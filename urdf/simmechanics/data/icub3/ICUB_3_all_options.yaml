@@ -1,5 +1,5 @@
 # Robot name
-robotName: iCub
+robotName: ergoCub
 
 # Model base origin
 originXYZ: [0.0,0.0,0.64]
