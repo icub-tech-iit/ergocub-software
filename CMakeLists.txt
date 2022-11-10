@@ -19,8 +19,8 @@ option(BUILD_TESTING "Run tests for the generated models" OFF)
 add_subdirectory(urdf)
 
 # TODO to be defined
-if (BUILD_TESTING)
-  include( CTest )
-  enable_testing()
-  add_subdirectory(tests)
-endif()
+#if (BUILD_TESTING)
+#  include( CTest )
+#  enable_testing()
+#  add_subdirectory(tests)
+#endif()
