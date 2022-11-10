@@ -13,7 +13,8 @@ if(POLICY CMP0046)
   cmake_policy(SET CMP0046 NEW)
 endif()
 
-option(ERGOCUB_MODEL_GENERATE_SIMMECHANICS "Generate models using the model generation pipeline from simmechanics" ON)
+option(ERGOCUB_MODEL_GENERATE_SIMMECHANICS "Generate models using the model generation pipeline from simmechanics" OFF)
+option(ERGOCUB_MODEL_COPY_TO_SRC "Copy to sources the generated urdf files" OFF)
 option(BUILD_TESTING "Run tests for the generated models" OFF)
 
 add_subdirectory(urdf)
