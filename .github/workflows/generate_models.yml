@@ -21,7 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-    
+
     - uses: conda-incubator/setup-miniconda@v2
       with:
         mamba-version: "*"
@@ -46,7 +46,7 @@ jobs:
         cd ${GITHUB_WORKSPACE}/..
         sudo apt-get install  --assume-yes --force-yes python3-lxml python3-yaml python3-numpy python3-setuptools
         # probably python on the path return a python interpreter and the find_package(PythonInterp) in CMake another,
-        # let's install both debian packages and pip packages to be sure 
+        # let's install both debian packages and pip packages to be sure
         sudo pip3 install lxml numpy pyyaml catkin_pkg
         # install urdf_parser_py and save the last commit SHA1 hash
         git clone https://github.com/ros/urdf_parser_py
@@ -64,7 +64,7 @@ jobs:
         # Prepare ergocub-software build
         mkdir build
         cd build
-        cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON  ..
+        cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON ..
         # Build and run
         make VERBOSE=1
 
@@ -74,7 +74,7 @@ jobs:
       with:
         commit-message: Automatic update of urdf
         branch: automatic-update-urdf
-        branch-suffix: timestamp 
+        branch-suffix: timestamp
         delete-branch: true
         title: 'Automatic update of urdf triggered by Github Action'
         reviewers: Nicogene
@@ -84,4 +84,4 @@ jobs:
     - name: Check outputs
       run: |
 
-        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"  
+        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
