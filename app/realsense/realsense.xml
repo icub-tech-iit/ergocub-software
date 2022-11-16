@@ -1,0 +1,30 @@
+<application>
+<name>2-realsense</name>
+<dependencies>
+</dependencies> 
+<module>
+      <name>yarpdev</name>
+      <parameters> --from sensors/RealSense_conf.ini</parameters>
+	  <node>ergocub-head</node>
+   </module>
+   <module>
+      <name>yarpview</name>
+      <parameters>--name /ergocub/view/rgb --x 0 --y 0 --p 50</parameters>
+      <node>ergocub-laptop</node>
+   </module>
+   <module>
+      <name>yarpview</name>
+      <parameters>--name /ergocub/view/depth --x 320 --y 0 --p 50</parameters>
+      <node>ergocub-laptop</node>
+   </module>
+<connection>
+  <output>/depthCamera/rgbImage:o</output>
+  <input>/ergocub/view/rgb</input>
+  <protocol>mjpeg</protocol>
+</connection>
+<connection>
+  <output>/depthCamera/depthImage:o</output>
+  <input>/ergocub/view/depth</input>
+  <protocol>fast_tcp+recv.portmonitor+type.dll+file.depthimage_to_rgb</protocol>
+</connection>
+</application>
