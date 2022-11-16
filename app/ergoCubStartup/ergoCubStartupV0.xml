@@ -1,0 +1,26 @@
+<application>
+<name>1-ergoCubStartup</name>
+
+        <dependencies>
+        </dependencies>
+
+        <module>
+                <name>yarplogger</name>
+                <parameters>--start --no_stop</parameters>
+                <node>ergocub-laptop</node>
+        </module>
+
+
+        <module>
+                <name>yarprobotinterface</name>
+                <parameters>--config ergocub_head.xml</parameters>
+                <node>ergocub-torso</node>
+        </module>
+        
+        <module>
+                <name>yarpmotorgui</name>
+                <parameters>--robot ergocub --parts "(head)"</parameters>
+                <node>ergocub-laptop</node>
+        </module>
+
+</application>
