@@ -8,8 +8,8 @@
     </param>
     <action phase="startup" level="5" type="attach">
          <paramlist name="networks">
-             <elem name="FirstStrain"> icub_left_foot_rear_ft </elem>
-             <elem name="SecondStrain"> icub_left_foot_front_ft </elem>
+             <elem name="FirstStrain"> ergocub_left_foot_rear_ft </elem>
+             <elem name="SecondStrain"> ergocub_left_foot_front_ft </elem>
          </paramlist>
      </action>
     <action phase="shutdown" level="20" type="detach" />

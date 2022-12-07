@@ -8,7 +8,7 @@
         
         <action phase="startup" level="10" type="attach">
             <paramlist name="networks">
-                <elem name="FirstStrain">  icub_right_leg_ft </elem>
+                <elem name="FirstStrain">  ergocub_right_leg_ft </elem>
             </paramlist>
         </action>
 
