@@ -9,7 +9,7 @@
 
   <createdFrom>"Pro/E Wildfire Creo 9.0 - 2022073"</createdFrom>
 
-  <createdOn>"12/06/22||11:28:15"</createdOn>
+  <createdOn>"12/13/22||10:15:38"</createdOn>
 
   <createdBy>"mfussi"</createdBy>
 
@@ -2136,7 +2136,7 @@
       </Body>
       <Body>
         <name>"SIM_ECUB_R_ANKLE_PITCH"</name>
-        <nodeID>"231"</nodeID>
+        <nodeID>"282"</nodeID>
         <status>""</status>
         <mass>0.348128</mass>
         <massUnits>"kg"</massUnits>
@@ -2150,7 +2150,7 @@
           <Frame>
             <name>"CG"</name>
             <displayName>""</displayName>
-            <nodeID>"231::CG(AUTOGEN)"</nodeID>
+            <nodeID>"282::CG(AUTOGEN)"</nodeID>
             <position>-93.2602,-19.7328,-864.687</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -2163,7 +2163,7 @@
           <Frame>
             <name>"CS1"</name>
             <displayName>""</displayName>
-            <nodeID>"231::CS1(AUTOGEN)"</nodeID>
+            <nodeID>"282::CS1(AUTOGEN)"</nodeID>
             <position>1.36019e-013,-8.65575e-014,5.93537e-013</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -2176,8 +2176,8 @@
           <Frame>
             <name>"CS2"</name>
             <displayName>"SCSYS_R_ANKLE_1"</displayName>
-            <nodeID>"513(USERADDED)"</nodeID>
-            <position>-92.6,4.29011,-880.859</position>
+            <nodeID>"525(USERADDED)"</nodeID>
+            <position>-92.6,-21.1,-850.6</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -2189,7 +2189,7 @@
           <Frame ref="61">
             <name>"CS3"</name>
             <displayName>""</displayName>
-            <nodeID>"231:-:SIM_ERGOCUB_1-0/RootPart::231(AUTOGEN)"</nodeID>
+            <nodeID>"282:-:SIM_ERGOCUB_1-0/RootPart::282(AUTOGEN)"</nodeID>
             <position>-93.2602,-19.7328,-864.687</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -2826,7 +2826,7 @@
       </Body>
       <Body>
         <name>"SIM_ECUB_L_ANKLE_PITCH"</name>
-        <nodeID>"250"</nodeID>
+        <nodeID>"281"</nodeID>
         <status>""</status>
         <mass>0.348128</mass>
         <massUnits>"kg"</massUnits>
@@ -2840,7 +2840,7 @@
           <Frame>
             <name>"CG"</name>
             <displayName>""</displayName>
-            <nodeID>"250::CG(AUTOGEN)"</nodeID>
+            <nodeID>"281::CG(AUTOGEN)"</nodeID>
             <position>93.2602,-19.7648,-864.687</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -2853,7 +2853,7 @@
           <Frame>
             <name>"CS1"</name>
             <displayName>""</displayName>
-            <nodeID>"250::CS1(AUTOGEN)"</nodeID>
+            <nodeID>"281::CS1(AUTOGEN)"</nodeID>
             <position>-3.66811e-013,0,5.86898e-013</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -2867,7 +2867,7 @@
             <name>"CS2"</name>
             <displayName>"SCSYS_L_ANKLE_1"</displayName>
             <nodeID>"520(USERADDED)"</nodeID>
-            <position>92.6,-27.15,-748.208</position>
+            <position>92.6,-21.15,-850.6</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -2879,7 +2879,7 @@
           <Frame ref="79">
             <name>"CS3"</name>
             <displayName>""</displayName>
-            <nodeID>"250:-:SIM_ERGOCUB_1-0/RootPart::250(AUTOGEN)"</nodeID>
+            <nodeID>"281:-:SIM_ERGOCUB_1-0/RootPart::281(AUTOGEN)"</nodeID>
             <position>93.2602,-19.7648,-864.687</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -3567,7 +3567,7 @@
           <Frame ref="60">
             <name>"CS31"</name>
             <displayName>""</displayName>
-            <nodeID>"231:-:SIM_ERGOCUB_1-0/RootPart::SIM_ERGOCUB_1-0/RootPart(AUTOGEN)"</nodeID>
+            <nodeID>"282:-:SIM_ERGOCUB_1-0/RootPart::SIM_ERGOCUB_1-0/RootPart(AUTOGEN)"</nodeID>
             <position>0.212867,-8.74447,-235.055</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -3684,7 +3684,7 @@
           <Frame ref="78">
             <name>"CS40"</name>
             <displayName>""</displayName>
-            <nodeID>"250:-:SIM_ERGOCUB_1-0/RootPart::SIM_ERGOCUB_1-0/RootPart(AUTOGEN)"</nodeID>
+            <nodeID>"281:-:SIM_ERGOCUB_1-0/RootPart::SIM_ERGOCUB_1-0/RootPart(AUTOGEN)"</nodeID>
             <position>0.212867,-8.74447,-235.055</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -5103,7 +5103,7 @@
       </SimpleJoint>
       <SimpleJoint>
         <name>"RootPart--SIM_ECUB_R_ANKLE_PITCH"</name>
-        <nodeID>"231:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
+        <nodeID>"282:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
           <JointSide>
@@ -5526,7 +5526,7 @@
       </SimpleJoint>
       <SimpleJoint>
         <name>"RootPart--SIM_ECUB_L_ANKLE_PITCH"</name>
-        <nodeID>"250:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
+        <nodeID>"281:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
           <JointSide>
