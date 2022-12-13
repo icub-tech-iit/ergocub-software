@@ -10,7 +10,7 @@ find_package(PythonInterp REQUIRED)
 # v2.5 robots using the simmechanics-to-urdf script
 macro(generate_ergocub_simmechanics)
     set(options INCREASE_INERTIA_FOR_GAZEBO
-                ICUB_3_COLLISION_GEOM_MOD)
+                ERGOCUB_COLLISION_GEOM_MOD)
     set(oneValueArgs YARP_ROBOT_NAME SIMMECHANICS_XML YAML_TEMPLATE CSV_TEMPLATE)
     set(multiValueArgs)
     cmake_parse_arguments(GIVTWO "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
@@ -116,7 +116,7 @@ macro(generate_ergocub_simmechanics)
       set(UPPERBODY_JOINT_DAMPING 0.06)
     endif()
 
-    if (GIVTWO_ICUB_3_COLLISION_GEOM_MOD)
+    if (GIVTWO_ERGOCUB_COLLISION_GEOM_MOD)
       set(ASSIGNED_COLLISION_GEOMETRIES
 "assignedCollisionGeometry:
   - linkName: r_foot_front
@@ -245,15 +245,15 @@ endmacro()
 
 set(model-simmechanics-generated-models "")
 
-generate_ergocub_simmechanics(YARP_ROBOT_NAME iCubGazeboV3
-                           SIMMECHANICS_XML "icub3/ICUB3_ALL_SIM_MODEL.xml"
-                           YAML_TEMPLATE "icub3/ICUB_3_all_options_gazebo.yaml.in"
-                           CSV_TEMPLATE "icub3/ICUB_3_joint_all_parameters.csv"
-                           ICUB_3_COLLISION_GEOM_MOD)
-generate_ergocub_simmechanics(YARP_ROBOT_NAME iCubGenova09
-                           SIMMECHANICS_XML "icub3/ICUB3_ALL_SIM_MODEL.xml"
-                           YAML_TEMPLATE "icub3/ICUB_3_all_options.yaml"
-                           CSV_TEMPLATE "icub3/ICUB_3_joint_all_parameters.csv")
+generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1
+                           SIMMECHANICS_XML "ergocub/SIM_ERGOCUB_1-0.xml"
+                           YAML_TEMPLATE "ergocub/ERGOCUB_all_options_gazebo.yaml.in"
+                           CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv"
+                           ERGOCUB_COLLISION_GEOM_MOD)
+generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubSN000
+                           SIMMECHANICS_XML "ergocub/SIM_ERGOCUB_1-0.xml"
+                           YAML_TEMPLATE "ergocub/ERGOCUB_all_options.yaml"
+                           CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv")
 
 
 add_custom_target(generate-models-simmechanics
@@ -263,6 +263,6 @@ add_custom_target(generate-models-simmechanics
 # Copy the meshes in the meshes/simmechanics directory
 add_custom_command(TARGET generate-models-simmechanics
                    POST_BUILD
-                   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/icub3/meshes" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/meshes"
-                   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/icub3/conf" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/conf_icub3"
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/ergocub/meshes" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/meshes"
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/ergocub/conf" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/conf"
                    COMMENT "Copying Simmechanics meshes")
