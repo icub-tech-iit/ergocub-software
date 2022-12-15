@@ -9,7 +9,7 @@
 
   <createdFrom>"Pro/E Wildfire Creo 9.0 - 2022073"</createdFrom>
 
-  <createdOn>"12/14/22||14:26:05"</createdOn>
+  <createdOn>"12/15/22||15:00:29"</createdOn>
 
   <createdBy>"mfussi"</createdBy>
 
@@ -1212,7 +1212,7 @@
         <geometryFileName>"SIM_ECUB_L_FOREARM_prt.stl"</geometryFileName>
       </Body>
       <Body>
-        <name>"SIM_ECUB_L_WRIST_YAW"</name>
+        <name>"SIM_ECUB_L_WRIST_1"</name>
         <nodeID>"286"</nodeID>
         <status>""</status>
         <mass>0.0565425</mass>
@@ -1264,10 +1264,10 @@
             <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
           </Frame>
         </frames>
-        <geometryFileName>"SIM_ECUB_L_WRIST_YAW_prt.stl"</geometryFileName>
+        <geometryFileName>"SIM_ECUB_L_WRIST_1_prt.stl"</geometryFileName>
       </Body>
       <Body>
-        <name>"SIM_ECUB_L_WRIST_ROLL"</name>
+        <name>"SIM_ECUB_L_WRIST_2"</name>
         <nodeID>"288"</nodeID>
         <status>""</status>
         <mass>0.00945549</mass>
@@ -1332,7 +1332,7 @@
             <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
           </Frame>
         </frames>
-        <geometryFileName>"SIM_ECUB_L_WRIST_ROLL_prt.stl"</geometryFileName>
+        <geometryFileName>"SIM_ECUB_L_WRIST_2_prt.stl"</geometryFileName>
       </Body>
       <Body>
         <name>"SIM_ECUB_L_HAND_PALM"</name>
@@ -3135,7 +3135,7 @@
         <geometryFileName>"SIM_ECUB_R_FOREARM_prt.stl"</geometryFileName>
       </Body>
       <Body>
-        <name>"SIM_ECUB_R_WRIST_YAW"</name>
+        <name>"SIM_ECUB_R_WRIST_1"</name>
         <nodeID>"311"</nodeID>
         <status>""</status>
         <mass>0.0565425</mass>
@@ -3200,10 +3200,10 @@
             <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
           </Frame>
         </frames>
-        <geometryFileName>"SIM_ECUB_R_WRIST_YAW_prt.stl"</geometryFileName>
+        <geometryFileName>"SIM_ECUB_R_WRIST_1_prt.stl"</geometryFileName>
       </Body>
       <Body>
-        <name>"SIM_ECUB_R_WRIST_ROLL"</name>
+        <name>"SIM_ECUB_R_WRIST_2"</name>
         <nodeID>"312"</nodeID>
         <status>""</status>
         <mass>0.0264562</mass>
@@ -3268,7 +3268,7 @@
             <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
           </Frame>
         </frames>
-        <geometryFileName>"SIM_ECUB_R_WRIST_ROLL_prt.stl"</geometryFileName>
+        <geometryFileName>"SIM_ECUB_R_WRIST_2_prt.stl"</geometryFileName>
       </Body>
       <Body>
         <name>"SIM_ECUB_R_HAND_PALM"</name>
@@ -7969,7 +7969,7 @@
         </primitives>
       </SimpleJoint>
       <SimpleJoint>
-        <name>"RootPart--SIM_ECUB_L_WRIST_YAW"</name>
+        <name>"RootPart--SIM_ECUB_L_WRIST_1"</name>
         <nodeID>"286:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
@@ -8016,7 +8016,7 @@
         </primitives>
       </SimpleJoint>
       <SimpleJoint>
-        <name>"RootPart--SIM_ECUB_L_WRIST_ROLL"</name>
+        <name>"RootPart--SIM_ECUB_L_WRIST_2"</name>
         <nodeID>"288:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
@@ -8768,7 +8768,7 @@
         </primitives>
       </SimpleJoint>
       <SimpleJoint>
-        <name>"RootPart--SIM_ECUB_R_WRIST_YAW"</name>
+        <name>"RootPart--SIM_ECUB_R_WRIST_1"</name>
         <nodeID>"311:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
@@ -8815,7 +8815,7 @@
         </primitives>
       </SimpleJoint>
       <SimpleJoint>
-        <name>"RootPart--SIM_ECUB_R_WRIST_ROLL"</name>
+        <name>"RootPart--SIM_ECUB_R_WRIST_2"</name>
         <nodeID>"312:-:SIM_ERGOCUB_1-0/RootPart"</nodeID>
         <status>""</status>
         <base>
