@@ -80,9 +80,11 @@ rename:
     SIM_ECUB_HEAD_NECK_2: neck_2
     SIM_ECUB_HEAD_NECK_3: neck_3
     SIM_ECUB_HEAD: head
+    SIM_ECUB_REALSENSE: realsense
     SIM_ECUB_HEAD_NECK_1--SIM_ECUB_HEAD_NECK_2: neck_pitch
     SIM_ECUB_HEAD_NECK_2--SIM_ECUB_HEAD_NECK_3: neck_roll
     SIM_ECUB_HEAD_NECK_3--SIM_ECUB_HEAD_HEAD: neck_yaw
+    SIM_ECUB_HEAD--SIM_ECUB_REALSENSE: camera-tilt
     # left forearm
     SIM_ECUB_L_UPPERARM: l_upperarm
     SIM_ECUB_L_FOREARM: l_forearm
@@ -230,6 +232,8 @@ linkFrames:
     frameName: SCSYS_NECK_3
   - linkName: head
     frameName: SCSYS_HEAD
+  - linkName: realsense
+    frameName: SCSYS_REALSENSE
   # left forearm
   - linkName: l_upperarm
     frameName: SCSYS_L_UPPERARM
@@ -309,11 +313,11 @@ exportedFrames:
     frameReferenceLink: head
     exportedFrameName: imu_frame
   - frameName: SCSYS_HEAD_DEPTH
-    frameReferenceLink: head
-    exportedFrameName: head_depth_frame
+    frameReferenceLink: realsense
+    exportedFrameName: realsense_depth_frame
   - frameName: SCSYS_HEAD_RGB
-    frameReferenceLink: head
-    exportedFrameName: head_rgb_frame
+    frameReferenceLink: realsense
+    exportedFrameName: realsense_rgb_frame
   - frameName: SCSYS_HEAD_S2_LASER
     frameReferenceLink: head
     exportedFrameName: head_laser_frame
@@ -436,84 +440,84 @@ sensors:
     sensorBlobs:
     - |
         <plugin name="ergocub_yarp_gazebo_plugin_camera" filename="libgazebo_yarp_camera.so" />
-  # - frameName: SCSYS_HEAD_DEPTH
-  #   linkName: head
-  #   sensorName: realsense_head_depth
-  #   sensorType: "depth"
-  #   sensorBlobs:
-  #   - |
-  #       <camera name="intel_realsense_depth_camera">
-  #         <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
-  #         <horizontal_fov>1.57079</horizontal_fov>
-  #         <distortion>
-  #           <k1>0</k1>
-  #           <k2>0</k2>
-  #           <k3>0</k3>
-  #           <p1>0</p1>
-  #           <p2>0</p2>
-  #           <center>319.5 239.5</center>
-  #         </distortion>
-  #         <image>
-  #           <width>640</width>
-  #           <height>480</height>
-  #           <format>R8G8B8</format>
-  #         </image>
-  #         <clip>
-  #           <near>0.175</near>
-  #           <far>3000</far>
-  #         </clip>
-  #       </camera>
-  #   - |
-  #       <visualize>false</visualize>
-  #   - |
-  #       <plugin name="ergocub_yarp_gazebo_plugin_depthCamera" filename="libgazebo_yarp_depthCamera.so">
-  #           <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera.ini</yarpConfigurationFile>
-  #       </plugin>
+  - frameName: SCSYS_HEAD_DEPTH
+    linkName: realsense
+    sensorName: realsense_head_depth
+    sensorType: "depth"
+    sensorBlobs:
+    - |
+        <camera name="intel_realsense_depth_camera">
+          <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
+          <horizontal_fov>1.57079</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.175</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+    - |
+        <visualize>false</visualize>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_depthCamera" filename="libgazebo_yarp_depthCamera.so">
+            <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera.ini</yarpConfigurationFile>
+        </plugin>
 
-  # - frameName: SCSYS_HEAD_RGB
-  #   linkName: head
-  #   sensorName: realsense_head_rgb
-  #   sensorType: "camera"
-  #   sensorBlobs:
-  #   - |
-  #       <camera name="intel_realsense_rgb_camera">
-  #         <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
-  #         <horizontal_fov>1.2217</horizontal_fov>
-  #         <distortion>
-  #           <k1>0</k1>
-  #           <k2>0</k2>
-  #           <k3>0</k3>
-  #           <p1>0</p1>
-  #           <p2>0</p2>
-  #           <center>319.5 239.5</center>
-  #         </distortion>
-  #         <image>
-  #           <width>640</width>
-  #           <height>480</height>
-  #           <format>R8G8B8</format>
-  #         </image>
-  #         <clip>
-  #           <near>0.02</near>
-  #           <far>3000</far>
-  #         </clip>
-  #       </camera>
-  #   - |
-  #       <visualize>false</visualize>
-  #   - |
-  #       <plugin name="ergocub_yarp_gazebo_plugin_camera" filename="libgazebo_yarp_camera.so">
-  #           <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_rgb_camera.ini</yarpConfigurationFile>
-  #       </plugin>
-  # # According to https://github.com/IntelRealSense/realsense-ros/issues/927 in the realsense
-  # # the imu measurements are referred to the depth frame.
-  # - frameName: SCSYS_HEAD_DEPTH
-  #   linkName: head
-  #   sensorName: chest_imu_acc_1x1
-  #   sensorType: "accelerometer"
-  #   sensorBlobs:
-  #   - |
-  #       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-  #           <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_chest_inertial.ini</yarpConfigurationFile>
-  #       </plugin>
+  - frameName: SCSYS_HEAD_RGB
+    linkName: realsense
+    sensorName: realsense_head_rgb
+    sensorType: "camera"
+    sensorBlobs:
+    - |
+        <camera name="intel_realsense_rgb_camera">
+          <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
+          <horizontal_fov>1.2217</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+    - |
+        <visualize>false</visualize>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_camera" filename="libgazebo_yarp_camera.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_rgb_camera.ini</yarpConfigurationFile>
+        </plugin>
+  # According to https://github.com/IntelRealSense/realsense-ros/issues/927 in the realsense
+  # the imu measurements are referred to the depth frame.
+  - frameName: SCSYS_HEAD_DEPTH
+    linkName: realsense
+    sensorName: realsense_imu_acc_1x1
+    sensorType: "accelerometer"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_chest_inertial.ini</yarpConfigurationFile>
+        </plugin>
   # - frameName: SCSYS_HEAD_S2_LASER
   #   linkName: head
   #   sensorName: lasersensor_head
