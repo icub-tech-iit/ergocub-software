@@ -188,7 +188,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 2.684000e+01 -4.404422e+01 -1.678240e+02
     endloop
   endfacet
-  facet normal -1.000000e+00 4.396897e-16 1.070177e-15
+  facet normal -1.000000e+00 -1.635462e-16 1.208744e-15
     outer loop
       vertex 2.684000e+01 -3.587546e+01 -1.579013e+02
       vertex 2.684000e+01 -2.302196e+01 -1.532230e+02
@@ -216,7 +216,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 5.050000e+01 -6.560000e+01 -1.668488e+02
     endloop
   endfacet
-  facet normal -1.000000e+00 0.000000e+00 0.000000e+00
+  facet normal -1.000000e+00 3.277013e-15 -2.034121e-15
     outer loop
       vertex 5.050000e+01 -5.772258e+01 -1.506650e+02
       vertex 5.050000e+01 -4.724109e+01 -1.407653e+02
@@ -265,7 +265,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 2.684000e+01 -2.263778e+01 -2.038033e+02
     endloop
   endfacet
-  facet normal -1.000000e+00 6.102187e-16 8.663524e-16
+  facet normal -1.000000e+00 8.487638e-16 9.922555e-16
     outer loop
       vertex 2.684000e+01 -9.266969e+00 -2.009188e+02
       vertex 2.684000e+01 -2.263778e+01 -2.038033e+02
@@ -482,7 +482,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 5.050000e+01 1.594383e+00 -1.385952e+02
     endloop
   endfacet
-  facet normal 9.521259e-17 -1.000000e+00 -4.152639e-15
+  facet normal 1.619400e-15 -1.000000e+00 -2.311419e-15
     outer loop
       vertex 8.842814e+01 -7.500000e+01 -2.006332e+02
       vertex 7.131083e+01 -7.500000e+01 -1.941814e+02
@@ -496,14 +496,14 @@ solid SIM_ECUB_L_HIP_1
       vertex 7.131083e+01 -7.500000e+01 -1.941814e+02
     endloop
   endfacet
-  facet normal -3.746144e-16 -1.000000e+00 -5.745898e-15
+  facet normal 2.151101e-16 -1.000000e+00 -6.376594e-15
     outer loop
       vertex 9.631020e+01 -7.500000e+01 -1.933381e+02
       vertex 9.109192e+01 -7.500000e+01 -1.756853e+02
       vertex 7.131083e+01 -7.500000e+01 -1.941814e+02
     endloop
   endfacet
-  facet normal -3.853510e-16 -1.000000e+00 -5.427629e-15
+  facet normal 2.046002e-16 -1.000000e+00 -6.065046e-15
     outer loop
       vertex 8.842814e+01 -7.500000e+01 -2.006332e+02
       vertex 9.631020e+01 -7.500000e+01 -1.933381e+02
@@ -601,7 +601,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 7.083628e+01 -2.372137e+01 -2.243436e+02
     endloop
   endfacet
-  facet normal 2.677676e-17 5.228549e-02 9.986322e-01
+  facet normal -9.893800e-16 5.228549e-02 9.986322e-01
     outer loop
       vertex 9.858451e+01 5.722984e+00 -1.342000e+02
       vertex 7.083576e+01 5.722984e+00 -1.342000e+02
@@ -671,7 +671,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 9.858600e+01 -2.320126e+01 -2.243633e+02
     endloop
   endfacet
-  facet normal 4.477489e-17 -1.748589e-01 -9.845935e-01
+  facet normal 1.075634e-15 -1.748589e-01 -9.845935e-01
     outer loop
       vertex 9.858451e+01 6.095963e+00 -2.295401e+02
       vertex 7.084828e+01 -2.309356e+01 -2.243562e+02
@@ -692,14 +692,14 @@ solid SIM_ECUB_L_HIP_1
       vertex 7.083576e+01 1.606975e+01 -2.238416e+02
     endloop
   endfacet
-  facet normal -1.337505e-16 4.960835e-01 -8.682748e-01
+  facet normal 6.910440e-16 4.960835e-01 -8.682748e-01
     outer loop
       vertex 9.858451e+01 1.606975e+01 -2.238416e+02
       vertex 9.858451e+01 6.095963e+00 -2.295401e+02
       vertex 7.083576e+01 6.095963e+00 -2.295401e+02
     endloop
   endfacet
-  facet normal 1.658530e-23 3.238519e-08 1.000000e+00
+  facet normal -1.024252e-15 3.238519e-08 1.000000e+00
     outer loop
       vertex 9.858451e+01 5.722984e+00 -1.342000e+02
       vertex 7.083576e+01 2.575000e+01 -1.342000e+02
@@ -748,7 +748,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 7.083576e+01 2.575000e+01 -2.182527e+02
     endloop
   endfacet
-  facet normal 6.401575e-17 5.000001e-01 -8.660254e-01
+  facet normal -6.401575e-17 5.000001e-01 -8.660254e-01
     outer loop
       vertex 9.858451e+01 2.575000e+01 -2.182527e+02
       vertex 7.083576e+01 1.606975e+01 -2.238416e+02
@@ -762,7 +762,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 8.221107e+01 4.755000e+01 -2.065787e+02
     endloop
   endfacet
-  facet normal 6.044107e-17 4.720797e-01 -8.815559e-01
+  facet normal -6.044107e-17 4.720797e-01 -8.815559e-01
     outer loop
       vertex 9.858451e+01 2.575000e+01 -2.182527e+02
       vertex 7.083576e+01 2.575000e+01 -2.182527e+02
@@ -853,21 +853,21 @@ solid SIM_ECUB_L_HIP_1
       vertex 9.858451e+01 2.575000e+01 -1.342000e+02
     endloop
   endfacet
-  facet normal 5.397318e-16 1.000000e+00 5.054737e-15
+  facet normal -7.934306e-16 1.000000e+00 5.558671e-15
     outer loop
       vertex 6.926949e+01 4.755000e+01 -1.745225e+02
       vertex 6.981142e+01 4.755000e+01 -2.012886e+02
       vertex 6.416210e+01 4.755000e+01 -1.880341e+02
     endloop
   endfacet
-  facet normal 4.115567e-16 1.000000e+00 4.994137e-15
+  facet normal 1.178326e-15 1.000000e+00 5.448240e-15
     outer loop
       vertex 7.157918e+01 4.755000e+01 -1.729792e+02
       vertex 8.221107e+01 4.755000e+01 -2.065787e+02
       vertex 6.981142e+01 4.755000e+01 -2.012886e+02
     endloop
   endfacet
-  facet normal -2.898996e-16 1.000000e+00 5.037939e-15
+  facet normal -6.399186e-16 1.000000e+00 5.561780e-15
     outer loop
       vertex 6.926949e+01 4.755000e+01 -1.745225e+02
       vertex 7.157918e+01 4.755000e+01 -1.729792e+02
@@ -881,14 +881,14 @@ solid SIM_ECUB_L_HIP_1
       vertex 8.221107e+01 4.755000e+01 -2.065787e+02
     endloop
   endfacet
-  facet normal 2.993811e-16 1.000000e+00 4.958641e-15
+  facet normal 9.945486e-18 1.000000e+00 5.078529e-15
     outer loop
       vertex 7.157918e+01 4.755000e+01 -1.729792e+02
       vertex 9.610854e+01 4.755000e+01 -1.730272e+02
       vertex 8.221107e+01 4.755000e+01 -2.065787e+02
     endloop
   endfacet
-  facet normal -2.479302e-16 -1.000000e+00 -5.109885e-15
+  facet normal -1.376160e-15 -1.000000e+00 -3.631495e-15
     outer loop
       vertex 1.030520e+02 4.755000e+01 -1.879877e+02
       vertex 8.498893e+01 4.755000e+01 -2.065787e+02
@@ -902,7 +902,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 8.498893e+01 4.755000e+01 -2.065787e+02
     endloop
   endfacet
-  facet normal -9.628125e-16 1.000000e+00 6.286247e-15
+  facet normal 2.944277e-16 1.000000e+00 4.682510e-15
     outer loop
       vertex 9.738858e+01 4.755000e+01 -2.012886e+02
       vertex 8.498893e+01 4.755000e+01 -2.065787e+02
@@ -916,7 +916,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 8.498893e+01 4.755000e+01 -2.065787e+02
     endloop
   endfacet
-  facet normal 5.082226e-16 1.000000e+00 4.942477e-15
+  facet normal -7.428258e-16 1.000000e+00 4.994332e-15
     outer loop
       vertex 9.793051e+01 4.755000e+01 -1.745225e+02
       vertex 1.030520e+02 4.755000e+01 -1.879877e+02
@@ -1175,7 +1175,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 1.221000e+02 -5.322009e+01 -1.944271e+02
     endloop
   endfacet
-  facet normal 9.745250e-01 0.000000e+00 -2.242790e-01
+  facet normal 9.745250e-01 -4.699053e-16 -2.242790e-01
     outer loop
       vertex 1.221000e+02 -2.374855e+01 -1.944271e+02
       vertex 1.221000e+02 -5.322009e+01 -1.944271e+02
@@ -1196,7 +1196,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 1.221000e+02 -5.322009e+01 -1.944271e+02
     endloop
   endfacet
-  facet normal 9.964247e-01 0.000000e+00 -8.448511e-02
+  facet normal 9.964247e-01 -4.853866e-16 -8.448511e-02
     outer loop
       vertex 1.244500e+02 -2.328673e+01 -1.667110e+02
       vertex 1.221000e+02 -5.322009e+01 -1.944271e+02
@@ -1245,7 +1245,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 1.179326e+02 -4.523666e+01 -1.435991e+02
     endloop
   endfacet
-  facet normal 9.999661e-01 0.000000e+00 -8.231586e-03
+  facet normal 9.999661e-01 4.821728e-16 -8.231586e-03
     outer loop
       vertex 1.221000e+02 5.722984e+00 -1.944271e+02
       vertex 1.221000e+02 -2.374855e+01 -1.944271e+02
@@ -1259,7 +1259,7 @@ solid SIM_ECUB_L_HIP_1
       vertex 1.221000e+02 -2.374855e+01 -1.944271e+02
     endloop
   endfacet
-  facet normal 1.000000e+00 0.000000e+00 0.000000e+00
+  facet normal 1.000000e+00 4.821891e-16 0.000000e+00
     outer loop
       vertex 1.221000e+02 5.722984e+00 -1.631574e+02
       vertex 1.221000e+02 -2.374855e+01 -1.944271e+02

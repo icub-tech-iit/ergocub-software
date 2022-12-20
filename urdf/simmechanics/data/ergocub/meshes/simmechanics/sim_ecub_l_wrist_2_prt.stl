@@ -8647,29 +8647,15 @@ solid SIM_ECUB_L_WRIST_2
   facet normal 9.078964e-01 -3.333706e-01 2.541421e-01
     outer loop
       vertex 2.598321e+02 -5.854512e+01 -1.647379e+02
-      vertex 2.597917e+02 -6.011397e+01 -1.666516e+02
-      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
-    endloop
-  endfacet
-  facet normal 9.078964e-01 -3.333706e-01 2.541421e-01
-    outer loop
-      vertex 2.598321e+02 -5.854512e+01 -1.647379e+02
       vertex 2.594894e+02 -5.975509e+01 -1.651006e+02
       vertex 2.597917e+02 -6.011397e+01 -1.666516e+02
     endloop
   endfacet
   facet normal 9.078964e-01 -3.333706e-01 2.541421e-01
     outer loop
-      vertex 2.603508e+02 -5.915189e+01 -1.673866e+02
+      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
       vertex 2.598321e+02 -5.854512e+01 -1.647379e+02
-      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
-    endloop
-  endfacet
-  facet normal 7.924160e-01 -1.801810e-01 5.827621e-01
-    outer loop
-      vertex 2.630291e+02 -6.030542e+01 -1.713851e+02
-      vertex 2.603508e+02 -5.915189e+01 -1.673866e+02
-      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
+      vertex 2.597917e+02 -6.011397e+01 -1.666516e+02
     endloop
   endfacet
   facet normal 9.078964e-01 -3.333706e-01 2.541421e-01
@@ -8721,6 +8707,13 @@ solid SIM_ECUB_L_WRIST_2
       vertex 2.606227e+02 -5.615087e+01 -1.644214e+02
     endloop
   endfacet
+  facet normal 9.078964e-01 -3.333706e-01 2.541421e-01
+    outer loop
+      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
+      vertex 2.603508e+02 -5.915189e+01 -1.673866e+02
+      vertex 2.598321e+02 -5.854512e+01 -1.647379e+02
+    endloop
+  endfacet
   facet normal 9.078966e-01 -3.333700e-01 2.541420e-01
     outer loop
       vertex 2.616427e+02 -5.571475e+01 -1.674934e+02
@@ -8733,6 +8726,13 @@ solid SIM_ECUB_L_WRIST_2
       vertex 2.606227e+02 -5.615087e+01 -1.644214e+02
       vertex 2.598321e+02 -5.854512e+01 -1.647379e+02
       vertex 2.616427e+02 -5.571475e+01 -1.674934e+02
+    endloop
+  endfacet
+  facet normal 7.924160e-01 -1.801810e-01 5.827621e-01
+    outer loop
+      vertex 2.630291e+02 -6.030542e+01 -1.713851e+02
+      vertex 2.603508e+02 -5.915189e+01 -1.673866e+02
+      vertex 2.599396e+02 -6.005927e+01 -1.671081e+02
     endloop
   endfacet
   facet normal 8.129528e-01 3.906785e-01 4.318310e-01

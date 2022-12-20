@@ -1525,14 +1525,14 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -1.246077e+02 -4.343938e+01 -7.812809e+02
     endloop
   endfacet
-  facet normal -5.952103e-01 -8.035700e-01 -6.663110e-14
+  facet normal -5.952103e-01 -8.035700e-01 -7.015870e-14
     outer loop
       vertex -1.139000e+02 -3.510000e+01 -8.239486e+02
       vertex -1.006000e+02 -4.495141e+01 -8.156129e+02
       vertex -1.139000e+02 -3.510000e+01 -8.223300e+02
     endloop
   endfacet
-  facet normal -9.999424e-01 1.073763e-02 -5.220456e-14
+  facet normal -9.999424e-01 1.073763e-02 -5.216037e-14
     outer loop
       vertex -1.137000e+02 -1.647500e+01 -8.176300e+02
       vertex -1.139000e+02 -3.510000e+01 -8.239486e+02
@@ -1987,7 +1987,7 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -1.009702e+02 3.588241e+01 -5.947122e+02
     endloop
   endfacet
-  facet normal -6.233730e-14 2.389024e-01 9.710436e-01
+  facet normal -6.250404e-14 2.389024e-01 9.710436e-01
     outer loop
       vertex -7.042873e+01 3.588241e+01 -5.947122e+02
       vertex -1.009702e+02 3.588241e+01 -5.947122e+02
@@ -2078,7 +2078,7 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -9.624830e+01 5.028802e+01 -7.156937e+02
     endloop
   endfacet
-  facet normal -9.587547e-15 9.956717e-01 9.294006e-02
+  facet normal -1.028247e-14 9.956717e-01 9.294006e-02
     outer loop
       vertex -7.042873e+01 3.588241e+01 -5.947122e+02
       vertex -1.009714e+02 3.883327e+01 -6.263250e+02
@@ -2652,7 +2652,7 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -6.300000e+01 -1.330586e+01 -5.609368e+02
     endloop
   endfacet
-  facet normal -9.780000e-01 2.086051e-01 -5.791629e-14
+  facet normal -9.780000e-01 2.086051e-01 -5.820598e-14
     outer loop
       vertex -5.950000e+01 1.777247e+01 -5.609368e+02
       vertex -5.950000e+01 1.777247e+01 -5.926002e+02
@@ -2771,7 +2771,7 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -4.170000e+01 1.494306e+01 -7.808934e+02
     endloop
   endfacet
-  facet normal -1.000000e+00 -9.793745e-15 -5.924305e-14
+  facet normal -1.000000e+00 -5.876247e-15 -5.946746e-14
     outer loop
       vertex -5.950000e+01 2.140000e+01 -5.609368e+02
       vertex -5.950000e+01 1.777247e+01 -5.926002e+02
@@ -2806,7 +2806,7 @@ solid SIM_ECUB_R_LOWER_LEG
       vertex -6.300000e+01 1.171922e+01 -5.292735e+02
     endloop
   endfacet
-  facet normal -1.000000e+00 -9.793745e-15 -5.968338e-14
+  facet normal -1.000000e+00 -5.876247e-15 -5.991109e-14
     outer loop
       vertex -5.950000e+01 2.327131e+01 -5.287427e+02
       vertex -5.950000e+01 2.140000e+01 -5.609368e+02

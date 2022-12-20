@@ -888,7 +888,7 @@ solid SIM_ECUB_L_HIP_3
       vertex 3.644856e+01 -6.070444e+01 -2.407825e+02
     endloop
   endfacet
-  facet normal 4.023959e-01 -8.112565e-15 9.154658e-01
+  facet normal 4.023959e-01 -7.701810e-15 9.154658e-01
     outer loop
       vertex 4.995478e+01 -6.206687e+00 -2.560685e+02
       vertex 3.169317e+01 -4.198290e+01 -2.480415e+02
@@ -1910,7 +1910,7 @@ solid SIM_ECUB_L_HIP_3
       vertex 1.091507e+02 -7.323782e+01 -2.399605e+02
     endloop
   endfacet
-  facet normal 2.612819e-02 -1.011446e-14 9.996586e-01
+  facet normal 2.612819e-02 -1.010063e-14 9.996586e-01
     outer loop
       vertex 1.237037e+02 -1.618320e+01 -2.579961e+02
       vertex 4.995478e+01 -6.206687e+00 -2.560685e+02
