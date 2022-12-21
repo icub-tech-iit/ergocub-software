@@ -2505,13 +2505,50 @@
       <update_rate>100</update_rate>
       <pose>0.00751550026595621 0.010000000000000004 -4.911144457775407e-08 -1.5707962931078618 8.881784197001252e-16 -1.5707963267948954</pose>
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-    <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_chest_inertial.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
   <sensor name="realsense_imu_acc_1x1" type="accelerometer">
     <parent link="realsense"/>
     <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621 0.010000000000000004 -4.911144457775407e-08"/>
+  </sensor>
+  <gazebo reference="head">
+    <sensor name="lasersensor_head" type="ray">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <pose>4.99999999999997e-05 0.0 0.13480199999999992 0.0 -0.0 1.5707963267948966</pose>
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray name="head_laser_sensor">
+  <scan>
+    <horizontal>
+      <samples>360</samples>
+      <resolution>2</resolution>
+      <min_angle>0</min_angle>
+      <max_angle>6.28</max_angle>
+    </horizontal>
+  </scan>
+  <range>
+    <min>0.04</min>
+    <max>5</max>
+    <resolution>0.01</resolution>
+  </range>
+  <noise>
+    <type>gaussian</type>
+    <mean>0</mean>
+    <stddev>0.005</stddev>
+  </noise>
+</ray>
+      <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
+  <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="lasersensor_head" type="ray">
+    <parent link="head"/>
+    <origin rpy="0.0 -0.0 1.5707963267948966" xyz="4.99999999999997e-05 0.0 0.13480199999999992"/>
   </sensor>
   <gazebo>
     <pose>0.0 0.0 0.9 0.0 0.0 0.0</pose>
