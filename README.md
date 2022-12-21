@@ -1,6 +1,17 @@
 # ergocub
 Main collector of ergoCub specific SW
 
+## Installation
+
+For installing it just:
+```
+mkdir build
+cd build
+cmake ..
+make
+(make install)
+```
+
 ## URDF generation
 This repo hosts the `ergoCub` urdf, enabling the cmake flag `ERGOCUB_MODEL_GENERATE_SIMMECHANICS` it is possible to generate it from simmechanics xml.
 Enabling also `ERGOCUB_MODEL_COPY_TO_SRC` the generated models are copied in the `urdf` directory for being committed.
