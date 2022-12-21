@@ -1,0 +1,87 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Automatically generate models and commit to the repo
+
+# Controls when the workflow will run
+on:
+  push:
+    # Triggers the workflow on push or pull request events but only for the master branch
+    branches:
+        - master
+    paths:
+        - 'urdf/simmechanics/**'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  generate_models:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        mamba-version: "*"
+        channels: conda-forge,robotology
+        channel-priority: true
+
+    - name: Dependencies
+      shell: bash
+      run: |
+        # Workaround for https://github.com/conda-incubator/setup-miniconda/issues/186
+        conda config --remove channels defaults
+        # Actual dependencies
+        mamba install python=3.8 yarp idyntree
+
+    - name: Generate models
+      run: |
+        sudo apt-get update
+        sudo apt-get install libeigen3-dev libace-dev libtinyxml-dev libxml2-dev
+        # Save the url of the repository and the user-name of the committ author
+        export CURRENT_REPOSITORY_URL=`git remote get-url origin`
+        # Start in the parent directory of ergocub-software
+        cd ${GITHUB_WORKSPACE}/..
+        sudo apt-get install  --assume-yes --force-yes python3-lxml python3-yaml python3-numpy python3-setuptools
+        # probably python on the path return a python interpreter and the find_package(PythonInterp) in CMake another,
+        # let's install both debian packages and pip packages to be sure
+        sudo pip3 install lxml numpy pyyaml catkin_pkg
+        # install urdf_parser_py and save the last commit SHA1 hash
+        git clone https://github.com/ros/urdf_parser_py
+        cd urdf_parser_py
+        # workaround for https://github.com/robotology/simmechanics-to-urdf/issues/36
+        git checkout 31474b9baaf7c3845b40e5a9aa87d5900a2282c3
+        sudo python3 setup.py install
+        cd ${GITHUB_WORKSPACE}/..
+        # install simmechanics-to-urdf and save the last commit SHA1 hash
+        git clone https://github.com/robotology/simmechanics-to-urdf
+        cd simmechanics-to-urdf
+        sudo python3 setup.py install
+        cd ${GITHUB_WORKSPACE}/..
+        cd ${GITHUB_WORKSPACE}
+        # Prepare ergocub-software build
+        mkdir build
+        cd build
+        cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON ..
+        # Build and run
+        make VERBOSE=1
+
+    - name: Create Pull Request
+      id: cpr
+      uses: peter-evans/create-pull-request@main
+      with:
+        commit-message: Automatic update of urdf
+        branch: automatic-update-urdf
+        branch-suffix: timestamp
+        delete-branch: true
+        title: 'Automatic update of urdf triggered by Github Action'
+        reviewers: Nicogene
+        assignees: ${{ github.actor }}
+        body: |
+          This PR has been automatically triggered by committing to simmechanics files
+    - name: Check outputs
+      run: |
+
+        echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
