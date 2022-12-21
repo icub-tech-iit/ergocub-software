@@ -161,14 +161,14 @@ linkFrames:
   # upperbody
   - linkName: root_link
     frameName: SCSYS_ROOT
-  # - linkName: chest # MISSING SCSYS
-  #   frameName: SCSYS_CHEST
+  - linkName: chest
+    frameName: SCSYS_CHEST
   - linkName: l_shoulder_1
     frameName: SCSYS_L_SHOULDER_1
   - linkName: l_shoulder_2
     frameName: SCSYS_L_SHOULDER_2
-  # - linkName: l_shoulder_3 # MISSING SCSYS
-  #   frameName: SCSYS_L_SHOULDER_3
+  - linkName: l_shoulder_3
+    frameName: SCSYS_L_SHOULDER_3
   - linkName: l_upper_arm
     frameName: SCSYS_L_UPPERARM
   - linkName: r_shoulder_2
@@ -177,8 +177,8 @@ linkFrames:
     frameName: SCSYS_R_SHOULDER_1
   - linkName: r_shoulder_2
     frameName: SCSYS_R_SHOULDER_2
-  # - linkName: r_shoulder_3 # MISSING SCSYS
-  #   frameName: SCSYS_R_SHOULDER_3
+  - linkName: r_shoulder_3
+    frameName: SCSYS_R_SHOULDER_3
   - linkName: r_upper_arm
     frameName: SCSYS_R_UPPERARM
   - linkName: torso_1
@@ -190,8 +190,8 @@ linkFrames:
     frameName: SCSYS_L_HIP_1
   - linkName: l_hip_2
     frameName: SCSYS_L_HIP_2
-  # - linkName: l_hip_3
-  #   frameName: SCSYS_L_HIP_3 # MISSING
+  - linkName: l_hip_3
+    frameName: SCSYS_L_HIP_3
   - linkName: l_upper_leg
     frameName: SCSYS_L_UPPER_LEG
   - linkName: l_lower_leg
@@ -239,8 +239,8 @@ linkFrames:
     frameName: SCSYS_L_UPPERARM
   - linkName: l_forearm
     frameName: SCSYS_L_FOREARM
-  # - linkName: l_wrist_1
-  #   frameName: SCSYS_L_WRIST_1 #MISSING
+  - linkName: l_wrist_1
+    frameName: SCSYS_L_WRIST_1
   - linkName: l_wrist_2
     frameName: SCSYS_L_WRIST_ROLL # WRONG NAME
   - linkName: l_hand_palm
@@ -261,16 +261,14 @@ linkFrames:
     frameName: SCSYS_L_HAND_MIDDLE_MED # WRONG NAME
   - linkName: l_hand_middle_2
     frameName: SCSYS_L_HAND_MIDDLE_DIST # WRONG NAME
-  # - linkName: l_hand_ring_1
-  #   frameName: SCSYS_L_HAND_RING_MED # WRONG NAME + DOES NOT LAY ON JOINT AXIS
+  - linkName: l_hand_ring_1
+    frameName: SCSYS_L_HAND_RING_1
   - linkName: l_hand_ring_2
     frameName: SCSYS_L_HAND_RING_DIST # WRONG NAME
   - linkName: l_hand_pinkie_1
     frameName: SCSYS_L_HAND_PINKIE_MED # WRONG NAME
   - linkName: l_hand_pinkie_2
     frameName: SCSYS_L_HAND_PINKIE_DIST # WRONG NAME
-
-
     # right forearm
   - linkName: r_upperarm
     frameName: SCSYS_R_UPPERARM
