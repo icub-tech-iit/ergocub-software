@@ -84,7 +84,7 @@ rename:
     SIM_ECUB_CHEST--SIM_ECUB_HEAD_NECK_2: neck_pitch # It will be fixed
     SIM_ECUB_HEAD_NECK_2--SIM_ECUB_HEAD_NECK_3: neck_roll
     SIM_ECUB_HEAD_NECK_3--SIM_ECUB_HEAD: neck_yaw
-    SIM_ECUB_HEAD--SIM_ECUB_REALSENSE: camera-tilt
+    SIM_ECUB_HEAD--SIM_ECUB_REALSENSE: camera_tilt
     # left forearm
     SIM_ECUB_L_UPPERARM: l_upperarm
     SIM_ECUB_L_FOREARM: l_forearm
