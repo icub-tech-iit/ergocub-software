@@ -415,6 +415,13 @@ sensors:
         <plugin name="ergocub_yarp_gazebo_plugin_ACC" filename="libgazebo_yarp_inertial.so" />
   - sensorName: default
     exportFrameInURDF: No
+    sensorType: "ray"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so" />
+  - sensorName: default
+    exportFrameInURDF: No
     sensorType: "gyroscope"
     updateRate: "100"
   - frameName: SCSYS_HEAD_IMU
@@ -516,39 +523,42 @@ sensors:
         <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
         </plugin>
-  # - frameName: SCSYS_HEAD_S2_LASER
-  #   linkName: realsense
-  #   sensorName: lasersensor_head
-  #   sensorType: "ray"
-  #   sensorBlobs:
-  #   - |
-  #       <always_on>1</always_on>
-  #       <update_rate>40</update_rate>
-  #       <visualize>true</visualize>
-  #       <ray>
-  #         <scan>
-  #           <horizontal>
-  #             <samples>360</samples>
-  #             <resolution>2</resolution>
-  #             <min_angle>0</min_angle>
-  #             <max_angle>6.28</max_angle>
-  #           </horizontal>
-  #         </scan>
-  #         <range>
-  #           <min>0.04</min>
-  #           <max>5</max>
-  #           <resolution>0.01</resolution>
-  #         </range>
-  #         <noise>
-  #           <type>gaussian</type>
-  #           <mean>0</mean>
-  #           <stddev>0.005</stddev>
-  #         </noise>
-  #       </ray>
-  #   - |
-  #       <plugin name="lasersensor" filename="libgazebo_yarp_lasersensor.so">
-  #         <yarpConfigurationFile>model://ergoCub/conf_stickBot/gazebo_icub_laser/gazebo_icub_laser.ini</yarpConfigurationFile>
-  #       </plugin>
+  - frameName: SCSYS_HEAD_S2_LASER
+    linkName: head
+    sensorName: lasersensor_head
+    sensorType: "ray"
+    sensorBlobs:
+    - |
+        <always_on>1</always_on>
+    - |
+        <visualize>true</visualize>
+    - |
+        <update_rate>40</update_rate>
+    - |
+        <ray name="head_laser_sensor">
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>2</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>6.28</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.04</min>
+            <max>5</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
+          <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+        </plugin>
 
 #assignedMasses:
   # root_link   : 2.5751
