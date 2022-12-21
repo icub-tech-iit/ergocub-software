@@ -822,7 +822,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="camera-tilt" type="continuous">
+  <joint name="camera_tilt" type="continuous">
     <origin xyz="0.06250999 -3e-05 0.07639299999999999" rpy="0 0.0002595819985423862 0"/>
     <axis xyz="-2.220446049250313e-16 1.0000000000000002 0.0"/>
     <parent link="head"/>
