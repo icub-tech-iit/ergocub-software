@@ -1,4 +1,4 @@
-# ergocub
+# ergocub-software
 Main collector of ergoCub specific SW
 
 ## Installation
