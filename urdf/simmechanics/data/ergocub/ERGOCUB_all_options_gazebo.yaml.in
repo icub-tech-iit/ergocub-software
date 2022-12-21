@@ -612,7 +612,7 @@ assignedInertias:
     xx: 0.01
     yy: 0.01
     zz: 0.01
-  - linkName: r_elbow_1
+  - linkName: r_forearm
     xx: 0.01
     yy: 0.01
     zz: 0.01
@@ -620,7 +620,59 @@ assignedInertias:
     xx: 0.01
     yy: 0.01
     zz: 0.01
-  - linkName: r_hand
+  - linkName: r_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_2
     xx: 0.01
     yy: 0.01
     zz: 0.01
@@ -644,7 +696,59 @@ assignedInertias:
     xx: 0.01
     yy: 0.01
     zz: 0.01
-  - linkName: l_hand
+  - linkName: l_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_2
     xx: 0.01
     yy: 0.01
     zz: 0.01
