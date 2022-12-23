@@ -469,6 +469,90 @@
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="r_hand_ring_skin_0"/>
+  <joint name="r_hand_ring_skin_0_fixed_joint" type="fixed">
+    <origin xyz="6.369438959753088e-07 -0.0024437159778973594 -0.02140551448514305" rpy="-1.8198440874177978e-06 1.222171074662119 -1.570798078779304"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_1"/>
+  <joint name="r_hand_ring_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003300577895109416 -0.00314198277569927 -0.023279866908672897" rpy="-8.828925104148836e-07 1.2197920927650072 -1.5707973488537736"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_2"/>
+  <joint name="r_hand_ring_skin_2_fixed_joint" type="fixed">
+    <origin xyz="6.542383091199394e-07 -0.0037691217541475086 -0.02519099159351179" rpy="-2.1979342417368875e-06 1.3054216764415913 -1.5707985350956188"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_3"/>
+  <joint name="r_hand_ring_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003300545141335001 -0.004093663560879535 -0.027765768308842698" rpy="-3.1415881649812016 1.5050938361710562 1.5708006164943"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_4"/>
+  <joint name="r_hand_ring_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.0059301207467280705 -0.001204276676426641 -0.027999177771960315" rpy="-3.1404875010050004 1.2995572108592925 2.778219856114847"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_5"/>
+  <joint name="r_hand_ring_skin_5_fixed_joint" type="fixed">
+    <origin xyz="5.308718775496463e-07 -0.0034891781806687394 -0.029833705591858994" rpy="-3.141591609794059 1.0865431510862156 1.5707972515436073"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_6"/>
+  <joint name="r_hand_ring_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.00330056984961531 -0.0018374330365136249 -0.031770474544050076" rpy="-3.1412265136676125 0.7787173410213876 2.5326427664034585"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_7"/>
+  <joint name="r_hand_ring_skin_7_fixed_joint" type="fixed">
+    <origin xyz="6.201472224371535e-07 -0.00028604387995345704 -0.033271223785790505" rpy="-3.1415918554197564 0.6187360445083335 1.5713172257908574"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_8"/>
+  <joint name="r_hand_ring_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032993851081752224 -0.0018375074923376866 -0.03177136313433143" rpy="3.1412269734474307 0.7787178284081474 0.608949710350258"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_9"/>
+  <joint name="r_hand_ring_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.0059288844459949135 -0.0012040132702312856 -0.027998753995689574" rpy="3.140488583833023 1.2995578078276662 0.3633736430221612"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_10"/>
+  <joint name="r_hand_ring_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0032993838888264685 -0.0040934889011343956 -0.027765688772483865" rpy="-3.1415881649812016 1.5050938361710562 1.5708006164943"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_ring_skin_11"/>
+  <joint name="r_hand_ring_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032994485112988626 -0.0031417855839680486 -0.02327979056232371" rpy="-8.828925104148836e-07 1.2197920927650072 -1.5707973488537736"/>
+    <parent link="r_hand_ring_2"/>
+    <child link="r_hand_ring_skin_11"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="r_hand_thumb_1">
     <inertial>
       <origin xyz="0.020758108203487696 -0.0027448049867991042 -0.008805475830796439" rpy="0.3407559733652856 -0.16157290397540885 0.8505098820311924"/>
@@ -559,6 +643,90 @@
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="r_hand_thumb_skin_0"/>
+  <joint name="r_hand_thumb_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0.020306533907145152 -0.0024343057730962236 1.0397284419816355e-06" rpy="1.5707964766707783 0 -0.3483080823075038"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_1"/>
+  <joint name="r_hand_thumb_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.022181514608171193 -0.0031315753693715864 0.0033003779167594116" rpy="1.5707959518025376 -2.240241662176975e-07 -0.35068660322761297"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_2"/>
+  <joint name="r_hand_thumb_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0.02409276610511432 -0.003758664710135945 0" rpy="1.5707964275257265 -1.835551116380351e-07 -0.2650566454956479"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_3"/>
+  <joint name="r_hand_thumb_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.026667717702938992 -0.004082289625380764 0.0032999352919206304" rpy="1.5707959455998035 0 0.06601999324156192"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_4"/>
+  <joint name="r_hand_thumb_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.026900637758132173 -0.001192766703610404 0.00592978690987403" rpy="0.3770235759970468 0.2531253892798945 0.09883876086864818"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_5"/>
+  <joint name="r_hand_thumb_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0.02873547899028911 -0.0034768652666126165 3.4128593354165737e-07" rpy="1.5707964228187474 -1.5765261132672026e-07 0.48457061294039566"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_6"/>
+  <joint name="r_hand_thumb_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.030671760207807985 -0.0018250312131609936 0.0033002175421802393" rpy="0.7821848393014904 0.6234818225335702 0.5256775270061106"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_7"/>
+  <joint name="r_hand_thumb_skin_7_fixed_joint" type="fixed">
+    <origin xyz="0.03217216338109172 -0.000273117886959634 0" rpy="1.5704937922637117 0.00042413338882563444 0.952377708566445"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_8"/>
+  <joint name="r_hand_thumb_skin_8_fixed_joint" type="fixed">
+    <origin xyz="0.030672481980214994 -0.001824659606315615 -0.0032996703614854295" rpy="2.359407636424222 -0.6234822954061497 0.5256775552228076"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_9"/>
+  <joint name="r_hand_thumb_skin_9_fixed_joint" type="fixed">
+    <origin xyz="0.026900216455781056 -0.0011927826587153079 -0.005928741363999124" rpy="2.764568142309075 -0.25312574742097016 0.09883922008926718"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_10"/>
+  <joint name="r_hand_thumb_skin_10_fixed_joint" type="fixed">
+    <origin xyz="0.02666722778049077 -0.004082576521223236 -0.003299639291161671" rpy="1.5707959455998035 0 0.06601999324156192"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_thumb_skin_11"/>
+  <joint name="r_hand_thumb_skin_11_fixed_joint" type="fixed">
+    <origin xyz="0.02218144484998505 -0.003131515879897573 -0.0033000354029952272" rpy="1.5707959518025376 -2.240241662176975e-07 -0.35068660322761297"/>
+    <parent link="r_hand_thumb_3"/>
+    <child link="r_hand_thumb_skin_11"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="r_hand_middle_1">
     <inertial>
       <origin xyz="0.00014288935851117235 0.003643274774255273 -0.014331647143315362" rpy="0.12008501986317731 -0.2297882840735942 -1.8533146530335884"/>
@@ -618,6 +786,90 @@
     <child link="r_hand_middle_2"/>
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="r_hand_middle_skin_0"/>
+  <joint name="r_hand_middle_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0 -0.002434163388032401 -0.02140626784029226" rpy="-2.888002141897799e-07 1.2224888157071614 -1.5707967443194422"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_1"/>
+  <joint name="r_hand_middle_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999302761449988 -0.003131534419503562 -0.023280711530192733" rpy="-1.4298532745530854e-06 1.2201100060845362 -1.5707976149443068"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_2"/>
+  <joint name="r_hand_middle_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0037584600637466103 -0.02519316791187759" rpy="-2.6780538415934596e-06 1.305739726207208 -1.5707987725046209"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_3"/>
+  <joint name="r_hand_middle_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0032999688028366864 -0.004081937549531761 -0.027767599906222185" rpy="-3.1415858006046733 1.5047760963753847 1.5708033199852864"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_4"/>
+  <joint name="r_hand_middle_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929566529031996 -0.0011920519924579764 -0.028000347463470243" rpy="3.141592260042173 1.2994442393401489 2.777155482919476"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_5"/>
+  <joint name="r_hand_middle_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0034765832806818997 -0.02983570347842418" rpy="-3.1415923106025314 1.086225709334958 1.570796364632236"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_6"/>
+  <joint name="r_hand_middle_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032999946700499015 -0.0018244087955724964 -0.0317716170907979" rpy="3.141592114011197 0.778535719104729 2.532385576753663"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_7"/>
+  <joint name="r_hand_middle_skin_7_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0002725978091494552 -0.033271502713935364" rpy="-3.1415924148088807 0.618418747537505 1.5713170250376087"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_8"/>
+  <joint name="r_hand_middle_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0033001032954547323 -0.0018248945553451246 -0.0317717577277557" rpy="3.1415924841511433 0.7785357399039171 0.6092069609627565"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_9"/>
+  <joint name="r_hand_middle_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.0059297326329880405 -0.001192832553830514 -0.027999915681298115" rpy="-3.1415923364133644 1.2994449456881931 0.36443740406990854"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_10"/>
+  <joint name="r_hand_middle_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003300181170510206 -0.004082174556855278 -0.027766773373389564" rpy="-3.1415858006046733 1.5047760963753847 1.5708033199852864"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_middle_skin_11"/>
+  <joint name="r_hand_middle_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003299992346993817 -0.0031310595632359495 -0.023281089805274435" rpy="-1.4298532745530854e-06 1.2201100060845362 -1.5707976149443068"/>
+    <parent link="r_hand_middle_2"/>
+    <child link="r_hand_middle_skin_11"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="r_hand_index_1">
     <inertial>
@@ -708,6 +960,90 @@
     <child link="r_hand_index_3"/>
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="r_hand_index_skin_0"/>
+  <joint name="r_hand_index_skin_0_fixed_joint" type="fixed">
+    <origin xyz="6.08329334565727e-07 -0.002433714278642418 -0.02140564618132018" rpy="-1.358973927973795e-06 1.2224885677301185 -1.5707970308820571"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_1"/>
+  <joint name="r_hand_index_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0033010071874996078 -0.0031310503039992388 -0.023280686406158713" rpy="-1.004508784930116e-06 1.2201097511639787 -1.5707973956436345"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_2"/>
+  <joint name="r_hand_index_skin_2_fixed_joint" type="fixed">
+    <origin xyz="9.879565030304627e-07 -0.0037585228231166723 -0.025192849922389793" rpy="-2.0192589424348972e-07 1.3057399175861366 -1.5707961736993847"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_3"/>
+  <joint name="r_hand_index_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033009199416053694 -0.004081475640701937 -0.027766769962195237" rpy="-3.141590806265971 1.5047757593824544 1.570798933120569"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_4"/>
+  <joint name="r_hand_index_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005930100741661566 -0.001192495473541999 -0.027999567974155037" rpy="3.1415912221673423 1.2994438865660232 2.777154326754342"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_5"/>
+  <joint name="r_hand_index_skin_5_fixed_joint" type="fixed">
+    <origin xyz="8.852545381743404e-07 -0.003476743370653318 -0.02983516522077506" rpy="-3.1415916993735475 1.0862258770767357 1.5707970353407095"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_6"/>
+  <joint name="r_hand_index_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.003300138880263759 -0.0018247773994582994 -0.03177155540437698" rpy="-3.1415926400948937 0.7785356574796939 2.532385471012728"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_7"/>
+  <joint name="r_hand_index_skin_7_fixed_joint" type="fixed">
+    <origin xyz="9.888131538779432e-07 -0.00027231359238352737 -0.03327170938394436" rpy="-3.1415924489774776 0.6184188472429561 1.5713175931002388"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_8"/>
+  <joint name="r_hand_index_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032989996784251463 -0.0018242465421607346 -0.03177159303017657" rpy="-3.1415920569068843 0.7785360318433138 0.6092077273521872"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_9"/>
+  <joint name="r_hand_index_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005928626915841569 -0.0011924268560411788 -0.028000151465407297" rpy="3.1415920007985783 1.2994444690524727 0.3644366437810966"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_10"/>
+  <joint name="r_hand_index_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003299456106408784 -0.004081629333914039 -0.027766804306264936" rpy="-3.141590806265971 1.5047757593824544 1.570798933120569"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_index_skin_11"/>
+  <joint name="r_hand_index_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032993688605145108 -0.0031312039972113404 -0.023280720750228412" rpy="-1.004508784930116e-06 1.2201097511639787 -1.5707973956436345"/>
+    <parent link="r_hand_index_3"/>
+    <child link="r_hand_index_skin_11"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="neck_2">
     <inertial>
@@ -1185,6 +1521,90 @@
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="l_hand_index_skin_0"/>
+  <joint name="l_hand_index_skin_0_fixed_joint" type="fixed">
+    <origin xyz="2.028305409948472e-07 -0.00243371427871783 -0.0214068046370407" rpy="1.3589739287870087e-06 1.222488567730119 -1.5707956227077366"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_1"/>
+  <joint name="l_hand_index_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003300180020390106 -0.0031312039972867245 -0.023281879205948874" rpy="1.0045087854148686e-06 1.2201097511639785 -1.5707952579461582"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_2"/>
+  <joint name="l_hand_index_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.003758272260446477 -0.02519304988711568" rpy="2.019258946672971e-07 1.305739917586136 -1.5707964798904088"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_3"/>
+  <joint name="l_hand_index_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003300267266284379 -0.004081629333989478 -0.0277679627619854" rpy="3.1415923305252225 1.5047762567210512 1.5707960116499358"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_4"/>
+  <joint name="l_hand_index_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929574139393212 -0.0011921762933710667 -0.02800035143013324" rpy="-3.141592000798577 1.2994444690524731 2.7771560098086976"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_5"/>
+  <joint name="l_hand_index_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0034767433707287576 -0.02983632367649547" rpy="3.1415916993735475 1.0862258770767357 1.570795618249084"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_6"/>
+  <joint name="l_hand_index_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0032998108383007554 -0.0018242465422362297 -0.03177275148589703" rpy="3.1415920569068843 0.7785360318433139 2.532384926237606"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_7"/>
+  <joint name="l_hand_index_skin_7_fixed_joint" type="fixed">
+    <origin xyz="-1.7765327827573563e-07 -0.0002723135924589115 -0.03327286783966488" rpy="3.141592488071993 0.6184189897566703 1.5713167119394844"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_8"/>
+  <joint name="l_hand_index_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.003299617986161796 -0.001823842286353905 -0.03177291710655328" rpy="3.1415926400948937 0.7785356574796937 0.6092071825770647"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_9"/>
+  <joint name="l_hand_index_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929289581785957 -0.0011924954736174387 -0.028000726429875444" rpy="-3.141591222167342 1.2994438865660223 0.36443832683545135"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_10"/>
+  <joint name="l_hand_index_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0033001087817297603 -0.004081475640777377 -0.027767928417915755" rpy="3.1415923305252225 1.5047762567210512 1.5707960116499358"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_index_skin_11"/>
+  <joint name="l_hand_index_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0033001960276240333 -0.0031310503040746507 -0.02328184486187923" rpy="1.0045087854148686e-06 1.2201097511639785 -1.5707952579461582"/>
+    <parent link="l_hand_index_3"/>
+    <child link="l_hand_index_skin_11"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="l_hand_thumb_1">
     <inertial>
       <origin xyz="0.020687992873158395 0.003255220723100055 -0.008896940067464165" rpy="0.3407559733652857 0.16157290397540883 2.2910827715586013"/>
@@ -1274,6 +1694,90 @@
     <child link="l_hand_thumb_3"/>
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="l_hand_thumb_skin_0"/>
+  <joint name="l_hand_thumb_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0.02030653337906324 -0.0024343101858567417 -1.02177518712665e-06" rpy="1.5707963529634608 -7.763677284389983e-07 -0.348308299608484"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_1"/>
+  <joint name="l_hand_thumb_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.022181441302594335 -0.0031315202770039463 0.0033000550744306523" rpy="1.5707968798775 -6.358788514904552e-07 -0.3506868205285684"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_2"/>
+  <joint name="l_hand_thumb_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0.02409276528831522 -0.003758669945510551 0" rpy="1.5707966249662435 -6.175239036510354e-07 -0.26505736279648673"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_3"/>
+  <joint name="l_hand_thumb_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.026667224026776015 -0.004082581893144865 0.00329966298150397" rpy="1.5707965227938288 -9.019462447191873e-07 0.06601977594073062"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_4"/>
+  <joint name="l_hand_thumb_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.026900211045993078 -0.0011927877443135282 0.005928764886386384" rpy="0.37702429099789225 0.2531248955594458 0.09883894762271977"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_5"/>
+  <joint name="l_hand_thumb_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0.02873547823504788 -0.00347687151090062 -3.1587642940200666e-07" rpy="1.5707957126757448 -5.513795408585156e-07 0.4845703956395784"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_6"/>
+  <joint name="l_hand_thumb_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.030672478717119173 -0.0018246658485785439 0.0032996972420061" rpy="0.7821843436480906 0.6234816082641762 0.5256769446782557"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_7"/>
+  <joint name="l_hand_thumb_skin_7_fixed_joint" type="fixed">
+    <origin xyz="0.03217216332171893 -0.00027312487799685536 0" rpy="1.5704939137056884 0.00042393168110662526 0.9523772903877968"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_8"/>
+  <joint name="l_hand_thumb_skin_8_fixed_joint" type="fixed">
+    <origin xyz="0.030671762678273262 -0.0018250383011248483 -0.0033001906622364963" rpy="2.3594071882842584 -0.6234824919681496 0.5256776375213161"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_9"/>
+  <joint name="l_hand_thumb_skin_9_fixed_joint" type="fixed">
+    <origin xyz="0.02690064265042469 -0.0011927733091181558 -0.005929763387118231" rpy="2.764568857310248 -0.253126241141505 0.09883859873338112"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_10"/>
+  <joint name="l_hand_thumb_skin_10_fixed_joint" type="fixed">
+    <origin xyz="0.026667719682656188 -0.004082295843226502 -0.003299911601186978" rpy="1.5707965227938288 -9.019462447191873e-07 0.06601977594073062"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_thumb_skin_11"/>
+  <joint name="l_hand_thumb_skin_11_fixed_joint" type="fixed">
+    <origin xyz="0.022181516794865852 -0.00313158061241825 -0.00330035824525321" rpy="1.5707968798775 -6.358788514904552e-07 -0.3506868205285684"/>
+    <parent link="l_hand_thumb_3"/>
+    <child link="l_hand_thumb_skin_11"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="l_hand_pinkie_1">
     <inertial>
@@ -1395,6 +1899,90 @@
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="l_hand_ring_skin_0"/>
+  <joint name="l_hand_ring_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0 -0.002434109766516257 -0.021405903344744404" rpy="3.19241308601029e-07 1.2224879756285634 -1.5707957505342052"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_1"/>
+  <joint name="l_hand_ring_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003299959717504214 -0.003131214942308308 -0.02328043103333599" rpy="7.841409816247398e-07 1.220109279873348 -1.5707953766916674"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_2"/>
+  <joint name="l_hand_ring_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0037587551640848593 -0.02519260657118344" rpy="2.109983659924688e-06 1.3057391422971405 -1.57079420774816"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_3"/>
+  <joint name="l_hand_ring_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.00329996113880285 -0.004081908765223852 -0.02776658723492642" rpy="3.141583892131502 1.5047765106577695 1.5707878943439342"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_4"/>
+  <joint name="l_hand_ring_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929559072218123 -0.0011924106023347703 -0.02799965564814172" rpy="3.1415923272373556 1.299444799530583 2.7771553646234826"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_5"/>
+  <joint name="l_hand_ring_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0 -0.003476611082493558 -0.02983485885572207" rpy="3.141592267163769 1.086225807890324 1.570796144313782"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_6"/>
+  <joint name="l_hand_ring_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0033000024742935834 -0.0018246687466072498 -0.03177155146156402" rpy="3.1415925874639985 0.7785363357981874 2.5323859043537085"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_7"/>
+  <joint name="l_hand_ring_skin_7_fixed_joint" type="fixed">
+    <origin xyz="0 -0.00027318260223696544 -0.03327141530303279" rpy="3.141592083365392 0.6184190542087526 1.5713170178340956"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_8"/>
+  <joint name="l_hand_ring_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.00329992655586789 -0.001824843406352361 -0.03177163099792274" rpy="-3.141592630967883 0.7785355069422046 0.6092077934143093"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_9"/>
+  <joint name="l_hand_ring_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.00592944612050488 -0.0011926740085301812 -0.02800007942441246" rpy="-3.1415921627311505 1.2994436529688218 0.36443765521426325"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_10"/>
+  <joint name="l_hand_ring_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999678913586076 -0.004082083424969074 -0.027766666771285198" rpy="3.141583892131502 1.5047765106577695 1.5707878943439342"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_ring_skin_11"/>
+  <joint name="l_hand_ring_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.003299969312657242 -0.003131389602053447 -0.023280510569694823" rpy="7.841409816247398e-07 1.220109279873348 -1.5707953766916674"/>
+    <parent link="l_hand_ring_2"/>
+    <child link="l_hand_ring_skin_11"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="l_hand_middle_1">
     <inertial>
       <origin xyz="0.0001426788707961195 0.0036428237933538443 -0.014331376909090254" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
@@ -1454,6 +2042,90 @@
     <child link="l_hand_middle_2"/>
     <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="l_hand_middle_skin_0"/>
+  <joint name="l_hand_middle_skin_0_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0024341633880324565 -0.02140626784029226" rpy="2.8880021565356356e-07 1.2224888157071614 -1.5707959092703505"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_1"/>
+  <joint name="l_hand_middle_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.0032999923469938033 -0.003131059563235894 -0.023281089805274435" rpy="1.4298532751994242e-06 1.2201100060845365 -1.5707950386454854"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_2"/>
+  <joint name="l_hand_middle_skin_2_fixed_joint" type="fixed">
+    <origin xyz="0 -0.003758460063746555 -0.025193167911877645" rpy="2.67805384222918e-06 1.3057397262072086 -1.5707938810851714"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_3"/>
+  <joint name="l_hand_middle_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033001811705102198 -0.004082174556855334 -0.027766773373389564" rpy="3.14159206598453 1.504776403539619 1.5707957068952807"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_4"/>
+  <joint name="l_hand_middle_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929732632988027 -0.0011928325538304585 -0.02799991568129817" rpy="3.141592336413363 1.299444945688194 2.7771552495198835"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_5"/>
+  <joint name="l_hand_middle_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0034765832806818997 -0.02983570347842418" rpy="3.1415923106025314 1.086225709334958 1.5707962889575584"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_6"/>
+  <joint name="l_hand_middle_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.003300103295454746 -0.00182489455534518 -0.0317717577277557" rpy="-3.1415924841511433 0.7785357399039169 2.532385692627037"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_7"/>
+  <joint name="l_hand_middle_skin_7_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0002725978091493997 -0.03327150271393542" rpy="3.141592263055179 0.6184187545317414 1.5713165725114155"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_8"/>
+  <joint name="l_hand_middle_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999946700499293 -0.0018244087955724408 -0.031771617090797954" rpy="-3.141592114011197 0.7785357191047289 0.60920707683613"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_9"/>
+  <joint name="l_hand_middle_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929566529031982 -0.001192051992458032 -0.028000347463470243" rpy="-3.141592260042174 1.299444239340149 0.3644371706703166"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_10"/>
+  <joint name="l_hand_middle_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999688028366864 -0.004081937549531761 -0.027767599906222185" rpy="3.14159206598453 1.504776403539619 1.5707957068952807"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_middle_skin_11"/>
+  <joint name="l_hand_middle_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999302761449988 -0.003131534419503562 -0.023280711530192733" rpy="1.4298532751994242e-06 1.2201100060845365 -1.5707950386454854"/>
+    <parent link="l_hand_middle_2"/>
+    <child link="l_hand_middle_skin_11"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="l_hip_1">
     <inertial>
