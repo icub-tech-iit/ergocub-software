@@ -325,6 +325,196 @@ exportedFrames:
   - frameName: SCSYS_R_SOLE
     frameReferenceLink: r_foot_rear
     exportedFrameName: r_sole
+  # Fingertip scsys
+  # l_thumb
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_0
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_1
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_2
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_3
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_4
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_5
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_6
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_7
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_8
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_9
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_10
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_11
+  # l_index
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_0
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_1
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_2
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_3
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_4
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_5
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_6
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_7
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_8
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_9
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_10
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_11
+  # l_middle
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_0
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_1
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_2
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_3
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_4
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_5
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_6
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_7
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_8
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_9
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_10
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_11
+  # l_ring
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_0
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_1
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_2
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_3
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_4
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_5
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_6
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_7
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_8
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_9
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_10
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_11
+  # l_pinkie
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_0
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_1
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_2
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_3
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_4
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_5
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_6
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_7
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_8
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_9
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_10
+  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_11
+
+
+
+
 
 # Sensors options
 forceTorqueSensors:
