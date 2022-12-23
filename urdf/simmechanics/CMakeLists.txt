@@ -266,3 +266,10 @@ add_custom_command(TARGET generate-models-simmechanics
                    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/ergocub/meshes" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/meshes"
                    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_CURRENT_SOURCE_DIR}/data/ergocub/conf" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/conf"
                    COMMENT "Copying Simmechanics meshes")
+
+# Convert meshes from ASCII to binary
+add_custom_command(TARGET generate-models-simmechanics
+                   POST_BUILD
+                   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+                   COMMAND ruby ./scripts/convertSTL.rb ${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/meshes/simmechanics/*.stl
+                   COMMENT "Converting Simmechanics meshes to binary")
