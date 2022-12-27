@@ -253,7 +253,7 @@
   </link>
   <joint name="r_elbow" type="revolute">
     <origin xyz="0.010000044612835839 0.001500072449440032 -0.1236996308912752" rpy="0 0 0"/>
-    <axis xyz="-3.352246002574083e-07 0.9999999783534191 -2.2068612626213735e-07"/>
+    <axis xyz="3.352246002574083e-07 -0.9999999783534191 2.2068612626213735e-07"/>
     <parent link="r_upperarm"/>
     <child link="r_forearm"/>
     <limit effort="50000" lower="-0.05235987755982989" upper="1.3089969389957472" velocity="120.0"/>
@@ -1217,7 +1217,7 @@
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
     <origin xyz="-0.0204593 0.041145 0.11657900000000002" rpy="0.25504097964037203 0.11691445967672928 -0.23139612148175434"/>
-    <axis xyz="-4.453300185801312e-07 -0.9999999783533606 -2.834495320125363e-07"/>
+    <axis xyz="4.453300185801312e-07 0.9999999783533606 2.834495320125363e-07"/>
     <parent link="chest"/>
     <child link="l_shoulder_1"/>
     <limit effort="50000" lower="-3.0543261909900767" upper="0.3490658503988659" velocity="120.0"/>
@@ -1247,7 +1247,7 @@
   </link>
   <joint name="l_shoulder_roll" type="revolute">
     <origin xyz="0.00492425107543696 0.12099955745141479 0.0008682398676788106" rpy="0 -0.17453283291838068 -3.434122541820032e-07"/>
-    <axis xyz="-0.9999998262416893 -3.56920377206707e-07 -2.721582535170075e-07"/>
+    <axis xyz="0.9999998262416893 3.56920377206707e-07 2.721582535170075e-07"/>
     <parent link="l_shoulder_1"/>
     <child link="l_shoulder_2"/>
     <limit effort="50000" lower="0.20943951023931956" upper="2.8448866807507573" velocity="120.0"/>
@@ -2868,7 +2868,7 @@
   <gazebo reference="l_elbow">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
-  <gazebo reference="l_wrist_prosup">
+  <gazebo reference="l_wrist_roll">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
   <gazebo reference="l_wrist_pitch">
@@ -2895,7 +2895,7 @@
   <gazebo reference="r_elbow">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
-  <gazebo reference="r_wrist_prosup">
+  <gazebo reference="r_wrist_roll">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
   <gazebo reference="r_wrist_pitch">
