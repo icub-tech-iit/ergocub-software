@@ -1221,22 +1221,22 @@ assignedColors:
   head        : [0.9, 0.9, 0.9, 1]
 
 reverseRotationAxis:
-    r_hip_yaw
-    r_hip_roll
-    r_knee
-    r_ankle_roll
-    l_ankle_pitch
-    r_elbow
-    l_shoulder_yaw
     l_shoulder_pitch
     l_shoulder_roll
-    l_wrist_prosup
-    l_wrist_pitch
-    l_wrist_yaw
-    torso_yaw
-    torso_pitch
-    torso_roll
-    neck_yaw
+    r_elbow
+#    r_hip_yaw
+#    r_hip_roll
+#    r_knee
+#    r_ankle_roll
+#    l_ankle_pitch
+#    l_shoulder_yaw
+#    l_wrist_roll
+#    l_wrist_pitch
+#    l_wrist_yaw
+#    torso_yaw
+#    torso_pitch
+#    torso_roll
+#    neck_yaw
 XMLBlobs:
     # upperbody
     - |
@@ -1508,7 +1508,7 @@ XMLBlobs:
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
     - |
-            <gazebo reference="l_wrist_prosup">
+            <gazebo reference="l_wrist_roll">
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
     - |
@@ -1544,7 +1544,7 @@ XMLBlobs:
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
     - |
-            <gazebo reference="r_wrist_prosup">
+            <gazebo reference="r_wrist_roll">
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
     - |
