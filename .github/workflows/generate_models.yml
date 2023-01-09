@@ -64,9 +64,10 @@ jobs:
         # Prepare ergocub-software build
         mkdir build
         cd build
-        cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON ..
+        cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON -DBUILD_TESTING=BOOL:ON ..
         # Build and run
         make VERBOSE=1
+        ctest --output-on-failure
 
     - name: Create Pull Request
       id: cpr
