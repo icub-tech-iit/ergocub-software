@@ -4,6 +4,9 @@ name: Automatically generate models and commit to the repo
 
 # Controls when the workflow will run
 on:
+  pull_request:
+      paths:
+        - 'urdf/simmechanics/**'
   push:
     # Triggers the workflow on push or pull request events but only for the master branch
     branches:
@@ -70,6 +73,7 @@ jobs:
         ctest --output-on-failure
 
     - name: Create Pull Request
+      if: ${{ github.event_name == 'push' }}
       id: cpr
       uses: peter-evans/create-pull-request@main
       with:
