@@ -22,11 +22,12 @@ option(ERGOCUB_MODEL_GENERATE_SIMMECHANICS "Generate models using the model gene
 option(ERGOCUB_MODEL_COPY_TO_SRC "Copy to sources the generated urdf files" OFF)
 option(BUILD_TESTING "Run tests for the generated models" OFF)
 
+set(BUILD_PREFIX "ergoCub")
 add_subdirectory(urdf)
 
 # TODO to be defined
-#if (BUILD_TESTING)
-#  include( CTest )
-#  enable_testing()
-#  add_subdirectory(tests)
-#endif()
+if (BUILD_TESTING)
+  include( CTest )
+  enable_testing()
+  add_subdirectory(tests)
+endif()
