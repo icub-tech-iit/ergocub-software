@@ -38,7 +38,7 @@ jobs:
         # Workaround for https://github.com/conda-incubator/setup-miniconda/issues/186
         conda config --remove channels defaults
         # Actual dependencies
-        mamba install python=3.8 yarp idyntree ruby
+        mamba install python=3.8 yarp idyntree ruby cmake compilers make
 
     - name: Generate models
       run: |
