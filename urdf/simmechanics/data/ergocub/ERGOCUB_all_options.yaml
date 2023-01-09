@@ -1031,7 +1031,15 @@ reverseRotationAxis:
     r_wrist_yaw
     r_wrist_pitch
     r_wrist_roll
-#    r_hip_yaw
+    torso_roll
+    r_hip_roll
+    r_hip_yaw
+    r_ankle_roll
+    l_knee
+    l_ankle_pitch
+    torso_pitch
+    torso_yaw
+    neck_yaw
 #    r_hip_roll
 #    r_knee
 #    r_ankle_roll
@@ -1042,7 +1050,6 @@ reverseRotationAxis:
 #    l_wrist_yaw
 #    torso_yaw
 #    torso_pitch
-#    torso_roll
 #    neck_yaw
 
 XMLBlobs:
