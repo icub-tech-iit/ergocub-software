@@ -271,10 +271,10 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-1.62555e-21,-1.1e-15,1));
     axisNames.push_back("r_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.961047,-0.271447,-0.0520081));
-    // axisNames.push_back("r_shoulder_yaw");
-    // expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.0713662,0.0619303,0.995526));
-    // axisNames.push_back("r_elbow");
-    // expectedDirectionInRootLink.push_back(iDynTree::Direction(0.267012,-0.960459,0.0788901));
+    axisNames.push_back("r_shoulder_yaw");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction( -0.116648,0.227771,0.966702));
+    axisNames.push_back("r_elbow");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
     axisNames.push_back("r_wrist_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,0.271447,0.0520081));
     axisNames.push_back("r_wrist_pitch");
@@ -283,10 +283,10 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,0.227771,0.966702));
     axisNames.push_back("l_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,-0.271447,0.0520081));
-    // axisNames.push_back("l_shoulder_yaw");
-    // expectedDirectionInRootLink.push_back(iDynTree::Direction(0.0713662,0.0619303,-0.995526));
-    // axisNames.push_back("l_elbow");
-    // expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.267012,-0.960459,-0.0788901));
+    axisNames.push_back("l_shoulder_yaw");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,-0.227771,0.966702));
+    axisNames.push_back("l_elbow");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     axisNames.push_back("l_wrist_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.961047,0.271447,-0.0520081));
     axisNames.push_back("l_wrist_pitch");
@@ -391,13 +391,13 @@ bool checkFTSensorsAreCorrectlyOriented(iDynTree::KinDynComputations & comp)
 {
 
     iDynTree::Rotation rootLink_R_sensorFrameLeftArmExpected =
-        iDynTree::Rotation(-0.267012, -0.961047, 0.0713662,
-                           -0.960459, 0.271447, 0.0619303,
-                           -0.0788901, -0.0520081, -0.995526);
+        iDynTree::Rotation(-0.250563, -0.961047, 0.116648,
+                           -0.935113, 0.271447, 0.227771,
+                           -0.250563, -0.0520081, -0.966702);
     iDynTree::Rotation rootLink_R_sensorFrameRightArmExpected =
-        iDynTree::Rotation(-0.267012, 0.961047, 0.0713662,
-                            0.960459, 0.271447, -0.0619303,
-                           -0.0788901, 0.0520081, -0.995526);
+        iDynTree::Rotation(-0.250563, 0.961047, 0.116648,
+                            0.935113, 0.271447, -0.227771,
+                            -0.250563, 0.0520081, -0.966702);
 
     iDynTree::Rotation rootLink_R_sensorFrameExpectedFoot =
         iDynTree::Rotation(-0.5, 0.866025, 0,
@@ -492,10 +492,10 @@ int main(int argc, char ** argv)
         return EXIT_FAILURE;
     }
 
-    // if (!checkFTSensorsAreCorrectlyOriented(comp))
-    // {
-    //     return EXIT_FAILURE;
-    // }
+    if (!checkFTSensorsAreCorrectlyOriented(comp))
+    {
+        return EXIT_FAILURE;
+    }
 
 
     std::cerr << "Check for model " << modelPath << " concluded correctly!" << std::endl;
