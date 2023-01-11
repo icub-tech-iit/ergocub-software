@@ -1040,6 +1040,11 @@ reverseRotationAxis:
     torso_pitch
     torso_yaw
     neck_yaw
+    l_thumb_prox
+    l_thumb_dist
+    l_ring_prox
+    r_thumb_prox
+    r_thumb_dist
 #    r_hip_roll
 #    r_knee
 #    r_ankle_roll
@@ -1307,6 +1312,12 @@ XMLBlobs:
             </plugin>
             </gazebo>
     - |
+            <gazebo>
+            <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
             <gazebo reference="l_shoulder_pitch">
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
@@ -1340,6 +1351,12 @@ XMLBlobs:
             <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_arm.ini</yarpConfigurationFile>
             <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
     - |

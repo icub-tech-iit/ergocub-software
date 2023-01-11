@@ -63,7 +63,7 @@ foreach(ROBOT_DIRNAME ${ROBOTS_NAMES})
     file(REMOVE_RECURSE ${ROBOT_FEET_FIXED_MODEL_FOLDER})
   elseif(ROBOT_NAME IN_LIST GAZEBO_SUPPORTED_MODELS)
 
-    set(ROBOT_NAME_CONFIG "${ROBOT_NAME} (no hands)")
+    set(ROBOT_NAME_CONFIG "${ROBOT_NAME}")
     set(ROBOT_MODEL_CONFIG "model.urdf")
     set(ROBOT_MODEL_DESCRIPTION_CONFIG "Model for the ergoCub humanoid robot.")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/model.config.in
@@ -71,7 +71,7 @@ foreach(ROBOT_DIRNAME ${ROBOTS_NAMES})
                    @ONLY)
 
     file(MAKE_DIRECTORY ${ROBOT_FIXED_MODEL_FOLDER})
-    set(ROBOT_NAME_CONFIG "${ROBOT_NAME}_fixed (no hands)")
+    set(ROBOT_NAME_CONFIG "${ROBOT_NAME}_fixed")
     set(ROBOT_MODEL_CONFIG "${ROBOT_NAME}_fixed.sdf")
     set(ROBOT_MODEL_DESCRIPTION_CONFIG "Model for the ergoCub humanoid robot, fixed on the air")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/model.config.in
@@ -82,7 +82,7 @@ foreach(ROBOT_DIRNAME ${ROBOTS_NAMES})
                    @ONLY)
 
     file(MAKE_DIRECTORY ${ROBOT_FEET_FIXED_MODEL_FOLDER})
-    set(ROBOT_NAME_CONFIG "${ROBOT_NAME}_feet_fixed (no hands)")
+    set(ROBOT_NAME_CONFIG "${ROBOT_NAME}_feet_fixed")
     set(ROBOT_MODEL_CONFIG "${ROBOT_NAME}_feet_fixed.sdf")
     set(ROBOT_MODEL_DESCRIPTION_CONFIG "Model for the ergoCub humanoid robot, with the feet fixed on the ground.")
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/model.config.in
