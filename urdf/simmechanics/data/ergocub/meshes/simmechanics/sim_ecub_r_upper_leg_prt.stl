@@ -1868,7 +1868,7 @@ solid SIM_ECUB_R_UPPER_LEG
       vertex -6.050000e+01 5.772984e+00 -5.613399e+02
     endloop
   endfacet
-  facet normal 5.320623e-14 3.039835e-01 -9.526773e-01
+  facet normal 5.333084e-14 3.039835e-01 -9.526773e-01
     outer loop
       vertex -4.112000e+01 -4.849219e+00 -5.490558e+02
       vertex -4.112000e+01 -2.307915e+01 -5.548726e+02
