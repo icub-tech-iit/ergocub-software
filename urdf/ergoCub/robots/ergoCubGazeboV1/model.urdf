@@ -1066,7 +1066,7 @@
     <axis xyz="-1.0000005135466863 1.979209419246744e-07 4.060128685548503e-07"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_pinkie_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_pinkie_2">
@@ -1096,7 +1096,7 @@
     <axis xyz="-1.0000005135466863 1.979209419246744e-07 4.060128685548503e-07"/>
     <parent link="r_hand_pinkie_1"/>
     <child link="r_hand_pinkie_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_thumb_1">
@@ -1126,7 +1126,7 @@
     <axis xyz="9.579078125154794e-08 6.90101361611184e-08 1.0000003967894142"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_thumb_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="1.0471975511965976" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_thumb_2">
@@ -1153,10 +1153,10 @@
   </link>
   <joint name="r_thumb_prox" type="revolute">
     <origin xyz="0.0345419043814173 -0.0031447987794122334 -0.026071809138455138" rpy="1.7929080217310676 0.6514101167838809 -1.1138050653581883e-07"/>
-    <axis xyz="-2.036798052024169e-07 -1.5008516943137984e-07 1.000000226690442"/>
+    <axis xyz="2.036798052024169e-07 1.5008516943137984e-07 -1.000000226690442"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_thumb_3">
@@ -1183,10 +1183,10 @@
   </link>
   <joint name="r_thumb_dist" type="revolute">
     <origin xyz="0.019999518753341633 -0.0014995177497797996 -3.909354686637556e-07" rpy="0 0 0"/>
-    <axis xyz="-2.036798052024169e-07 -1.5008516943137984e-07 1.000000226690442"/>
+    <axis xyz="2.036798052024169e-07 1.5008516943137984e-07 -1.000000226690442"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_thumb_skin_0"/>
@@ -1300,7 +1300,7 @@
     <axis xyz="-0.9999998262416893 3.56920377206707e-07 2.721582535170075e-07"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_middle_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_middle_2">
@@ -1330,7 +1330,7 @@
     <axis xyz="-0.9999998262417538 9.878318872787173e-08 2.5044776373606137e-07"/>
     <parent link="r_hand_middle_1"/>
     <child link="r_hand_middle_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_middle_skin_0"/>
@@ -1444,7 +1444,7 @@
     <axis xyz="-1.0000005135466863 1.979209419246744e-07 4.060128685548503e-07"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_ring_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_ring_2">
@@ -1474,7 +1474,7 @@
     <axis xyz="-1.0000005135466863 1.979209419246744e-07 4.060128685548503e-07"/>
     <parent link="r_hand_ring_1"/>
     <child link="r_hand_ring_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_ring_skin_0"/>
@@ -1588,7 +1588,7 @@
     <axis xyz="-3.992524267790176e-07 0.999999978353397 2.1441989261905547e-07"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_index_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="0.3490658503988659" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_index_2">
@@ -1618,7 +1618,7 @@
     <axis xyz="-0.9999995872902697 -2.6872936789712476e-07 4.668360350512657e-07"/>
     <parent link="r_hand_index_1"/>
     <child link="r_hand_index_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_index_3">
@@ -1648,7 +1648,7 @@
     <axis xyz="-0.9999995872902697 -2.6872936789712476e-07 4.668360350512657e-07"/>
     <parent link="r_hand_index_2"/>
     <child link="r_hand_index_3"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_hand_index_skin_0"/>
@@ -1997,10 +1997,10 @@
   </link>
   <joint name="l_ring_prox" type="revolute">
     <origin xyz="-0.015417865717831492 -0.0018501027039076468 -0.09790043518642755" rpy="0 0.08726650590388031 0.026179823381597748"/>
-    <axis xyz="1.0000005135466863 1.979209419246744e-07 4.060128685548503e-07"/>
+    <axis xyz="-1.0000005135466863 -1.979209419246744e-07 -4.060128685548503e-07"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_ring_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_ring_2">
@@ -2030,7 +2030,7 @@
     <axis xyz="-1.0000005135466863 -1.979209419246744e-07 -4.060128685548503e-07"/>
     <parent link="l_hand_ring_1"/>
     <child link="l_hand_ring_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_ring_skin_0"/>
@@ -2141,10 +2141,10 @@
   </link>
   <joint name="l_index_add" type="revolute">
     <origin xyz="0.022469969224748403 -0.001550029846802109 -0.06859012009285947" rpy="0 -0.08726657030232389 2.273729335436677e-07"/>
-    <axis xyz="3.992524267790176e-07 0.999999978353397 2.1441989261905547e-07"/>
+    <axis xyz="-3.992524267790176e-07 -0.999999978353397 -2.1441989261905547e-07"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_index_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="0.3490658503988659" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_index_2">
@@ -2174,7 +2174,7 @@
     <axis xyz="-0.9999995872902697 2.6872936789712476e-07 -4.668360350512657e-07"/>
     <parent link="l_hand_index_1"/>
     <child link="l_hand_index_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_index_3">
@@ -2204,7 +2204,7 @@
     <axis xyz="-0.9999995872902697 2.6872936789712476e-07 -4.668360350512657e-07"/>
     <parent link="l_hand_index_2"/>
     <child link="l_hand_index_3"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_index_skin_0"/>
@@ -2318,7 +2318,7 @@
     <axis xyz="-0.9999998262416893 -3.56920377206707e-07 -2.721582535170075e-07"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_middle_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_middle_2">
@@ -2348,7 +2348,7 @@
     <axis xyz="-0.9999998262417538 -9.878318872787173e-08 -2.5044776373606137e-07"/>
     <parent link="l_hand_middle_1"/>
     <child link="l_hand_middle_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_middle_skin_0"/>
@@ -2462,7 +2462,7 @@
     <axis xyz="-9.579078130705909e-08 6.90101362721407e-08 -1.0000003967894144"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_thumb_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="1.0471975511965976" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_thumb_2">
@@ -2489,10 +2489,10 @@
   </link>
   <joint name="l_thumb_prox" type="revolute">
     <origin xyz="0.03454190438141733 0.0031447987794122334 -0.026071809138455138" rpy="1.3486854426081958 0.6514100961972398 1.2371890149379312e-06"/>
-    <axis xyz="-6.65068723482154e-07 2.7824760159833595e-07 1.0000002266902146"/>
+    <axis xyz="6.65068723482154e-07 -2.7824760159833595e-07 -1.0000002266902146"/>
     <parent link="l_hand_thumb_1"/>
     <child link="l_hand_thumb_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_thumb_3">
@@ -2519,10 +2519,10 @@
   </link>
   <joint name="l_thumb_dist" type="revolute">
     <origin xyz="0.01999951842714734 -0.0014995220956423305 4.0850220001109605e-07" rpy="0 0 0"/>
-    <axis xyz="-6.65068723482154e-07 2.7824760159833595e-07 1.0000002266902146"/>
+    <axis xyz="6.65068723482154e-07 -2.7824760159833595e-07 -1.0000002266902146"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_thumb_skin_0"/>
@@ -2636,7 +2636,7 @@
     <axis xyz="-1.0000005135466863 -1.979209419246744e-07 -4.060128685548503e-07"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_pinkie_1"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hand_pinkie_2">
@@ -2666,7 +2666,7 @@
     <axis xyz="-1.0000005135465095 -7.224204564889453e-07 1.88573045758339e-07"/>
     <parent link="l_hand_pinkie_1"/>
     <child link="l_hand_pinkie_2"/>
-    <limit effort="50000" lower="0.0" upper="1.7453292519943295" velocity="120.0"/>
+    <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="base_link"/>
@@ -2870,6 +2870,11 @@
 <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
 </plugin>
 </gazebo>
+  <gazebo>
+<plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
+<yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand.ini</yarpConfigurationFile>
+</plugin>
+</gazebo>
   <gazebo reference="l_shoulder_pitch">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
@@ -2895,6 +2900,11 @@
 <plugin name="controlboard_right_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
 <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_arm.ini</yarpConfigurationFile>
 <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+</plugin>
+</gazebo>
+  <gazebo>
+<plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
+<yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand.ini</yarpConfigurationFile>
 </plugin>
 </gazebo>
   <gazebo reference="r_shoulder_pitch">
