@@ -1618,7 +1618,7 @@
             <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
           </Frame>
         </frames>
-        <geometryFileName>""</geometryFileName>
+        <geometryFileName>"SIM_ECUB_L_WRIST_1_prt.stl"</geometryFileName>
       </Body>
       <Body>
         <name>"SIM_ECUB_L_WRIST_2"</name>
