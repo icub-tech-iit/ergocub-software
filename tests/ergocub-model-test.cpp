@@ -281,6 +281,30 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
     axisNames.push_back("r_wrist_yaw");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,0.227771,0.966702));
+    axisNames.push_back("r_thumb_add");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.329847,0.160871,0.930227));
+    axisNames.push_back("r_thumb_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+    axisNames.push_back("r_thumb_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+    axisNames.push_back("r_index_add");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
+    axisNames.push_back("r_index_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.947223,0.290266,0.136064));
+    axisNames.push_back("r_index_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.947223,0.290266,0.136064));
+    axisNames.push_back("r_middle_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,0.271447,0.0520081));
+    axisNames.push_back("r_middle_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,0.271447,0.0520081));
+    axisNames.push_back("r_ring_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.973762,0.226085,-0.0259272));
+    axisNames.push_back("r_ring_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.973762,0.226085,-0.0259272));
+    axisNames.push_back("r_pinkie_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.973762,0.226085,-0.0259272));
+    axisNames.push_back("r_pinkie_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.973762,0.226085,-0.0259272));
     axisNames.push_back("l_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,-0.271447,0.0520081));
     axisNames.push_back("l_shoulder_yaw");
@@ -293,6 +317,31 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     axisNames.push_back("l_wrist_yaw");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.116648,0.227771,-0.966702));
+    axisNames.push_back("l_thumb_add");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.329847,0.160871,-0.930227));
+    axisNames.push_back("l_thumb_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
+    axisNames.push_back("l_thumb_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
+    axisNames.push_back("l_index_add");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
+    axisNames.push_back("l_index_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.947223,0.290266,-0.136064));
+    axisNames.push_back("l_index_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.947223,0.290266,-0.136064));
+    axisNames.push_back("l_middle_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.961047,0.271447,-0.0520081));
+    axisNames.push_back("l_middle_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.961047,0.271447,-0.0520081));
+    axisNames.push_back("l_ring_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
+    axisNames.push_back("l_ring_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
+    axisNames.push_back("l_pinkie_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
+    axisNames.push_back("l_pinkie_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
+
 
     for(int i=0; i < axisNames.size(); i++)
     {
