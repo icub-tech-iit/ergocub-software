@@ -480,10 +480,10 @@ int main(int argc, char ** argv)
 
 
     // Check if l_sole/r_sole have the same distance from the root_link
-    // if( !checkSolesAreParallel(comp) )
-    // {
-    //     return EXIT_FAILURE;
-    // }
+    if( !checkSolesAreParallel(comp) )
+    {
+        return EXIT_FAILURE;
+    }
 
     // Now some test that test the sensors
     // The ft sensors orientation respect to the root_link are different to iCubV2 and they are under investigation.
