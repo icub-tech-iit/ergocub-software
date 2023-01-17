@@ -40,3 +40,10 @@ make
 
 ### Automatic generation
 [This GitHub Action]() generates automatically the urdf everytime a commit in `usdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
+
+### Maintainers
+This repository is maintained by:
+
+| | |
+|:---:|:---:|
+| [<img src="https://github.com/Nicogene.png" width="40">](https://github.com/Nicogene) | [@Nicogene](https://github.com/Nicogene) |
