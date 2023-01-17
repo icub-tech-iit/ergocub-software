@@ -7,11 +7,19 @@ For installing it just:
 ```
 mkdir build
 cd build
-cmake ..
+cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
 make
 (make install)
 ```
 `ergocub` model needs [Gazebo YARP Plugins v4.6.0](https://github.com/robotology/gazebo-yarp-plugins/releases/tag/v4.6.0) or higher in order to be used.
+
+In order to use the model, the following env variables can be configured:
+```sh
+# ergoCub model in YARP
+export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/ergoCub
+# ergoCub model in Gazebo
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/ergoCub/robots
+```
 
 ## URDF generation
 This repo hosts the `ergoCub` urdf, enabling the cmake flag `ERGOCUB_MODEL_GENERATE_SIMMECHANICS` it is possible to generate it from simmechanics xml.
