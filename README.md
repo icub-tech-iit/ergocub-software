@@ -19,6 +19,7 @@ In order to use the model, the following env variables can be configured:
 export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/ergoCub
 # ergoCub model in Gazebo
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/ergoCub/robots
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/
 ```
 
 ## URDF generation
