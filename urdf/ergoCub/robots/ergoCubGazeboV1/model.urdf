@@ -750,11 +750,11 @@
     <child link="head_laser_frame"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="imu_frame"/>
-  <joint name="imu_frame_fixed_joint" type="fixed">
+  <link name="head_imu_0"/>
+  <joint name="head_imu_0_fixed_joint" type="fixed">
     <origin xyz="-0.004299998 -0.0055 0.03823499999999996" rpy="3.141592653589793 0 1.5707963267948966"/>
     <parent link="head"/>
-    <child link="imu_frame"/>
+    <child link="head_imu_0"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="realsense">
@@ -794,11 +794,11 @@
     <child link="realsense_rgb_frame"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="realsense_depth_frame"/>
-  <joint name="realsense_depth_frame_fixed_joint" type="fixed">
+  <link name="realsense_imu_0"/>
+  <joint name="realsense_imu_0_fixed_joint" type="fixed">
     <origin xyz="0.00751550026595621 0.010000000000000005 0" rpy="-1.5707962931078618 0 -1.5707963267948968"/>
     <parent link="realsense"/>
-    <child link="realsense_depth_frame"/>
+    <child link="realsense_imu_0"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="r_shoulder_1">
@@ -3110,7 +3110,7 @@
     <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
   </sensor>
   <gazebo reference="head">
-    <sensor name="head_imu_acc_1x1" type="imu">
+    <sensor name="head_imu_0" type="imu">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <pose>-0.004299998 -0.0055 0.03823499999999996 3.141592653589793 -0.0 1.5707963267948966</pose>
@@ -3119,7 +3119,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="head_imu_acc_1x1" type="accelerometer">
+  <sensor name="head_imu_0" type="accelerometer">
     <parent link="head"/>
     <origin rpy="3.141592653589793 -0.0 1.5707963267948966" xyz="-0.004299998 -0.0055 0.03823499999999996"/>
   </sensor>
@@ -3196,7 +3196,7 @@
     <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621 -0.0115 -4.911144457775407e-08"/>
   </sensor>
   <gazebo reference="realsense">
-    <sensor name="realsense_imu_acc_1x1" type="imu">
+    <sensor name="realsense_imu_0" type="imu">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <pose>0.00751550026595621 0.010000000000000005 -4.911144457775407e-08 -1.5707962931078618 8.881784197001252e-16 -1.5707963267948954</pose>
@@ -3205,7 +3205,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="realsense_imu_acc_1x1" type="accelerometer">
+  <sensor name="realsense_imu_0" type="accelerometer">
     <parent link="realsense"/>
     <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621 0.010000000000000005 -4.911144457775407e-08"/>
   </sensor>
