@@ -4,7 +4,7 @@ Main collector of ergoCub specific SW
 ## Installation
 
 For installing it just:
-```
+```sh
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
@@ -13,7 +13,7 @@ make
 ```
 `ergocub` model needs [Gazebo YARP Plugins v4.6.0](https://github.com/robotology/gazebo-yarp-plugins/releases/tag/v4.6.0) or higher in order to be used.
 
-In order to use the model, the following env variables ought to be configured:
+In order to use the model, the following env variables must be configured:
 ```sh
 # ergoCub model in YARP
 export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/ergoCub
@@ -31,7 +31,7 @@ Enabling also `ERGOCUB_MODEL_COPY_TO_SRC` the generated models are copied in the
 - [YARP](https://github.com/robotology/yarp)
 - [simmechanics-to-urdf](https://github.com/robotology/simmechanics-to-urdf)
 ### Usage
-```
+```sh
 mkdir build
 cd build
 cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON ..
