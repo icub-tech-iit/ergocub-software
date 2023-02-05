@@ -13,7 +13,7 @@ make
 ```
 `ergocub` model needs [Gazebo YARP Plugins v4.6.0](https://github.com/robotology/gazebo-yarp-plugins/releases/tag/v4.6.0) or higher in order to be used.
 
-In order to use the model, the following env variables can be configured:
+In order to use the model, the following env variables ought to be configured:
 ```sh
 # ergoCub model in YARP
 export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/ergoCub
