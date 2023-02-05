@@ -40,7 +40,7 @@ make
 ```
 
 ### Automatic generation
-[This GitHub Action]() generates automatically the urdf everytime a commit in `usdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
+[This GitHub Action]() generates automatically the urdf everytime a commit in `urdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
 
 ### Maintainers
 This repository is maintained by:
