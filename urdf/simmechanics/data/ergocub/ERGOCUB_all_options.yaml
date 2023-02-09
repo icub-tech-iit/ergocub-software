@@ -1028,6 +1028,7 @@ assignedColors:
 reverseRotationAxis:
     l_shoulder_pitch
     l_shoulder_roll
+    l_shoulder_yaw
     r_elbow
     l_wrist_pitch
     r_wrist_yaw
@@ -1053,7 +1054,6 @@ reverseRotationAxis:
 #    r_knee
 #    r_ankle_roll
 #    l_ankle_pitch
-#    l_shoulder_yaw
 #    l_wrist_roll
 #    l_wrist_pitch
 #    l_wrist_yaw
