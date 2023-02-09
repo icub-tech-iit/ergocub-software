@@ -308,7 +308,7 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     axisNames.push_back("l_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,-0.271447,0.0520081));
     axisNames.push_back("l_shoulder_yaw");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,-0.227771,0.966702));
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.116648,0.227771,-0.966702));
     axisNames.push_back("l_elbow");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     axisNames.push_back("l_wrist_roll");
