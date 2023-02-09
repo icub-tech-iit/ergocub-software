@@ -269,6 +269,8 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(1,0,0));
     axisNames.push_back("neck_yaw");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-1.62555e-21,-1.1e-15,1));
+    axisNames.push_back("camera_tilt");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0,-1,0));
     axisNames.push_back("r_shoulder_roll");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.961047,-0.271447,-0.0520081));
     axisNames.push_back("r_shoulder_yaw");
