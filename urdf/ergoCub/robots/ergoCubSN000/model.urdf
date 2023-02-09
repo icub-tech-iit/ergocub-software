@@ -781,7 +781,7 @@
   </link>
   <joint name="camera_tilt" type="revolute">
     <origin xyz="0.06250999 -3e-05 0.07639299999999999" rpy="0 0.0002595819985423862 0"/>
-    <axis xyz="-2.220446049250313e-16 1.0000000000000002 0.0"/>
+    <axis xyz="2.220446049250313e-16 -1.0000000000000002 0.0"/>
     <parent link="head"/>
     <child link="realsense"/>
     <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="120.0"/>
@@ -1847,7 +1847,7 @@
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
     <origin xyz="0 0 -0.022500225580001282" rpy="0 0 0"/>
-    <axis xyz="-3.936910710766739e-07 1.8507626386998766e-07 0.9999995705743131"/>
+    <axis xyz="3.936910710766739e-07 -1.8507626386998766e-07 -0.9999995705743131"/>
     <parent link="l_shoulder_3"/>
     <child link="l_upperarm"/>
     <limit effort="50000" lower="-0.8726646259971648" upper="1.3962634015954636" velocity="120.0"/>
