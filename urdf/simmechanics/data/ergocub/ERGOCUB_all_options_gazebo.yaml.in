@@ -1239,6 +1239,7 @@ reverseRotationAxis:
     torso_pitch
     torso_yaw
     neck_yaw
+    camera_tilt
     l_thumb_prox
     l_thumb_dist
     l_index_add
