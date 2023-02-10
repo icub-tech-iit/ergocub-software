@@ -81,7 +81,7 @@ jobs:
         branch: automatic-update-urdf
         branch-suffix: timestamp
         delete-branch: true
-        title: 'Automatic update of urdf triggered by Github Action'
+        title: 'Automatic update of urdf triggered by GitHub Action'
         reviewers: Nicogene
         assignees: ${{ github.actor }}
         body: |
