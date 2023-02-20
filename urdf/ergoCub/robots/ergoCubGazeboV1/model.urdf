@@ -2677,6 +2677,30 @@
   <parent link="root_link"/>
   <child link="base_link"/>
 </joint>
+
+<link name="lidar">
+    <inertial>
+      <origin xyz="0.0 0.0 0.17" rpy="0.0 0.0 0.0"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.04" length="0.04"/>
+      </geometry>
+      <material name="blue"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+<joint name="lidar_joint" type="fixed">
+    <dynamics damping="0.06" friction="0.0"/>
+    <limit effort="50000.0" velocity="120.0" lower="-0.7853981633974483" upper="0.7853981633974483"/>
+    <parent link="head"/>
+    <child link="lidar"/>
+    <axis xyz="0. 0. 1."/>
+    <origin xyz="0.00117 0.00115 0.1348" rpy="0.0 0.0 0.0"/>
+  </joint>
+
   <gazebo reference="r_arm_ft_sensor">
 <preserveFixedJoint>true</preserveFixedJoint>
 <!-- For compatibility with SDFormat < 4.4 -->
@@ -3218,7 +3242,43 @@
     <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621 0.010000000000000005 -4.911144457775407e-08"/>
   </sensor>
 
-
+  <gazebo reference="lidar">
+    <sensor name="lasersensor_head" type="ray">
+        <always_on>1</always_on>
+        <update_rate>100</update_rate>
+        <pose frame=''>0.0 0.0 0.0105 0.0 0.0 0.0</pose>
+        <visualize>false</visualize>
+        <ray name="head_laser_sensor">
+          <scan>
+            <horizontal>
+              <samples>1600</samples>          <!-- 16000 samples per second = 1600 at 10 Hz-->
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>6.283185</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.2</min>
+            <max>25</max>
+            <resolution>0.01</resolution>    <!-- Real value: 1% of range (if < 12m) 2% otherwise-->
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+      <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
+        <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+  <sensor name="lasersensor_head" type="ray">
+    <parent link="lidar"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0105"/>
+  </sensor>
+<!--
   <gazebo reference="head">
     <sensor name="lasersensor_head" type="ray">
       <always_on>1</always_on>
@@ -3256,6 +3316,7 @@
     <parent link="head"/>
     <origin rpy="0.0 -0.0 1.5707963267948966" xyz="4.99999999999997e-05 0.0 0.13480199999999992"/>
   </sensor>
+-->
   <gazebo>
     <pose>0.0 0.0 0.9 0.0 0.0 0.0</pose>
   </gazebo>
