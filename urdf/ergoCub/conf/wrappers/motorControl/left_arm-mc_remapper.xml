@@ -4,9 +4,9 @@
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="left_arm-mc_remapper" type="controlboardremapper">
     <paramlist name="networks">
         <elem name="left_arm_joints1">(  0  6  0 6 )</elem>
-        <elem name="left_arm_joints2">(  7  12 0 5 )</elem>
+        <elem name="left_arm_joints2">(  7  18 0 11 )</elem>
     </paramlist>
-    <param name="joints"> 13 </param>
+    <param name="joints"> 19 </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
             <elem name="left_arm_joints1"> left_arm_hardware_device </elem>
