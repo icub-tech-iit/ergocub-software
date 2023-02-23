@@ -5,18 +5,22 @@
     <paramlist name="networks">
         <elem name="head_joints1">( 0 3 0 3 )</elem>
         <elem name="left_arm_joints1">( 4 10 0 6 )</elem>
-        <elem name="right_arm_joints1">( 11 17 0 6 )</elem>
-        <elem name="torso_joints">( 18 20  0 2 )</elem>
-        <elem name="left_leg_joints1">( 21 26  0 5 )</elem>
-        <elem name="right_leg_joints1">( 27 32  0 5 )</elem>
+        <elem name="left_arm_joints2">( 11 22 0 11 )</elem>
+        <elem name="right_arm_joints1">( 23 29 0 6 )</elem>
+        <elem name="right_arm_joints2">( 30 41 0 11 )</elem>
+        <elem name="torso_joints">( 42 44  0 2 )</elem>
+        <elem name="left_leg_joints1">( 45 50  0 5 )</elem>
+        <elem name="right_leg_joints1">( 51 56  0 5 )</elem>
     </paramlist>
     <param name="period"> 0.010 </param>
-    <param name="joints"> 33 </param>
+    <param name="joints"> 57 </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
             <elem name="head_joints1">head_hardware_device</elem>
             <elem name="left_arm_joints1">left_arm_hardware_device</elem>
+            <elem name="left_arm_joints2">left_hand_hardware_device</elem>
             <elem name="right_arm_joints1">right_arm_hardware_device</elem>
+            <elem name="right_arm_joints2">right_hand_hardware_device</elem>
             <elem name="torso_joints">torso_hardware_device</elem>
             <elem name="left_leg_joints1">left_leg-mc_remapper</elem>
             <elem name="right_leg_joints1">right_leg-mc_remapper</elem>
