@@ -25,6 +25,15 @@ option(BUILD_TESTING "Run tests for the generated models" OFF)
 set(BUILD_PREFIX "ergoCub")
 add_subdirectory(urdf)
 
+# Install empty ergoCub file in <prefix>/share/ament_index/resource_index/packages
+# so that ergoCub package is found by ROS2
+# See https://github.com/robotology/icub-models/issues/177
+# and https://github.com/icub-tech-iit/ergocub-software/issues/59
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file "")
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file 
+        DESTINATION share/ament_index/resource_index/packages
+        RENAME ergoCub)
+
 # TODO to be defined
 if (BUILD_TESTING)
   include( CTest )
