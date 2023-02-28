@@ -15,12 +15,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0.1785" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_root_link_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <link name="r_hip_1">
     <inertial>
@@ -37,12 +31,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021099999999999997 0.0505 0.1785" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_pitch" type="revolute">
     <origin xyz="0.0211 -0.0505 0" rpy="0 0 0"/>
@@ -67,12 +55,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.0262 0.08360000000001593 0.1874999999999929" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_roll" type="revolute">
     <origin xyz="-0.04725 -0.03309999999999999 -0.009000000000000008" rpy="0 0 0"/>
@@ -97,12 +79,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.0105 0.08360000000001593 0.2771999999999929" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_leg_ft_sensor" type="fixed">
     <origin xyz="0.036699999999999997 0 -0.0897" rpy="0 0 0"/>
@@ -125,12 +101,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.01050000004578778 0.068600000000031 0.3498999999999929" rpy="0 0 1.5707963267956018"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_yaw" type="revolute">
     <origin xyz="0 0.015 -0.07269999999999999" rpy="0 0 1.187379294776138e-06"/>
@@ -155,12 +125,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021099999999999997 -0.060700000000000004 -0.5296000000000003" rpy="3.141592653589793 0 -1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_knee" type="revolute">
     <origin xyz="0.010600009380288952 0.007899987413773887 -0.17970000000000008" rpy="3.141592653589793 0 -1.187379294776138e-06"/>
@@ -185,12 +149,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021099999999999997 0.0926 0.8505999999999999" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ankle_pitch" type="revolute">
     <origin xyz="0 0.0319 0.32099999999999995" rpy="3.141592653589793 0 0"/>
@@ -215,12 +173,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.031650000000000005 0.07440000000000001 0.8856000000000002" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ankle_roll" type="revolute">
     <origin xyz="-0.052750000000000005 0.018199999999999994 -0.03500000000000003" rpy="0 0 0"/>
@@ -308,12 +260,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021099999999999997 -0.0505 0.1785" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_hip_pitch" type="revolute">
     <origin xyz="0.0211 0.0505 0" rpy="0 0 0"/>
@@ -338,12 +284,7 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.026149999999999982 -0.08359999999999998 0.18750000000000003" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
+
   </link>
   <joint name="l_hip_roll" type="revolute">
     <origin xyz="-0.04725 0.03309999999999999 -0.009000000000000008" rpy="0 0 0"/>
@@ -368,12 +309,7 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.010549999999999967 -0.08360000000000002 0.27720000000000006" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
+
   </link>
   <joint name="l_leg_ft_sensor" type="fixed">
     <origin xyz="0.036699999999999997 0 -0.0897" rpy="0 0 0"/>
@@ -396,12 +332,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.01055000000000001 -0.06860000000000005 0.3499" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_hip_yaw" type="revolute">
     <origin xyz="0 -0.015 -0.07269999999999999" rpy="0 0 0"/>
@@ -426,12 +356,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021150000000000016 0.06070000000000036 -0.5296000000000004" rpy="3.141592653589793 0 -1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_knee" type="revolute">
     <origin xyz="0.010599999999999998 -0.00789999999999999 -0.17970000000000008" rpy="3.141592653589793 0 0"/>
@@ -456,12 +380,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.021150000000000165 -0.09260000000000018 0.8506000000000005" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ankle_pitch" type="revolute">
     <origin xyz="0 -0.0319 0.32099999999999995" rpy="3.141592653589793 0 0"/>
@@ -486,12 +404,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.031599999999999906 -0.07440000000000055 0.8856000000000006" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ankle_roll" type="revolute">
     <origin xyz="-0.052750000000000005 -0.018199999999999994 -0.03500000000000003" rpy="0 0 0"/>
@@ -579,12 +491,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0.11800000000000006" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_roll" type="revolute">
     <origin xyz="0 0 0.060499999999999984" rpy="0 0 0"/>
@@ -609,12 +515,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_pitch" type="revolute">
     <origin xyz="0 0 0.11800000000000005" rpy="0 0 0"/>
@@ -639,12 +539,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 -0.06446999999999996" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_chest_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_yaw" type="revolute">
     <origin xyz="0 0 0.06446999999999996" rpy="0 0 0"/>
@@ -669,12 +563,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.004861510000001958 -5.0000000001387415e-05 -0.2897700000000001" rpy="0 0 1.570796326794898"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_pitch" type="revolute">
     <origin xyz="0.00486151 0 0.22529999999999997" rpy="0 0 0"/>
@@ -699,12 +587,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.0048615100000017055 0 -0.2992700000000001" rpy="0 0 1.5707963267948974"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_roll" type="revolute">
     <origin xyz="0 0 0.009500000000000008" rpy="0 0 0"/>
@@ -729,12 +611,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.00486150999999975 0 -0.36842000000000047" rpy="0 0 1.5707963267948966"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_yaw" type="revolute">
     <origin xyz="0 0 0.06915000000000004" rpy="0 0 0"/>
@@ -773,12 +649,6 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.06725603228393816 3.0000000000165657e-05 -0.4448304734420435" rpy="-0.00025958199854238625 0 1.5707963267948972"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_realsense_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="camera_tilt" type="revolute">
     <origin xyz="0.06250999 -3e-05 0.07639299999999999" rpy="0 0.0002595819985423862 0"/>
@@ -817,12 +687,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.021414945972355947 0.10641310711982899 -0.16803579004948574" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_pitch" type="revolute">
     <origin xyz="-0.013518700012225604 -0.06704759999753497 0.12352000000000002" rpy="-0.2536122932682645 -0.05203182377908277 0.27527867980625303"/>
@@ -847,12 +711,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.013901412308925644 0.1996664041437421 -0.16804657793009403" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_roll" type="revolute">
     <origin xyz="0.007499961299727744 -0.09330005268198815 -6.00683019019721e-07" rpy="0 0 0"/>
@@ -877,12 +735,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.020751322852116103 0.19966607735058817 -0.11374685915473111" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_arm_ft_sensor" type="fixed">
     <origin xyz="-0.006849910543190453 3.2679315392636354e-07 -0.05429971877536288" rpy="0 0 0"/>
@@ -905,12 +757,6 @@
         <color rgba="0 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.020751359543703093 0.19966616827788958 -0.09124663357473975" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_yaw" type="revolute">
     <origin xyz="0 0 -0.02250022557998886" rpy="0 0 0"/>
@@ -935,12 +781,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.010751314930868198 0.19816609582844913 0.032452997316536135" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_forearm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_elbow" type="revolute">
     <origin xyz="0.010000044612835832 0.0015000724494400042 -0.1236996308912752" rpy="0 0 0"/>
@@ -965,12 +805,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.025751515213232788 0.20016678947605634 0.22680306204167924" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_yaw" type="revolute">
     <origin xyz="-0.015000200282364597 -0.002000693647607188 -0.19435006472514327" rpy="0 0 0"/>
@@ -996,12 +830,6 @@
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.025751515213232896 0.2001667894760563 0.22680306204167938" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_roll" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1026,12 +854,6 @@
         <color rgba="0 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.025751515213232955 0.20016678947605626 0.22680306204167947" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1057,12 +879,6 @@
         <color rgba="1 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.028527203126593598 -0.19932629907859575 0.32260234794349524" rpy="0.03293841693450851 -0.2510502277214382 -1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
     <origin xyz="-0.0359822951163049 0.0023886829394013653 -0.09208533059471607" rpy="0 -0.08726707208822813 3.1154130190543565"/>
@@ -1087,12 +903,7 @@
         <color rgba="1 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.028527291616398734 -0.19782654821837029 0.34760258035440544" rpy="0.03293841693450851 -0.2510502277214382 -1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
+
   </link>
   <joint name="r_pinkie_dist" type="revolute">
     <origin xyz="0 -0.0014997508602252463 -0.025000232410908152" rpy="0 0 0"/>
@@ -1117,12 +928,7 @@
         <color rgba="0 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.1322152574525801 0.15851578156756058 0.2540941242362456" rpy="0.3407559733652856 -0.16157290397540885 0.8505098820311924"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
+
   </link>
   <joint name="r_thumb_add" type="revolute">
     <origin xyz="0.023374917753110392 0.003000077535523449 -0.03452353585390944" rpy="-0.08853690416789765 -0.20917986809225603 0.403968951543933"/>
@@ -1147,12 +953,6 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.0921942222362805 0.2394763188666295 -0.21981468433736873" rpy="-1.3050072033505575 0.9949590577630557 0.6894456200851217"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
     <origin xyz="0.0345419043814173 -0.0031447987794122334 -0.026071809138455138" rpy="1.7929080217310676 0.6514101167838809 -1.1138050653581883e-07"/>
@@ -1177,12 +977,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.11219374098962233 0.2409758366164094 -0.21981429340190012" rpy="-1.3050072033505575 0.9949590577630557 0.6894456200851217"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
     <origin xyz="0.019999518753341633 -0.0014995177497797996 -3.909354686637556e-07" rpy="0 0 0"/>
@@ -1293,12 +1087,6 @@
         <color rgba="0 0 0.8 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.016151209552036482 -0.19866593918881123 0.3298029428237952" rpy="0.12008501986317731 -0.2297882840735942 -1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
     <origin xyz="0.009600156192095581 0.0015008642793520877 -0.10299988189076881" rpy="0 -5.650294234014884e-07 -3.141592467955196"/>
@@ -1323,12 +1111,6 @@
         <color rgba="0.1 0.8 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.016151302128169853 -0.1978396872777643 0.3594333857584242" rpy="0.11954926259843997 -0.22799029281164018 -1.8531928341958708"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
     <origin xyz="1.3550151000546462e-07 -0.0014995238274964628 -0.03000020325318492" rpy="-0.0018721728628663644 0 -2.576685250299645e-07"/>
@@ -1439,12 +1221,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.0075272370088071685 -0.1993263860452732 0.32660238489385823" rpy="0.03293841693450851 -0.2510502277214382 -1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
     <origin xyz="-0.01541792137789915 0.0018501048853160618 -0.09790042637955282" rpy="0 -0.08726707208822813 3.1154130190543565"/>
@@ -1469,12 +1245,6 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.007527194888446845 -0.19782646544374372 0.35660294900517864" rpy="0.03293841693450851 -0.2510502277214382 -1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
     <origin xyz="0 -0.0014999206015293143 -0.03000056411131863" rpy="0 0 0"/>
@@ -1585,12 +1355,6 @@
         <color rgba="0 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.029013910407855708 -0.1986661648104217 0.29398252253935925" rpy="0.20567444929844825 -0.20467244819585653 -1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_add" type="revolute">
     <origin xyz="0.02247013280412654 0.0015006329961735065 -0.06858950116064205" rpy="0 0.08726600527288864 3.141592607344335"/>
@@ -1615,12 +1379,6 @@
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.01982136066481879 -0.19866600173088222 0.3246961457413716" rpy="0.20567444929844825 -0.20467244819585653 -1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
     <origin xyz="-0.00919254974303696 -1.6307953948357934e-07 -0.03071362320201243" rpy="0 0 0"/>
@@ -1645,12 +1403,6 @@
         <color rgba="0 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.019821401942974836 -0.1971661787747334 0.35469663065976104" rpy="0.20567444929844825 -0.20467244819585653 -1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
     <origin xyz="0 -0.0014998229561488108 -0.030000484918389303" rpy="0 0 0"/>
@@ -1761,12 +1513,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.021415060671471992 -0.10641309448782241 -0.16803578343142547" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
     <origin xyz="-0.013518699987774399 0.06704760000246503 0.12352000000000002" rpy="0.2536122437269179 -0.05203123024743728 -0.27527871815172983"/>
@@ -1791,12 +1537,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.01642850313247387 -0.19975933535232593 -0.1680239607265381" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
     <origin xyz="0.00500012990494483 0.09329948520836115 -4.341360000936767e-07" rpy="0 0 0"/>
@@ -1821,12 +1561,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.020778568919260366 -0.1997595789508428 -0.11372408057794763" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_arm_ft_sensor" type="fixed">
     <origin xyz="-0.004350065786786487 2.435985168580679e-07 -0.054299880148590496" rpy="0 0 0"/>
@@ -1849,12 +1583,6 @@
         <color rgba="1 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.020778592897575728 -0.19975967103727527 -0.09122385499794652" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
     <origin xyz="0 0 -0.022500225580001282" rpy="0 0 0"/>
@@ -1879,12 +1607,6 @@
         <color rgba="0.3 0.3 0.3 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.010778478112345273 -0.19825960681678675 0.03247577032026795" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_forearm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_elbow" type="revolute">
     <origin xyz="0.01000011478523053 -0.001500064220488484 -0.12369962531821438" rpy="0 0 0"/>
@@ -1910,12 +1632,6 @@
         <color rgba="0.9 0.9 0.9 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.02577856895260016 -0.20026030769211345 0.22682584341786544" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_yaw" type="revolute">
     <origin xyz="-0.015000090840254894 0.0020007008753266664 -0.19435007309759766" rpy="0 0 0"/>
@@ -1941,12 +1657,6 @@
         <color rgba="1 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.02577856895260023 -0.20026030769211345 0.22682584341786535" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_roll" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -1971,12 +1681,6 @@
         <color rgba="0 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.025778568952600042 -0.2002603076921135 0.22682584341786538" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_pitch" type="revolute">
     <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -2002,12 +1706,6 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.007549845505752852 -0.19942057587455292 0.32662722703398567" rpy="0.03293841693450851 0.2510502277214382 1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
     <origin xyz="-0.015417865717831492 -0.0018501027039076468 -0.09790043518642755" rpy="0 0.08726650590388031 0.026179823381597748"/>
@@ -2032,12 +1730,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.007549803385393823 -0.1979206552730235 0.35662779114530463" rpy="0.03293841693450851 0.2510502277214382 1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
     <origin xyz="0 -0.0014999206015293143 -0.03000056411131863" rpy="0 0 0"/>
@@ -2148,12 +1840,6 @@
         <color rgba="0 0 0.8 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.02904319388181435 -0.19871027157305793 0.2940034586718241" rpy="0.20567444929844825 0.20467244819585653 1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_add" type="revolute">
     <origin xyz="0.022469969224748403 -0.001550029846802109 -0.06859012009285947" rpy="0 -0.08726657030232389 2.273729335436677e-07"/>
@@ -2178,12 +1864,6 @@
         <color rgba="0.1 0.8 0.1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.019850644138777407 -0.19871010849351842 0.3247170818738366" rpy="0.20567444929844825 0.20467244819585653 1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
     <origin xyz="0.009192549743036973 -1.6307953948357934e-07 -0.030713623202012375" rpy="0 0 0"/>
@@ -2208,12 +1888,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.019850732699259722 -0.19720947570560032 0.35471630507241264" rpy="0.20567444929844825 0.20467244819585653 1.8717733650332327"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
     <origin xyz="0 -0.0015006327879180659 -0.02999922319857601" rpy="0 0 0"/>
@@ -2324,12 +1998,6 @@
         <color rgba="0 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.01617835428392994 -0.19875945050109686 0.32982571996156645" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
     <origin xyz="0.009600214668670098 -0.0015008571910165858 -0.10299987654370085" rpy="0 0 0"/>
@@ -2354,12 +2022,6 @@
         <color rgba="0 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.016178446836467256 -0.19793324107587792 0.3594559877864297" rpy="0.11954926259843997 0.22799029281164018 1.8531928341958708"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
     <origin xyz="-1.3550151000546462e-07 -0.0014995238274964628 -0.03000020325318492" rpy="-0.0018721728628663644 0 2.576685250299645e-07"/>
@@ -2470,12 +2132,6 @@
         <color rgba="1 0 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.1322803583541615 -0.15858996430408137 0.2541102113185044" rpy="0.3407559733652857 0.16157290397540883 2.2910827715586013"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
     <origin xyz="0.023374937816838005 -0.003000071417791822 -0.034523522800941175" rpy="0.08853717963934662 -0.2091803673917457 -0.40396882311318977"/>
@@ -2500,12 +2156,6 @@
         <color rgba="0 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.09215234480058533 0.2395110056057534 0.21989844725116847" rpy="1.836586646685542 0.9949596465626955 -2.452146247302006"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
     <origin xyz="0.03454190438141733 0.0031447987794122334 -0.026071809138455138" rpy="1.3486854426081958 0.6514100961972398 1.2371890149379312e-06"/>
@@ -2530,12 +2180,6 @@
         <color rgba="1 1 0 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="-0.11215186322773268 0.24101052770139572 0.21989803874896846" rpy="1.836586646685542 0.9949596465626955 -2.452146247302006"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
     <origin xyz="0.01999951842714734 -0.0014995220956423305 4.0850220001109605e-07" rpy="0 0 0"/>
@@ -2646,12 +2290,6 @@
         <color rgba="1 0 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.028549811623539312 -0.19942048890787537 0.3226271900836232" rpy="0.03293841693450851 0.2510502277214382 1.8063707999903837"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
     <origin xyz="-0.03598224264195511 -0.002388684875026248 -0.09208535104881393" rpy="0 0.08726650590388031 0.026179823381597748"/>
@@ -2676,12 +2314,6 @@
         <color rgba="0 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0.0285502106092587 -0.1979083365759431 0.3476344574461948" rpy="0.03294759939428343 0.25108473598814396 1.806373605758749"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
     <origin xyz="0 -0.0014997508602252463 -0.025000232410908152" rpy="3.5631170772755025e-05 -5.94559868174076e-07 -5.245059638522189e-07"/>
