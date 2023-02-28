@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## urdf
 - Removed hip ft sensors from `ergoCubSN000` model.
 - Aligned joint names of the hands with the real robot.
+- Fixed left arm small inertia problems (https://github.com/icub-tech-iit/ergocub-software/issues/60)
 
 ## [0.1.0] - 2023-01-24
 
