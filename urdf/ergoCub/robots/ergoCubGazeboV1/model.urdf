@@ -828,7 +828,7 @@
     <axis xyz="-3.352246002574083e-07 0.9999999783534191 -2.2068612626213735e-07"/>
     <parent link="chest"/>
     <child link="r_shoulder_1"/>
-    <limit effort="50000" lower="-3.0543261909900767" upper="0.3490658503988659" velocity="120.0"/>
+    <limit effort="50000" lower="-2.9670597283903604" upper="0.6108652381980153" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_shoulder_2">
@@ -858,7 +858,7 @@
     <axis xyz="-0.9999998262417322 1.7128582631247002e-07 2.9287109011566503e-07"/>
     <parent link="r_shoulder_1"/>
     <child link="r_shoulder_2"/>
-    <limit effort="50000" lower="0.20943951023931956" upper="2.8448866807507573" velocity="120.0"/>
+    <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_shoulder_3">
@@ -1762,7 +1762,7 @@
     <axis xyz="1.4958988243767013e-07 0.9999999783534517 2.7220291587415346e-07"/>
     <parent link="chest"/>
     <child link="l_shoulder_1"/>
-    <limit effort="50000" lower="-3.0543261909900767" upper="0.3490658503988659" velocity="120.0"/>
+    <limit effort="50000" lower="-2.9670597283903604" upper="0.6108652381980153" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_shoulder_2">
@@ -1792,7 +1792,7 @@
     <axis xyz="0.9999998262416893 3.56920377206707e-07 2.721582535170075e-07"/>
     <parent link="l_shoulder_1"/>
     <child link="l_shoulder_2"/>
-    <limit effort="50000" lower="0.20943951023931956" upper="2.8448866807507573" velocity="120.0"/>
+    <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_shoulder_3">
