@@ -22,6 +22,13 @@ export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/ergoCub/rob
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/
 ```
 
+## Run Whole-body-dynamics
+Currently whole-body-dynamics does not run along with `ergoCubGazeboV1`. To start it please run the following command in a console once `yarpserver` and
+the robot has been placed in `gazebo`
+```console
+yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
+```
+
 ## URDF generation
 This repo hosts the `ergoCub` urdf, enabling the cmake flag `ERGOCUB_MODEL_GENERATE_SIMMECHANICS` it is possible to generate it from simmechanics xml.
 Enabling also `ERGOCUB_MODEL_COPY_TO_SRC` the generated models are copied in the `urdf` directory for being committed.
