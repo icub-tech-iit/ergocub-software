@@ -7,7 +7,8 @@ find_package(OpenCV REQUIRED)
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PUBLIC emotionHandler.cpp emotionHandler.h main.cpp)
 
-
+set(IMAGE_PATH "images")
+include_directories(${IMAGE_PATH})
 
 # Link the application with YARP and OpenCV libraries
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES} ${OpenCV_LIBS})
