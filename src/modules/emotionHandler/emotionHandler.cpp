@@ -117,7 +117,7 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
 
 bool EmotionHandler::getCommand(std::string command)
 {
-    Mat image = imread("/home/martinagloria/ergocub-software/src/modules/emotionHandler/images/" + command + ".png");
+    Mat image = imread("images/" + command + ".png");
 
     if(image.empty())
     {
