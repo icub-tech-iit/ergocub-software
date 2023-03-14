@@ -5,9 +5,13 @@
 #include <yarp/os/RFModule.h>
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/Bottle.h>
+#include <yarp/os/RpcServer.h>
+#include <yarp/os/BufferedPort.h>
+
+using namespace yarp::os;
+using namespace std;
 
 // define the vocabs
-
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_SET = yarp::os::createVocab32('s','e','t');
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_GET = yarp::os::createVocab32('g','e','t');
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_IS  = yarp::os::createVocab32('i','s');
@@ -25,11 +29,8 @@ constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_SHY = yarp::os::createVocab32('s'
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_CUN = yarp::os::createVocab32('c','u','n');
 
 // EmotionHandler class definition
-
-class EmotionHandler : public RFModule, public IEmotionHandler {
+class EmotionHandler : public RFModule {
     private:
-
-
 
     public:
         EmotionHandler();
@@ -37,12 +38,13 @@ class EmotionHandler : public RFModule, public IEmotionHandler {
         
         bool configure(ResourceFinder& config);
         bool close();
-        bool interruptModule();
         bool updateModule();
         bool respond(const Bottle &cmd, Bottle &reply);
         double getPeriod();
+
+        bool getCommand(std::string command);
+
+        RpcServer rpcPort;
 };
-
-
 
 #endif
