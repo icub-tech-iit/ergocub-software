@@ -1,3 +1,10 @@
+/******************************************************************************
+ *                                                                            *
+ * Copyright (C) 2023 Fondazione Istituto Italiano di Tecnologia (IIT)        *
+ * All Rights Reserved.                                                       *
+ *                                                                            *
+ ******************************************************************************/
+
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Bottle.h>
@@ -18,16 +25,14 @@ EmotionHandler::~EmotionHandler()
 
 bool EmotionHandler::configure(ResourceFinder& config)
 {
-    rpcPort.open("/emotionHandler/rpc");
+    auto ret = rpcPort.open("/emotionHandler/rpc");
     attach(rpcPort);
-
-    return true;
+    return ret;
 }
 
 bool EmotionHandler::close()
 {
     rpcPort.close();
-
     return true;
 }
 
@@ -38,7 +43,6 @@ double EmotionHandler::getPeriod()
 
 bool EmotionHandler::updateModule()
 {
-
     return true;
 }
 
@@ -52,14 +56,18 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
 
     switch (cmd.get(0).asVocab32())
     {
+        case EMOTION_VOCAB_HELP:
+        {
+            // implement
+        }
+
         case EMOTION_VOCAB_SET:
         {
             namedWindow("emotion", WINDOW_NORMAL);
             resizeWindow("emotion", Size(1920, 1020));
-
-            bool ok = false;
             reply.clear();
 
+            bool ok = false;
             switch (cmd.get(1).asVocab32())
             {
                 case EMOTION_VOCAB_ANGRY:
@@ -103,18 +111,20 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
                     break;
                 }
                 default:
-                {
+                {   
+                    reply.addVocab32(EMOTION_VOCAB_FAILED);
                     yDebug() << "Command not recognized!";
                     break;
                 }
             }
+
             reply.addVocab32(EMOTION_VOCAB_OK);
         }
     }
     return true;
 }
 
-bool EmotionHandler::getCommand(std::string command)
+bool EmotionHandler::getCommand(const std::string command)
 {
     Mat image = imread("images/" + command + ".png");
 
