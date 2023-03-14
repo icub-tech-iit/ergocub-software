@@ -10,7 +10,8 @@
 #include <yarp/os/Bottle.h>
 #include "emotionHandler.h"
 
-#include <opencv2/opencv.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/core.hpp>
 
 using namespace cv;
 using namespace yarp::os;
