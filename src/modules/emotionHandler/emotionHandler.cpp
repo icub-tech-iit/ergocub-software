@@ -56,6 +56,8 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
         case EMOTION_VOCAB_SET:
         {
             namedWindow("emotion", WINDOW_NORMAL);
+            resizeWindow("emotion", Size(1920, 1020));
+
             bool ok = false;
             reply.clear();
 
