@@ -1,3 +1,10 @@
+/******************************************************************************
+ *                                                                            *
+ * Copyright (C) 2023 Fondazione Istituto Italiano di Tecnologia (IIT)        *
+ * All Rights Reserved.                                                       *
+ *                                                                            *
+ ******************************************************************************/
+
 #include <yarp/os/Network.h>
 #include <yarp/os/LogStream.h>
 #include "emotionHandler.h"
