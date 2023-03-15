@@ -5,8 +5,8 @@
  *                                                                            *
  ******************************************************************************/
 
-#ifndef __EMOTIONHANDLER__
-#define __EMOTIONHANDLER__
+#ifndef __ERGOCUBEMOTIONS__
+#define __ERGOCUBEMOTIONS__
 
 #include <yarp/os/Vocab.h>
 #include <yarp/os/RFModule.h>
@@ -32,13 +32,13 @@ constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_EVIL = yarp::os::createVocab32('e
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_SHY = yarp::os::createVocab32('s','h','y');
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_CUN = yarp::os::createVocab32('c','u','n');
 
-// EmotionHandler class definition
-class EmotionHandler : public yarp::os::RFModule {
+// ergoCubEmotions class definition
+class ErgoCubEmotions : public yarp::os::RFModule {
     private:
         
     public:
-        EmotionHandler();
-        ~EmotionHandler();
+        ErgoCubEmotions();
+        ~ErgoCubEmotions();
         
         bool configure(yarp::os::ResourceFinder& config);
         bool close();

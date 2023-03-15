@@ -8,7 +8,7 @@
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Bottle.h>
-#include "emotionHandler.h"
+#include "ergoCubEmotions.h"
 
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
@@ -16,38 +16,45 @@
 using namespace cv;
 using namespace yarp::os;
 
-EmotionHandler::EmotionHandler()
+ErgoCubEmotions::ErgoCubEmotions()
 {
 }
 
-EmotionHandler::~EmotionHandler()
+ErgoCubEmotions::~ErgoCubEmotions()
 {
 }
 
-bool EmotionHandler::configure(ResourceFinder& config)
+bool ErgoCubEmotions::configure(ResourceFinder& config)
 {
-    auto ret = rpcPort.open("/emotionHandler/rpc");
+    auto ret = rpcPort.open("/ergoCubEmotions/rpc");
     attach(rpcPort);
+
+    // set window properties
+    namedWindow("emotion", WINDOW_FULLSCREEN);
+    Mat start_img = imread("images/neu.png");
+    imshow("emotion", start_img);
+    waitKey(0);
+
     return ret;
 }
 
-bool EmotionHandler::close()
+bool ErgoCubEmotions::close()
 {
     rpcPort.close();
     return true;
 }
 
-double EmotionHandler::getPeriod()
+double ErgoCubEmotions::getPeriod()
 {
     return 1.0;
 }
 
-bool EmotionHandler::updateModule()
+bool ErgoCubEmotions::updateModule()
 {
     return true;
 }
 
-bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
+bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
 {
     if(cmd.size() < 2)
     {
@@ -64,13 +71,12 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
 
         case EMOTION_VOCAB_SET:
         {
-            namedWindow("emotion", WINDOW_NORMAL);
-            resizeWindow("emotion", Size(1920, 1020));
             reply.clear();
 
             bool ok = false;
             switch (cmd.get(1).asVocab32())
-            {
+            { 
+                // it could be possible to create an array of vocabs and iterate over it
                 case EMOTION_VOCAB_ANGRY:
                 {
                     ok = getCommand(cmd.get(1).toString());
@@ -113,7 +119,6 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
                 }
                 default:
                 {   
-                    reply.addVocab32(EMOTION_VOCAB_FAILED);
                     yDebug() << "Command not recognized!";
                     break;
                 }
@@ -125,7 +130,7 @@ bool EmotionHandler::respond(const Bottle &cmd, Bottle &reply)
     return true;
 }
 
-bool EmotionHandler::getCommand(const std::string command)
+bool ErgoCubEmotions::getCommand(const std::string command)
 {
     Mat image = imread("images/" + command + ".png");
 

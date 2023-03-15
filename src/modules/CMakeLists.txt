@@ -1,1 +1,1 @@
-add_subdirectory(emotionHandler)
+add_subdirectory(ergoCubEmotions)
