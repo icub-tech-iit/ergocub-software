@@ -20,5 +20,6 @@ target_link_libraries(${PROJECT_NAME} YARP::YARP_os
                                       YARP::YARP_dev
                                       YARP::YARP_init
                                       opencv_core
-                                      opencv_highgui)
+                                      opencv_highgui
+                                      opencv_videoio)
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)

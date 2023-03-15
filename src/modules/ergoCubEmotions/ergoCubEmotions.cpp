@@ -12,6 +12,7 @@
 
 #include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
+#include <opencv2/videoio.hpp>
 
 using namespace cv;
 using namespace yarp::os;
@@ -30,11 +31,22 @@ bool ErgoCubEmotions::configure(ResourceFinder& config)
     attach(rpcPort);
 
     // set window properties
-    namedWindow("emotion", WINDOW_FULLSCREEN);
+    namedWindow("emotion", WND_PROP_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
     Mat start_img = imread("images/neu.png");
     imshow("emotion", start_img);
     waitKey(0);
-
+    // VideoCapture cap("images/video.mp4");
+    // while(1)
+    // {
+    //     Mat frame;
+    //     cap >> frame;
+    //     imshow("emotion", frame);
+    //     char c=(char)waitKey(25);
+    //     if(c==27)
+    //         break;
+    // }
+    // cap.release();
     return ret;
 }
 
