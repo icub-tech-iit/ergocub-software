@@ -5,13 +5,13 @@
 #                                                                              #
 ################################################################################
 
-project(emotionHandler)
+project(ergoCubEmotions)
 cmake_minimum_required(VERSION 3.12)
 
 find_package(YARP 3.7.2 REQUIRED)
 find_package(OpenCV 4.5.4 REQUIRED)
 add_executable(${PROJECT_NAME})
-target_sources(${PROJECT_NAME} PUBLIC emotionHandler.cpp emotionHandler.h main.cpp)
+target_sources(${PROJECT_NAME} PUBLIC ergoCubEmotions.cpp ergoCubEmotions.h main.cpp)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/images DESTINATION ${CMAKE_BINARY_DIR})
 

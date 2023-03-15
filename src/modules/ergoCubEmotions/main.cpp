@@ -7,7 +7,7 @@
 
 #include <yarp/os/Network.h>
 #include <yarp/os/LogStream.h>
-#include "emotionHandler.h"
+#include "ergoCubEmotions.h"
 
 using namespace yarp::os;
 using namespace std;
@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
     
     ResourceFinder rf;
     rf.configure(argc, argv);
-    EmotionHandler emotionHandler;
-    emotionHandler.configure(rf);
+    ErgoCubEmotions ergoCubEmotions;
+    ergoCubEmotions.configure(rf);
 
-    return emotionHandler.runModule();
+    return ergoCubEmotions.runModule();
 }
