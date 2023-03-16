@@ -8,6 +8,8 @@
 #ifndef __ERGOCUBEMOTIONS__
 #define __ERGOCUBEMOTIONS__
 
+#include <mutex>
+
 #include <yarp/os/Vocab.h>
 #include <yarp/os/RFModule.h>
 #include <yarp/os/ResourceFinder.h>
@@ -35,7 +37,7 @@ constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_CUN = yarp::os::createVocab32('c'
 // ergoCubEmotions class definition
 class ErgoCubEmotions : public yarp::os::RFModule {
     private:
-        
+
     public:
         ErgoCubEmotions();
         ~ErgoCubEmotions();
@@ -47,7 +49,8 @@ class ErgoCubEmotions : public yarp::os::RFModule {
         double getPeriod();
 
         bool getCommand(const std::string command);
-
+        
+        std::mutex mtx;
         yarp::os::RpcServer rpcPort;
 };
 
