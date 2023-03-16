@@ -29,13 +29,19 @@ bool ErgoCubEmotions::configure(ResourceFinder& config)
 {
     auto ret = rpcPort.open("/ergoCubEmotions/rpc");
     attach(rpcPort);
-
+    
     // set window properties
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
     Mat start_img = imread("images/neu.png");
     imshow("emotion", start_img);
+    int key = pollKey();
+    if(key == -1)
+    {
+        //
+    }
     waitKey(0);
+
     // VideoCapture cap("images/video.mp4");
     // while(1)
     // {
@@ -84,59 +90,64 @@ bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
         case EMOTION_VOCAB_SET:
         {
             reply.clear();
-
             bool ok = false;
             switch (cmd.get(1).asVocab32())
             { 
-                // it could be possible to create an array of vocabs and iterate over it
                 case EMOTION_VOCAB_ANGRY:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_CUN:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_EVIL:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_HAPPY:
                 {                  
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_NEUTRAL:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SAD:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SHY:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SURPRISED:
                 {
                     ok = getCommand(cmd.get(1).toString());
+                    reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 default:
                 {   
                     yDebug() << "Command not recognized!";
+                    reply.addVocab32(EMOTION_VOCAB_FAILED);
                     break;
                 }
             }
-
-            reply.addVocab32(EMOTION_VOCAB_OK);
         }
     }
     return true;
@@ -152,7 +163,12 @@ bool ErgoCubEmotions::getCommand(const std::string command)
     }
     
     imshow("emotion", image);
+    int key = pollKey();
+    if(key == -1)
+    {
+        return -1;
+    }
     waitKey(0);
-
+    
     return true;
 }
