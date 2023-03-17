@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### urdf
+
+- Fixed pinkie taxels exportation (https://github.com/icub-tech-iit/ergocub-software/issues/79)
+
 ### ergoCubEmotions
-- Add first draft of `ergoCubEmotions`
+- Added first draft of `ergoCubEmotions`
 
 ## [0.2.0] - 2023-03-07
 

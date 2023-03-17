@@ -475,40 +475,40 @@ exportedFrames:
     frameReferenceLink: l_hand_ring_2
     exportedFrameName: l_hand_ring_skin_11
   # l_pinkie
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_0
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_0
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_0
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_1
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_1
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_1
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_2
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_2
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_2
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_3
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_3
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_3
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_4
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_4
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_4
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_5
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_5
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_5
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_6
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_6
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_6
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_7
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_7
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_7
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_8
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_8
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_8
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_9
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_9
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_9
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_10
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_10
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_10
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_11
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_11
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_11
   # r_thumb
@@ -660,40 +660,40 @@ exportedFrames:
     frameReferenceLink: r_hand_ring_2
     exportedFrameName: r_hand_ring_skin_11
   # r_pinkie
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_0
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_0
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_0
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_1
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_1
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_1
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_2
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_2
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_2
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_3
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_3
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_3
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_4
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_4
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_4
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_5
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_5
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_5
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_6
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_6
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_6
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_7
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_7
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_7
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_8
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_8
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_8
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_9
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_9
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_9
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_10
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_10
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_10
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_11
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_11
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_11
 
