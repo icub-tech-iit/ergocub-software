@@ -74,7 +74,7 @@ macro(generate_ergocub_simmechanics)
     xx: 0.01
     yy: 0.01
     zz: 0.01
-  - linkName: l_elbow_1
+  - linkName: l_forearm
     xx: 0.01
     yy: 0.01
     zz: 0.01

@@ -291,7 +291,7 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="l_hip_1"/>
     <child link="l_hip_2"/>
-    <limit effort="50000" lower="-0.610865" upper="1.9547687622336491" velocity="120.0"/>
+    <limit effort="50000" lower="-0.6108652381980153" upper="1.9547687622336491" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_hip_3">
@@ -693,7 +693,7 @@
     <axis xyz="-3.352246002574083e-07 0.9999999783534191 -2.2068612626213735e-07"/>
     <parent link="chest"/>
     <child link="r_shoulder_1"/>
-    <limit effort="50000" lower="-3.0543261909900767" upper="0.3490658503988659" velocity="120.0"/>
+    <limit effort="50000" lower="-2.9670597283903604" upper="0.6108652381980153" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_shoulder_2">
@@ -717,7 +717,7 @@
     <axis xyz="-0.9999998262417322 1.7128582631247002e-07 2.9287109011566503e-07"/>
     <parent link="r_shoulder_1"/>
     <child link="r_shoulder_2"/>
-    <limit effort="50000" lower="0.20943951023931956" upper="2.8448866807507573" velocity="120.0"/>
+    <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="r_shoulder_3">
@@ -912,6 +912,90 @@
     <child link="r_hand_pinkie_2"/>
     <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_0"/>
+  <joint name="r_hand_pinkie_skin_0_fixed_joint" type="fixed">
+    <origin xyz="5.24026344098788e-07 -0.0024354810362662294 -0.021406597529906146" rpy="-5.339779170127326e-07 1.222464412412669 -1.5707971402527485"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_1"/>
+  <joint name="r_hand_pinkie_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003300496310033329 -0.0031327608718034194 -0.02328120475485651" rpy="-9.058425513650301e-07 1.220085763516189 -1.5707973667610562"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_2"/>
+  <joint name="r_hand_pinkie_skin_2_fixed_joint" type="fixed">
+    <origin xyz="4.752769862184647e-07 -0.0037598773182656586 -0.025192332629705105" rpy="-1.4380740491308361e-06 1.3057150721430268 -1.5707978707690744"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_3"/>
+  <joint name="r_hand_pinkie_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.0033004948887347084 -0.004083454694718991 -0.027767360956446885" rpy="-3.141590842054191 1.504800394784673 1.5707978043490913"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_4"/>
+  <joint name="r_hand_pinkie_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929999045510021 -0.0011937961627108695 -0.02799980548293407" rpy="-3.1415104011644295 1.2994522769277002 2.7772344057122673"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_5"/>
+  <joint name="r_hand_pinkie_skin_5_fixed_joint" type="fixed">
+    <origin xyz="5.119517530564888e-07 -0.003477982352243447 -0.029835553040883755" rpy="-3.1415918798336704 1.08624932348146 1.5707969993348667"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_6"/>
+  <joint name="r_hand_pinkie_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.0033005509294908135 -0.0018262372080883327 -0.03177232199307489" rpy="-3.141564561936376 0.7785492927452188 2.532405111936198"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_7"/>
+  <joint name="r_hand_pinkie_skin_7_fixed_joint" type="fixed">
+    <origin xyz="4.324022333489219e-07 -0.0002745538719869933 -0.033272109488194535" rpy="-3.141592419311535 0.6184426912841147 1.5713166046748288"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_8"/>
+  <joint name="r_hand_pinkie_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.003299475476917474 -0.0018260400163571666 -0.03177224564672576" rpy="3.141565377372822 0.7785500817229738 0.6091876378122474"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_9"/>
+  <joint name="r_hand_pinkie_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.005929032074842022 -0.0011937818720847149 -0.028000349833303406" rpy="3.141510097302847 1.299453078588194 0.3643573710193685"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_10"/>
+  <joint name="r_hand_pinkie_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003299434141426749 -0.004083280034973769 -0.027767281420088163" rpy="-3.141590842054191 1.504800394784673 1.5707978043490913"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_hand_pinkie_skin_11"/>
+  <joint name="r_hand_pinkie_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032994327201281183 -0.003132586212058197 -0.023281125218497678" rpy="-9.058425513650301e-07 1.220085763516189 -1.5707973667610562"/>
+    <parent link="r_hand_pinkie_2"/>
+    <child link="r_hand_pinkie_skin_11"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="r_hand_thumb_1">
     <inertial>
@@ -1511,7 +1595,7 @@
     <axis xyz="1.4958988243767013e-07 0.9999999783534517 2.7220291587415346e-07"/>
     <parent link="chest"/>
     <child link="l_shoulder_1"/>
-    <limit effort="50000" lower="-3.0543261909900767" upper="0.3490658503988659" velocity="120.0"/>
+    <limit effort="50000" lower="-2.9670597283903604" upper="0.6108652381980153" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_shoulder_2">
@@ -1535,7 +1619,7 @@
     <axis xyz="0.9999998262416893 3.56920377206707e-07 2.721582535170075e-07"/>
     <parent link="l_shoulder_1"/>
     <child link="l_shoulder_2"/>
-    <limit effort="50000" lower="0.20943951023931956" upper="2.8448866807507573" velocity="120.0"/>
+    <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
   <link name="l_shoulder_3">
@@ -1588,7 +1672,7 @@
     <inertial>
       <origin xyz="-0.01855325167731582 0.002312010233018774 -0.08919372867102593" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
       <mass value="1.46045"/>
-      <inertia ixx="0.00383607" ixy="3.91822e-05" ixz="0.000544225" iyy="0.00387427" iyz="-0.00023171" izz="0.00165694"/>
+      <inertia ixx="0.01" ixy="3.91822e-05" ixz="0.000544225" iyy="0.01" iyz="-0.00023171" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0.010778478112345273 -0.19825960681678675 0.03247577032026795" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
@@ -2307,7 +2391,90 @@
     <limit effort="50000" lower="0.0" upper="2.792526803190927" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
-  
+  <link name="l_hand_pinkie_skin_0"/>
+  <joint name="l_hand_pinkie_skin_0_fixed_joint" type="fixed">
+    <origin xyz="1.8627311225080656e-07 -0.0024348274185200802 -0.021405822982714817" rpy="-8.939271766715321e-07 1.2224879759996063 -1.570796437488251"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_0"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_1"/>
+  <joint name="l_hand_pinkie_skin_1_fixed_joint" type="fixed">
+    <origin xyz="0.003300265574117542 -0.0031322242728360483 -0.023281299102175357" rpy="-4.2144702671722384e-07 1.2201092037136552 -1.570796055245151"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_1"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_2"/>
+  <joint name="l_hand_pinkie_skin_2_fixed_joint" type="fixed">
+    <origin xyz="1.3068408375588314e-07 -0.0037586433186322377 -0.02519273065382599" rpy="-2.2343657636641088e-07 1.3057390607747252 -1.5707959184083247"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_2"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_3"/>
+  <joint name="l_hand_pinkie_skin_3_fixed_joint" type="fixed">
+    <origin xyz="0.003300038741161134 -0.004082136052822927 -0.02776766988141205" rpy="-3.141588133865973 1.5047765429447213 1.5708013920301542"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_3"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_4"/>
+  <joint name="l_hand_pinkie_skin_4_fixed_joint" type="fixed">
+    <origin xyz="0.005929609093259319 -0.0011923956670338298 -0.027999874696404914" rpy="-3.1415898130471933 1.2994447966707832 2.777159519806537"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_4"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_5"/>
+  <joint name="l_hand_pinkie_skin_5_fixed_joint" type="fixed">
+    <origin xyz="0 -0.0034769137961876972 -0.029835961106282116" rpy="-3.141592306229009 1.0862256881675525 1.5707971505010307"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_5"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_6"/>
+  <joint name="l_hand_pinkie_skin_6_fixed_joint" type="fixed">
+    <origin xyz="0.00330005058434088 -0.0018247895871311148 -0.03177174641585645" rpy="-3.1415921850758615 0.7785357768581953 2.5323865539300248"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_6"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_7"/>
+  <joint name="l_hand_pinkie_skin_7_fixed_joint" type="fixed">
+    <origin xyz="2.3837590162195665e-07 -0.00027333608447874247 -0.0332716667664561" rpy="-3.1415922498602584 0.6184195364791579 1.5713183551591798"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_7"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_8"/>
+  <joint name="l_hand_pinkie_skin_8_fixed_joint" type="fixed">
+    <origin xyz="-0.0032998784457741875 -0.0018249677112725515 -0.03177182202181561" rpy="3.1415926446474787 0.7785363484555708 0.6092078507312519"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_8"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_9"/>
+  <joint name="l_hand_pinkie_skin_9_fixed_joint" type="fixed">
+    <origin xyz="-0.0059293960995737485 -0.00119266530819645 -0.02800029141217969" rpy="3.1415908944349136 1.2994448560737986 0.364436254251993"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_9"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_10"/>
+  <joint name="l_hand_pinkie_skin_10_fixed_joint" type="fixed">
+    <origin xyz="-0.003299890288953923 -0.004082314176964308 -0.027767745487371154" rpy="-3.141588133865973 1.5047765429447213 1.5708013920301542"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_10"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_hand_pinkie_skin_11"/>
+  <joint name="l_hand_pinkie_skin_11_fixed_joint" type="fixed">
+    <origin xyz="-0.0032999869178418142 -0.003131483039578775 -0.02328161997209177" rpy="-4.2144702671722384e-07 1.2201092037136552 -1.570796055245151"/>
+    <parent link="l_hand_pinkie_2"/>
+    <child link="l_hand_pinkie_skin_11"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="base_link"/>
   <joint name="base_link_fixed_joint" type="fixed">
   <origin xyz="0 0 0" rpy="0 -0 0"/>

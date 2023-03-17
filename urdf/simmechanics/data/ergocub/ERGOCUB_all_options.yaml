@@ -475,40 +475,40 @@ exportedFrames:
     frameReferenceLink: l_hand_ring_2
     exportedFrameName: l_hand_ring_skin_11
   # l_pinkie
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_0
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_0
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_0
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_1
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_1
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_1
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_2
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_2
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_2
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_3
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_3
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_3
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_4
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_4
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_4
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_5
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_5
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_5
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_6
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_6
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_6
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_7
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_7
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_7
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_8
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_8
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_8
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_9
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_9
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_9
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_10
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_10
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_10
-  - frameName: SCSYS_L_PINKIE_SKIN_TAXEL_11
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_11
     frameReferenceLink: l_hand_pinkie_2
     exportedFrameName: l_hand_pinkie_skin_11
   # r_thumb
@@ -660,40 +660,40 @@ exportedFrames:
     frameReferenceLink: r_hand_ring_2
     exportedFrameName: r_hand_ring_skin_11
   # r_pinkie
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_0
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_0
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_0
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_1
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_1
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_1
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_2
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_2
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_2
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_3
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_3
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_3
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_4
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_4
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_4
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_5
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_5
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_5
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_6
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_6
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_6
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_7
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_7
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_7
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_8
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_8
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_8
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_9
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_9
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_9
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_10
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_10
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_10
-  - frameName: SCSYS_R_PINKIE_SKIN_TAXEL_11
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_11
     frameReferenceLink: r_hand_pinkie_2
     exportedFrameName: r_hand_pinkie_skin_11
 
@@ -937,50 +937,6 @@ sensors:
           <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
         </plugin>
 
-#assignedMasses:
-  # root_link   : 2.5751
-  # torso_1     : 1.6998
-  # torso_2     : 0.77098
-  # chest       : 7.5231
-  # l_shoulder_1: 0.78644
-  # r_shoulder_1: 0.78697
-  # l_shoulder_2: 0.42492
-  # r_shoulder_2: 0.42492
-  # l_shoulder_3: 0.2625
-  # r_shoulder_3: 0.2625
-  # l_upper_arm : 1.6203
-  # r_upper_arm : 1.6219
-  # r_hip_1     : 2.1623
-  # r_hip_2     : 1.7731
-  # r_hip_3     : 2.1635
-  # r_upper_leg : 0.90926
-  # r_lower_leg : 5.0761
-  # r_ankle_1   : 0.36569
-  # r_ankle_2   : 1.3771
-  # r_foot_front: 0.17964
-  # r_foot_rear : 0.17874
-  # l_hip_1     : 2.1611
-  # l_hip_2     : 1.7731
-  # l_hip_3     : 2.1622
-  # l_upper_leg : 0.90926
-  # l_lower_leg : 5.0486
-  # l_ankle_1   : 0.36569
-  # l_ankle_2   : 1.377
-  # l_foot_front: 0.17896
-  # l_foot_rear : 0.17851
-  # l_elbow_1   : 0.22161
-  # r_elbow_1   : 0.22157
-  # l_forearm   : 0.87311
-  # r_forearm   :  0.8686
-  # l_wrist_1   : 0.033183
-  # r_wrist_1   : 0.033183
-  # l_hand      : 0.25639
-  # r_hand      : 0.25705
-  # neck_1      : 0.36804
-  # neck_2      : 0.1214
-  # neck_3      : 0.18386
-  # head        : 1.8728
-
 assignedColors:
   root_link   : [0.70, 0.70, 0.70, 1]
   torso_1     : [0.70, 0.70, 0.70, 1]
@@ -1012,7 +968,7 @@ assignedColors:
   l_ankle_2   : [0.3, 0.3, 0.3, 1]
   l_foot_front: [1, 0.51, 0.0, 1]
   l_foot_rear : [1, 0.51, 0.0, 1]
-  l_elbow_1   : [0.3, 0.3, 0.3, 1]
+  l_forearm   : [0.3, 0.3, 0.3, 1]
   r_elbow_1   : [0.3, 0.3, 0.3, 1]
   l_forearm   : [0.3, 0.3, 0.3, 1]
   r_forearm   : [0.3, 0.3, 0.3, 1]
