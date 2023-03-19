@@ -5,17 +5,18 @@
  *                                                                            *
  ******************************************************************************/
 
-#include <yarp/os/ResourceFinder.h>
 #include <yarp/os/LogStream.h>
+#include <yarp/os/Network.h>
 #include <yarp/os/Bottle.h>
-#include "ergoCubEmotions.h"
 
-#include <opencv2/highgui.hpp>
 #include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
 #include <opencv2/videoio.hpp>
 
-using namespace cv;
+#include "ergoCubEmotions.h"
+
 using namespace yarp::os;
+using namespace cv;
 
 ErgoCubEmotions::ErgoCubEmotions()
 {
@@ -25,23 +26,15 @@ ErgoCubEmotions::~ErgoCubEmotions()
 {
 }
 
+bool ErgoCubEmotions::attach(RpcServer& source)
+{
+    return yarp().attachAsServer(source);
+}
+
 bool ErgoCubEmotions::configure(ResourceFinder& config)
 {
-    auto ret = rpcPort.open("/ergoCubEmotions/rpc");
+    rpcPort.open("/ergoCubEmotions/rpc");
     attach(rpcPort);
-    
-    // set window properties
-    namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
-    Mat start_img = imread("images/neu.png");
-    imshow("emotion", start_img);
-    int key = pollKey();
-    if(key == -1)
-    {
-        //
-    }
-    waitKey(0);
-
     // VideoCapture cap("images/video.mp4");
     // while(1)
     // {
@@ -53,7 +46,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& config)
     //         break;
     // }
     // cap.release();
-    return ret;
+    return true;
 }
 
 bool ErgoCubEmotions::close()
@@ -69,10 +62,11 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
+    //std::lock_guard<std::mutex> lg(mtx);
     return true;
 }
 
-bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
+/*bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
 {
     if(cmd.size() < 2)
     {
@@ -95,49 +89,49 @@ bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
             { 
                 case EMOTION_VOCAB_ANGRY:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_CUN:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_EVIL:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_HAPPY:
                 {                  
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_NEUTRAL:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SAD:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SHY:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
                 case EMOTION_VOCAB_SURPRISED:
                 {
-                    ok = getCommand(cmd.get(1).toString());
+                    ok = displayEmotion(cmd.get(1).toString());
                     reply.addVocab32(EMOTION_VOCAB_OK);
                     break;
                 }
@@ -151,24 +145,108 @@ bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
         }
     }
     return true;
-}
+}*/
 
-bool ErgoCubEmotions::getCommand(const std::string command)
+bool ErgoCubEmotions::startModule()
 {
-    Mat image = imread("images/" + command + ".png");
-
-    if(image.empty())
+    std::lock_guard<std::mutex> lg(mtx);
+    // set window properties
+    namedWindow("emotion", WND_PROP_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+    //use std::map to chose the correct image
+    Mat start_img = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
+    if(start_img.empty())
     {
         yDebug() << "Could not read the image!";
     }
-    
-    imshow("emotion", image);
+
+    imshow("emotion", start_img);
     int key = pollKey();
     if(key == -1)
     {
-        return -1;
+        return 1;
     }
     waitKey(0);
-    
+
+    return true;
+}
+
+bool ErgoCubEmotions::setHappy()
+{
+    std::lock_guard<std::mutex> lg(mtx);
+    Mat happy = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_1.png");
+    if(happy.empty())
+    {
+        yDebug() << "Could not read the image!";
+    }
+
+    imshow("emotion", happy);
+    int key = pollKey();
+    if(key == -1)
+    {
+        return 1;
+    }
+    waitKey(0);
+
+    return true;
+}
+
+bool ErgoCubEmotions::setAngry()
+{
+    std::lock_guard<std::mutex> lg(mtx);
+    Mat angry = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_0.png");
+    if(angry.empty())
+    {
+        yDebug() << "Could not read the image!";
+    }
+
+    imshow("emotion", angry);
+    int key = pollKey();
+    if(key == -1)
+    {
+        return 1;
+    }
+    waitKey(0);
+
+    return true;
+}
+
+bool ErgoCubEmotions::setShy()
+{
+    std::lock_guard<std::mutex> lg(mtx);
+    Mat shy = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_3.png");
+    if(shy.empty())
+    {
+        yDebug() << "Could not read the image!";
+    }
+
+    imshow("emotion", shy);
+    int key = pollKey();
+    if(key == -1)
+    {
+        return 1;
+    }
+    waitKey(0);
+
+    return true;
+}
+
+bool ErgoCubEmotions::setNeutral()
+{
+    std::lock_guard<std::mutex> lg(mtx);
+    Mat neutral = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
+    if(neutral.empty())
+    {
+        yDebug() << "Could not read the image!";
+    }
+
+    imshow("emotion", neutral);
+    int key = pollKey();
+    if(key == -1)
+    {
+        return 1;
+    }
+    waitKey(0);
+
     return true;
 }
