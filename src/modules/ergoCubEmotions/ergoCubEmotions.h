@@ -16,6 +16,9 @@
 #include <yarp/os/Bottle.h>
 #include <yarp/os/RpcServer.h>
 #include <yarp/os/BufferedPort.h>
+#include <yarp/os/ConnectionReader.h>
+
+#include "ergoCubEmotions_IDL.h"
 
 // define the vocabs
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_SET = yarp::os::createVocab32('s','e','t');
@@ -35,21 +38,26 @@ constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_SHY = yarp::os::createVocab32('s'
 constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_CUN = yarp::os::createVocab32('c','u','n');
 
 // ergoCubEmotions class definition
-class ErgoCubEmotions : public yarp::os::RFModule {
+class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
     private:
 
     public:
         ErgoCubEmotions();
         ~ErgoCubEmotions();
         
+        bool attach(yarp::os::RpcServer& source);
         bool configure(yarp::os::ResourceFinder& config);
         bool close();
         bool updateModule();
-        bool respond(const yarp::os::Bottle &cmd, yarp::os::Bottle &reply);
+        //bool respond(const yarp::os::Bottle &cmd, yarp::os::Bottle &reply);
         double getPeriod();
 
-        bool getCommand(const std::string command);
-        
+        bool startModule();
+        bool setHappy();
+        bool setNeutral();
+        bool setShy();
+        bool setAngry();
+
         std::mutex mtx;
         yarp::os::RpcServer rpcPort;
 };

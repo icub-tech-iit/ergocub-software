@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="yarpmanifest.xsl"?>
+
+<module>
+  <name>ergoCubEmotions</name>
+  <doxygen-group>ergoCubEmotions</doxygen-group>
+  <description>This module is responsible for interfacing with the robot's base to implement the navigation part.</description>
+  <copypolicy>Released under the terms of the BSD 3-Clause License.</copypolicy>
+  <version>0.6.0</version>
+
+  <description-long>
+   This moudule aims to keep the distance from a specified skeleton fixed. To this end, the robot will be navigating along an imaginary straight track.
+  </description-long>
+
+  <authors>
+    <author email="martina.gloria@iit.it"> Martina Gloria </author>
+  </authors>
+
+  <services>
+    <server>
+      <type>ergoCubEmotions_IDL</type>
+      <idl>idl.thrift</idl>
+      <port>/ergoCubEmotions/rpc</port>
+      <description>service port</description>
+    </server>
+  </services>
+
+</module>
