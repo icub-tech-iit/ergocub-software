@@ -51,12 +51,10 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         bool updateModule();
         double getPeriod();
 
-        bool startModule();
         bool setHappy();
         bool setNeutral();
         bool setShy();
         bool setAngry();
-        bool stopModule();
 
         std::mutex mtx;
         yarp::os::RpcServer cmdPort;

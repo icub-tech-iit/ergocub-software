@@ -8,10 +8,8 @@
 
 service ergoCubEmotions_IDL
 {
-        bool startModule();
         bool setHappy();
         bool setNeutral();
         bool setAngry();
         bool setShy();
-        bool stopModule();
 }
