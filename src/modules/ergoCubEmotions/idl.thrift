@@ -13,4 +13,5 @@ service ergoCubEmotions_IDL
         bool setNeutral();
         bool setAngry();
         bool setShy();
+        bool stopModule();
 }
