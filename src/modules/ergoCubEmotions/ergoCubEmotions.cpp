@@ -46,13 +46,25 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     //         break;
     // }
     // cap.release();
+    namedWindow("emotion", WND_PROP_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+    //use std::map to chose the correct image
+    Mat start_img = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
+    if(start_img.empty())
+    {
+        yDebug() << "Could not read the image!";
+    }
 
+    imshow("emotion", start_img);
+    waitKey(1000);
+    
     return true;
 }
 
 bool ErgoCubEmotions::close()
 {
     cmdPort.close();
+    destroyAllWindows();
     return true;
 }
 
@@ -64,6 +76,7 @@ double ErgoCubEmotions::getPeriod()
 bool ErgoCubEmotions::updateModule()
 {
     //std::lock_guard<std::mutex> lg(mtx);
+
     return true;
 }
 
@@ -148,29 +161,6 @@ bool ErgoCubEmotions::updateModule()
     return true;
 }*/
 
-bool ErgoCubEmotions::startModule()
-{
-    //std::lock_guard<std::mutex> lg(mtx);
-    // set window properties
-    namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
-    //use std::map to chose the correct image
-    Mat start_img = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
-    if(start_img.empty())
-    {
-        yDebug() << "Could not read the image!";
-    }
-
-    imshow("emotion", start_img);
-    int key = pollKey();
-    if(key == -1)
-    {
-        return 1;
-    }
-    waitKey(0);
-
-    return true;
-}
 
 bool ErgoCubEmotions::setHappy()
 {
@@ -180,14 +170,8 @@ bool ErgoCubEmotions::setHappy()
     {
         yDebug() << "Could not read the image!";
     }
-
     imshow("emotion", happy);
-    int key = pollKey();
-    if(key == -1)
-    {
-        return 1;
-    }
-    waitKey(0);
+    pollKey();
 
     return true;
 }
@@ -202,12 +186,7 @@ bool ErgoCubEmotions::setAngry()
     }
 
     imshow("emotion", angry);
-    int key = pollKey();
-    if(key == -1)
-    {
-        return 1;
-    }
-    waitKey(0);
+    pollKey();
 
     return true;
 }
@@ -222,12 +201,7 @@ bool ErgoCubEmotions::setShy()
     }
 
     imshow("emotion", shy);
-    int key = pollKey();
-    if(key == -1)
-    {
-        return 1;
-    }
-    waitKey(0);
+    pollKey();
 
     return true;
 }
@@ -242,21 +216,7 @@ bool ErgoCubEmotions::setNeutral()
     }
 
     imshow("emotion", neutral);
-    int key = pollKey();
-    if(key == -1)
-    {
-        return 1;
-    }
-    waitKey(0);
-
-    return true;
-}
-
-bool ErgoCubEmotions::stopModule()
-{
-    // std::lock_guard<std::mutex> lg(mtx);
-    destroyAllWindows();
-    stopModule();
+    pollKey();
 
     return true;
 }
