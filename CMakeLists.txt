@@ -21,6 +21,7 @@ include(AddUninstallTarget)
 option(ERGOCUB_MODEL_GENERATE_SIMMECHANICS "Generate models using the model generation pipeline from simmechanics" OFF)
 option(ERGOCUB_MODEL_COPY_TO_SRC "Copy to sources the generated urdf files" OFF)
 option(BUILD_TESTING "Run tests for the generated models" OFF)
+option(COMPILE_ergoCubEmotions "Compile the module controlling the ergoCub emotions" OFF)
 
 set(BUILD_PREFIX "ergoCub")
 add_subdirectory(urdf)
@@ -31,3 +32,9 @@ if (BUILD_TESTING)
   enable_testing()
   add_subdirectory(tests)
 endif()
+
+if(COMPILE_ergoCubEmotions)
+  add_subdirectory(src)
+endif() 
+
+

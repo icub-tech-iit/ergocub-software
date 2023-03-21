@@ -31,10 +31,10 @@ bool ErgoCubEmotions::attach(RpcServer& source)
     return yarp().attachAsServer(source);
 }
 
-bool ErgoCubEmotions::configure(ResourceFinder& config)
+bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
-    rpcPort.open("/ergoCubEmotions/rpc");
-    attach(rpcPort);
+    cmdPort.open("/ergoCubEmotions/rpc");
+    attach(cmdPort);
     // VideoCapture cap("images/video.mp4");
     // while(1)
     // {
@@ -46,12 +46,13 @@ bool ErgoCubEmotions::configure(ResourceFinder& config)
     //         break;
     // }
     // cap.release();
+
     return true;
 }
 
 bool ErgoCubEmotions::close()
 {
-    rpcPort.close();
+    cmdPort.close();
     return true;
 }
 
@@ -149,7 +150,7 @@ bool ErgoCubEmotions::updateModule()
 
 bool ErgoCubEmotions::startModule()
 {
-    std::lock_guard<std::mutex> lg(mtx);
+    //std::lock_guard<std::mutex> lg(mtx);
     // set window properties
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
@@ -247,6 +248,15 @@ bool ErgoCubEmotions::setNeutral()
         return 1;
     }
     waitKey(0);
+
+    return true;
+}
+
+bool ErgoCubEmotions::stopModule()
+{
+    // std::lock_guard<std::mutex> lg(mtx);
+    destroyAllWindows();
+    stopModule();
 
     return true;
 }
