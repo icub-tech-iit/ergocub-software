@@ -54,8 +54,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
-    //use std::map to chose the correct image
-    Mat start_img = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
+    Mat start_img = imread(path + "/expressions/images/exp_img_2.png");
     if(start_img.empty())
     {
         yDebug() << "Could not read the image!";
@@ -81,91 +80,8 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
-    //std::lock_guard<std::mutex> lg(mtx);
-
     return true;
 }
-
-/*bool ErgoCubEmotions::respond(const Bottle &cmd, Bottle &reply)
-{
-    if(cmd.size() < 2)
-    {
-        yError() << "Invalid command size: it must be 2";
-        return false;
-    }
-
-    switch (cmd.get(0).asVocab32())
-    {
-        case EMOTION_VOCAB_HELP:
-        {
-            // implement
-        }
-
-        case EMOTION_VOCAB_SET:
-        {
-            reply.clear();
-            bool ok = false;
-            switch (cmd.get(1).asVocab32())
-            { 
-                case EMOTION_VOCAB_ANGRY:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_CUN:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_EVIL:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_HAPPY:
-                {                  
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_NEUTRAL:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_SAD:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_SHY:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                case EMOTION_VOCAB_SURPRISED:
-                {
-                    ok = displayEmotion(cmd.get(1).toString());
-                    reply.addVocab32(EMOTION_VOCAB_OK);
-                    break;
-                }
-                default:
-                {   
-                    yDebug() << "Command not recognized!";
-                    reply.addVocab32(EMOTION_VOCAB_FAILED);
-                    break;
-                }
-            }
-        }
-    }
-    return true;
-}*/
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
 {    
@@ -176,8 +92,6 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         {    
             if(it->first.second == "image")
             {
-                //Mat img = imread(it->second);
-                yDebug() << path;
                 Mat img = imread(path + it->second);
                 if(img.empty())
                 {
