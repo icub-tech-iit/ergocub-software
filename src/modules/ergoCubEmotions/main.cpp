@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     }
     
     ResourceFinder rf;
-    //rf.setDefaultConfigFile("config.ini");
+    rf.setDefaultContext("ergoCubEmotions");
+    rf.setDefaultConfigFile("config.ini");
     rf.configure(argc, argv);
 
     ErgoCubEmotions ergoCubEmotions;

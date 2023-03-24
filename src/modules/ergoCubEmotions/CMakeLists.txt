@@ -18,12 +18,14 @@ source_group("IDL Files" FILES idl.thrift)
 source_group("DOC Files" FILES ${doc_files})
 add_executable(${PROJECT_NAME} ergoCubEmotions.cpp ergoCubEmotions.h main.cpp idl.thrift ${IDL_GEN_FILES} ${doc_files})
 
-# file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/images DESTINATION ${CMAKE_BINARY_DIR})
+yarp_install(FILES config.ini DESTINATION ${YARP_CONTEXTS_INSTALL_DIR}/${PROJECT_NAME})
+yarp_install(DIRECTORY expressions DESTINATION ${YARP_CONTEXTS_INSTALL_DIR}/${PROJECT_NAME})
 
 # Link the application with YARP and OpenCV libraries
 target_link_libraries(${PROJECT_NAME} YARP::YARP_os
                                       YARP::YARP_dev
                                       YARP::YARP_init
+                                      YARP::YARP_conf
                                       opencv_core
                                       opencv_highgui
                                       opencv_videoio)
