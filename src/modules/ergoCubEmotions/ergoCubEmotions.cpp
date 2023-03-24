@@ -36,6 +36,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
 
+    path = rf.getHomeContextPath();
     Bottle &bGroup = rf.findGroup("general");
     nexpressions = bGroup.find("num_expressions").asInt32();
     for (int i = 0; i < nexpressions; i++)
@@ -175,8 +176,9 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         {    
             if(it->first.second == "image")
             {
-                yDebug() << it->second;
-                Mat img = imread(it->second);
+                //Mat img = imread(it->second);
+                yDebug() << path;
+                Mat img = imread(path + it->second);
                 if(img.empty())
                 {
                     yDebug() << "Could not read the image!";
