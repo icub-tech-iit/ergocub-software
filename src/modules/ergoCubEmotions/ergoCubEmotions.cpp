@@ -35,17 +35,22 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
-    // VideoCapture cap("images/video.mp4");
-    // while(1)
-    // {
-    //     Mat frame;
-    //     cap >> frame;
-    //     imshow("emotion", frame);
-    //     char c=(char)waitKey(25);
-    //     if(c==27)
-    //         break;
-    // }
-    // cap.release();
+
+    Bottle &bGroup = rf.findGroup("general");
+    nexpressions = bGroup.find("num_expressions").asInt32();
+    for (int i = 0; i < nexpressions; i++)
+    {
+        std::ostringstream expression_i;
+        expression_i << "expression_" << i;
+        Bottle &bExpression = rf.findGroup(expression_i.str());
+        std::string name = bExpression.find("name").asString();
+        std::string type = bExpression.find("type").asString();
+        std::string file = bExpression.find("file").asString();
+        
+        std::pair<std::string, std::string> par = std::make_pair(name, type);
+        img_map[par] = file;
+    }
+
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
     //use std::map to chose the correct image
@@ -161,62 +166,42 @@ bool ErgoCubEmotions::updateModule()
     return true;
 }*/
 
-
-bool ErgoCubEmotions::setHappy()
-{
+bool ErgoCubEmotions::setEmotion(const std::string& command)
+{    
     std::lock_guard<std::mutex> lg(mtx);
-    Mat happy = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_1.png");
-    if(happy.empty())
+    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
     {
-        yDebug() << "Could not read the image!";
+        if(it->first.first == command)
+        {    
+            if(it->first.second == "image")
+            {
+                yDebug() << it->second;
+                Mat img = imread(it->second);
+                if(img.empty())
+                {
+                    yDebug() << "Could not read the image!";
+                }
+
+                imshow("emotion", img);
+                pollKey();
+            }
+
+            else if(it->first.second == "video")
+            {
+                // VideoCapture cap("images/video.mp4");
+                // while(1)
+                // {
+                //     Mat frame;
+                //     cap >> frame;
+                //     imshow("emotion", frame);
+                //     char c=(char)waitKey(25);
+                //     if(c==27)
+                //         break;
+                // }
+                // cap.release();
+            }
+        }
     }
-    imshow("emotion", happy);
-    pollKey();
-
-    return true;
-}
-
-bool ErgoCubEmotions::setAngry()
-{
-    std::lock_guard<std::mutex> lg(mtx);
-    Mat angry = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_0.png");
-    if(angry.empty())
-    {
-        yDebug() << "Could not read the image!";
-    }
-
-    imshow("emotion", angry);
-    pollKey();
-
-    return true;
-}
-
-bool ErgoCubEmotions::setShy()
-{
-    std::lock_guard<std::mutex> lg(mtx);
-    Mat shy = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_3.png");
-    if(shy.empty())
-    {
-        yDebug() << "Could not read the image!";
-    }
-
-    imshow("emotion", shy);
-    pollKey();
-
-    return true;
-}
-
-bool ErgoCubEmotions::setNeutral()
-{
-    std::lock_guard<std::mutex> lg(mtx);
-    Mat neutral = imread("/home/martinagloria/ergocub-software/src/modules/ergoCubEmotions/expressions/images/exp_img_2.png");
-    if(neutral.empty())
-    {
-        yDebug() << "Could not read the image!";
-    }
-
-    imshow("emotion", neutral);
-    pollKey();
 
     return true;
 }
