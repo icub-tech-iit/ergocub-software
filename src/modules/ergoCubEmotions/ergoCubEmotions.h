@@ -57,6 +57,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         yarp::os::RpcServer cmdPort;
 
         int nexpressions;
+        std::string path;
         std::map<std::pair<std::string, std::string>, std::string> img_map;
 };
 
