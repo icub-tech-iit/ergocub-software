@@ -2,7 +2,11 @@ name: C++ CI Workflow with conda dependencies
 
 on:
   push:
+    paths:
+      - 'src/**'
   pull_request:
+    paths:
+      - 'src/**'
   schedule:
   # * is a special character in YAML so you have to quote this string
   # Execute a "nightly" build at 2 AM UTC
@@ -43,7 +47,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -GNinja -DBUILD_TESTING:BOOL=ON \
+        cmake -GNinja \
               -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCOMPILE_ergoCubEmotions:BOOL=ON ..
 
     - name: Configure [Windows]
@@ -52,7 +56,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -G"Visual Studio 16 2019" -DBUILD_TESTING:BOOL=ON \
+        cmake -G"Visual Studio 16 2019" \
               -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCOMPILE_ergoCubEmotions:BOOL=ON ..
 
     - name: Build
