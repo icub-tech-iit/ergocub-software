@@ -47,7 +47,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -GNinja \
+        cmake -GNinja -DCMAKE_INSTALL_PREFIX=${GITHUB_WORKSPACE}/install \
               -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCOMPILE_ergoCubEmotions:BOOL=ON ..
 
     - name: Configure [Windows]
@@ -56,7 +56,7 @@ jobs:
       run: |
         mkdir -p build
         cd build
-        cmake -G"Visual Studio 16 2019" \
+        cmake -G"Visual Studio 16 2019" -DCMAKE_INSTALL_PREFIX=${GITHUB_WORKSPACE}/install \
               -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCOMPILE_ergoCubEmotions:BOOL=ON ..
 
     - name: Build
