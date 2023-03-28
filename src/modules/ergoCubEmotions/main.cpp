@@ -27,7 +27,5 @@ int main(int argc, char *argv[])
     rf.configure(argc, argv);
 
     ErgoCubEmotions ergoCubEmotions;
-    ergoCubEmotions.configure(rf);
-
-    return ergoCubEmotions.runModule();
+    return ergoCubEmotions.runModule(rf);
 }
