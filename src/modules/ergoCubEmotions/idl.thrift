@@ -20,7 +20,7 @@ service ergoCubEmotions_IDL
 {
         /**
         * Display a specific facial expression.
-        * @param command is the name of the emotion that it would be set.
+        * @param command is the name of the emotion that will be set.
         * @return true/false on success/failure.
         */
         bool setEmotion(1:string command);
