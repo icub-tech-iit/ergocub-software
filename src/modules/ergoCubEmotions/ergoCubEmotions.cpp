@@ -36,7 +36,18 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
 
-    path = rf.getHomeContextPath();
+    auto filePath = rf.findPath("config.ini");
+    auto last_slash_idx = filePath.rfind('/');
+    if (std::string::npos != last_slash_idx)
+    {
+        path = filePath.substr(0, last_slash_idx);
+    }
+
+    else {
+        yError() <<"Cannot find config.ini";
+        return false;
+    }
+
     Bottle &bGroup = rf.findGroup("general");
     nexpressions = bGroup.find("num_expressions").asInt32();
     for (int i = 0; i < nexpressions; i++)
@@ -57,7 +68,8 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     Mat start_img = imread(path + "/expressions/images/exp_img_2.png");
     if(start_img.empty())
     {
-        yDebug() << "Could not read the image!";
+        yError() << "Could not read the image in"<<path;
+        return false;
     }
 
     imshow("emotion", start_img);
