@@ -4,12 +4,13 @@
 <module>
   <name>ergoCubEmotions</name>
   <doxygen-group>ergoCubEmotions</doxygen-group>
-  <description>This module is responsible for interfacing with the robot's base to implement the navigation part.</description>
+  <description>This module is responsible for controlling the ergoCub facial expressions.</description>
   <copypolicy>Released under the terms of the BSD 3-Clause License.</copypolicy>
   <version>0.6.0</version>
 
   <description-long>
-   This moudule aims to keep the distance from a specified skeleton fixed. To this end, the robot will be navigating along an imaginary straight track.
+   This moudule aims to set the ergoCub facial expressions. It makes use of OpenCV libraries in order to visualize the images and the 
+   videos stored in a context called 'ergoCubEmotions' and installed in '${YARP_CONTEXTS_INSTALL_DIR}/ergoCubEmotions'.
   </description-long>
 
   <authors>
