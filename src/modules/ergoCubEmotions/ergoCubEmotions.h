@@ -39,7 +39,8 @@ constexpr  yarp::conf::vocab32_t EMOTION_VOCAB_CUN = yarp::os::createVocab32('c'
 
 // ergoCubEmotions class definition
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
-    private:
+    protected:
+        yarp::os::ResourceFinder *rf;
 
     public:
         ErgoCubEmotions();

@@ -35,19 +35,8 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
-
-    auto filePath = rf.findPath("config.ini");
-    auto last_slash_idx = filePath.rfind('/');
-    if (std::string::npos != last_slash_idx)
-    {
-        path = filePath.substr(0, last_slash_idx);
-    }
-
-    else {
-        yError() <<"Cannot find config.ini";
-        return false;
-    }
-
+    
+    this->rf=&rf;
     Bottle &bGroup = rf.findGroup("general");
     nexpressions = bGroup.find("num_expressions").asInt32();
     for (int i = 0; i < nexpressions; i++)
@@ -65,10 +54,11 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
-    Mat start_img = imread(path + "/expressions/images/exp_img_2.png");
+    path = rf.findFile("expressions/images/exp_img_2.png");
+    Mat start_img = imread(path);
     if(start_img.empty())
     {
-        yError() << "Could not read the image in"<<path;
+        yError() << "Could not read the image";
         return false;
     }
 
@@ -104,7 +94,8 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         {    
             if(it->first.second == "image")
             {
-                Mat img = imread(path + it->second);
+                path = rf->findFile(it->second);
+                Mat img = imread(path);
                 if(img.empty())
                 {
                     yDebug() << "Could not read the image!";
