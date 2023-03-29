@@ -7,7 +7,6 @@
 
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Network.h>
-#include <yarp/os/Bottle.h>
 
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
@@ -33,9 +32,6 @@ bool ErgoCubEmotions::attach(RpcServer& source)
 
 bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
-    cmdPort.open("/ergoCubEmotions/rpc");
-    attach(cmdPort);
-    
     this->rf=&rf;
     Bottle &bGroup = rf.findGroup("general");
     nexpressions = bGroup.find("num_expressions").asInt32();
@@ -48,8 +44,8 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
         
-        std::pair<std::string, std::string> par = std::make_pair(name, type);
-        img_map[par] = file;
+        par = std::make_pair(type, file);
+        img_map[name] = par;
     }
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
@@ -65,6 +61,9 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     imshow("emotion", start_img);
     waitKey(1000);
     
+    cmdPort.open("/ergoCubEmotions/rpc");
+    attach(cmdPort);
+
     return true;
 }
 
@@ -86,15 +85,22 @@ bool ErgoCubEmotions::updateModule()
 }
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
-{    
+{   
     std::lock_guard<std::mutex> lg(mtx);
+
+    if(img_map.count(command) < 1)
+    {
+        yError() << "Command not found!";
+        return false;
+    }
+
     for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
     {
-        if(it->first.first == command)
-        {    
-            if(it->first.second == "image")
+        if(it->first == command)
+        {   
+            if(it->second.first == "image")
             {
-                path = rf->findFile(it->second);
+                path = rf->findFile(it->second.second);
                 Mat img = imread(path);
                 if(img.empty())
                 {
@@ -105,22 +111,31 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
                 pollKey();
             }
 
-            else if(it->first.second == "video")
+            else if(it->second.first == "video")
             {
-                // VideoCapture cap("images/video.mp4");
-                // while(1)
-                // {
-                //     Mat frame;
-                //     cap >> frame;
-                //     imshow("emotion", frame);
-                //     char c=(char)waitKey(25);
-                //     if(c==27)
-                //         break;
-                // }
-                // cap.release();
+                int frame_counter = 0;
+                path = rf->findFile(it->second.second);
+                VideoCapture cap(path);
+                Mat frame;
+                for( ; ; )
+                {
+                    frame_counter += 1;
+                    if(frame_counter == cap.get(CAP_PROP_FRAME_COUNT))
+                    {
+                        frame_counter = 0;
+                        cap.set(CAP_PROP_POS_FRAMES, 0);
+                        //VideoCapture cap(path);
+                    }
+                    
+                    cap >> frame;
+                    if(frame.empty())
+                        break;
+                    imshow("emotion", frame);
+                    pollKey();
+                }
             }
         }
     }
-
+    
     return true;
 }
