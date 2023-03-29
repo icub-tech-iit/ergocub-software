@@ -59,7 +59,8 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
 
         int nexpressions;
         std::string path;
-        std::map<std::pair<std::string, std::string>, std::string> img_map;
+        std::pair<std::string, std::string> par;
+        std::map<std::string, std::pair<std::string, std::string>> img_map;
 };
 
 #endif
