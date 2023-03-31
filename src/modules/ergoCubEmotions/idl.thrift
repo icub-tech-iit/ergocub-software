@@ -24,4 +24,10 @@ service ergoCubEmotions_IDL
         * @return true/false on success/failure.
         */
         bool setEmotion(1:string command);
+
+        /**
+        * Print the list of all the available facial expressions.
+        * @return a list of commands.
+        */
+        list<string> availableEmotions();
 }

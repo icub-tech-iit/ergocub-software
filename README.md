@@ -46,6 +46,18 @@ make
 (make install)
 ```
 
+## ergoCubEmotions 
+This repo contains the `ergoCubEmotions` module: it allows to display different facial expressions on ergoCub.
+This module can be run enabling the cmake flag `COMPLILE_ergoCubEmotions` and it needs [OpenCV v4.x](https://github.com/opencv/opencv) or higher to be used.
+### Usage
+```sh
+mkdir build
+cd build
+cmake -DCOMPILE_ergoCubEmotions=BOOL:ON ..
+make
+(make install)
+```
+
 ### Automatic generation
 [This GitHub Action](/.github/workflows/generate_models.yml) generates automatically the urdf everytime a commit in `urdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
 

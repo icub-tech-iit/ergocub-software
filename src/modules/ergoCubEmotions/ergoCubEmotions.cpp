@@ -44,7 +44,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
         
-        par = std::make_pair(type, file);
+        std::pair<std::string, std::string> par = std::make_pair(type, file);
         img_map[name] = par;
     }
 
@@ -99,7 +99,7 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         if(it->first == command)
         {   
             if(it->second.first == "image")
-            {
+            {   
                 path = rf->findFile(it->second.second);
                 Mat img = imread(path);
                 if(img.empty())
@@ -115,27 +115,39 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
             {
                 int frame_counter = 0;
                 path = rf->findFile(it->second.second);
-                VideoCapture cap(path);
-                Mat frame;
-                for( ; ; )
+                VideoCapture cap(path, CAP_FFMPEG);
+                while(cap.isOpened())
                 {
+                    Mat frame;
                     frame_counter += 1;
                     if(frame_counter == cap.get(CAP_PROP_FRAME_COUNT))
                     {
                         frame_counter = 0;
                         cap.set(CAP_PROP_POS_FRAMES, 0);
-                        //VideoCapture cap(path);
+                        continue;
                     }
-                    
                     cap >> frame;
                     if(frame.empty())
                         break;
                     imshow("emotion", frame);
-                    pollKey();
+                    pollKey();  
                 }
             }
         }
     }
     
     return true;
+}
+
+std::vector<std::string> ErgoCubEmotions::availableEmotions()
+{
+    std::vector<std::string> cmd;
+    cmd.push_back("Available command");
+
+    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+    {
+        cmd.push_back(it->first);
+    }
+
+    return cmd;
 }
