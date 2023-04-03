@@ -10,10 +10,4 @@
             <node>localhost</node>
         </module>
 
-        <module>
-            <name>ergoCubEmotions</name>
-            <parameters>--context ergoCubEmotions --from config.ini </parameters>
-            <node>ergocub-head</node>
-        </module>
-
 </application>

@@ -18,8 +18,8 @@ source_group("IDL Files" FILES idl.thrift)
 source_group("DOC Files" FILES ${doc_files})
 add_executable(${PROJECT_NAME} ergoCubEmotions.cpp ergoCubEmotions.h main.cpp idl.thrift ${IDL_GEN_FILES} ${doc_files})
 
-install(FILES config.ini DESTINATION ${YARP_CONTEXTS_INSTALL_DIR}/${PROJECT_NAME})
-install(FILES emotionHandler.xml DESTINATION ${YARP_APPLICATIONS_INSTALL_DIR}/${PROJECT_NAME})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/app/conf/config.ini DESTINATION ${YARP_CONTEXTS_INSTALL_DIR}/${PROJECT_NAME})
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/app/scripts/emotionHandler.xml DESTINATION ${YARP_APPLICATIONS_INSTALL_DIR}/${PROJECT_NAME})
 install(DIRECTORY expressions DESTINATION ${YARP_CONTEXTS_INSTALL_DIR}/${PROJECT_NAME})
 
 # Link the application with YARP and OpenCV libraries
