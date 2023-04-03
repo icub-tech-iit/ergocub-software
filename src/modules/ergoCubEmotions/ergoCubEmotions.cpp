@@ -142,7 +142,7 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
 std::vector<std::string> ErgoCubEmotions::availableEmotions()
 {
     std::vector<std::string> cmd;
-    cmd.push_back("Available command");
+    //cmd.push_back("Available command");
 
     for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
     {
