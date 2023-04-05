@@ -142,6 +142,343 @@ macro(generate_ergocub_simmechanics)
 ")
     endif()
 
+    if (${GIVTWO_YARP_ROBOT_NAME} STREQUAL "ergoCubGazeboV1_noContacts")
+      message( "DEBUG ergoCubGazeboV1_noContacts collisions assignement" )
+      set(ASSIGNED_COLLISION_GEOMETRIES
+"assignedCollisionGeometry:
+      - linkName: r_foot_front
+        geometricShape:
+          shape: box
+          size: 0.117 0.100 0.006
+          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      - linkName: r_foot_rear
+        geometricShape:
+          shape: box
+          size: 0.117 0.100 0.006
+          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      - linkName: l_foot_front
+        geometricShape:
+          shape: box
+          size: 0.117 0.100 0.006
+          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      - linkName: l_foot_rear
+        geometricShape:
+          shape: box
+          size: 0.117 0.100 0.006
+          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      - linkName: r_hip_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hip_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hip_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_upper_leg
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_lower_leg
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_ankle_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_ankle_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hip_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hip_2
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hip_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_upper_leg
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_lower_leg
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_ankle_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_ankle_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: torso_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: torso_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: chest
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: neck_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: neck_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: head
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_shoulder_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_shoulder_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_shoulder_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_upperarm
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_forearm
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_wrist_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_wrist_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_palm
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_pinkie_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_pinkie_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_thumb_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_thumb_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_thumb_3
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_middle_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_middle_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_ring_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_ring_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_index_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_index_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: r_hand_index_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_shoulder_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_shoulder_2
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_shoulder_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_upperarm
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_forearm
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_wrist_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_wrist_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_palm
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_pinkie_1
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_pinkie_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_thumb_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_thumb_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_thumb_3
+        geometricShape:
+          shape: box
+          size: 0.000 0.000 0.000
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_middle_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_middle_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_ring_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_ring_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_index_1
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_index_2
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: l_hand_index_3
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: realsense
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+      - linkName: root_link
+        geometricShape:
+          shape: box
+          size: 0.0 0.0 0.0
+          origin: \"0.0 0.0 0.0 0.0 0.0 0.0\"
+    ")
+    endif()
+
     set(MESH_FILE_FORMAT "filenameformatchangeext: \"package://iCub/meshes/simmechanics/%s-binary.stl\"")
     set(ANKLE_PITCH_ROM "-35,35")
     set(CUSTOM_EPSILON "")
@@ -246,6 +583,11 @@ endmacro()
 set(model-simmechanics-generated-models "")
 
 generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1
+                           SIMMECHANICS_XML "ergocub/SIM_ERGOCUB_1-0.xml"
+                           YAML_TEMPLATE "ergocub/ERGOCUB_all_options_gazebo.yaml.in"
+                           CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv"
+                           ERGOCUB_COLLISION_GEOM_MOD)
+generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1_noContacts
                            SIMMECHANICS_XML "ergocub/SIM_ERGOCUB_1-0.xml"
                            YAML_TEMPLATE "ergocub/ERGOCUB_all_options_gazebo.yaml.in"
                            CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv"
