@@ -74,7 +74,7 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
-    imshow("emotion", start_img);
+    imshow("emotion", img);
     pollKey();
     return true;
 }
