@@ -8,8 +8,6 @@
 #ifndef __ERGOCUBEMOTIONS__
 #define __ERGOCUBEMOTIONS__
 
-#include <mutex>
-
 #include <yarp/os/Vocab.h>
 #include <yarp/os/RFModule.h>
 #include <yarp/os/ResourceFinder.h>
@@ -17,6 +15,10 @@
 #include <yarp/os/RpcServer.h>
 #include <yarp/os/BufferedPort.h>
 #include <yarp/os/ConnectionReader.h>
+
+#include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/videoio.hpp>
 
 #include "ergoCubEmotions_IDL.h"
 
@@ -54,12 +56,12 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         bool setEmotion(const std::string& command);
         std::vector<std::string> availableEmotions();
 
-        std::mutex mtx;
         yarp::os::RpcServer cmdPort;
 
         int nexpressions;
         std::string path;
         std::map<std::string, std::pair<std::string, std::string>> img_map;
+        cv::Mat img;
 };
 
 #endif

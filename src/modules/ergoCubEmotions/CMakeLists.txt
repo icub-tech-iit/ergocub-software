@@ -9,7 +9,7 @@ project(ergoCubEmotions)
 cmake_minimum_required(VERSION 3.12)
 
 find_package(YARP 3.7.2 REQUIRED)
-find_package(OpenCV 4.5.4 REQUIRED)
+find_package(OpenCV 4.2.0 REQUIRED)
 
 set(doc_files ${PROJECT_NAME}.xml)
 yarp_add_idl(IDL_GEN_FILES idl.thrift)
