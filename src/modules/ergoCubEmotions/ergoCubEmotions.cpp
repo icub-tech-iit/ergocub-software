@@ -8,10 +8,6 @@
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Network.h>
 
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/videoio.hpp>
-
 #include "ergoCubEmotions.h"
 
 using namespace yarp::os;
@@ -48,19 +44,16 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         img_map[name] = par;
     }
 
-    namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
     path = rf.findFile("expressions/images/exp_img_2.png");
-    Mat start_img = imread(path);
-    if(start_img.empty())
+    img = imread(path);
+    if(img.empty())
     {
         yError() << "Could not read the image";
         return false;
     }
+    namedWindow("emotion", WND_PROP_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
 
-    imshow("emotion", start_img);
-    waitKey(1000);
-    
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
 
@@ -81,13 +74,13 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
+    imshow("emotion", start_img);
+    pollKey();
     return true;
 }
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
 {   
-    std::lock_guard<std::mutex> lg(mtx);
-
     if(img_map.count(command) < 1)
     {
         yError() << "Command not found!";
@@ -101,38 +94,39 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
             if(it->second.first == "image")
             {   
                 path = rf->findFile(it->second.second);
-                Mat img = imread(path);
+                Mat img_tmp = imread(path);
                 if(img.empty())
                 {
                     yDebug() << "Could not read the image!";
                 }
-
-                imshow("emotion", img);
-                pollKey();
-            }
-
-            else if(it->second.first == "video")
-            {
-                int frame_counter = 0;
-                path = rf->findFile(it->second.second);
-                VideoCapture cap(path, CAP_FFMPEG);
-                while(cap.isOpened())
+                else
                 {
-                    Mat frame;
-                    frame_counter += 1;
-                    if(frame_counter == cap.get(CAP_PROP_FRAME_COUNT))
-                    {
-                        frame_counter = 0;
-                        cap.set(CAP_PROP_POS_FRAMES, 0);
-                        continue;
-                    }
-                    cap >> frame;
-                    if(frame.empty())
-                        break;
-                    imshow("emotion", frame);
-                    pollKey();  
+                    img = img_tmp;
                 }
             }
+
+            // else if(it->second.first == "video")
+            // {
+            //     int frame_counter = 0;
+            //     path = rf->findFile(it->second.second);
+            //     VideoCapture cap(path, CAP_FFMPEG);
+            //     while(cap.isOpened())
+            //     {
+            //         Mat frame;
+            //         frame_counter += 1;
+            //         if(frame_counter == cap.get(CAP_PROP_FRAME_COUNT))
+            //         {
+            //             frame_counter = 0;
+            //             cap.set(CAP_PROP_POS_FRAMES, 0);
+            //             continue;
+            //         }
+            //         cap >> frame;
+            //         if(frame.empty())
+            //             break;
+            //         imshow("emotion", frame);
+            //         pollKey();  
+            //     }
+            // }
         }
     }
     
@@ -142,7 +136,6 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
 std::vector<std::string> ErgoCubEmotions::availableEmotions()
 {
     std::vector<std::string> cmd;
-    //cmd.push_back("Available command");
 
     for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
     {
