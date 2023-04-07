@@ -45,6 +45,7 @@ cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=
 make
 (make install)
 ```
+
 ### Automatic generation
 [This GitHub Action](/.github/workflows/generate_models.yml) generates automatically the urdf everytime a commit in `urdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
 
