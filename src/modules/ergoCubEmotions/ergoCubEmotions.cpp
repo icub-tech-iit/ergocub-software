@@ -43,7 +43,8 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::pair<std::string, std::string> par = std::make_pair(type, file);
         img_map[name] = par;
     }
-
+    namedWindow("emotion", WND_PROP_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
     path = rf.findFile("expressions/images/exp_img_2.png");
     img = imread(path);
     if(img.empty())
@@ -51,12 +52,11 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         yError() << "Could not read the image";
         return false;
     }
-    namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
+    imshow("emotion", img);
+    waitKey(1000);
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
-
     return true;
 }
 
@@ -74,8 +74,42 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
-    imshow("emotion", img);
-    pollKey();
+    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+    {
+        if(it->first == command)
+        {   
+            if(it->second.first == "image")
+            {   
+                path = rf->findFile(it->second.second);
+                Mat img_tmp = imread(path);
+                if(img_tmp.empty())
+                {
+                    yDebug() << "Could not read the image!";
+                }
+                else
+                {
+                    img = img_tmp;
+                    imshow("emotion", img);
+                    pollKey();
+                }
+            }
+
+            else if(it->second.first == "video")
+            {
+                path = rf->findFile(it->second.second);
+                VideoCapture cap(path);
+                while(cap.isOpened())
+                {
+                    Mat frame;
+                    cap >> frame;
+                    if(frame.empty())
+                        break;
+                    imshow("emotion", frame);
+                    pollKey();  
+                }
+            }
+        }
+    }
     return true;
 }
 
@@ -87,50 +121,11 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         return false;
     }
 
-    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+    else
     {
-        if(it->first == command)
-        {   
-            if(it->second.first == "image")
-            {   
-                path = rf->findFile(it->second.second);
-                Mat img_tmp = imread(path);
-                if(img.empty())
-                {
-                    yDebug() << "Could not read the image!";
-                }
-                else
-                {
-                    img = img_tmp;
-                }
-            }
-
-            // else if(it->second.first == "video")
-            // {
-            //     int frame_counter = 0;
-            //     path = rf->findFile(it->second.second);
-            //     VideoCapture cap(path, CAP_FFMPEG);
-            //     while(cap.isOpened())
-            //     {
-            //         Mat frame;
-            //         frame_counter += 1;
-            //         if(frame_counter == cap.get(CAP_PROP_FRAME_COUNT))
-            //         {
-            //             frame_counter = 0;
-            //             cap.set(CAP_PROP_POS_FRAMES, 0);
-            //             continue;
-            //         }
-            //         cap >> frame;
-            //         if(frame.empty())
-            //             break;
-            //         imshow("emotion", frame);
-            //         pollKey();  
-            //     }
-            // }
-        }
+        this->command = command;
+        return true;
     }
-    
-    return true;
 }
 
 std::vector<std::string> ErgoCubEmotions::availableEmotions()
