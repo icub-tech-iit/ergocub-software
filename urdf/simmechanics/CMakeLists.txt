@@ -142,8 +142,8 @@ macro(generate_ergocub_simmechanics)
 ")
     endif()
 
-    if (${GIVTWO_YARP_ROBOT_NAME} STREQUAL "ergoCubGazeboV1_noContacts")
-      message( "DEBUG ergoCubGazeboV1_noContacts collisions assignement" )
+    if (${GIVTWO_YARP_ROBOT_NAME} STREQUAL "ergoCubGazeboV1_minContacts")
+      message( "DEBUG ergoCubGazeboV1_minContacts collisions assignement" )
       set(ASSIGNED_COLLISION_GEOMETRIES
 "assignedCollisionGeometry:
       - linkName: r_foot_front
@@ -587,7 +587,7 @@ generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1
                            YAML_TEMPLATE "ergocub/ERGOCUB_all_options_gazebo.yaml.in"
                            CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv"
                            ERGOCUB_COLLISION_GEOM_MOD)
-generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1_noContacts
+generate_ergocub_simmechanics(YARP_ROBOT_NAME ergoCubGazeboV1_minContacts
                            SIMMECHANICS_XML "ergocub/SIM_ERGOCUB_1-0.xml"
                            YAML_TEMPLATE "ergocub/ERGOCUB_all_options_gazebo.yaml.in"
                            CSV_TEMPLATE "ergocub/ERGOCUB_joint_all_parameters.csv"
