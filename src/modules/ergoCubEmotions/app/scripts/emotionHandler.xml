@@ -1,0 +1,13 @@
+<application>
+<name>ergoCubEmotions</name>
+
+        <dependencies>
+        </dependencies>
+
+        <module>
+            <name>ergoCubEmotions</name>
+            <parameters>--context ergoCubEmotions --from config.ini </parameters>
+            <node>localhost</node>
+        </module>
+
+</application>

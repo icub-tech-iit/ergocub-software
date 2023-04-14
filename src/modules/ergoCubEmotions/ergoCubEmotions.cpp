@@ -7,11 +7,6 @@
 
 #include <yarp/os/LogStream.h>
 #include <yarp/os/Network.h>
-#include <yarp/os/Bottle.h>
-
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/videoio.hpp>
 
 #include "ergoCubEmotions.h"
 
@@ -33,9 +28,6 @@ bool ErgoCubEmotions::attach(RpcServer& source)
 
 bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
-    cmdPort.open("/ergoCubEmotions/rpc");
-    attach(cmdPort);
-    
     this->rf=&rf;
     Bottle &bGroup = rf.findGroup("general");
     nexpressions = bGroup.find("num_expressions").asInt32();
@@ -48,23 +40,23 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
         
-        std::pair<std::string, std::string> par = std::make_pair(name, type);
-        img_map[par] = file;
+        std::pair<std::string, std::string> par = std::make_pair(type, file);
+        img_map[name] = par;
     }
-
     namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
     path = rf.findFile("expressions/images/exp_img_2.png");
-    Mat start_img = imread(path);
-    if(start_img.empty())
+    img = imread(path);
+    if(img.empty())
     {
         yError() << "Could not read the image";
         return false;
     }
-
-    imshow("emotion", start_img);
+    imshow("emotion", img);
     waitKey(1000);
-    
+
+    cmdPort.open("/ergoCubEmotions/rpc");
+    attach(cmdPort);
     return true;
 }
 
@@ -82,45 +74,68 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
+    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+    {
+        if(it->first == command)
+        {   
+            if(it->second.first == "image")
+            {   
+                path = rf->findFile(it->second.second);
+                Mat img_tmp = imread(path);
+                if(img_tmp.empty())
+                {
+                    yDebug() << "Could not read the image!";
+                }
+                else
+                {
+                    img = img_tmp;
+                    imshow("emotion", img);
+                    pollKey();
+                }
+            }
+
+            else if(it->second.first == "video")
+            {
+                path = rf->findFile(it->second.second);
+                VideoCapture cap(path);
+                while(cap.isOpened())
+                {
+                    Mat frame;
+                    cap >> frame;
+                    if(frame.empty())
+                        break;
+                    imshow("emotion", frame);
+                    pollKey();  
+                }
+            }
+        }
+    }
     return true;
 }
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
-{    
-    std::lock_guard<std::mutex> lg(mtx);
-    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+{   
+    if(img_map.count(command) < 1)
     {
-        if(it->first.first == command)
-        {    
-            if(it->first.second == "image")
-            {
-                path = rf->findFile(it->second);
-                Mat img = imread(path);
-                if(img.empty())
-                {
-                    yDebug() << "Could not read the image!";
-                }
-
-                imshow("emotion", img);
-                pollKey();
-            }
-
-            else if(it->first.second == "video")
-            {
-                // VideoCapture cap("images/video.mp4");
-                // while(1)
-                // {
-                //     Mat frame;
-                //     cap >> frame;
-                //     imshow("emotion", frame);
-                //     char c=(char)waitKey(25);
-                //     if(c==27)
-                //         break;
-                // }
-                // cap.release();
-            }
-        }
+        yError() << "Command not found!";
+        return false;
     }
 
-    return true;
+    else
+    {
+        this->command = command;
+        return true;
+    }
+}
+
+std::vector<std::string> ErgoCubEmotions::availableEmotions()
+{
+    std::vector<std::string> cmd;
+
+    for(auto it = img_map.cbegin(); it!= img_map.cend(); it++)
+    {
+        cmd.push_back(it->first);
+    }
+
+    return cmd;
 }
