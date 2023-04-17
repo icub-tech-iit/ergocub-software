@@ -60,6 +60,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         transitionMap[par] = file;
     }
 
+    isTransition = true;
     command = "neutral";
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
@@ -99,7 +100,6 @@ bool ErgoCubEmotions::updateModule()
         {   
             if(it->second.first == "image")
             {   
-                showTransition();
                 path = rf->findFile(it->second.second);
                 Mat img_tmp = imread(path);
                 if(img_tmp.empty())
@@ -116,7 +116,10 @@ bool ErgoCubEmotions::updateModule()
             }
             else if(it->second.first == "video")
             {
-                showTransition();
+                if(isTransition)
+                {
+                    showTransition();
+                }
                 path = rf->findFile(it->second.second);
                 VideoCapture cap(path);
                 Mat frame;
@@ -125,7 +128,9 @@ bool ErgoCubEmotions::updateModule()
                 {
                     cap >> frame;
                     if(frame.empty())
+                    {
                         break;
+                    }
                     imshow("emotion", frame);
                     pollKey();  
                 }
@@ -147,8 +152,9 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
     {
         cmd_tmp = this->command;
         this->command = command;
-        return true;
+        isTransition = true;
     }
+    return true;
 }
 
 void ErgoCubEmotions::showTransition()
@@ -165,11 +171,14 @@ void ErgoCubEmotions::showTransition()
             {
                 capTrans >> frameTrans;
                 if(frameTrans.empty())
+                {
                     break;
+                }
                 imshow("emotion", frameTrans);
                 pollKey();
             }
             capTrans.release();
+            isTransition = false;
             return;
         }
     }

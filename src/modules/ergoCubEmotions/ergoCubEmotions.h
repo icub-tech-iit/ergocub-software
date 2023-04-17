@@ -11,6 +11,7 @@
 #include <yarp/os/RFModule.h>
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/RpcServer.h>
+#include <yarp/os/Thread.h>
 
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
@@ -21,7 +22,6 @@
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
     protected:
         yarp::os::ResourceFinder *rf;
-
     public:
         ErgoCubEmotions();
         ~ErgoCubEmotions();
@@ -39,6 +39,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         yarp::os::RpcServer cmdPort;
         int nExpressions;
         int nTransitions;
+        bool isTransition;
         std::string path;
         std::map<std::string, std::pair<std::string, std::string>> imgMap;
         std::map<std::pair<std::string, std::string>, std::string> transitionMap;
