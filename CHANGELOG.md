@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### urdf
 
 - Fixed pinkie taxels exportation (https://github.com/icub-tech-iit/ergocub-software/issues/79)
+- Added the model `ergoCubGazeboV1_minContacts`
 
 ### ergoCubEmotions
 - Added first draft of `ergoCubEmotions`
