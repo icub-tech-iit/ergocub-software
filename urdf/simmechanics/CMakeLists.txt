@@ -143,7 +143,6 @@ macro(generate_ergocub_simmechanics)
     endif()
 
     if (${GIVTWO_YARP_ROBOT_NAME} STREQUAL "ergoCubGazeboV1_minContacts")
-      message( "DEBUG ergoCubGazeboV1_minContacts collisions assignement" )
       set(ASSIGNED_COLLISION_GEOMETRIES
 "assignedCollisionGeometry:
       - linkName: r_foot_front
