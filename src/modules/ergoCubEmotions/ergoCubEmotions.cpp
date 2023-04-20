@@ -77,16 +77,22 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
             yError() << "Transition" << j << "is pointing to a non existing emotion!";
             return false;
         }
+
+        if(transitionMap.count({source, destination}))
+        {
+            yError() << "Transition from" << source << "to" << destination << "is not unique!";
+            return false;
+        }
+
         std::string file = bTransition.find("file").asString();
-        
         std::pair<std::string, std::string> par = std::make_pair(source, destination);
         transitionMap[par] = file;
     }
 
-    if(transitionMap.size() > nTransitions)
-    {
-        yError() << "The available transitions are higher than the actual number of inputs!";
-    }
+    // if(transitionMap.size() > nTransitions)
+    // {
+    //     yError() << "The available transitions are higher than the actual number of inputs!";
+    // }
 
     isTransition = true;
     command = "neutral";
