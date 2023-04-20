@@ -3145,6 +3145,28 @@
     </force_torque>
     <origin rpy="-3.1415924092528633 -2.2277470853981803e-08 1.5707964070692688" xyz="0.0 0.0 0.0"/>
   </sensor>
+  <gazebo reference="l_leg_ft_sensor">
+    <sensor name="l_leg_ft_sensor" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>0.0 0.0 0.0 3.141592653589793 -0.0 2.6179934742070086</pose>
+      <plugin name="left_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+  <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="l_leg_ft_sensor" type="force_torque">
+    <parent joint="l_leg_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="3.141592653589793 -0.0 2.6179934742070086" xyz="0.0 0.0 0.0"/>
+  </sensor>
   <gazebo reference="l_foot_front_ft_sensor">
     <sensor name="l_foot_front_ft_sensor" type="force_torque">
       <always_on>1</always_on>
@@ -3188,6 +3210,28 @@
       <measure_direction>parent_to_child</measure_direction>
     </force_torque>
     <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
+  </sensor>
+  <gazebo reference="r_leg_ft_sensor">
+    <sensor name="r_leg_ft_sensor" type="force_torque">
+      <always_on>1</always_on>
+      <update_rate>100</update_rate>
+      <force_torque>
+        <frame>sensor</frame>
+        <measure_direction>child_to_parent</measure_direction>
+      </force_torque>
+      <pose>0.0 0.0 0.0 3.141592653589793 0.0 -2.6179934742070086</pose>
+      <plugin name="right_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+  <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
+  <sensor name="r_leg_ft_sensor" type="force_torque">
+    <parent joint="r_leg_ft_sensor"/>
+    <force_torque>
+      <frame>sensor</frame>
+      <measure_direction>child_to_parent</measure_direction>
+    </force_torque>
+    <origin rpy="3.141592653589793 0.0 -2.6179934742070086" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="r_foot_front_ft_sensor">
     <sensor name="r_foot_front_ft_sensor" type="force_torque">
