@@ -13,3 +13,5 @@ The module is already integrated in `yarpmanager` and, in order to use it, run t
 ```console
 yarp rpc /ergoCubEmotions/rpc
 ```
+
+![](20230421-1341-08.8827813.mp4)
