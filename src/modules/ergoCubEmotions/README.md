@@ -1,6 +1,12 @@
 ## ergoCubEmotions 
 This repo contains the `ergoCubEmotions` module that allows displaying several facial expressions on ergoCub.
+
+<div align="center">
+  <video src="https://user-images.githubusercontent.com/114698424/233678415-f705705e-0358-4293-aae8-c488f0a4946a.mp4" width="400" />
+</div>
+
 This module can be run enabling the cmake flag `COMPILE_ergoCubEmotions` and it needs [OpenCV v4.x](https://github.com/opencv/opencv) or higher to be used.
+
 ### Usage
 ```sh
 mkdir build
@@ -13,5 +19,3 @@ The module is already integrated in `yarpmanager` and, in order to use it, run t
 ```console
 yarp rpc /ergoCubEmotions/rpc
 ```
-
-https://user-images.githubusercontent.com/114698424/233656867-6d4cf48c-98aa-40d7-8bad-4053b5fc1818.mp4
