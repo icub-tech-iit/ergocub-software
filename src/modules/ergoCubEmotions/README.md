@@ -14,4 +14,4 @@ The module is already integrated in `yarpmanager` and, in order to use it, run t
 yarp rpc /ergoCubEmotions/rpc
 ```
 
-![](20230421-1341-08.8827813.mp4)
+https://user-images.githubusercontent.com/114698424/233656867-6d4cf48c-98aa-40d7-8bad-4053b5fc1818.mp4
