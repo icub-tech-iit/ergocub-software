@@ -7,7 +7,7 @@
         <module>
             <name>ergoCubEmotions</name>
             <parameters>--context ergoCubEmotions --from config.ini </parameters>
-            <node>localhost</node>
+            <node>ergocub-head</node>
         </module>
 
 </application>

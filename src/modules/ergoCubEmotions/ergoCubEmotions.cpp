@@ -53,12 +53,6 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         imgMap[name] = par;
     }
 
-    // if(imgMap.size() < nExpressions)
-    // {
-    //     yError() << "The available expressions are lower than the actual number of inputs!";
-    //     return false;
-    // }
-
     for(int j = 0; j < nTransitions; j++)
     {
         std::ostringstream transition_j;
@@ -89,25 +83,11 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         transitionMap[par] = file;
     }
 
-    // if(transitionMap.size() > nTransitions)
-    // {
-    //     yError() << "The available transitions are higher than the actual number of inputs!";
-    // }
-
     isTransition = true;
-    command = "neutral";
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
-    path = rf.findFile("expressions/images/exp_img_2.png");
-    img = imread(path);
-    if(img.empty())
-    {
-        yError() << "Could not read the image";
-        return false;
-    }
-    imshow("emotion", img);
-    waitKey(1000);
+    command = "neutral";
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
