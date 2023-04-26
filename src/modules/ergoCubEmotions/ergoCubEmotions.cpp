@@ -84,10 +84,19 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     }
 
     isTransition = true;
+    command = "neutral";
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
-    command = "neutral";
+    path = rf.findFile("expressions/images/start.png");
+    img = imread(path);
+    if(img.empty())
+    {
+        yError() << "Could not read the image";
+        return false;
+    }
+    imshow("emotion", img);
+    waitKey(1000);
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
@@ -172,6 +181,12 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         this->command = command;
         isTransition = true;
     }
+
+    if (cmd_tmp == command)
+    {
+        yError() << command << "is already set!";
+    }
+
     return true;
 }
 
