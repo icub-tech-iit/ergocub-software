@@ -40,7 +40,11 @@
         <param name="local"> /wholeBodyDynamics/imu </param>
     </device>
 
-
+    <device name="waist_inertial_hardware_device" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/waist/inertials </param>
+        <param name="local"> /wholeBodyDynamics/waist_imu </param>
+    </device>
+    
     <!-- six axis force torque sensors -->
     <device name="ergocub_left_arm_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/left_arm </param>
