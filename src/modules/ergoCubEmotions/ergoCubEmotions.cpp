@@ -88,15 +88,6 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
-    path = rf.findFile("expressions/images/start.png");
-    img = imread(path);
-    if(img.empty())
-    {
-        yError() << "Could not read the image";
-        return false;
-    }
-    imshow("emotion", img);
-    waitKey(1000);
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
