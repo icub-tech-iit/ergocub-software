@@ -19,3 +19,5 @@ The module is already integrated in `yarpmanager` and, in order to use it, run t
 ```console
 yarp rpc /ergoCubEmotions/rpc
 ```
+
+The module is ["_thrifted_"](https://yarp.it/latest/idl_thrift.html), hence you can get a list of the available options via the `help` command.
