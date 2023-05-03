@@ -49,6 +49,12 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         
         avlEmotions.emplace_back(name);
 
+        if(std::count(avlEmotions.begin(), avlEmotions.end(), name) > 1)
+        {
+            yError() << name << "is not a unique expression";
+            return false;
+        }
+
         std::pair<std::string, std::string> par = std::make_pair(type, file);
         imgMap[name] = par;
     }
