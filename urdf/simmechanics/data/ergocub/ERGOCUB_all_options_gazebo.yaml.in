@@ -1218,7 +1218,6 @@ reverseRotationAxis:
 #   l_wrist_pitch
 #   l_wrist_yaw
 #   torso_yaw
-#   torso_pitch
 #   neck_yaw
 
 XMLBlobs:
