@@ -95,6 +95,17 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
 
+    path = rf.findFile("expressions/images/exp_img_2.png");
+    Mat start_img = imread(path);
+    if(start_img.empty())
+    {
+        yError() << "Could not read the image";
+        return false;
+    }
+
+    imshow("emotion", start_img);
+    waitKey(1000);
+
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
     return true;
