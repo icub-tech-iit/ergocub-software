@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### urdf
 
+- Added imu in the waist (https://github.com/icub-tech-iit/ergocub-software/pull/99)
+- Locked `torso_pitch` to 10 deg (https://github.com/icub-tech-iit/ergocub-software/issues/102)
 - Fixed pinkie taxels exportation (https://github.com/icub-tech-iit/ergocub-software/issues/79)
 - Added the model `ergoCubGazeboV1_minContacts`
 
