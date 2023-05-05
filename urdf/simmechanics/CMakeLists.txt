@@ -481,14 +481,7 @@ macro(generate_ergocub_simmechanics)
     set(MESH_FILE_FORMAT "filenameformatchangeext: \"package://iCub/meshes/simmechanics/%s-binary.stl\"")
     set(ANKLE_PITCH_ROM "-35,35")
     set(CUSTOM_EPSILON "")
-    set(XSENS_IMU_FRAME 
-"
-- frameName: XSENS_MTI_630_IMU_CSYS
-    linkName: torso_1
-    sensorName: waist_imu_0
-    sensorType: \"accelerometer\"
-    sensorBlobs: \"\"
-")
+    set(XSENS_IMU_FRAME "")
     set(FT_IMU_SENSORS
 "  - frameName: SCSYS_R_UPPER_LEG_FT-IMU_3B11
     linkName: r_hip_2
