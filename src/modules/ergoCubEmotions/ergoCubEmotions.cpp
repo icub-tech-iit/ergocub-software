@@ -95,9 +95,6 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     namedWindow("emotion", WND_PROP_FULLSCREEN);
     setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
 
-    imshow("emotion", start_img);
-    waitKey(1000);
-
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
     return true;
