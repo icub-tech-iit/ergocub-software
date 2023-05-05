@@ -615,8 +615,8 @@
       </geometry>
     </collision>
   </link>
-  <joint name="torso_pitch" type="revolute">
-    <origin xyz="0 0 0.11800000000000005" rpy="0 0 0"/>
+  <joint name="torso_pitch" type="fixed">
+    <origin xyz="0 0 0.11800000000000005" rpy="0 0.174533 0"/>
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="torso_1"/>
     <child link="torso_2"/>
