@@ -566,8 +566,8 @@
   <link name="torso_1">
     <inertial>
       <origin xyz="-0.00963997 0.0006168500000000001 0.08244230000000001" rpy="0 0 1.5707963267948966"/>
-      <mass value="2.01685"/>
-      <inertia ixx="0.00709474" ixy="6.97521e-06" ixz="-1.25869e-05" iyy="0.00581692" iyz="0.000722773" izz="0.00295365"/>
+      <mass value="2.0645667"/>
+      <inertia ixx="0.007406086" ixy="7.140236651960731e-06" ixz="-1.288469375324392e-05" iyy="0.0059470733" iyz="0.0007398731028381387" izz="0.0031780111"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0.11800000000000006" rpy="0 0 1.5707963267948966"/>
@@ -2837,6 +2837,32 @@
     <child link="l_hand_pinkie_skin_11"/>
     <dynamics damping="0.1"/>
   </joint>
+  <link name="waist_imu_0"/>
+  <joint name="waist_imu_0_fixed_joint" type="fixed">
+  <origin xyz="0.0354497 0.00639688 0.060600" rpy="-1.5707322 1.5707963 0"/>
+  <parent link="torso_1"/>
+  <child link="waist_imu_0"/>
+  <dynamics damping="0.1"/>
+</joint>
+  <gazebo>
+<plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+  <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
+</plugin>
+</gazebo>
+  <gazebo reference="torso_1">
+<sensor name="waist_imu_0" type="imu">
+<always_on>1</always_on>
+<update_rate>100</update_rate>
+<pose>0.0354497 0.00639688 0.060600 -1.5707322 1.5707963 0</pose>
+<plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+<yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
+</plugin>
+</sensor>
+</gazebo>
+  <sensor name="waist_imu_0" type="accelerometer">
+<parent link="torso_1"/>
+<origin rpy="-1.5707322 1.5707963 0" xyz="0.0354497 0.00639688 0.060600"/>
+</sensor>
   <link name="base_link"/>
   <joint name="base_link_fixed_joint" type="fixed">
   <origin xyz="0 0 0" rpy="0 -0 0"/>
