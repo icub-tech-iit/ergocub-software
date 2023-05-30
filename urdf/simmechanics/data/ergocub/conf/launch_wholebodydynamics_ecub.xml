@@ -48,22 +48,22 @@
     <!-- six axis force torque sensors -->
     <device name="ergocub_left_arm_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/left_arm/FT </param>
-        <param name="local"> /wholeBodyDynamics/l_arm_ft_sensor </param>
+        <param name="local"> /wholeBodyDynamics/left_arm_ft_sensor </param>
     </device>
 
     <device name="ergocub_right_arm_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/right_arm/FT </param>
-        <param name="local"> /wholeBodyDynamics/r_arm_ft_sensor </param>
+        <param name="local"> /wholeBodyDynamics/right_arm_ft_sensor </param>
     </device> 
 
     <device name="ergocub_left_leg_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/left_leg/FT </param>
-        <param name="local"> /wholeBodyDynamics/l_leg_ft_sensor </param>
+        <param name="local"> /wholeBodyDynamics/left_leg_ft_sensor </param>
     </device>
 
     <device name="ergocub_right_leg_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/right_leg/FT </param>
-        <param name="local"> /wholeBodyDynamics/r_leg_ft_sensor </param>
+        <param name="local"> /wholeBodyDynamics/right_leg_ft_sensor </param>
     </device>  
     
     <!-- estimators -->
