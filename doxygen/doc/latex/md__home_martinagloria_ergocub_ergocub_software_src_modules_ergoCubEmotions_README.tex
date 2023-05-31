@@ -1,0 +1,25 @@
+This repo contains the {\ttfamily ergo\+Cub\+Emotions} module that allows displaying several facial expressions on ergo\+Cub.
+
+ $<$video src=\char`\"{}https\+://user-\/images.\+githubusercontent.\+com/114698424/236434116-\/8c9d69a1-\/5cce-\/43b8-\/8655-\/6fc3d20aec82.\+mp4\char`\"{} width=\char`\"{}400\char`\"{} $>$ 
+
+This module can be run enabling the cmake flag {\ttfamily COMPILE\+\_\+ergo\+Cub\+Emotions} and it needs \href{https://github.com/opencv/opencv}{\texttt{ Open\+CV v4.\+x}} or higher to be used.
+
+\doxysubsection*{Usage}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake -\/DCOMPILE\_ergoCubEmotions=BOOL:ON ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{(make install)}
+
+\end{DoxyCode}
+ The module is already integrated in {\ttfamily yarpmanager} and, in order to use it, run the following command in a console\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{yarp rpc /ergoCubEmotions/rpc}
+
+\end{DoxyCode}
+
+
+The module is \href{https://yarp.it/latest/idl_thrift.html}{\texttt{ \char`\"{}\+\_\+thrifted\+\_\+\char`\"{}}}, hence you can get a list of the available options via the {\ttfamily help} command. 

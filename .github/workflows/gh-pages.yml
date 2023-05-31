@@ -1,0 +1,63 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+    - 'master'
+  workflow_dispatch:
+
+jobs:
+  docs:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y xsltproc doxygen doxygen-doc texlive ghostscript graphviz python3-wheel python3-setuptools
+          pip3 install --upgrade Jinja2
+          pip3 install --user mkdocs mkdocs-material pymdown-extensions
+          pip3 install --upgrade pygments
+          echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
+
+      - name: Check remote
+        run: git ls-remote --heads --exit-code https://github.com/${{ github.repository }}.git gh-pages
+        
+      - name: Configure Git
+        run: |
+          git config --global push.default upstream
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Get YARP XSL interpreter
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          git clone --depth 1 --branch master https://github.com/robotology/yarp.git
+          echo "YARP_SOURCE_DIR=${GITHUB_WORKSPACE}/yarp" >> ${GITHUB_ENV}
+
+      - name: Clone and rebase
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          git clone https://github.com/${{ github.repository }}.git gh-pages
+          cd gh-pages
+          git checkout gh-pages
+          git rebase master
+
+      - name: Build Doxygen
+        run: |
+          cd ${GITHUB_WORKSPACE}/gh-pages/doxygen
+          ./doc-compile.sh
+
+      - name: Build Mkdocs
+        run: |
+          cd ${GITHUB_WORKSPACE}/gh-pages/mkdocs
+          ./site-compile.sh
+
+      - name: Commit and push
+        run: |
+          cd ${GITHUB_WORKSPACE}/gh-pages
+          git add .
+          git commit --amend --no-edit
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push --force-with-lease         

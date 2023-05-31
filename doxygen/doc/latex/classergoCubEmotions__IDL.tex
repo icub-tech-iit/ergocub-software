@@ -1,0 +1,78 @@
+\doxysection{ergo\+Cub\+Emotions\+\_\+\+IDL Class Reference}
+\label{classergoCubEmotions__IDL}\index{ergoCubEmotions\_IDL@{ergoCubEmotions\_IDL}}
+
+
+\mbox{\hyperlink{classergoCubEmotions__IDL}{ergo\+Cub\+Emotions\+\_\+\+IDL}} IDL Interface to ergo\+Cub Emotion Handler services.  
+
+
+
+
+{\ttfamily \#include $<$ergo\+Cub\+Emotions\+\_\+\+IDL.\+h$>$}
+
+
+
+Inherits yarp\+::os\+::\+Wire.
+
+
+
+Inherited by Ergo\+Cub\+Emotions.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classergoCubEmotions__IDL_a1479a6d012fb90fc8abf15a44985c16c}{set\+Emotion}} (const std\+::string \&command)
+\begin{DoxyCompactList}\small\item\em Display a specific facial expression. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classergoCubEmotions__IDL_aeda7453e0a9291784af6de136dbd2a4d}{available\+Emotions}} ()
+\begin{DoxyCompactList}\small\item\em Print the list of all the available facial expressions. \end{DoxyCompactList}\item 
+\mbox{\label{classergoCubEmotions__IDL_afee6c152ce3838aae8e480b6370046fe}} 
+virtual std\+::vector$<$ std\+::string $>$ {\bfseries help} (const std\+::string \&function\+Name=\char`\"{}-\/-\/all\char`\"{})
+\item 
+\mbox{\label{classergoCubEmotions__IDL_a0718c0fd248d200efc8a152446c77154}} 
+bool {\bfseries read} (yarp\+::os\+::\+Connection\+Reader \&connection) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classergoCubEmotions__IDL}{ergo\+Cub\+Emotions\+\_\+\+IDL}} IDL Interface to ergo\+Cub Emotion Handler services. 
+
+Definition at line 21 of file ergo\+Cub\+Emotions\+\_\+\+IDL.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classergoCubEmotions__IDL_aeda7453e0a9291784af6de136dbd2a4d}} 
+\index{ergoCubEmotions\_IDL@{ergoCubEmotions\_IDL}!availableEmotions@{availableEmotions}}
+\index{availableEmotions@{availableEmotions}!ergoCubEmotions\_IDL@{ergoCubEmotions\_IDL}}
+\doxysubsubsection{\texorpdfstring{availableEmotions()}{availableEmotions()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$std\+::string$>$ ergo\+Cub\+Emotions\+\_\+\+IDL\+::available\+Emotions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print the list of all the available facial expressions. 
+
+\begin{DoxyReturn}{Returns}
+a list of commands. 
+\end{DoxyReturn}
+\mbox{\label{classergoCubEmotions__IDL_a1479a6d012fb90fc8abf15a44985c16c}} 
+\index{ergoCubEmotions\_IDL@{ergoCubEmotions\_IDL}!setEmotion@{setEmotion}}
+\index{setEmotion@{setEmotion}!ergoCubEmotions\_IDL@{ergoCubEmotions\_IDL}}
+\doxysubsubsection{\texorpdfstring{setEmotion()}{setEmotion()}}
+{\footnotesize\ttfamily virtual bool ergo\+Cub\+Emotions\+\_\+\+IDL\+::set\+Emotion (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Display a specific facial expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & is the name of the emotion that will be set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false on success/failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+idl\+\_\+dox/ergo\+Cub\+Emotions\+\_\+\+IDL.\+h\end{DoxyCompactItemize}
