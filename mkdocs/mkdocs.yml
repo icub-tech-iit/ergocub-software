@@ -81,8 +81,9 @@ nav:
     # - Install: 'install.md'
     - Documentation: https://icub-tech-iit.github.io/ergocub-software/doxygen/doc/html/index.html
     - Modules:
-          - ergoCubEmotions: 'ergoCubEmotions.md'
-    #     - Getting started: 'tutorial_intro.md'
+        - Getting started: 'modules_intro.md'
+        - ergoCubEmotions: 'ergoCubEmotions.md'
+
     #     - How to manage a skeleton object: 'create_new_skeleton.md'
     #     - How to replay an experiment: 'replay_an_experiment.md'
     #     - How to run the pipeline in a disembodied manner: 'disembodied.md'
