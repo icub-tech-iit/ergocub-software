@@ -10,7 +10,7 @@ edit_uri: 'edit/gh-pages/mkdocs/docs'
 
 
 theme:
-  name: mkdocs
+  name: material
   logo: assets/head-solid.png
   favicon: assets/head-solid.png
   palette:
@@ -65,12 +65,13 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-    - Home: 'README.md'
+    - Home: 'index.md'
     # - News:
     #     - Latest: 'latest_news.md'
     # - Install: 'install.md'
-    - Documentation: https://icub-tech-iit.github.io/ergocub-software/doxygen/doc/html/index.html
-    # - Tutorials:
+    - Documentation: https://martinaxgloria.github.io/ergocub-software/doxygen/doc/html/index.html
+    - Modules:
+          - ergoCubEmotions: 'ergoCubEmotions.md'
     #     - Getting started: 'tutorial_intro.md'
     #     - How to manage a skeleton object: 'create_new_skeleton.md'
     #     - How to replay an experiment: 'replay_an_experiment.md'
