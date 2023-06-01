@@ -51,8 +51,7 @@ jobs:
 
       - name: Build Mkdocs
         run: |
-          cd ${GITHUB_WORKSPACE}/gh-pages/mkdocs
-          ./site-compile.sh
+          mkdocs build -c -v --site-dir site
 
       - name: Commit and push
         run: |
