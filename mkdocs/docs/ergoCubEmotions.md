@@ -3,7 +3,7 @@
 
 This repo contains the `ergoCubEmotions` module that allows displaying several facial expressions on ergoCub.
 
-![video](https://user-images.githubusercontent.com/114698424/236434116-8c9d69a1-5cce-43b8-8655-6fc3d20aec82.mp4)
+![type:video](https://user-images.githubusercontent.com/114698424/236434116-8c9d69a1-5cce-43b8-8655-6fc3d20aec82.mp4)
 
 This module can be run enabling the cmake flag `COMPILE_ergoCubEmotions` and it needs [OpenCV v4.x](https://github.com/opencv/opencv) or higher to be used.
 

@@ -5,13 +5,21 @@ site_author: iCub-Tech
 copyright: BSD 3-Clause License
 
 repo_name: icub-tech-iit/ergocub-software
-repo_url: https://github.com/martinaxgloria/ergocub-software
+repo_url: https://github.com/icub-tech-iit/ergocub-software
 edit_uri: 'edit/gh-pages/mkdocs/docs'
 
+markdown_extensions:
+  - attr_list
+plugins:
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
+      css_style:
+        width: "100%"
 
 theme:
   name: material
-  logo: assets/head-solid.png
   favicon: assets/head-solid.png
   palette:
     # Palette toggle for automatic mode
@@ -35,6 +43,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+  icon:
+    logo: material/robot
 
   font:
     text: Roboto
@@ -69,7 +79,7 @@ nav:
     # - News:
     #     - Latest: 'latest_news.md'
     # - Install: 'install.md'
-    - Documentation: https://martinaxgloria.github.io/ergocub-software/doxygen/doc/html/index.html
+    - Documentation: https://icub-tech-iit.github.io/ergocub-software/doxygen/doc/html/index.html
     - Modules:
           - ergoCubEmotions: 'ergoCubEmotions.md'
     #     - Getting started: 'tutorial_intro.md'
