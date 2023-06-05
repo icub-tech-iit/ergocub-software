@@ -11,7 +11,7 @@ cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
 make
 (make install)
 ```
-`ergocub` model needs [Gazebo YARP Plugins v4.6.0](https://github.com/robotology/gazebo-yarp-plugins/releases/tag/v4.6.0) or higher in order to be used.
+`ergocub` model needs [Gazebo YARP Plugins v4.7.0](https://github.com/robotology/gazebo-yarp-plugins/releases/tag/v4.7.0) or higher in order to be used.
 
 In order to use the model, the following env variables must be configured:
 ```sh
