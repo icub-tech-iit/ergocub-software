@@ -20,9 +20,6 @@ jobs:
           pip3 install --upgrade pygments
           echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
 
-      - name: Check remote
-        run: git ls-remote --heads --exit-code https://github.com/${{ github.repository }}.git gh-pages
-        
       - name: Configure Git
         run: |
           git config --global push.default upstream
@@ -50,8 +47,9 @@ jobs:
       - name: Create and prepare gh-pages anew
         run: |
           git checkout --orphan gh-pages
-          rm -R `ls -A | grep -v -E "^(.git|site)$"`
-          mv site/* ./
+          rm -R `ls -A | grep -v -E "^(.git|mkdocs)$"`
+          mv mkdocs/site/* ./
+          rm -rf mkdocs
 
       - name: Commit and push
         run: |
