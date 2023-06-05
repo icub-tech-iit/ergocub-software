@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2023-06-05
+
 ### urdf
 
 - Changed the way the FT are published, now are divided per parts (https://github.com/icub-tech-iit/ergocub-software/pull/123)
