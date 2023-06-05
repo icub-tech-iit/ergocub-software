@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@main
+        with:
+          ref: gh-pages
       - name: Dependencies
         run: |
           sudo apt update
