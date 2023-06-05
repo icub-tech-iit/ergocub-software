@@ -28,20 +28,14 @@ jobs:
           git config --global push.default upstream
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
 
       - name: Get YARP XSL interpreter
         run: |
           cd ${GITHUB_WORKSPACE}
           git clone --depth 1 --branch master https://github.com/robotology/yarp.git
           echo "YARP_SOURCE_DIR=${GITHUB_WORKSPACE}/yarp" >> ${GITHUB_ENV}
-
-      - name: Clone and rebase
-        run: |
-          cd ${GITHUB_WORKSPACE}
-          git clone https://github.com/${{ github.repository }}.git gh-pages
-          cd gh-pages
-          git checkout gh-pages
-          git rebase master
 
       - name: Build Doxygen
         run: |
@@ -53,10 +47,14 @@ jobs:
           cd ${GITHUB_WORKSPACE}/gh-pages/mkdocs
           ./site-compile.sh
 
+      - name: Create and prepare gh-pages anew
+        run: |
+          git checkout --orphan gh-pages
+          rm -R `ls -A | grep -v -E "^(.git|site)$"`
+          mv site/* ./
+
       - name: Commit and push
         run: |
-          cd ${GITHUB_WORKSPACE}/gh-pages
           git add .
-          git commit --amend --no-edit
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push --force-with-lease         
+          git commit -m "Publish site"
+          git push --force --set-upstream origin gh-pages       
