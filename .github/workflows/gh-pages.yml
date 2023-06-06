@@ -9,11 +9,11 @@ jobs:
   docs:
     name: "Deploy"
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./doc
 
     steps:
       - uses: actions/checkout@main
-        with:
-          ref: gh-pages
       - name: Dependencies
         run: |
           sudo apt update
@@ -30,7 +30,6 @@ jobs:
           git config --global user.email "actions@github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
 
-
       - name: Get YARP XSL interpreter
         run: |
           cd ${GITHUB_WORKSPACE}
@@ -39,20 +38,23 @@ jobs:
 
       - name: Build Doxygen
         run: |
-          cd ${GITHUB_WORKSPACE}/gh-pages/doxygen
+          cd doxygen
+          chmod u+x doc-compile.sh
           ./doc-compile.sh
+        working-directory: ${{ env.working-directory }}
 
       - name: Build Mkdocs
         run: |
-          cd ${GITHUB_WORKSPACE}/gh-pages/mkdocs
+          cd mkdocs
+          chmod u+x site-compile.sh
           ./site-compile.sh
+        working-directory: ${{ env.working-directory }}
 
       - name: Create and prepare gh-pages anew
         run: |
           git checkout --orphan gh-pages
-          rm -R `ls -A | grep -v -E "^(.git|mkdocs)$"`
-          mv mkdocs/site/* ./
-          rm -rf mkdocs
+          rm -R `ls -A | grep -v -E "^(.git|doc)$"`
+          mv doc/mkdocs/site/* ./
 
       - name: Commit and push
         run: |
