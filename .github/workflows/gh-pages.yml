@@ -39,14 +39,12 @@ jobs:
       - name: Build Doxygen
         run: |
           cd doxygen
-          chmod u+x doc-compile.sh
           ./doc-compile.sh
         working-directory: ${{ env.working-directory }}
 
       - name: Build Mkdocs
         run: |
           cd mkdocs
-          chmod u+x site-compile.sh
           ./site-compile.sh
         working-directory: ${{ env.working-directory }}
 
