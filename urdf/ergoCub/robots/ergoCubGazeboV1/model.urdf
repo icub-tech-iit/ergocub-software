@@ -745,7 +745,7 @@
   </joint>
   <link name="head_laser_frame"/>
   <joint name="head_laser_frame_fixed_joint" type="fixed">
-    <origin xyz="4.99999999999997e-05 0 0.13480199999999992" rpy="0 0 1.5707963267948966"/>
+    <origin xyz="4.99999999999997e-05 0 0.13480199999999992" rpy="0 0 -3.6732051038684165e-06"/>
     <parent link="head"/>
     <child link="head_laser_frame"/>
     <dynamics damping="0.1"/>
@@ -3407,7 +3407,7 @@
     <sensor name="lasersensor_head" type="ray">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
-      <pose>4.99999999999997e-05 0.0 0.13480199999999992 0.0 -0.0 1.5707963267948966</pose>
+      <pose>4.99999999999997e-05 0.0 0.13480199999999992 0.0 0.0 -3.6732051038684153e-06</pose>
       <always_on>1</always_on>
       <visualize>true</visualize>
       <update_rate>40</update_rate>
@@ -3438,7 +3438,7 @@
   </gazebo>
   <sensor name="lasersensor_head" type="ray">
     <parent link="head"/>
-    <origin rpy="0.0 -0.0 1.5707963267948966" xyz="4.99999999999997e-05 0.0 0.13480199999999992"/>
+    <origin rpy="0.0 0.0 -3.6732051038684153e-06" xyz="4.99999999999997e-05 0.0 0.13480199999999992"/>
   </sensor>
   <gazebo>
     <pose>0.0 0.0 0.9 0.0 0.0 0.0</pose>
