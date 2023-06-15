@@ -319,6 +319,7 @@ exportedFrames:
   - frameName: SCSYS_HEAD_S2_LASER
     frameReferenceLink: head
     exportedFrameName: head_laser_frame
+    additionalTransformation: [0,0,0,0,0,-1.5708]
   - frameName: SCSYS_L_SOLE
     frameReferenceLink: l_foot_rear
     exportedFrameName: l_sole
@@ -1237,7 +1238,7 @@ XMLBlobs:
               <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
-    - | 
+    - |
             <gazebo reference="torso_1">
             <sensor name="waist_imu_0" type="imu">
             <always_on>1</always_on>
