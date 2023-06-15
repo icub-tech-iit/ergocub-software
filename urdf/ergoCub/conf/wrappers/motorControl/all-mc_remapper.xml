@@ -2,28 +2,18 @@
 <!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="alljoints_mc" type="controlboardremapper">
-    <paramlist name="networks">
-        <elem name="head_joints1">( 0 3 0 3 )</elem>
-        <elem name="left_arm_joints1">( 4 10 0 6 )</elem>
-        <elem name="left_arm_joints2">( 11 16 0 5 )</elem>
-        <elem name="right_arm_joints1">( 17 23 0 6 )</elem>
-        <elem name="right_arm_joints2">( 24 29 0 5 )</elem>
-        <elem name="torso_joints">( 30 31  0 1 )</elem>
-        <elem name="left_leg_joints1">( 32 37  0 5 )</elem>
-        <elem name="right_leg_joints1">( 38 43  0 5 )</elem>
-    </paramlist>
+<!-- These are the parameters with torso_pitch removed -->
+    <param name="axesNames">(neck_pitch,neck_roll,neck_yaw,camera_tilt,l_shoulder_pitch,l_shoulder_roll,l_shoulder_yaw,l_elbow,l_wrist_yaw,l_wrist_roll,l_wrist_pitch,l_thumb_add,l_thumb_oc,l_index_add,l_index_oc,l_middle_oc,l_ring_pinky_oc,r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow,r_wrist_yaw,r_wrist_roll,r_wrist_pitch,r_thumb_add,r_thumb_oc,r_index_add,r_index_oc,r_middle_oc,r_ring_pinky_oc,torso_roll,torso_yaw,l_hip_pitch,l_hip_roll,l_hip_yaw,l_knee,l_ankle_pitch,l_ankle_roll,r_hip_pitch,r_hip_roll,r_hip_yaw,r_knee,r_ankle_pitch,r_ankle_roll)</param>
     <param name="period"> 0.010 </param>
     <param name="joints"> 44 </param>
-    <action phase="startup" level="5" type="attach">
+    <action phase="startup" level="6" type="attach">
         <paramlist name="networks">
-            <elem name="head_joints1">head_hardware_device</elem>
-            <elem name="left_arm_joints1">left_arm_hardware_device</elem>
-            <elem name="left_arm_joints2">left_hand_hardware_device</elem>
-            <elem name="right_arm_joints1">right_arm_hardware_device</elem>
-            <elem name="right_arm_joints2">right_hand_hardware_device</elem>
-            <elem name="torso_joints">torso_hardware_device</elem>
-            <elem name="left_leg_joints1">left_leg-mc_remapper</elem>
-            <elem name="right_leg_joints1">right_leg-mc_remapper</elem>
+            <elem name="head_joints">       head-mc_remapper </elem>
+            <elem name="left_arm_joints">   left_arm-mc_remapper</elem>
+            <elem name="right_arm_joints">  right_arm-mc_remapper </elem>
+            <elem name="torso_joints">      torso-mc_remapper </elem>
+            <elem name="left_leg_joints">   left_leg-mc_remapper </elem>
+            <elem name="right_leg_joints">  right_leg-mc_remapper </elem>
         </paramlist>
     </action>
     <action phase="shutdown" level="20" type="detach" />
