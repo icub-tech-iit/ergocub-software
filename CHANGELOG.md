@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### urdf
+- Fixed lidar frame (https://github.com/icub-tech-iit/ergocub-software/pull/134)
+
 ## [0.3.0] - 2023-06-05
 
 ### urdf
