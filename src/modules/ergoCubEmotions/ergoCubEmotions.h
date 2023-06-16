@@ -19,13 +19,15 @@
 
 #include "ergoCubEmotions_IDL.h"
 
+#include <mutex>
+
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
     protected:
         yarp::os::ResourceFinder *rf;
     public:
         ErgoCubEmotions();
         ~ErgoCubEmotions();
-        
+
         bool attach(yarp::os::RpcServer& source);
         bool configure(yarp::os::ResourceFinder& config);
         bool close();
@@ -47,6 +49,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         std::string cmd_tmp;
         std::vector<std::string> avlEmotions;
         cv::Mat img;
+        std::mutex mutex;
 };
 
 #endif

@@ -46,7 +46,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string name = bExpression.find("name").asString();
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
-        
+
         avlEmotions.emplace_back(name);
 
         if(std::count(avlEmotions.begin(), avlEmotions.end(), name) > 1)
@@ -93,7 +93,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     command = "neutral";
 
     namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);  
+    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
@@ -113,14 +113,22 @@ double ErgoCubEmotions::getPeriod()
 }
 
 bool ErgoCubEmotions::updateModule()
-{   
+{
+    std::string command_local;
+    bool isTransition_local;
+    {
+        std::lock_guard<std::mutex> guard(mutex);
+        command_local = command;
+        isTransition_local = isTransition;
+    }
+
     for(auto it = imgMap.cbegin(); it!= imgMap.cend(); it++)
     {
-        if(it->first == command)
-        {   
+        if(it->first == command_local)
+        {
             if(it->second.first == "image")
-            {   
-                if(isTransition)
+            {
+                if(isTransition_local)
                 {
                     showTransition();
                 }
@@ -140,7 +148,7 @@ bool ErgoCubEmotions::updateModule()
             }
             else if(it->second.first == "video")
             {
-                if(isTransition)
+                if(isTransition_local)
                 {
                     showTransition();
                 }
@@ -156,7 +164,7 @@ bool ErgoCubEmotions::updateModule()
                         break;
                     }
                     imshow("emotion", frame);
-                    pollKey();  
+                    pollKey();
                 }
             }
         }
@@ -165,23 +173,26 @@ bool ErgoCubEmotions::updateModule()
 }
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
-{   
+{
     if(imgMap.count(command) < 1)
     {
         yError() << command << "not found!";
         return false;
     }
 
-    else
     {
+        std::lock_guard<std::mutex> guard(mutex);
+
         cmd_tmp = this->command;
         this->command = command;
         isTransition = true;
-    }
 
-    if (cmd_tmp == command)
-    {
-        yError() << command << "is already set!";
+
+        if (cmd_tmp == command)
+        {
+            yError() << command << "is already set!";
+            isTransition = false;
+        }
     }
 
     return true;
