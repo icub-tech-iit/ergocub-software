@@ -20,6 +20,8 @@
 #include "ergoCubEmotions_IDL.h"
 
 #include <mutex>
+#include <map>
+#include <unordered_map>
 
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
     protected:
@@ -43,7 +45,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         int nTransitions;
         bool isTransition;
         std::string path;
-        std::map<std::string, std::pair<std::string, std::string>> imgMap;
+        std::unordered_map<std::string, std::pair<std::string, std::string>> imgMap;
         std::map<std::pair<std::string, std::string>, std::string> transitionMap;
         std::string command;
         std::string cmd_tmp;

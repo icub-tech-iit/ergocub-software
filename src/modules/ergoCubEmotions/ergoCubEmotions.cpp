@@ -102,6 +102,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
 bool ErgoCubEmotions::close()
 {
+    std::lock_guard<std::mutex> guard(mutex);
     cmdPort.close();
     destroyAllWindows();
     return true;
@@ -114,85 +115,83 @@ double ErgoCubEmotions::getPeriod()
 
 bool ErgoCubEmotions::updateModule()
 {
-    std::string command_local;
     bool isTransition_local;
+    std::pair<std::string, std::string> info;
     {
         std::lock_guard<std::mutex> guard(mutex);
-        command_local = command;
         isTransition_local = isTransition;
-    }
-
-    for(auto it = imgMap.cbegin(); it!= imgMap.cend(); it++)
-    {
-        if(it->first == command_local)
+        auto it = imgMap.find(command);
+        if (it != imgMap.end())
         {
-            if(it->second.first == "image")
-            {
-                if(isTransition_local)
-                {
-                    showTransition();
-                }
-                path = rf->findFile(it->second.second);
-                Mat img_tmp = imread(path);
-                if(img_tmp.empty())
-                {
-                    yDebug() << "Could not read the image!";
-                    break;
-                }
-                else
-                {
-                    img = img_tmp;
-                    imshow("emotion", img);
-                    pollKey();
-                }
-            }
-            else if(it->second.first == "video")
-            {
-                if(isTransition_local)
-                {
-                    showTransition();
-                }
-                path = rf->findFile(it->second.second);
-                VideoCapture cap(path);
-                Mat frame;
-
-                while(cap.isOpened())
-                {
-                    cap >> frame;
-                    if(frame.empty())
-                    {
-                        break;
-                    }
-                    imshow("emotion", frame);
-                    pollKey();
-                }
-            }
+            info = it->second;
         }
     }
+
+
+    if(info.first == "image")
+    {
+        if(isTransition_local)
+        {
+            showTransition();
+        }
+        path = rf->findFile(info.second);
+        Mat img_tmp = imread(path);
+        if(img_tmp.empty())
+        {
+            yDebug() << "Could not read the image!";
+            return true;
+        }
+        else
+        {
+            img = img_tmp;
+            imshow("emotion", img);
+            pollKey();
+        }
+    }
+    else if(info.first == "video")
+    {
+        if(isTransition_local)
+        {
+            showTransition();
+        }
+        path = rf->findFile(info.second);
+        VideoCapture cap(path);
+        Mat frame;
+
+        while(cap.isOpened())
+        {
+            cap >> frame;
+            if(frame.empty())
+            {
+                break;
+            }
+            imshow("emotion", frame);
+            pollKey();
+        }
+    }
+
     return true;
 }
 
 bool ErgoCubEmotions::setEmotion(const std::string& command)
 {
-    if(imgMap.count(command) < 1)
+    std::lock_guard<std::mutex> guard(mutex);
+
+    if(imgMap.find(command) == imgMap.end())
     {
         yError() << command << "not found!";
         return false;
     }
 
+    cmd_tmp = this->command;
+    this->command = command;
+    isTransition = true;
+
+
+    if (cmd_tmp == command)
     {
-        std::lock_guard<std::mutex> guard(mutex);
-
-        cmd_tmp = this->command;
-        this->command = command;
-        isTransition = true;
-
-
-        if (cmd_tmp == command)
-        {
-            yError() << command << "is already set!";
-            isTransition = false;
-        }
+        yError() << command << "is already set!";
+        isTransition = false;
     }
 
     return true;
