@@ -28,7 +28,6 @@ bool ErgoCubEmotions::attach(RpcServer& source)
 
 bool ErgoCubEmotions::configure(ResourceFinder& rf)
 {
-    this->rf=&rf;
     Bottle &bGroup = rf.findGroup("general");
     nExpressions = bGroup.find("num_expressions").asInt32();
     nTransitions = bGroup.find("num_transitions").asInt32();
@@ -46,6 +45,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string name = bExpression.find("name").asString();
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
+        std::string filePath = rf.findFile(file);
 
         avlEmotions.emplace_back(name);
 
@@ -55,7 +55,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
             return false;
         }
 
-        std::pair<std::string, std::string> par = std::make_pair(type, file);
+        std::pair<std::string, std::string> par = std::make_pair(type, filePath);
         imgMap[name] = par;
     }
 
@@ -85,8 +85,9 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         }
 
         std::string file = bTransition.find("file").asString();
+        std::string filePath = rf.findFile(file);
         std::pair<std::string, std::string> par = std::make_pair(source, destination);
-        transitionMap[par] = file;
+        transitionMap[par] = filePath;
     }
 
     isTransition = true;
@@ -139,8 +140,7 @@ bool ErgoCubEmotions::updateModule()
         {
             showTransition(current_local, command_local);
         }
-        path = rf->findFile(info.second);
-        Mat img_tmp = imread(path);
+        Mat img_tmp = imread(info.second);
         if(img_tmp.empty())
         {
             yDebug() << "Could not read the image!";
@@ -159,8 +159,7 @@ bool ErgoCubEmotions::updateModule()
         {
             showTransition(current_local, command_local);
         }
-        path = rf->findFile(info.second);
-        VideoCapture cap(path);
+        VideoCapture cap(info.second);
         Mat frame;
 
         while(cap.isOpened())
@@ -206,8 +205,7 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
     {
         if(k->first.first == current && k->first.second == desired)
         {
-            std::string pathTrans = rf->findFile(k->second);
-            VideoCapture capTrans(pathTrans);
+            VideoCapture capTrans(k->second);
             Mat frameTrans;
 
             while(capTrans.isOpened())

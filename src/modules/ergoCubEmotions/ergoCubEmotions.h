@@ -24,8 +24,6 @@
 #include <unordered_map>
 
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
-    protected:
-        yarp::os::ResourceFinder *rf;
     public:
         ErgoCubEmotions();
         ~ErgoCubEmotions();
@@ -44,7 +42,6 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         int nExpressions;
         int nTransitions;
         bool isTransition;
-        std::string path;
         std::unordered_map<std::string, std::pair<std::string, std::string>> imgMap;
         std::map<std::pair<std::string, std::string>, std::string> transitionMap;
         std::string command;
