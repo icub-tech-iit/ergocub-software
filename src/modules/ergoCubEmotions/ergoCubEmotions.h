@@ -38,7 +38,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
 
         bool setEmotion(const std::string& command);
         std::vector<std::string> availableEmotions();
-        void showTransition();
+        void showTransition(const std::string &current, const std::string &desired);
 
         yarp::os::RpcServer cmdPort;
         int nExpressions;
@@ -48,7 +48,7 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         std::unordered_map<std::string, std::pair<std::string, std::string>> imgMap;
         std::map<std::pair<std::string, std::string>, std::string> transitionMap;
         std::string command;
-        std::string cmd_tmp;
+        std::string currentCommand;
         std::vector<std::string> avlEmotions;
         cv::Mat img;
         std::mutex mutex;

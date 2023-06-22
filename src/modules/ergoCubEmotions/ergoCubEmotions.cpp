@@ -117,14 +117,19 @@ bool ErgoCubEmotions::updateModule()
 {
     bool isTransition_local;
     std::pair<std::string, std::string> info;
+    std::string current_local, command_local;
     {
         std::lock_guard<std::mutex> guard(mutex);
         isTransition_local = isTransition;
+        current_local = currentCommand;
+        command_local = command;
         auto it = imgMap.find(command);
         if (it != imgMap.end())
         {
             info = it->second;
+            currentCommand = command;
         }
+        isTransition = false;
     }
 
 
@@ -132,7 +137,7 @@ bool ErgoCubEmotions::updateModule()
     {
         if(isTransition_local)
         {
-            showTransition();
+            showTransition(current_local, command_local);
         }
         path = rf->findFile(info.second);
         Mat img_tmp = imread(path);
@@ -152,7 +157,7 @@ bool ErgoCubEmotions::updateModule()
     {
         if(isTransition_local)
         {
-            showTransition();
+            showTransition(current_local, command_local);
         }
         path = rf->findFile(info.second);
         VideoCapture cap(path);
@@ -183,25 +188,23 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
         return false;
     }
 
-    cmd_tmp = this->command;
     this->command = command;
     isTransition = true;
 
-
-    if (cmd_tmp == command)
+    if (currentCommand == command)
     {
-        yError() << command << "is already set!";
+        yWarning() << command << "is already set!";
         isTransition = false;
     }
 
     return true;
 }
 
-void ErgoCubEmotions::showTransition()
+void ErgoCubEmotions::showTransition(const std::string& current, const std::string& desired)
 {
     for(auto k = transitionMap.cbegin(); k!= transitionMap.cend(); k++)
     {
-        if(k->first.first == cmd_tmp && k->first.second == command)
+        if(k->first.first == current && k->first.second == desired)
         {
             std::string pathTrans = rf->findFile(k->second);
             VideoCapture capTrans(pathTrans);
@@ -218,7 +221,6 @@ void ErgoCubEmotions::showTransition()
                 pollKey();
             }
             capTrans.release();
-            isTransition = false;
             return;
         }
     }
