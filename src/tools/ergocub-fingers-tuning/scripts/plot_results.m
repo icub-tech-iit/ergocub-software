@@ -3,6 +3,15 @@
 % Authors: mattia.fussi@iit.it
 %
 function [rmse,h] = plot_results(model, idd_training, idd_validation, training_Ts, validation_Ts)
+
+    arguments
+        model {mustBeA(model, ["idproc", "zpk", "tf", "ss"])}
+        idd_training {mustBeA(idd_training, "iddata")}
+        idd_validation {mustBeA(idd_validation, "iddata")}
+        training_Ts (1,1) {mustBePositive}
+        validation_Ts (1,1) {mustBePositive}
+    end
+
     h = figure;
     subplot(2,1,1)
     timevec = 0:training_Ts:((length(idd_training.InputData)-1)*training_Ts);
@@ -18,8 +27,6 @@ function [rmse,h] = plot_results(model, idd_training, idd_validation, training_T
     subplot(2,1,2)
     
     rmse(1, 1) = struct;
-
-    colors = {"r", "b", "m", "k", "g"};
     
     timevec = 0:validation_Ts:((length(idd_validation.InputData)-1)*validation_Ts);
     [y_out, time] = lsim(model, idd_validation.InputData(1:end), timevec(1:end));
