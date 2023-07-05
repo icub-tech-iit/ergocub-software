@@ -49,7 +49,7 @@ int main(int argc, char * argv[])
     auto set_point = rf.check("set-point", Value(-60)).asFloat64();
     auto cycles = rf.check("cycles", Value(2)).asInt32();
     auto T = rf.check("T", Value(2.)).asFloat64();
-    auto filename = rf.check("robot", Value("output.csv")).asString();
+    auto filename = rf.check("filename", Value("output.csv")).asString();
 
     PolyDriver m_driver;
     IPositionControl* iPos{ nullptr };
@@ -63,7 +63,7 @@ int main(int argc, char * argv[])
     std::string port = "/" + robot + "/" + part;
     std::vector<DataExperiment> data_vec;
     data_vec.reserve(1000);
-    std::vector<double> velocities{10, 25, 50, 70};
+    std::vector<double> velocities{10, 25, 50, 60};
 
     Property conf;
     conf.put("device", "remote_controlboard");
@@ -92,12 +92,12 @@ int main(int argc, char * argv[])
         iPos->checkMotionDone(joint_id, &done);
         Time::yield();
     }
-    
+
     for(auto & ref_speed : velocities)
-    {   
+    {
         auto t1 = Time::now();
         for(int i=0; i<cycles; i++) {
-            
+
             auto set_point_to_apply = set_point;
 
             if(i == 1)
@@ -107,11 +107,11 @@ int main(int argc, char * argv[])
             iEnc->getEncoder(joint_id, &data.enc);
             iPos->setRefSpeed(joint_id, ref_speed);
             iPos->positionMove(joint_id, set_point_to_apply);
-            
+
             //auto t0 = Time::now();
             done = false;
 
-            yInfo() << "ref speed "<< ref_speed << " cycle " << i << " sp " << set_point_to_apply;           
+            yInfo() << "ref speed "<< ref_speed << " cycle " << i << " sp " << set_point_to_apply;
 
             while (!done) {
                 data.t = Time::now() - t0;
@@ -143,7 +143,7 @@ int main(int argc, char * argv[])
         iPos->checkMotionDone(joint_id, &done);
         Time::yield();
     }
-    
+
     m_driver.close();
     file.close();
 
