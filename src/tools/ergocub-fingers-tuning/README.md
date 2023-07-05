@@ -40,7 +40,11 @@ After building it, navigate to the `build` folder, and then launch it with your 
 
 ### MATLAB scripts
 
-Upon opening MATLAB, navigate to the repo directory, then:
+Upon opening MATLAB, navigate to the repo directory.
+
+Copy the `.csv` datasets created with `ident-finger` in the `data` folder. Then:
 
 1. Add to the path the folders `data` and `scripts`
-2. Open the live script `identification_tuning.mlx` and run it by pressing "Run" or F5
+2. Open the live script `identification_tuning.mlx`
+3. Check the file names of the training and validation sets
+4. Run it by pressing "Run" or F5
