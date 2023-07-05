@@ -1,7 +1,7 @@
 % Copyright (C) 2022 Fondazione Istituto Italiano di Tecnologia (IIT)
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it
-
+%
 function t = prepare_dataset(file, Ts, tau)
 
     training_table = readtable(file);

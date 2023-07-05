@@ -1,7 +1,8 @@
-function [C, T] = design_robust_pid(usys, Ts,  SoftGoals, HardGoals)
 % Copyright (C) 2022 Fondazione Istituto Italiano di Tecnologia (IIT)
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it
+%
+function [C, T] = design_robust_pid(usys, Ts,  SoftGoals, HardGoals)
 
     %% define the tunable controller
     C = tunablePID('C', 'PI');

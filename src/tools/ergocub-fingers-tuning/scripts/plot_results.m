@@ -1,5 +1,7 @@
-% Copyright (C) 2023 Fondazione Istitito Italiano di Tecnologia (IIT)
-% All Rights Reserved.
+% Copyright (C) 2022 Fondazione Istituto Italiano di Tecnologia (IIT)
+% All Rights Reserved
+% Authors: mattia.fussi@iit.it
+%
 function [rmse,h] = plot_results(model, idd_training, idd_validation, training_Ts, validation_Ts)
     h = figure;
     subplot(2,1,1)
