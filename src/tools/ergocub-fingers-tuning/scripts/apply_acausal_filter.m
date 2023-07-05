@@ -4,6 +4,12 @@
 %
 function y = apply_acausal_filter(x, tau, Ts)
 
+    arguments
+        x {mustBeVector}
+        tau (1,1) {mustBeNonnegative}
+        Ts (1,1) {mustBePositive}
+    end
+
     s = tf('s');
     sys = 1 / (tau * Ts * s + 1);
     sysd = c2d(sys, Ts, 'tustin');

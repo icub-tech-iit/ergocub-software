@@ -4,6 +4,12 @@
 %
 function t = prepare_dataset(file, Ts, tau)
 
+    arguments
+        file {mustBeFile}
+        Ts (1, 1) {mustBePositive}
+        tau (1, 1) {mustBeNonnegative}
+    end
+
     training_table = readtable(file);
     training_table.Properties.VariableNames = {'time','pwm','theta','pid', 'pwmsp'};
     
