@@ -35,7 +35,7 @@ After building it, navigate to the `build` folder, and then launch it with your 
 After building it, navigate to the `build` folder, and then launch it with your desired arguments, e.g.:
 
 ```bash
-./move-finger-pos --robot ergocub --part left_arm --set-point 60
+./move-finger-pos --robot ergocub --part left_arm --set-point 60 --filename output.csv
 ```
 
 ### MATLAB scripts
