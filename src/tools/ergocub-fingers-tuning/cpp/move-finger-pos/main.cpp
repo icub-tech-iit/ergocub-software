@@ -46,7 +46,7 @@ int main(int argc, char * argv[])
     auto robot = rf.check("robot", Value("ergocub")).asString();
     auto part = rf.check("part", Value("left_arm")).asString();
     auto joint_id = rf.check("joint-id", Value(10)).asInt32();
-    auto set_point = rf.check("set-point", Value(-60)).asFloat64();
+    auto set_point = rf.check("set-point", Value(60)).asFloat64();
     auto cycles = rf.check("cycles", Value(2)).asInt32();
     auto T = rf.check("T", Value(2.)).asFloat64();
     auto filename = rf.check("filename", Value("output.csv")).asString();
@@ -88,6 +88,8 @@ int main(int argc, char * argv[])
     iPos->setRefAcceleration(joint_id, std::numeric_limits<double>::max());
     iPos->positionMove(joint_id, 0.);
     auto done{ false };
+    auto cycle_done{ false };
+
     while (!done) {
         iPos->checkMotionDone(joint_id, &done);
         Time::yield();
@@ -96,6 +98,7 @@ int main(int argc, char * argv[])
     for(auto & ref_speed : velocities)
     {
         auto t1 = Time::now();
+        auto t2 = Time::now();
         for(int i=0; i<cycles; i++) {
 
             auto set_point_to_apply = set_point;
@@ -109,23 +112,43 @@ int main(int argc, char * argv[])
             iPos->positionMove(joint_id, set_point_to_apply);
 
             //auto t0 = Time::now();
-            done = false;
+
+            cycle_done = false;
 
             yInfo() << "ref speed "<< ref_speed << " cycle " << i << " sp " << set_point_to_apply;
 
-            while (!done) {
+            while (!cycle_done) {
                 data.t = Time::now() - t0;
                 iPid->getPidReference(VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_ref);
                 iPid->getPidOutput(VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_out);
                 iEnc->getEncoder(joint_id, &data.enc);
 
-                if (Time::now() - t1 >= 0.1) {
+                if (Time::now() - t1 >= 0.01) {
                     iPos->checkMotionDone(joint_id, &done);
                     t1 = Time::now();
-                data_vec.push_back(std::move(data));
+
+                    if(done)
+                    {
+                        if(Time::now() - t2 >= 5)
+                        {
+                            cycle_done = true;
+                            done = false;
+                        }
+
+                    }
+                    else
+                    {
+                            t2 = Time::now();
+                    }
+
+                    data_vec.push_back(std::move(data));
 
                 }
                 Time::yield();
+            }
+
+            if(done)
+            {
             }
         }
     }
