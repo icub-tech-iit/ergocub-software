@@ -31,6 +31,7 @@
 
     <!-- INERTIAL SENSOR-->
     <xi:include href="wrappers/inertials/head-inertials_wrapper.xml" />
+    <xi:include href="wrappers/inertials/r_foot_rear_ft_sensor-inertials_wrapper.xml" />
 
     <!--  HEAD SENSORS -->
     <xi:include href="sensors/rgbd_camera_wrapper.xml" />
