@@ -570,14 +570,10 @@ macro(generate_ergocub_simmechanics)
                        DEPENDS  "${GENERATED_YAML_LOCATION}"
                                 "${GENERATED_CSV_LOCATION}")
 
-    # Set torso pitch fixed to 10 deg see https://github.com/icub-tech-iit/ergocub-software/issues/102
     add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${GIVTWO_YARP_ROBOT_NAME}/model.urdf"
-                      MAIN_DEPENDENCY "${GIVTWO_YARP_ROBOT_NAME}.urdf"
-                      COMMENT "I AM COPYING TO THE BUILD!"
-                      COMMAND sed -i 's/<joint name=\"torso_pitch\" type=\"revolute\">/<joint name=\"torso_pitch\" type=\"fixed\">/g' ${CMAKE_BINARY_DIR}/urdf/simmechanics/${GIVTWO_YARP_ROBOT_NAME}.urdf
-                      COMMAND sed -i 's/<origin xyz=\"0 0 0.11800000000000005\" rpy=\"0 0 0\"\\/>/<origin xyz=\"0 0 0.11800000000000005\" rpy=\"0 0.174533 0\"\\/>/g' ${CMAKE_BINARY_DIR}/urdf/simmechanics/${GIVTWO_YARP_ROBOT_NAME}.urdf
-                      COMMAND  ${CMAKE_COMMAND} -E copy "${GIVTWO_YARP_ROBOT_NAME}.urdf" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${GIVTWO_YARP_ROBOT_NAME}/model.urdf"
-)
+                       MAIN_DEPENDENCY "${GIVTWO_YARP_ROBOT_NAME}.urdf"
+                       COMMAND ${CMAKE_COMMAND} -E
+                               copy "${GIVTWO_YARP_ROBOT_NAME}.urdf" "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${GIVTWO_YARP_ROBOT_NAME}/model.urdf")
 
     list(APPEND model-simmechanics-generated-models "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${GIVTWO_YARP_ROBOT_NAME}/model.urdf")
 endmacro()
