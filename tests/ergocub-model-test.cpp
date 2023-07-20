@@ -518,11 +518,10 @@ int main(int argc, char ** argv)
     comp.setRobotState(qj,dqj,grav);
 
     // Check axis
-    // Skipping for now because we had to lock torso_pitch to 10 deg see https://github.com/icub-tech-iit/ergocub-software/issues/102
-    // if( !checkAxisDirections(comp) )
-    // {
-    //     return EXIT_FAILURE;
-    // }
+    if( !checkAxisDirections(comp) )
+    {
+        return EXIT_FAILURE;
+    }
     // Check if base_link exist, and check that is a frame attached to root_link and if its
     // transform is the idyn
     if( !checkBaseLink(comp) )
@@ -543,11 +542,11 @@ int main(int argc, char ** argv)
     {
         return EXIT_FAILURE;
     }
-    // Skipping for now because we had to lock torso_pitch to 10 deg see https://github.com/icub-tech-iit/ergocub-software/issues/102
-    //if (!checkFTSensorsAreCorrectlyOriented(comp))
-    //{
-    //    return EXIT_FAILURE;
-    //}
+
+    if (!checkFTSensorsAreCorrectlyOriented(comp))
+    {
+       return EXIT_FAILURE;
+    }
 
 
     std::cerr << "Check for model " << modelPath << " concluded correctly!" << std::endl;
