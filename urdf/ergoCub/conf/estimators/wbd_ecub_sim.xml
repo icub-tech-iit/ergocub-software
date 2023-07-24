@@ -61,8 +61,8 @@
                 <!-- ft -->
                 <elem name="left_arm_ft_sensor">ergocub_left_arm_ft</elem>
                 <elem name="right_arm_ft_sensor">ergocub_right_arm_ft</elem>
-                <elem name="left_leg_ft_sensor">left_leg-FT_remapper</elem>
-                <elem name="right_leg_ft_sensor">right_leg-FT_remapper</elem>
+                <elem name="left_leg_ft_sensor">ergocub_left_leg_ft</elem>
+                <elem name="right_leg_ft_sensor">ergocub_right_leg_ft</elem>
             </paramlist>
         </action>
 
