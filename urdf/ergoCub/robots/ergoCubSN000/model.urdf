@@ -81,6 +81,13 @@
     <limit effort="50000" lower="-0.2792526803190927" upper="1.9024088846738192" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="r_leg_ft"/>
+  <joint name="r_leg_ft_fixed_joint" type="fixed">
+    <origin xyz="0.036699999999999997 0 -0.0897" rpy="3.141592653589793 0 -2.6179934742070086"/>
+    <parent link="r_hip_2"/>
+    <child link="r_leg_ft"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="r_hip_3">
     <inertial>
       <origin xyz="0.005150999999999999 0.012832099999999999 -0.051687999999999956" rpy="0 0 1.5707963267948966"/>
@@ -229,14 +236,28 @@
     <limit effort="50000" lower="-0.4363323129985824" upper="0.4363323129985824" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="r_foot_front_ft"/>
+  <joint name="r_foot_front_ft_fixed_joint" type="fixed">
+    <origin xyz="0.13525 0 -0.04789999999999994" rpy="0 0 -2.0943952105869315"/>
+    <parent link="r_ankle_2"/>
+    <child link="r_foot_front_ft"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="r_foot_rear_ft"/>
+  <joint name="r_foot_rear_ft_fixed_joint" type="fixed">
+    <origin xyz="0.016000000000000004 0 -0.04789999999999994" rpy="0 0 -2.0943952105869315"/>
+    <parent link="r_ankle_2"/>
+    <child link="r_foot_rear_ft"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="r_foot_rear">
     <inertial>
-      <origin xyz="0.0005878999999999988 0 0.00229899999999994" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.0005878999999999988 0 -0.020001000000000047" rpy="0 0 1.5707963267948966"/>
       <mass value="0.221105"/>
       <inertia ixx="0.000260872" ixy="0.0" ixz="-4.27001e-09" iyy="0.000191206" iyz="3.29086e-09" izz="0.000450088"/>
     </inertial>
     <visual>
-      <origin xyz="0.015599999999999463 0.07440000000000031 0.9558" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.015599999999999463 0.07440000000000031 0.9335" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -245,33 +266,33 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.015599999999999463 0.07440000000000031 0.9558" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.015599999999999463 0.07440000000000031 0.9335" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <joint name="r_foot_rear_ft_sensor" type="fixed">
-    <origin xyz="0.016000000000000004 0 -0.07019999999999993" rpy="0 0 0"/>
+    <origin xyz="0.016000000000000004 0 -0.04789999999999994" rpy="0 0 0"/>
     <parent link="r_ankle_2"/>
     <child link="r_foot_rear"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="r_sole"/>
   <joint name="r_sole_fixed_joint" type="fixed">
-    <origin xyz="0.05963 0 0" rpy="0 0 0"/>
+    <origin xyz="0.05963 0 -0.022299999999999986" rpy="0 0 0"/>
     <parent link="r_foot_rear"/>
     <child link="r_sole"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="r_foot_front">
     <inertial>
-      <origin xyz="0.0005879999999999913 0 0.00229899999999994" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.0005879999999999913 0 -0.020001000000000047" rpy="0 0 1.5707963267948966"/>
       <mass value="0.221105"/>
       <inertia ixx="0.000260883" ixy="0.0" ixz="-4.27001e-09" iyy="0.000191206" iyz="3.99664e-09" izz="0.000450089"/>
     </inertial>
     <visual>
-      <origin xyz="-0.10360000000000001 0.07440000000000001 0.9558000000000001" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="-0.10360000000000001 0.07440000000000001 0.9335000000000001" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -280,14 +301,14 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.10360000000000001 0.07440000000000001 0.9558000000000001" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="-0.10360000000000001 0.07440000000000001 0.9335000000000001" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <joint name="r_foot_front_ft_sensor" type="fixed">
-    <origin xyz="0.13525 0 -0.07019999999999993" rpy="0 0 0"/>
+    <origin xyz="0.13525 0 -0.04789999999999994" rpy="0 0 0"/>
     <parent link="r_ankle_2"/>
     <child link="r_foot_front"/>
     <dynamics damping="0.1"/>
@@ -351,6 +372,13 @@
     <child link="l_hip_2"/>
     <limit effort="50000" lower="-0.2792526803190927" upper="1.9024088846738192" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="l_leg_ft"/>
+  <joint name="l_leg_ft_fixed_joint" type="fixed">
+    <origin xyz="0.036699999999999997 0 -0.0897" rpy="3.141592653589793 0 2.6179934742070086"/>
+    <parent link="l_hip_2"/>
+    <child link="l_leg_ft"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="l_hip_3">
     <inertial>
@@ -500,14 +528,28 @@
     <limit effort="50000" lower="-0.4363323129985824" upper="0.4363323129985824" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
+  <link name="l_foot_front_ft"/>
+  <joint name="l_foot_front_ft_fixed_joint" type="fixed">
+    <origin xyz="0.13525 0 -0.04789999999999994" rpy="0 0 -2.0943952105869315"/>
+    <parent link="l_ankle_2"/>
+    <child link="l_foot_front_ft"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="l_foot_rear_ft"/>
+  <joint name="l_foot_rear_ft_fixed_joint" type="fixed">
+    <origin xyz="0.016000000000000004 0 -0.04789999999999994" rpy="0 0 -2.0943952105869315"/>
+    <parent link="l_ankle_2"/>
+    <child link="l_foot_rear_ft"/>
+    <dynamics damping="0.1"/>
+  </joint>
   <link name="l_foot_front">
     <inertial>
-      <origin xyz="0.0005879999999999913 0 0.00229899999999994" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.0005879999999999913 0 -0.020001000000000047" rpy="0 0 1.5707963267948966"/>
       <mass value="0.221105"/>
       <inertia ixx="0.000260879" ixy="0.0" ixz="-5.72999e-09" iyy="0.000191206" iyz="5.16985e-09" izz="0.000450089"/>
     </inertial>
     <visual>
-      <origin xyz="-0.10365000000000019 -0.07440000000000048 0.955800000000001" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="-0.10365000000000019 -0.07440000000000048 0.933500000000001" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -516,26 +558,26 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="-0.10365000000000019 -0.07440000000000048 0.955800000000001" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="-0.10365000000000019 -0.07440000000000048 0.933500000000001" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <joint name="l_foot_front_ft_sensor" type="fixed">
-    <origin xyz="0.13525 0 -0.07019999999999993" rpy="0 0 0"/>
+    <origin xyz="0.13525 0 -0.04789999999999994" rpy="0 0 0"/>
     <parent link="l_ankle_2"/>
     <child link="l_foot_front"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="l_foot_rear">
     <inertial>
-      <origin xyz="0.0005878999999999988 0 0.00229899999999994" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.0005878999999999988 0 -0.020001000000000047" rpy="0 0 1.5707963267948966"/>
       <mass value="0.221105"/>
       <inertia ixx="0.000260872" ixy="0.0" ixz="-5.72999e-09" iyy="0.000191206" iyz="3.29086e-09" izz="0.000450088"/>
     </inertial>
     <visual>
-      <origin xyz="0.015599999999999909 -0.07440000000000056 0.9558000000000011" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.015599999999999909 -0.07440000000000056 0.9335000000000011" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -544,21 +586,21 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0.015599999999999909 -0.07440000000000056 0.9558000000000011" rpy="0 0 1.5707963267948966"/>
+      <origin xyz="0.015599999999999909 -0.07440000000000056 0.9335000000000011" rpy="0 0 1.5707963267948966"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
   <joint name="l_foot_rear_ft_sensor" type="fixed">
-    <origin xyz="0.016000000000000004 0 -0.07019999999999993" rpy="0 0 0"/>
+    <origin xyz="0.016000000000000004 0 -0.04789999999999994" rpy="0 0 0"/>
     <parent link="l_ankle_2"/>
     <child link="l_foot_rear"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="l_sole"/>
   <joint name="l_sole_fixed_joint" type="fixed">
-    <origin xyz="0.05963 0 0" rpy="0 0 0"/>
+    <origin xyz="0.05963 0 -0.022299999999999986" rpy="0 0 0"/>
     <parent link="l_foot_rear"/>
     <child link="l_sole"/>
     <dynamics damping="0.1"/>
@@ -860,6 +902,13 @@
     <child link="r_shoulder_2"/>
     <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="r_arm_ft"/>
+  <joint name="r_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.006849910543190453 3.2679315392636354e-07 -0.05429971877536288" rpy="-3.1415924092528633 0 1.5707964070692688"/>
+    <parent link="r_shoulder_2"/>
+    <child link="r_arm_ft"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="r_shoulder_3">
     <inertial>
@@ -1878,6 +1927,13 @@
     <child link="l_shoulder_2"/>
     <limit effort="50000" lower="-0.2617993877991494" upper="2.6179938779914944" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
+  </joint>
+  <link name="l_arm_ft"/>
+  <joint name="l_arm_ft_fixed_joint" type="fixed">
+    <origin xyz="-0.004350065786786487 2.435985168580679e-07 -0.054299880148590496" rpy="-3.1415923328972943 0 -1.5707962214346844"/>
+    <parent link="l_shoulder_2"/>
+    <child link="l_arm_ft"/>
+    <dynamics damping="0.1"/>
   </joint>
   <link name="l_shoulder_3">
     <inertial>
@@ -3128,7 +3184,7 @@
   </plugin>
 </gazebo>
   <gazebo reference="l_arm_ft_sensor">
-    <sensor name="l_arm_ft_sensor" type="force_torque">
+    <sensor name="l_arm_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
@@ -3141,7 +3197,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="l_arm_ft_sensor" type="force_torque">
+  <sensor name="l_arm_ft" type="force_torque">
     <parent joint="l_arm_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
@@ -3150,7 +3206,7 @@
     <origin rpy="-3.1415923328972943 2.923917580150936e-08 -1.5707962214346844" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="r_arm_ft_sensor">
-    <sensor name="r_arm_ft_sensor" type="force_torque">
+    <sensor name="r_arm_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
@@ -3163,7 +3219,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="r_arm_ft_sensor" type="force_torque">
+  <sensor name="r_arm_ft" type="force_torque">
     <parent joint="r_arm_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
@@ -3172,7 +3228,7 @@
     <origin rpy="-3.1415924092528633 -2.2277470853981803e-08 1.5707964070692688" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="l_leg_ft_sensor">
-    <sensor name="l_leg_ft_sensor" type="force_torque">
+    <sensor name="l_leg_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
@@ -3185,7 +3241,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="l_leg_ft_sensor" type="force_torque">
+  <sensor name="l_leg_ft" type="force_torque">
     <parent joint="l_leg_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
@@ -3194,51 +3250,51 @@
     <origin rpy="3.141592653589793 -0.0 2.6179934742070086" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="l_foot_front_ft_sensor">
-    <sensor name="l_foot_front_ft_sensor" type="force_torque">
+    <sensor name="l_foot_front_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
         <frame>sensor</frame>
         <measure_direction>parent_to_child</measure_direction>
       </force_torque>
-      <pose>0.0 0.0 0.022299999999999986 0.0 -0.0 -2.0943952105869315</pose>
+      <pose>0.0 0.0 0.0 0.0 -0.0 -2.0943952105869315</pose>
       <plugin name="left_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
   <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="l_foot_front_ft_sensor" type="force_torque">
+  <sensor name="l_foot_front_ft" type="force_torque">
     <parent joint="l_foot_front_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
       <measure_direction>parent_to_child</measure_direction>
     </force_torque>
-    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
+    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="l_foot_rear_ft_sensor">
-    <sensor name="l_foot_rear_ft_sensor" type="force_torque">
+    <sensor name="l_foot_rear_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
         <frame>sensor</frame>
         <measure_direction>parent_to_child</measure_direction>
       </force_torque>
-      <pose>0.0 0.0 0.022299999999999986 0.0 -0.0 -2.0943952105869315</pose>
+      <pose>0.0 0.0 0.0 0.0 -0.0 -2.0943952105869315</pose>
       <plugin name="left_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
   <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="l_foot_rear_ft_sensor" type="force_torque">
+  <sensor name="l_foot_rear_ft" type="force_torque">
     <parent joint="l_foot_rear_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
       <measure_direction>parent_to_child</measure_direction>
     </force_torque>
-    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
+    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="r_leg_ft_sensor">
-    <sensor name="r_leg_ft_sensor" type="force_torque">
+    <sensor name="r_leg_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
@@ -3251,7 +3307,7 @@
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="r_leg_ft_sensor" type="force_torque">
+  <sensor name="r_leg_ft" type="force_torque">
     <parent joint="r_leg_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
@@ -3260,48 +3316,48 @@
     <origin rpy="3.141592653589793 0.0 -2.6179934742070086" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="r_foot_front_ft_sensor">
-    <sensor name="r_foot_front_ft_sensor" type="force_torque">
+    <sensor name="r_foot_front_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
         <frame>sensor</frame>
         <measure_direction>parent_to_child</measure_direction>
       </force_torque>
-      <pose>0.0 0.0 0.022299999999999986 0.0 -0.0 -2.0943952105869315</pose>
+      <pose>0.0 0.0 0.0 0.0 -0.0 -2.0943952105869315</pose>
       <plugin name="right_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
   <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="r_foot_front_ft_sensor" type="force_torque">
+  <sensor name="r_foot_front_ft" type="force_torque">
     <parent joint="r_foot_front_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
       <measure_direction>parent_to_child</measure_direction>
     </force_torque>
-    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
+    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="r_foot_rear_ft_sensor">
-    <sensor name="r_foot_rear_ft_sensor" type="force_torque">
+    <sensor name="r_foot_rear_ft" type="force_torque">
       <always_on>1</always_on>
       <update_rate>100</update_rate>
       <force_torque>
         <frame>sensor</frame>
         <measure_direction>parent_to_child</measure_direction>
       </force_torque>
-      <pose>0.0 0.0 0.022299999999999986 0.0 -0.0 -2.0943952105869315</pose>
+      <pose>0.0 0.0 0.0 0.0 -0.0 -2.0943952105869315</pose>
       <plugin name="right_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
   <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
-  <sensor name="r_foot_rear_ft_sensor" type="force_torque">
+  <sensor name="r_foot_rear_ft" type="force_torque">
     <parent joint="r_foot_rear_ft_sensor"/>
     <force_torque>
       <frame>sensor</frame>
       <measure_direction>parent_to_child</measure_direction>
     </force_torque>
-    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.022299999999999986"/>
+    <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.0 0.0 0.0"/>
   </sensor>
   <gazebo reference="head">
     <sensor name="head_imu_0" type="imu">
