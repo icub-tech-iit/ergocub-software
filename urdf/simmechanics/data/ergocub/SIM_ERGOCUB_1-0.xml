@@ -6340,7 +6340,7 @@
             <name>"CS2"</name>
             <displayName>"SCSYS_R_FOOT_FRONT"</displayName>
             <nodeID>"421(USERADDED)"</nodeID>
-            <position>-74.4,-103.65,-955.8</position>
+            <position>-74.4,-103.65,-933.5</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -6434,7 +6434,7 @@
             <name>"CS3"</name>
             <displayName>"SCSYS_R_FOOT_REAR"</displayName>
             <nodeID>"315(USERADDED)"</nodeID>
-            <position>-74.4,15.6,-955.8</position>
+            <position>-74.4,15.6,-933.5</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -7147,7 +7147,7 @@
             <name>"CS2"</name>
             <displayName>"SCSYS_L_FOOT_FRONT"</displayName>
             <nodeID>"403(USERADDED)"</nodeID>
-            <position>74.4,-103.65,-955.8</position>
+            <position>74.4,-103.65,-933.5</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -7241,7 +7241,7 @@
             <name>"CS3"</name>
             <displayName>"SCSYS_L_FOOT_REAR"</displayName>
             <nodeID>"453(USERADDED)"</nodeID>
-            <position>74.4,15.6,-955.8</position>
+            <position>74.4,15.6,-933.5</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
