@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### urdf
 - ergoCubGazeboV1: reenabled `torso_pitch` (https://github.com/icub-tech-iit/ergocub-software/issues/152)
+- ergoCubGazeboV1: "center" feet csys w/ ft csys (https://github.com/icub-tech-iit/ergocub-software/issues/146)
 
 ## [0.3.3] - 2023-07-07
 
