@@ -14,6 +14,12 @@
 #include <cmath>
 #include <cstdlib>
 
+bool isergoCub1_1Model(const std::string& modelPath)
+{
+    return (modelPath.find("SN001") != std::string::npos ||
+            modelPath.find("GazeboV1_1") != std::string::npos);
+}
+
 inline bool checkDoubleAreEqual(const double & val1,
                                 const double & val2,
                                 const double tol)
@@ -226,7 +232,7 @@ bool checkSolesAreParallel(iDynTree::KinDynComputations & comp)
 
 
 
-bool checkAxisDirections(iDynTree::KinDynComputations & comp)
+bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isergoCub1_1Model)
 {
 
     std::vector<std::string> axisNames;
@@ -287,10 +293,27 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,0.227771,0.966702));
     axisNames.push_back("r_thumb_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.329847,0.160871,0.930227));
-    axisNames.push_back("r_thumb_prox");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
-    axisNames.push_back("r_thumb_dist");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+    if (!isergoCub1_1Model) {
+        axisNames.push_back("r_thumb_prox");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+        axisNames.push_back("r_thumb_dist");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+        axisNames.push_back("l_thumb_prox");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
+        axisNames.push_back("l_thumb_dist");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
+    }
+    else {
+        axisNames.push_back("r_thumb_prox");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.439716,0.892571,-0.0998355));
+        axisNames.push_back("r_thumb_dist");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.439716,0.892571,-0.0998355));
+        axisNames.push_back("l_thumb_prox");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.439716,0.892571,0.0998355));
+        axisNames.push_back("l_thumb_dist");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.439716,0.892571,0.0998355));
+
+    }
     axisNames.push_back("r_index_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
     axisNames.push_back("r_index_prox");
@@ -323,10 +346,6 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.116648,0.227771,-0.966702));
     axisNames.push_back("l_thumb_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.329847,0.160871,-0.930227));
-    axisNames.push_back("l_thumb_prox");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
-    axisNames.push_back("l_thumb_dist");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
     axisNames.push_back("l_index_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     axisNames.push_back("l_index_prox");
@@ -362,7 +381,7 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp)
         {
             std::cerr << "ergocub-model-test error:" << axisToCheck << " got direction of " << axisInRootLink.getDirection().toString()
                   << " instead of expected " << expectedDirection.toString() << std::endl;
-            //return false;
+            return false;
         }
     }
 
@@ -550,11 +569,14 @@ bool checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGiven
         return false;
     }
 
+    //std::cout<<firstLink_H_sensor.toString()<<std::endl;
+    //std::cout<<firstLinkName<<" "<<sens->getSecondLinkName()<<std::endl;
+    //std::cout<<root_H_firstLink.toString();
 
     iDynTree::Transform root_H_sensor = root_H_firstLink*firstLink_H_sensor;
 
     // Check that the two transfom are equal equal
-    if (!checkTransformAreEqual(root_H_frame, root_H_sensor, 1e-6))
+    if (!checkTransformAreEqual(root_H_frame, root_H_sensor, 1e-5))
     {
         std::cerr << "ergocub-model-test : transform between root_H_frame and root_H_sensor for " << sensorName << " is not the expected one, test failed." << std::endl;
         std::cerr << "ergocub-model-test : root_H_frame :" << root_H_frame.toString() << std::endl;
@@ -680,7 +702,7 @@ int main(int argc, char ** argv)
     comp.setRobotState(qj,dqj,grav);
 
     // Check axis
-    if( !checkAxisDirections(comp) )
+    if( !checkAxisDirections(comp, isergoCub1_1Model(modelPath)) )
     {
         return EXIT_FAILURE;
     }

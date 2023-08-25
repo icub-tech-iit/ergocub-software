@@ -1332,25 +1332,21 @@ reverseRotationAxis:
     r_shoulder_roll
     r_shoulder_pitch
     r_shoulder_yaw
-    l_shoulder_yaw
     l_elbow
-    l_wrist_pitch
     r_hip_pitch
-    l_knee
     l_ankle_roll
-    l_ankle_pitch
     l_hip_pitch
     l_hip_roll
     l_hip_yaw
     neck_pitch
     neck_roll
+    r_knee
+    r_ankle_pitch
     l_wrist_roll
-    l_writs_yaw
-    l_wrist_pitch
+    l_wrist_yaw
     l_thumb_add
     l_thumb_prox
     l_thumb_dist
-    l_index_add
     l_index_prox
     l_index_dist
     l_middle_prox
@@ -1358,18 +1354,16 @@ reverseRotationAxis:
     l_pinkie_prox
     l_pinkie_dist
     r_thumb_dist
+    r_thumb_prox
     r_index_add
     r_index_prox
     r_index_dist
+    r_middle_prox
     r_middle_dist
     r_ring_dist
+    r_ring_prox
     r_pinkie_dist
-#    r_knee
-#    l_ankle_pitch
-#    l_wrist_roll
-#    l_wrist_pitch
-#    l_wrist_yaw
-#    torso_pitch
+    r_pinkie_prox
 
 XMLBlobs:
     # imu waist (workaround since simmechanics was not updated)
