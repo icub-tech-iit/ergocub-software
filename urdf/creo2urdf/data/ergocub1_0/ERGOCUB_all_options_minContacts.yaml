@@ -1490,12 +1490,6 @@ assignedCollisionGeometry:
         size: [0.0,0.0,0.0]
         origin: [0.0,0.0,0.0,0.0,0.0,0.0]
 
-mirroredInertia:
-- mirroredLink: l_upper_arm
-  originalLink: r_upper_arm
-  simmetryReferenceLink: root_link
-  symmetryPlane: xz
-
 assignedColors:
   root_link   : [0.90, 0.90, 0.90, 1]
   torso_1     : [0.90, 0.90, 0.90, 1]

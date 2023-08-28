@@ -917,15 +917,6 @@ assignedInertias:
     yy: 0.01
     zz: 0.01
 
-mirroredInertia:
-- mirroredLink: l_upper_arm
-  originalLink: r_upper_arm
-  simmetryReferenceLink: root_link
-  symmetryPlane: xz
-
-
-
-
 # Sensors options
 forceTorqueSensors:
     - jointName: l_arm_ft_sensor
