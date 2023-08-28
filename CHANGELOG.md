@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-##[0.3.4] - 2023-08-28
+## 0.3.4] - 2023-08-28
 
 ### urdf
 - ergoCubGazeboV1: reenabled `torso_pitch` (https://github.com/icub-tech-iit/ergocub-software/issues/152)
