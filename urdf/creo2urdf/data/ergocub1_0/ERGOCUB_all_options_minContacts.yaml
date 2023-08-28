@@ -6,7 +6,7 @@ originXYZ: [0.0,0.0,0.90]
 originRPY: [0.0,0.0,0.0]
 # Meshes options
 scale: [0.001,0.001,0.001]
-filenameformatchangeext: "package://ergoCub/meshes/simmechanics/%s.stl"
+filenameformat: "package://ergoCub/meshes/simmechanics/%s.stl"
 epsilon: 2e-4
 
 forcelowercase: Yes
