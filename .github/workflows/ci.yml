@@ -2,6 +2,10 @@ name: C++ CI Workflow with conda dependencies
 
 on:
   push:
+    branches:
+    - master
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
   pull_request:
   schedule:
   # * is a special character in YAML so you have to quote this string
@@ -71,8 +75,8 @@ jobs:
     - name: Test
       shell: bash-l {0}
       run: |
-      cd build
-      ctest --output-on-failure
+        cd build
+        ctest --output-on-failure
 
 
 
