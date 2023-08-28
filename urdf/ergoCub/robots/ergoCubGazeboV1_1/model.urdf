@@ -1800,13 +1800,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_foot_front.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.117 0.1 0.006"/>
       </geometry>
-      <material name="">
-        <color rgba="1 0.51 0 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_foot_rear_ft_sensor" type="fixed">
@@ -1830,13 +1827,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_foot_rear.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.117 0.1 0.006"/>
       </geometry>
-      <material name="">
-        <color rgba="1 0.51 0 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_hip_roll" type="revolute">
@@ -2050,13 +2044,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_foot_front.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.117 0.1 0.006"/>
       </geometry>
-      <material name="">
-        <color rgba="1 0.51 0 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_foot_rear_ft_sensor" type="fixed">
@@ -2080,13 +2071,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0 0.003" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_foot_rear.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.117 0.1 0.006"/>
       </geometry>
-      <material name="">
-        <color rgba="1 0.51 0 1"/>
-      </material>
     </collision>
   </link>
   <link name="head_imu_0"/>
