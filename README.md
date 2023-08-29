@@ -30,24 +30,8 @@ yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
 ```
 
 ## URDF generation
-This repo hosts the `ergoCub` urdf, enabling the cmake flag `ERGOCUB_MODEL_GENERATE_SIMMECHANICS` it is possible to generate it from simmechanics xml.
-Enabling also `ERGOCUB_MODEL_COPY_TO_SRC` the generated models are copied in the `urdf` directory for being committed.
-### Dependencies
-- [Ruby](https://www.ruby-lang.org/en/)
-- [iDynTree](https://github.com/robotology/idyntree)
-- [YARP](https://github.com/robotology/yarp)
-- [simmechanics-to-urdf](https://github.com/robotology/simmechanics-to-urdf)
-### Usage
-```sh
-mkdir build
-cd build
-cmake -DERGOCUB_MODEL_GENERATE_SIMMECHANICS=BOOL:ON -DERGOCUB_MODEL_COPY_TO_SRC=BOOL:ON ..
-make
-(make install)
-```
-
-### Automatic generation
-[This GitHub Action](/.github/workflows/generate_models.yml) generates automatically the urdf everytime a commit in `urdf/simmechanics` on master branch is done and opens a PR containing the changes in the models.
+This repository hosts the configuration files for generating ergoCub urdf via [`creo2urdf`](https://github.com/icub-tech-iit/creo2urdf).
+You can find there the relative documentation on how write those configuration files.
 
 ### Maintainers
 This repository is maintained by:

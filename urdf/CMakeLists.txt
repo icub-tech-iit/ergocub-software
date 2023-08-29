@@ -9,6 +9,8 @@
 set(GAZEBO_SUPPORTED_MODELS "")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_minContacts")
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_1")
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_1_minContacts")
 
 
 set(INSTALLED_URDF_MODELS "")
@@ -24,23 +26,8 @@ macro(SUBDIRLIST result curdir)
   set(${result} ${dirlist})
 endmacro()
 
-if( ERGOCUB_MODEL_GENERATE_SIMMECHANICS )
-  add_subdirectory(simmechanics)
-  add_custom_target(generate-models ALL)
-
-  if(TARGET generate-models-simmechanics AND ERGOCUB_MODEL_COPY_TO_SRC )
-    add_dependencies(generate-models generate-models-simmechanics)
-    add_custom_target(copy-models-to-src ALL)
-    add_dependencies(copy-models-to-src generate-models)
-    add_custom_command(TARGET copy-models-to-src
-                       POST_BUILD
-                       COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_BINARY_DIR}/${BUILD_PREFIX}" "${CMAKE_CURRENT_SOURCE_DIR}/${BUILD_PREFIX}"
-                       COMMENT "Copying generated files to ${CMAKE_CURRENT_SOURCE_DIR}/${BUILD_PREFIX}")
-  endif()
-else()
-  # Copy the ergoCub folder in the build tree
-  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/${BUILD_PREFIX} DESTINATION ${CMAKE_BINARY_DIR})
-endif()
+# Copy the ergoCub folder in the build tree
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/${BUILD_PREFIX} DESTINATION ${CMAKE_BINARY_DIR})
 
 set(ERGOCUB_MODELS_SDF_VERSION "1.7")
 
@@ -58,11 +45,7 @@ foreach(ROBOT_DIRNAME ${ROBOTS_NAMES})
 
   list(APPEND INSTALLED_URDF_MODELS \"${ROBOT_NAME}\")
   # When copying in sources remove the _fixed models
-  if(ERGOCUB_MODEL_COPY_TO_SRC)
-    file(REMOVE ${ROBOT_MODEL_CONFIG_FILE})
-    file(REMOVE_RECURSE ${ROBOT_FIXED_MODEL_FOLDER})
-    file(REMOVE_RECURSE ${ROBOT_FEET_FIXED_MODEL_FOLDER})
-  elseif(ROBOT_NAME IN_LIST GAZEBO_SUPPORTED_MODELS)
+  if(ROBOT_NAME IN_LIST GAZEBO_SUPPORTED_MODELS)
 
     set(ROBOT_NAME_CONFIG "${ROBOT_NAME}")
     set(ROBOT_MODEL_CONFIG "model.urdf")

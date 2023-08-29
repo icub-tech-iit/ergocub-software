@@ -18,8 +18,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(AddUninstallTarget)
 
-option(ERGOCUB_MODEL_GENERATE_SIMMECHANICS "Generate models using the model generation pipeline from simmechanics" OFF)
-option(ERGOCUB_MODEL_COPY_TO_SRC "Copy to sources the generated urdf files" OFF)
 option(BUILD_TESTING "Run tests for the generated models" OFF)
 option(COMPILE_ergoCubEmotions "Compile the module controlling the ergoCub emotions" OFF)
 
@@ -31,10 +29,10 @@ add_subdirectory(urdf)
 # See https://github.com/robotology/icub-models/issues/177
 # and https://github.com/icub-tech-iit/ergocub-software/issues/59
 file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file "")
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file 
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file
         DESTINATION share/ament_index/resource_index/packages
         RENAME ergoCub)
-        
+
 # TODO to be defined
 if (BUILD_TESTING)
   include( CTest )
@@ -44,6 +42,6 @@ endif()
 
 if(COMPILE_ergoCubEmotions)
   add_subdirectory(src)
-endif() 
+endif()
 
 
