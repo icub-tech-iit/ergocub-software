@@ -73,7 +73,7 @@ jobs:
         cmake --build . --config ${{ matrix.build_type }} --target install
 
     - name: Test
-      shell: bash-l {0}
+      shell: bash -l {0}
       run: |
         cd build
         ctest --output-on-failure
