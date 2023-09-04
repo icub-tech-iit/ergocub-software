@@ -909,7 +909,7 @@ sensors:
     - |
         <update_rate>40</update_rate>
     - |
-        <ray name="head_laser_sensor">
+        <ray>
           <scan>
             <horizontal>
               <samples>360</samples>
