@@ -56,13 +56,13 @@
                 <!--elem name="right_lower_arm">right_arm-mc_wrapper</elem>
                 <elem name="left_lower_arm">left_arm-mc_wrapper</elem-->
                 <!-- imu -->
-                <elem name="imu">head_inertial_hardware_device</elem>
-                <elem name="waist_imu">waist_inertial_hardware_device</elem>
+                <elem name="imu">head_inertial_MAS_client</elem>
+                <elem name="waist_imu">waist_inertial_MAS_client</elem>
                 <!-- ft -->
-                <elem name="left_arm_ft_sensor">ergocub_left_arm_ft</elem>
-                <elem name="right_arm_ft_sensor">ergocub_right_arm_ft</elem>
-                <elem name="left_leg_ft_sensor">ergocub_left_leg_ft</elem>
-                <elem name="right_leg_ft_sensor">ergocub_right_leg_ft</elem>
+                <elem name="left_arm_ft_sensor">left_arm_ft_MAS_client</elem>
+                <elem name="right_arm_ft_sensor">right_arm_ft_MAS_client</elem>
+                <elem name="left_leg_ft_sensor">left_leg_ft_MAS_client</elem>
+                <elem name="right_leg_ft_sensor">right_leg_ft_MAS_client</elem>
             </paramlist>
         </action>
 
