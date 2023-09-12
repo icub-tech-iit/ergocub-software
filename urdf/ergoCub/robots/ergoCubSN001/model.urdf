@@ -636,7 +636,7 @@
     <axis xyz="3.164135620181696e-15 -3.643548754324866e-11 0.9999999999999999"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_thumb_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_thumb_1">
     <inertial>
@@ -668,7 +668,7 @@
     <axis xyz="2.4122360359202233e-11 -3.299033268788776e-11 -0.9999999999999999"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
-    <limit lower="0" upper="1.4329153158873444" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_thumb_2">
     <inertial>
@@ -700,7 +700,7 @@
     <axis xyz="-5.6626925371494566e-12 5.173264594478845e-11 -0.9999999999999999"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
-    <limit lower="0" upper="0.9354964790689606" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_thumb_3">
     <inertial>
@@ -732,7 +732,7 @@
     <axis xyz="-0.9999999999999999 -2.8681237072836204e-11 -1.0871797212486101e-10"/>
     <parent link="r_hand_ring_1"/>
     <child link="r_hand_ring_2"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_ring_2">
     <inertial>
@@ -764,7 +764,7 @@
     <axis xyz="-0.9999999999999999 -2.8584519595543556e-11 -1.0874608649338082e-10"/>
     <parent link="r_hand_pinkie_1"/>
     <child link="r_hand_pinkie_2"/>
-    <limit lower="0" upper="1.6283921921107094" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_pinkie_2">
     <inertial>
@@ -796,7 +796,7 @@
     <axis xyz="-0.9999999999999998 -2.630088161156088e-11 -1.079318529386326e-10"/>
     <parent link="r_hand_middle_1"/>
     <child link="r_hand_middle_2"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_middle_2">
     <inertial>
@@ -860,7 +860,7 @@
     <axis xyz="-0.9999999999999997 -2.3468990639763373e-11 -1.0793547999821127e-10"/>
     <parent link="r_hand_index_2"/>
     <child link="r_hand_index_3"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="r_hand_index_3">
     <inertial>
@@ -1338,7 +1338,7 @@
     <axis xyz="-6.391803752947567e-12 3.5905271811298434e-11 -1"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_thumb_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_thumb_1">
     <inertial>
@@ -1370,7 +1370,7 @@
     <axis xyz="2.4115921065659407e-11 -3.3017838463322846e-11 -0.9999999999999997"/>
     <parent link="l_hand_thumb_1"/>
     <child link="l_hand_thumb_2"/>
-    <limit lower="0" upper="1.4329153158873444" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_thumb_2">
     <inertial>
@@ -1402,7 +1402,7 @@
     <axis xyz="5.648245760041583e-12 -5.177168416189185e-11 -0.9999999999999996"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
-    <limit lower="0" upper="0.9354964790689606" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_thumb_3">
     <inertial>
@@ -1434,7 +1434,7 @@
     <axis xyz="-1 2.8664399475776237e-11 1.0876850894396261e-10"/>
     <parent link="l_hand_ring_1"/>
     <child link="l_hand_ring_2"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_ring_2">
     <inertial>
@@ -1466,7 +1466,7 @@
     <axis xyz="-0.9999999998538307 7.645479968428705e-6 -1.529330960500596e-5"/>
     <parent link="l_hand_pinkie_1"/>
     <child link="l_hand_pinkie_2"/>
-    <limit lower="0" upper="1.6283921921107094" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_pinkie_2">
     <inertial>
@@ -1498,7 +1498,7 @@
     <axis xyz="-1 2.824224757752587e-11 1.074840171400902e-10"/>
     <parent link="l_hand_middle_1"/>
     <child link="l_hand_middle_2"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_middle_2">
     <inertial>
@@ -1562,7 +1562,7 @@
     <axis xyz="-0.9999999999999999 2.3461101117417404e-11 1.0798067476965604e-10"/>
     <parent link="l_hand_index_2"/>
     <child link="l_hand_index_3"/>
-    <limit lower="0" upper="1.7313666179783749" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
   </joint>
   <link name="l_hand_index_3">
     <inertial>
@@ -3020,7 +3020,7 @@
   </gazebo>
   <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo reference="l_shoulder_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
@@ -3038,7 +3038,7 @@
   </gazebo>
   <gazebo>
     <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo reference="r_shoulder_pitch">  <implicitSpringDamper>1</implicitSpringDamper></gazebo>
