@@ -298,24 +298,29 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isergoCub1_1M
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
         axisNames.push_back("r_thumb_dist");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
+        axisNames.push_back("r_index_add");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
         axisNames.push_back("l_thumb_prox");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
         axisNames.push_back("l_thumb_dist");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
+        axisNames.push_back("l_index_add");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     }
     else {
         axisNames.push_back("r_thumb_prox");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.439716,0.892571,-0.0998355));
         axisNames.push_back("r_thumb_dist");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.439716,0.892571,-0.0998355));
+        axisNames.push_back("r_index_add");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,0.935113,-0.250563));
         axisNames.push_back("l_thumb_prox");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.439716,0.892571,0.0998355));
         axisNames.push_back("l_thumb_dist");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.439716,0.892571,0.0998355));
-
+        axisNames.push_back("l_index_add");
+        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,0.935113,0.250563));
     }
-    axisNames.push_back("r_index_add");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,-0.935113,0.250563));
     axisNames.push_back("r_index_prox");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.947223,0.290266,0.136064));
     axisNames.push_back("r_index_dist");
@@ -346,8 +351,6 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isergoCub1_1M
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.116648,0.227771,-0.966702));
     axisNames.push_back("l_thumb_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.329847,0.160871,-0.930227));
-    axisNames.push_back("l_index_add");
-    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
     axisNames.push_back("l_index_prox");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.947223,0.290266,-0.136064));
     axisNames.push_back("l_index_dist");
