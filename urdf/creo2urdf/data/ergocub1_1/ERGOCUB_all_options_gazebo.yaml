@@ -1229,13 +1229,13 @@ reverseRotationAxis:
     l_thumb_dist
     l_index_prox
     l_index_dist
+    l_index_add
     l_middle_prox
     l_middle_dist
     l_pinkie_prox
     l_pinkie_dist
     r_thumb_dist
     r_thumb_prox
-    r_index_add
     r_index_prox
     r_index_dist
     r_middle_prox
