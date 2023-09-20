@@ -123,22 +123,22 @@ macro(generate_ergocub_simmechanics)
     geometricShape:
       shape: box
       size: 0.117 0.100 0.006
-      origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
   - linkName: r_foot_rear
     geometricShape:
       shape: box
       size: 0.117 0.100 0.006
-      origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
   - linkName: l_foot_front
     geometricShape:
       shape: box
       size: 0.117 0.100 0.006
-      origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
   - linkName: l_foot_rear
     geometricShape:
       shape: box
       size: 0.117 0.100 0.006
-      origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+      origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
 ")
     endif()
 
@@ -149,22 +149,22 @@ macro(generate_ergocub_simmechanics)
         geometricShape:
           shape: box
           size: 0.117 0.100 0.006
-          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+          origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
       - linkName: r_foot_rear
         geometricShape:
           shape: box
           size: 0.117 0.100 0.006
-          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+          origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
       - linkName: l_foot_front
         geometricShape:
           shape: box
           size: 0.117 0.100 0.006
-          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+          origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
       - linkName: l_foot_rear
         geometricShape:
           shape: box
           size: 0.117 0.100 0.006
-          origin: \"0.0 0.0 0.003 0.0 0.0 0.0\"
+          origin: \"0.0 0.0 -0.0193 0.0 0.0 0.0\"
       - linkName: r_hip_1
         geometricShape:
           shape: box
