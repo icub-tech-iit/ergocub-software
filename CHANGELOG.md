@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fixed regression in 0.3.4 that moved (in Gazebo-related models) the collision of the sole links to be higher, resulting in the `(r|l)_ankle_2` link being in contact with the ground and resulting in unstable contacts when using the models in Gazebo Classic (https://github.com/icub-tech-iit/ergocub-software/issues/174, https://github.com/icub-tech-iit/ergocub-software/issues/175)
+
 ## [0.3.4] - 2023-08-28
 
 ### urdf
