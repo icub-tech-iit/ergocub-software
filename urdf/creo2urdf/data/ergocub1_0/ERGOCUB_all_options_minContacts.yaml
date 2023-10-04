@@ -700,7 +700,6 @@ exportedFrames:
 
 # Sensors options
 forceTorqueSensors:
-    # upperbody
     - jointName: l_arm_ft_sensor
       directionChildToParent: Yes
       exportFrameInURDF: Yes
@@ -802,50 +801,22 @@ forceTorqueSensors:
 
 
 sensors:
-  - sensorName: default
-    exportFrameInURDF: No
-    sensorType: "accelerometer"
-    updateRate: "100"
-    sensorBlobs:
-    - |
-        <plugin name="ergocub_yarp_gazebo_plugin_ACC" filename="libgazebo_yarp_inertial.so" />
-  - sensorName: default
-    exportFrameInURDF: No
-    sensorType: "ray"
-    updateRate: "100"
-    sensorBlobs:
-    - |
-        <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so" />
-  - sensorName: default
-    exportFrameInURDF: No
-    sensorType: "gyroscope"
-    updateRate: "100"
   - frameName: SCSYS_HEAD_IMU
     linkName: head
     sensorName: head_imu_0
     exportFrameInURDF: Yes
     sensorType: "accelerometer"
+    updateRate: "100"
     sensorBlobs:
     - |
         <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
         </plugin>
-
-  - sensorName: default
-    exportFrameInURDF: No
-    sensorType: "depth"
-    updateRate: "30"
-  - sensorName: default
-    exportFrameInURDF: No
-    sensorType: "camera"
-    updateRate: "30"
-    sensorBlobs:
-    - |
-        <plugin name="ergocub_yarp_gazebo_plugin_camera" filename="libgazebo_yarp_camera.so" />
   - frameName: SCSYS_HEAD_DEPTH
     linkName: realsense
     sensorName: realsense_head_depth
     sensorType: "depth"
+    updateRate: "30"
     sensorBlobs:
     - |
         <camera name="intel_realsense_depth_camera">
@@ -880,6 +851,7 @@ sensors:
     linkName: realsense
     sensorName: realsense_head_rgb
     sensorType: "camera"
+    updateRate: "30"
     sensorBlobs:
     - |
         <camera name="intel_realsense_rgb_camera">
@@ -916,6 +888,7 @@ sensors:
     sensorName: realsense_imu_0
     exportFrameInURDF: Yes
     sensorType: "accelerometer"
+    updateRate: "100"
     sensorBlobs:
     - |
         <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
@@ -925,6 +898,7 @@ sensors:
     linkName: head
     sensorName: lasersensor_head
     sensorType: "ray"
+    updateRate: "100"
     sensorBlobs:
     - |
         <always_on>1</always_on>
@@ -957,7 +931,6 @@ sensors:
         <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
           <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
         </plugin>
-
 
 
 assignedMasses:
