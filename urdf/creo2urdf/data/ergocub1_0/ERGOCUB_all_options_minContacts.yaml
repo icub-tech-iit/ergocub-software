@@ -1508,40 +1508,38 @@ assignedColors:
   head        : [0.9, 0.9, 0.9, 1]
 
 reverseRotationAxis:
-    l_shoulder_pitch
-    l_shoulder_roll
-    l_shoulder_yaw
-    r_elbow
-    l_wrist_pitch
-    r_wrist_yaw
-    r_wrist_pitch
-    r_wrist_roll
-    torso_roll
-    r_hip_roll
-    r_hip_yaw
-    r_ankle_roll
-    l_knee
-    l_ankle_pitch
-    torso_pitch
-    torso_yaw
-    neck_yaw
-    camera_tilt
-    l_thumb_prox
-    l_thumb_dist
-    l_index_add
-    l_ring_prox
-    r_thumb_prox
-    r_thumb_dist
-#
-#   r_knee
-#   r_ankle_roll
-#   l_ankle_pitch
-#   l_shoulder_yaw
-#   l_wrist_roll
-#   l_wrist_pitch
-#   l_wrist_yaw
-#   torso_yaw
-#   neck_yaw
+    l_elbow
+    r_shoulder_pitch
+    r_shoulder_yaw
+    r_shoulder_roll
+    l_wrist_roll
+    l_wrist_yaw
+    r_hip_pitch
+    r_knee
+    r_ankle_pitch
+    l_hip_pitch
+    l_hip_roll
+    l_hip_yaw
+    l_ankle_roll
+    neck_pitch
+    neck_roll
+    l_thumb_add
+    l_index_prox
+    l_index_dist
+    l_middle_prox
+    l_middle_dist
+    l_ring_dist
+    l_pinkie_prox
+    l_pinkie_dist
+    r_thumb_add
+    r_index_add
+    r_index_prox
+    r_middle_prox
+    r_middle_dist
+    r_ring_prox
+    r_ring_dist
+    r_pinkie_prox
+    r_pinkie_dist
 
 XMLBlobs:
     # imu waist (workaround since simmechanics was not updated)
