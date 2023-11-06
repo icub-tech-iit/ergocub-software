@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+###
+
 ## [0.5.0] - 2023-10-26
+
+### urdf
+- Fixed wobbling of the models after moving feet link frames
 
 ## [0.4.0] - 2023-09-04
 
