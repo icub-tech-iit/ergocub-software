@@ -280,7 +280,7 @@
   </joint>
   <link name="r_sole"/>
   <joint name="r_sole_fixed_joint" type="fixed">
-    <origin xyz="0.05963 0 -0.022299999999999986" rpy="0 0 0"/>
+    <origin xyz="0.05963 0 -0.024299999999999877" rpy="0 0 0"/>
     <parent link="r_foot_rear"/>
     <child link="r_sole"/>
     <dynamics damping="0.1"/>
@@ -600,7 +600,7 @@
   </joint>
   <link name="l_sole"/>
   <joint name="l_sole_fixed_joint" type="fixed">
-    <origin xyz="0.05963 0 -0.022299999999999986" rpy="0 0 0"/>
+    <origin xyz="0.05963 0 -0.024299999999999877" rpy="0 0 0"/>
     <parent link="l_foot_rear"/>
     <child link="l_sole"/>
     <dynamics damping="0.1"/>
