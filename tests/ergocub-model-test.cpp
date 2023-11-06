@@ -163,7 +163,7 @@ bool checkBaseLink(iDynTree::KinDynComputations & comp)
     return true;
 }
 
-bool checkSolesAreParallel(iDynTree::KinDynComputations & comp)
+bool checkSolesAreParallelAndCorrectlyPlaced(iDynTree::KinDynComputations & comp)
 {
     iDynTree::LinkIndex rootLinkIdx = comp.getFrameIndex("root_link");
 
@@ -191,6 +191,32 @@ bool checkSolesAreParallel(iDynTree::KinDynComputations & comp)
 
     iDynTree::Transform root_H_l_sole = comp.getRelativeTransform(rootLinkIdx,l_sole);
     iDynTree::Transform root_H_r_sole = comp.getRelativeTransform(rootLinkIdx,r_sole);
+
+    iDynTree::Transform root_H_l_sole_expected(iDynTree::Rotation(1, 0, 0,
+                                                                  0, 1, 0,
+                                                                  0, 0, 1),
+                                               iDynTree::Position(0.04403,0.0744,-0.7793));
+    iDynTree::Transform root_H_r_sole_expected(iDynTree::Rotation(1, 0, 0,
+                                                                  0, 1, 0,
+                                                                  0, 0, 1),
+                                               iDynTree::Position(0.04403,-0.0744,-0.7793));
+
+
+    if (!checkTransformAreEqual(root_H_l_sole, root_H_l_sole_expected, 1e-5))
+    {
+        std::cerr << "ergocub-model-test : transform between root_H_l_sole is not the expected one, test failed." << std::endl;
+        std::cerr << "ergocub-model-test : root_H_l_sole :" << root_H_l_sole.toString() << std::endl;
+        std::cerr << "ergocub-model-test : root_H_l_sole_expected :" << root_H_l_sole_expected.toString() << std::endl;
+        return false;
+    }
+
+    if (!checkTransformAreEqual(root_H_r_sole, root_H_r_sole_expected, 1e-5))
+    {
+        std::cerr << "ergocub-model-test : transform between root_H_r_sole is not the expected one, test failed." << std::endl;
+        std::cerr << "ergocub-model-test : root_H_r_sole :" << root_H_r_sole.toString() << std::endl;
+        std::cerr << "ergocub-model-test : root_H_r_sole_expected :" << root_H_r_sole_expected.toString() << std::endl;
+        return false;
+    }
 
     // height of the sole should be equal
     double l_sole_height = root_H_l_sole.getPosition().getVal(2);
@@ -446,21 +472,21 @@ bool checkFTSensorsAreEvenAndNotNull(iDynTree::ModelLoader & mdlLoader)
 }
 
 
-bool checkFTSensorIsCorrectlyOriented(iDynTree::KinDynComputations & comp,
+bool checkFrameIsCorrectlyOriented(iDynTree::KinDynComputations & comp,
                                       const iDynTree::Rotation& expected,
-                                      const std::string& sensorName)
+                                      const std::string& frameName)
 {
     // Depending on the ergocub model, the sensor could be absent
-    if (!comp.model().isFrameNameUsed(sensorName))
+    if (!comp.model().isFrameNameUsed(frameName))
     {
         return true;
     }
 
-    iDynTree::Rotation actual = comp.getRelativeTransform("root_link", sensorName).getRotation();
+    iDynTree::Rotation actual = comp.getRelativeTransform("root_link", frameName).getRotation();
 
     if (!checkMatrixAreEqual(expected, actual, 1e-3))
     {
-        std::cerr << "ergocub-model-test : transform between root_link and " << sensorName << " is not the expected one, test failed." << std::endl;
+        std::cerr << "ergocub-model-test : transform between root_link and " << frameName << " is not the expected one, test failed." << std::endl;
         std::cerr << "ergocub-model-test : Expected transform : " << expected.toString() << std::endl;
         std::cerr << "ergocub-model-test : Actual transform : " << actual.toString() << std::endl;
         return false;
@@ -468,6 +494,7 @@ bool checkFTSensorIsCorrectlyOriented(iDynTree::KinDynComputations & comp,
 
     return true;
 }
+
 
 
 bool checkFTSensorsAreCorrectlyOriented(iDynTree::KinDynComputations & comp)
@@ -497,14 +524,14 @@ bool checkFTSensorsAreCorrectlyOriented(iDynTree::KinDynComputations & comp)
                            0.5, 0.866025, 0,
                             0, 0, -1);
 
-    bool ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameLeftArmExpected, "l_arm_ft");
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameRightArmExpected, "r_arm_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_L_sensorFrameExpectedLeg, "l_leg_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedLeg, "r_leg_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "l_foot_rear_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "r_foot_rear_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "l_foot_front_ft") && ok;
-    ok = checkFTSensorIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "r_foot_front_ft") && ok;
+    bool ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameLeftArmExpected, "l_arm_ft");
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameRightArmExpected, "r_arm_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_L_sensorFrameExpectedLeg, "l_leg_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedLeg, "r_leg_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "l_foot_rear_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "r_foot_rear_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "l_foot_front_ft") && ok;
+    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "r_foot_front_ft") && ok;
     return ok;
 }
 
@@ -726,7 +753,7 @@ int main(int argc, char ** argv)
 
 
     // Check if l_sole/r_sole have the same distance from the root_link
-    if( !checkSolesAreParallel(comp) )
+    if( !checkSolesAreParallelAndCorrectlyPlaced(comp) )
     {
         return EXIT_FAILURE;
     }
