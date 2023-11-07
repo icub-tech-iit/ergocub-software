@@ -3377,10 +3377,10 @@
     <sensor name="realsense_head_depth" type="depth">
       <always_on>1</always_on>
       <update_rate>30</update_rate>
-      <pose>0.00751550026595621 0.010000000000000005 -4.911144457775407e-08 -1.5707962931078618 8.881784197001252e-16 -1.5707963267948954</pose>
+      <pose>0.00751548 -0.0115 1.73521e-08 -1.5708 3.75968e-16 -1.5708 </pose>
       <camera name="intel_realsense_depth_camera">
   <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
-  <horizontal_fov>1.57079</horizontal_fov>
+  <horizontal_fov>1.2217</horizontal_fov>
   <distortion>
     <k1>0</k1>
     <k2>0</k2>
@@ -3407,7 +3407,7 @@
   </gazebo>
   <sensor name="realsense_head_depth" type="depth">
     <parent link="realsense"/>
-    <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621 0.010000000000000005 -4.911144457775407e-08"/>
+    <origin rpy="-1.5707962931078618 8.881784197001252e-16 -1.5707963267948954" xyz="0.00751550026595621  -0.0115 -4.911144457775407e-08"/>
   </sensor>
   <gazebo reference="realsense">
     <sensor name="realsense_head_rgb" type="camera">
