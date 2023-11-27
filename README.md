@@ -3,6 +3,8 @@ Main collector of ergoCub specific SW
 
 ## Installation
 
+### Compiling from source
+
 For installing it just:
 ```sh
 mkdir build
@@ -21,6 +23,15 @@ export YARP_DATA_DIRS=${YARP_DATA_DIRS}:<install-prefix>/share/ergoCub
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/ergoCub/robots
 export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:<install-prefix>/share/
 ```
+
+### Use conda binary packages
+
+This repository is packaged as `ergocub-software` in the `robotology` conda channel, see https://anaconda.org/robotology/ergocub-software .
+
+To create an environment with it, just add it during the environment creation as any other conda package, for example:
+~~~
+conda create -n ergocubenv -c conda-forge -c robotology ergocub-software
+~~~
 
 ## Run Whole-body-dynamics
 Currently whole-body-dynamics does not run along with `ergoCubGazeboV1`. To start it please run the following command in a console once `yarpserver` and
