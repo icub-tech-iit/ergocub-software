@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- ergoCubV1: fixed the names r/l_upperarm with r/l_upper_arm(https://github.com/icub-tech-iit/ergocub-software/issues/197)
 - Fixed HF when resetting the world when using DART as PE(https://github.com/icub-tech-iit/ergocub-software/issues/190)
 
 ## [0.6.0] - 2023-11-15
