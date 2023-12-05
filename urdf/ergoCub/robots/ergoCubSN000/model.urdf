@@ -938,7 +938,7 @@
     <child link="r_shoulder_3"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="r_upperarm">
+  <link name="r_upper_arm">
     <inertial>
       <origin xyz="0.00014706365601642457 -0.002335316124503606 -0.050116658948294965" rpy="0.12008559189031787 -0.2297881760318691 1.288278055899408"/>
       <mass value="1.77224"/>
@@ -964,7 +964,7 @@
     <origin xyz="0 0 -0.02250022557998886" rpy="0 0 0"/>
     <axis xyz="1.7133815359560156e-07 -2.3659291614741562e-07 0.999999570574365"/>
     <parent link="r_shoulder_3"/>
-    <child link="r_upperarm"/>
+    <child link="r_upper_arm"/>
     <limit effort="50000" lower="-0.8726646259971648" upper="1.3962634015954636" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
@@ -993,7 +993,7 @@
   <joint name="r_elbow" type="revolute">
     <origin xyz="0.010000044612835832 0.0015000724494400042 -0.1236996308912752" rpy="0 0 0"/>
     <axis xyz="3.352246002574083e-07 -0.9999999783534191 2.2068612626213735e-07"/>
-    <parent link="r_upperarm"/>
+    <parent link="r_upper_arm"/>
     <child link="r_forearm"/>
     <limit effort="50000" lower="-0.05235987755982989" upper="1.3089969389957472" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
@@ -1963,7 +1963,7 @@
     <child link="l_shoulder_3"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="l_upperarm">
+  <link name="l_upper_arm">
     <inertial>
       <origin xyz="0.00013045033120965763 0.0022533114588239866 -0.05006471572755227" rpy="0.12008501986317731 0.2297882840735942 1.8533146530335884"/>
       <mass value="1.77085"/>
@@ -1989,7 +1989,7 @@
     <origin xyz="0 0 -0.022500225580001282" rpy="0 0 0"/>
     <axis xyz="3.936910710766739e-07 -1.8507626386998766e-07 -0.9999995705743131"/>
     <parent link="l_shoulder_3"/>
-    <child link="l_upperarm"/>
+    <child link="l_upper_arm"/>
     <limit effort="50000" lower="-0.8726646259971648" upper="1.3962634015954636" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
   </joint>
@@ -2018,7 +2018,7 @@
   <joint name="l_elbow" type="revolute">
     <origin xyz="0.01000011478523053 -0.001500064220488484 -0.12369962531821438" rpy="0 0 0"/>
     <axis xyz="-1.4958988243767013e-07 -0.9999999783534517 -2.7220291587415346e-07"/>
-    <parent link="l_upperarm"/>
+    <parent link="l_upper_arm"/>
     <child link="l_forearm"/>
     <limit effort="50000" lower="-0.05235987755982989" upper="1.3089969389957472" velocity="120.0"/>
     <dynamics damping="2.0" friction="0.0"/>
