@@ -9,6 +9,8 @@ cmake_minimum_required(VERSION 3.12)
 project(ergocub-software
         VERSION 0.6.0)
 
+find_package(YARP 3.7.2 REQUIRED)
+
 # Give error if add_dependencies is called on a non-existing target
 if(POLICY CMP0046)
   cmake_policy(SET CMP0046 NEW)
@@ -39,6 +41,8 @@ if (BUILD_TESTING)
   enable_testing()
   add_subdirectory(tests)
 endif()
+
+add_subdirectory(app)
 
 if(COMPILE_ergoCubEmotions)
   add_subdirectory(src)
