@@ -1,14 +1,12 @@
-################################################################################
-#                                                                              #
-# Copyright (C) 2023 Fondazione Istitito Italiano di Tecnologia (IIT)          #
-# All Rights Reserved.                                                         #
-#                                                                              #
-################################################################################
+# Copyright (C) 2006-2022 Istituto Italiano di Tecnologia (IIT)
+# All rights reserved.
+#
+# This software may be modified and distributed under the terms of the
+# BSD-3-Clause license. See the accompanying LICENSE file for details.
 
 project(ergoCubEmotions)
 cmake_minimum_required(VERSION 3.12)
 
-find_package(YARP 3.7.2 REQUIRED)
 find_package(OpenCV 4.2.0 REQUIRED)
 
 set(doc_files ${PROJECT_NAME}.xml)
