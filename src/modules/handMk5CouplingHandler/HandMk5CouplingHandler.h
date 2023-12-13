@@ -79,7 +79,8 @@ private:
      */
     double evaluateCoupledJointJacobian(const double& q1, const std::string& finger_name);
 
-    bool parseFingerParameters(yarp::os::Bottle& hand_params);
+    bool parseFingerParameters(yarp::os::Searchable& config);
+    bool parseCouplingParameters(yarp::os::Searchable& config);
 };
 
 #endif // HANDMK5COUPLINGHANDLER_H
