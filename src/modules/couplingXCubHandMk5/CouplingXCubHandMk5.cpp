@@ -72,13 +72,6 @@ double CouplingXCubHandMk5::evaluateCoupledJointJacobian(const double& q1, const
 }
 
 
-CouplingXCubHandMk5::CouplingXCubHandMk5()
-{
-    m_couplingSize = 12;
-}
-
-
-
 bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
 {
 

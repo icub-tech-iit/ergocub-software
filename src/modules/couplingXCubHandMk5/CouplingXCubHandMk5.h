@@ -16,13 +16,28 @@
 #include <vector>
 #include <string>
 
+/**
+ * Parameters from https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling
+ */
+struct FingerParameters
+{
+    double L0x;
+    double L0y;
+    double q2bias;
+    double q1off;
+    double k;
+    double d;
+    double l;
+    double b;
+};
+
 /** TBD
  */
 class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
                             public yarp::dev::ImplementJointCoupling {
 public:
-    CouplingXCubHandMk5();
-    ~CouplingXCubHandMk5() override;
+    CouplingXCubHandMk5() = default;
+    virtual ~CouplingXCubHandMk5() override = default;
     bool convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) override;
     bool convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) override;
     bool convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) override;
@@ -32,8 +47,7 @@ public:
     bool convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) override;
     bool convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) override;
 
-    //DeviceDriver
-    bool close() override;
+    // //DeviceDriver
     /**
         * Configure with a set of options.
         * @param config The options to use
@@ -41,21 +55,6 @@ public:
         */
     bool open(yarp::os::Searchable& config) override;
 private:
-
-    /**
-     * Parameters from https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling
-     */
-    struct FingerParameters
-    {
-        double L0x;
-        double L0y;
-        double q2bias;
-        double q1off;
-        double k;
-        double d;
-        double l;
-        double b;
-    };
 
     std::unordered_map<std::string, FingerParameters> mFingerParameters;
 
