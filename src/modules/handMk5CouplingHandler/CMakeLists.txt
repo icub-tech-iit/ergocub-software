@@ -8,29 +8,29 @@ find_package(YARP 3.9.0 REQUIRED)
 
 yarp_configure_plugins_installation(ergocub-software)
 
-yarp_prepare_plugin(handMk5CouplingHandler
+yarp_prepare_plugin(couplingHandMk5
                     CATEGORY device
                     TYPE HandMk5CouplingHandler
                     INCLUDE HandMk5CouplingHandler.h
                     DEFAULT OFF)
 
-if(ENABLE_handMk5CouplingHandler)
+if(ENABLE_couplingHandMk5)
 
-  yarp_add_plugin(yarp_handMk5CouplingHandler)
+  yarp_add_plugin(yarp_couplingHandMk5)
 
   if(MSVC)
     add_definitions(-D_USE_MATH_DEFINES)
   endif()
 
-  target_sources(yarp_handMk5CouplingHandler PRIVATE HandMk5CouplingHandler.cpp
+  target_sources(yarp_couplingHandMk5 PRIVATE HandMk5CouplingHandler.cpp
                                                      HandMk5CouplingHandler.h)
 
-  target_link_libraries(yarp_handMk5CouplingHandler PRIVATE YARP::YARP_os
+  target_link_libraries(yarp_couplingHandMk5 PRIVATE YARP::YARP_os
                                                            YARP::YARP_dev)
   list(APPEND YARP_${YARP_PLUGIN_MASTER}_PRIVATE_DEPS YARP_os
                                                       YARP_dev)
 
-  yarp_install(TARGETS yarp_handMk5CouplingHandler
+  yarp_install(TARGETS yarp_couplingHandMk5
                EXPORT YARP_${YARP_PLUGIN_MASTER}
                COMPONENT ${YARP_PLUGIN_MASTER}
                LIBRARY DESTINATION ${YARP_DYNAMIC_PLUGINS_INSTALL_DIR}
@@ -39,5 +39,5 @@ if(ENABLE_handMk5CouplingHandler)
 
   set(YARP_${YARP_PLUGIN_MASTER}_PRIVATE_DEPS ${YARP_${YARP_PLUGIN_MASTER}_PRIVATE_DEPS} PARENT_SCOPE)
 
-  set_property(TARGET yarp_handMk5CouplingHandler PROPERTY FOLDER "Plugins/Device")
+  set_property(TARGET yarp_couplingHandMk5 PROPERTY FOLDER "Plugins/Device")
 endif()
