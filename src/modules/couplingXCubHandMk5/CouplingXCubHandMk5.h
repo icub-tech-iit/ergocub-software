@@ -6,8 +6,8 @@
  * BSD-3-Clause license. See the accompanying LICENSE file for details.
  */
 
-#ifndef HANDMK5COUPLINGHANDLER_H
-#define HANDMK5COUPLINGHANDLER_H
+#ifndef COUPLINGXCUBHANDMK5_H
+#define COUPLINGXCUBHANDMK5_H
 
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/ImplementJointCoupling.h>
@@ -18,11 +18,11 @@
 
 /** TBD
  */
-class HandMk5CouplingHandler : public yarp::dev::DeviceDriver,
-                               public yarp::dev::ImplementJointCoupling {
+class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
+                            public yarp::dev::ImplementJointCoupling {
 public:
-    HandMk5CouplingHandler();
-    ~HandMk5CouplingHandler() override;
+    CouplingXCubHandMk5();
+    ~CouplingXCubHandMk5() override;
     bool convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) override;
     bool convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) override;
     bool convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) override;
@@ -83,4 +83,4 @@ private:
     bool parseCouplingParameters(yarp::os::Searchable& config);
 };
 
-#endif // HANDMK5COUPLINGHANDLER_H
+#endif // COUPLINGXCUBHANDMK5_H

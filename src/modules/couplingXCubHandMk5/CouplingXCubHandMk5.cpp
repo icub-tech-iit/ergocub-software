@@ -6,7 +6,7 @@
  * BSD-3-Clause license. See the accompanying LICENSE file for details.
  */
 
-#include "HandMk5CouplingHandler.h"
+#include "CouplingXCubHandMk5.h"
 #include <yarp/os/LogStream.h>
 #include <yarp/os/LogComponent.h>
 #include <cmath>
@@ -15,7 +15,7 @@
 YARP_DECLARE_LOG_COMPONENT(HANDMK5COUPLINGHANDLER)
 
 
-double HandMk5CouplingHandler::evaluateCoupledJoint(const double& q1, const std::string& finger_name)
+double CouplingXCubHandMk5::evaluateCoupledJoint(const double& q1, const std::string& finger_name)
 {
     /**
      * Coupling law taken from from https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling
@@ -43,7 +43,7 @@ double HandMk5CouplingHandler::evaluateCoupledJoint(const double& q1, const std:
 }
 
 
-double HandMk5CouplingHandler::evaluateCoupledJointJacobian(const double& q1, const std::string& finger_name)
+double CouplingXCubHandMk5::evaluateCoupledJointJacobian(const double& q1, const std::string& finger_name)
 {
     /**
      * Coupling law jacobian taken from from https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling
@@ -72,14 +72,14 @@ double HandMk5CouplingHandler::evaluateCoupledJointJacobian(const double& q1, co
 }
 
 
-HandMk5CouplingHandler::HandMk5CouplingHandler()
+CouplingXCubHandMk5::CouplingXCubHandMk5()
 {
     m_couplingSize = 12;
 }
 
 
 
-bool HandMk5CouplingHandler::parseFingerParameters(yarp::os::Searchable& config)
+bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
 {
 
     yarp::os::Bottle& hand_params = config.findGroup("COUPLING_PARAMS");
@@ -119,7 +119,7 @@ bool HandMk5CouplingHandler::parseFingerParameters(yarp::os::Searchable& config)
     return true;
 }
 
-bool HandMk5CouplingHandler::parseCouplingParameters(yarp::os::Searchable& config) {
+bool CouplingXCubHandMk5::parseCouplingParameters(yarp::os::Searchable& config) {
     yarp::sig::VectorOf<size_t> coupled_physical_joints{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     yarp::sig::VectorOf<size_t> coupled_actuated_axes{0, 1, 2, 3, 4, 5};
     std::vector<std::string> physical_joint_names;
@@ -197,7 +197,7 @@ bool HandMk5CouplingHandler::parseCouplingParameters(yarp::os::Searchable& confi
     return true;
 }
 
-bool HandMk5CouplingHandler::open(yarp::os::Searchable& config) {
+bool CouplingXCubHandMk5::open(yarp::os::Searchable& config) {
 
     // TODO INVOKE ImplementCoupling::initialise()
     bool ok = parseFingerParameters(config);
@@ -215,7 +215,7 @@ bool HandMk5CouplingHandler::open(yarp::os::Searchable& config) {
     return ok;
 }
 
-bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) {
+bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
@@ -244,7 +244,7 @@ bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesPos(const ya
     return true;
 }
 
-bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) {
+bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
@@ -273,16 +273,16 @@ bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesVel(const ya
 }
 
 
-bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) {
+bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) {
     return false;
 }
 
-bool HandMk5CouplingHandler::convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) {
+bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) {
     return false;
 }
 
 
-bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) {
+bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
@@ -319,7 +319,7 @@ bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsPos(const ya
 }
 
 
-bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) {
+bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
@@ -372,9 +372,9 @@ bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsVel(const ya
     return true;
 }
 
-bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) {
+bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) {
     return false;
 }
-bool HandMk5CouplingHandler::convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) {
+bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) {
     return false;
 }

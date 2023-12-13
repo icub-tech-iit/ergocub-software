@@ -7,4 +7,4 @@
 if(COMPILE_ergoCubEmotions)
   add_subdirectory(ergoCubEmotions)
 endif()
-add_subdirectory(handMk5CouplingHandler)
+add_subdirectory(couplingXCubHandMk5)
