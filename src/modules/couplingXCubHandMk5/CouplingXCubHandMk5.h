@@ -9,12 +9,16 @@
 #ifndef COUPLINGXCUBHANDMK5_H
 #define COUPLINGXCUBHANDMK5_H
 
+#include <yarp/os/LogComponent.h>
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/ImplementJointCoupling.h>
 
 #include <unordered_map>
 #include <vector>
 #include <string>
+
+
+YARP_DECLARE_LOG_COMPONENT(COUPLINGXCUBHANDMK5)
 
 /**
  * Parameters from https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling

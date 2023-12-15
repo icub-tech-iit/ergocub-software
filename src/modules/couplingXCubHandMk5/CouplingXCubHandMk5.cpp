@@ -8,11 +8,10 @@
 
 #include "CouplingXCubHandMk5.h"
 #include <yarp/os/LogStream.h>
-#include <yarp/os/LogComponent.h>
 #include <cmath>
 
 
-YARP_DECLARE_LOG_COMPONENT(HANDMK5COUPLINGHANDLER)
+YARP_LOG_COMPONENT(COUPLINGXCUBHANDMK5, "yarp.device.couplingXCubHandMk5")
 
 
 double CouplingXCubHandMk5::evaluateCoupledJoint(const double& q1, const std::string& finger_name)
@@ -78,7 +77,7 @@ bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
     yarp::os::Bottle& hand_params = config.findGroup("COUPLING_PARAMS");
     if(hand_params.isNull())
     {
-        yCError(HANDMK5COUPLINGHANDLER)<<"Missing COUPLING_PARAMS section in the configuration file";
+        yCError(COUPLINGXCUBHANDMK5)<<"Missing COUPLING_PARAMS section in the configuration file";
         return false;
     }
     auto L0x    = hand_params.findGroup("L0x");
@@ -96,7 +95,7 @@ bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
        q1off.size()!=nFingers+1 || k.size()!=nFingers+1 || d.size()!=nFingers+1 ||
        l.size()!=nFingers+1 || b.size()!=nFingers+1 )
     {
-        yCError(HANDMK5COUPLINGHANDLER)<<"Invalid hand parameters, check your configuration file";
+        yCError(COUPLINGXCUBHANDMK5)<<"Invalid hand parameters, check your configuration file";
         return false;
     }
 
@@ -119,30 +118,31 @@ bool CouplingXCubHandMk5::parseCouplingParameters(yarp::os::Searchable& config) 
     std::vector<std::string> actuated_axes_names;
     std::vector<std::pair<double, double>> physical_joint_limits;
 
-    yarp::os::Bottle physical_joint_names_bottle = config.findGroup("jointNames");
+    yarp::os::Bottle& physical_joint_names_bottle = config.findGroup("jointNames");
 
     if (physical_joint_names_bottle.isNull()) {
-        yCError(HANDMK5COUPLINGHANDLER) << "Error cannot find jointNames." ;
+        yCError(COUPLINGXCUBHANDMK5) << "Error cannot find jointNames." ;
         return false;
     }
 
-    for (size_t i = 1; i < physical_joint_names.size(); i++) {
+    yCDebug(COUPLINGXCUBHANDMK5) << "Requested joints:" << physical_joint_names_bottle.toString();
+
+    for (size_t i = 1; i < physical_joint_names_bottle.size(); i++) {
         physical_joint_names.push_back(physical_joint_names_bottle.get(i).asString().c_str());
     }
 
     yarp::os::Bottle& coupling_params = config.findGroup("COUPLING");
     if (coupling_params.size() ==0)
     {
-        yCError(HANDMK5COUPLINGHANDLER) << "Missing param in COUPLING section";
+        yCError(COUPLINGXCUBHANDMK5) << "Missing param in COUPLING section";
         return false;
     }
-    yCDebug(HANDMK5COUPLINGHANDLER) << "Requested couplings:" << coupling_params.toString();
-    yCDebug(HANDMK5COUPLINGHANDLER) << "Size: " << coupling_params.size();
+    yCDebug(COUPLINGXCUBHANDMK5) << "Requested couplings:" << coupling_params.toString();
 
-    yarp::os::Bottle actuated_axes_names_bottle = coupling_params.findGroup("actuatedAxesNames");
+    yarp::os::Bottle& actuated_axes_names_bottle = coupling_params.findGroup("actuatedAxesNames");
 
     if (actuated_axes_names_bottle.isNull()) {
-        yCError(HANDMK5COUPLINGHANDLER) << "Error cannot find actuatedAxesNames." ;
+        yCError(COUPLINGXCUBHANDMK5) << "Error cannot find actuatedAxesNames." ;
         return false;
     }
 
@@ -163,7 +163,7 @@ bool CouplingXCubHandMk5::parseCouplingParameters(yarp::os::Searchable& config) 
         }
         else
         {
-            yCError(HANDMK5COUPLINGHANDLER) << "Failed to parse jntPosMin parameter";
+            yCError(COUPLINGXCUBHANDMK5) << "Failed to parse jntPosMin parameter";
             return false;
         }
         yarp::os::Bottle& pos_limit_max = limits_bottle.findGroup("jntPosMax");
@@ -177,13 +177,13 @@ bool CouplingXCubHandMk5::parseCouplingParameters(yarp::os::Searchable& config) 
         }
         else
         {
-            yCError(HANDMK5COUPLINGHANDLER) << "Failed to parse jntPosMax parameter";
+            yCError(COUPLINGXCUBHANDMK5) << "Failed to parse jntPosMax parameter";
             return false;
         }
     }
     else
     {
-        yCError(HANDMK5COUPLINGHANDLER) << "Failed to parse LIMITS parameter";
+        yCError(COUPLINGXCUBHANDMK5) << "Failed to parse LIMITS parameter";
         return false;
     }
     initialise(coupled_physical_joints, coupled_actuated_axes, physical_joint_names, actuated_axes_names, physical_joint_limits);
@@ -195,13 +195,13 @@ bool CouplingXCubHandMk5::open(yarp::os::Searchable& config) {
     // TODO INVOKE ImplementCoupling::initialise()
     bool ok = parseFingerParameters(config);
     if (!ok) {
-        yCError(HANDMK5COUPLINGHANDLER) << "Error parsing finger parameters";
+        yCError(COUPLINGXCUBHANDMK5) << "Error parsing finger parameters";
         return false;
     }
 
     ok &= parseCouplingParameters(config);
     if (!ok) {
-        yCError(HANDMK5COUPLINGHANDLER) << "Error parsing coupling parameters";
+        yCError(COUPLINGXCUBHANDMK5) << "Error parsing coupling parameters";
         return false;
     }
 
@@ -214,7 +214,7 @@ bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesPos(const yarp:
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsPos.size() != nrOfPhysicalJoints || actAxesPos.size() != nrOfActuatedAxes) {
-        yCError(HANDMK5COUPLINGHANDLER) << "convertFromPhysicalJointsToActuatedAxesPos: input or output vectors have wrong size";
+        yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesPos: input or output vectors have wrong size";
         return false;
     }
 
@@ -243,7 +243,7 @@ bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesVel(const yarp:
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsVel.size() != nrOfPhysicalJoints || actAxesVel.size() != nrOfActuatedAxes) {
-        yCError(HANDMK5COUPLINGHANDLER) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
+        yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
         return false;
     }
     /* thumb_add <-- thumb_add */
@@ -281,7 +281,7 @@ bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsPos(const yarp:
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsPos.size() != nrOfPhysicalJoints || actAxesPos.size() != nrOfActuatedAxes) {
-        yCError(HANDMK5COUPLINGHANDLER) << "convertFromActuatedAxesToPhysicalJointsPos: input or output vectors have wrong size";
+        yCError(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsPos: input or output vectors have wrong size";
         return false;
     }
     physJointsPos[0] = actAxesPos[0];
@@ -318,7 +318,7 @@ bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp:
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || actAxesPos.size() != nrOfActuatedAxes || physJointsVel.size() != nrOfPhysicalJoints || actAxesVel.size() != nrOfActuatedAxes) {
-        yCError(HANDMK5COUPLINGHANDLER) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
+        yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
         return false;
     }
 
