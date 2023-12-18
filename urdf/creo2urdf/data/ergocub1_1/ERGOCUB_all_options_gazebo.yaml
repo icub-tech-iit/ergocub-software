@@ -717,7 +717,126 @@ assignedCollisionGeometry:
         shape: box
         size: [0.117, 0.100, 0.006]
         origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
-
+    - linkName: l_hand_thumb_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.040
+        origin: [0.020,0.004,0.0,0.0,1.57,0.0]
+    - linkName: l_hand_thumb_3
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.016,0.004,0.0,0.0,1.57,0.0]
+    - linkName: l_hand_index_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: l_hand_index_3
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.055
+        origin: [0.0,0.004,-0.018,0.0,0.0,0.0]
+    - linkName: l_hand_middle_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: l_hand_middle_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.055
+        origin: [0.0,0.004,-0.018,0.0,0.0,0.0]
+    - linkName: l_hand_ring_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: l_hand_ring_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.0,0.004,-0.020,0.0,0.0,0.0]
+    - linkName: l_hand_pinkie_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.040
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: l_hand_pinkie_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.0,0.004,-0.020,0.0,0.0,0.0]
+    - linkName: r_hand_thumb_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.040
+        origin: [-0.020,-0.004,0.0,0.0,1.57,0.0]
+    - linkName: r_hand_thumb_3
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.016,0.004,0.0,0.0,1.57,0.0]
+    - linkName: r_hand_index_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: r_hand_index_3
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.055
+        origin: [0.0,0.004,-0.018,0.0,0.0,0.0]
+    - linkName: r_hand_middle_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: r_hand_middle_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.055
+        origin: [0.0,0.004,-0.018,0.0,0.0,0.0]
+    - linkName: r_hand_ring_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.045
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: r_hand_ring_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.0,0.004,-0.020,0.0,0.0,0.0]
+    - linkName: r_hand_pinkie_1
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.040
+        origin: [0.0,0.004,-0.022,0.0,0.0,0.0]
+    - linkName: r_hand_pinkie_2
+      geometricShape:
+        shape: cylinder
+        radius: 0.008
+        lenght: 0.050
+        origin: [0.0,0.004,-0.020,0.0,0.0,0.0]
 
 assignedMasses:
  torso_1   : 2.0645667

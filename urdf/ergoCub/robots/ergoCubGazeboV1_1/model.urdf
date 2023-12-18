@@ -574,13 +574,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
@@ -607,13 +604,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.04"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
@@ -640,13 +634,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
@@ -706,13 +697,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="-0.02 -0.004 0" rpy="0 1.5699999999999876 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.04"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
@@ -739,13 +727,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0.016 0.004 0" rpy="0 1.5699999999999876 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
@@ -772,13 +757,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.02" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
@@ -805,13 +787,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.02" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
@@ -838,13 +817,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.018" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.055"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
@@ -871,13 +847,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
@@ -904,13 +877,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.018" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.055"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="neck_roll" type="revolute">
@@ -1297,13 +1267,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
@@ -1330,13 +1297,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.04"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
@@ -1363,13 +1327,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_1.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
@@ -1429,13 +1390,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0.02 0.004 0" rpy="0 1.5699999999999876 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.04"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
@@ -1462,13 +1420,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0.016 0.004 0" rpy="0 1.5699999999999876 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_3.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
@@ -1495,13 +1450,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.02" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
@@ -1528,13 +1480,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.02" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.05"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
@@ -1561,13 +1510,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.018" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.055"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
@@ -1594,13 +1540,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.022" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_2.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.045"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
@@ -1627,13 +1570,10 @@
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <origin xyz="0 0.004 -0.018" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_3.stl" scale="0.001 0.001 0.001"/>
+        <cylinder radius="0.008" length="0.055"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_hip_roll" type="revolute">
