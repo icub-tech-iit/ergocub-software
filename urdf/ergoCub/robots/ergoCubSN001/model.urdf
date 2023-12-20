@@ -2146,12 +2146,6 @@
     <parent link="realsense"/>
     <child link="realsense_imu_0"/>
   </joint>
-  <link name="l_arm_ft"/>
-  <joint name="l_arm_ft_fixed_joint" type="fixed">
-    <origin xyz="-0.004349999999999996 -2.7755575615628914e-17 -0.054300000000000015" rpy="3.141592653589793 2.498001805406602e-16 -1.5707963267948952"/>
-    <parent link="l_shoulder_2"/>
-    <child link="l_arm_ft"/>
-  </joint>
   <link name="l_foot_front_ft"/>
   <joint name="l_foot_front_ft_fixed_joint" type="fixed">
     <origin xyz="0.13525 -4.163336342344337e-17 -0.047899999999999054" rpy="-4.259189482954547e-17 -7.513330770412076e-17 -2.0943951023931966"/>
@@ -2169,12 +2163,6 @@
     <origin xyz="0.03669999999999986 -1.3877787807814457e-17 -0.08969999999999997" rpy="-3.1415926535897927 -1.4675346083959194e-15 2.617993877991494"/>
     <parent link="l_hip_2"/>
     <child link="l_leg_ft"/>
-  </joint>
-  <link name="r_arm_ft"/>
-  <joint name="r_arm_ft_fixed_joint" type="fixed">
-    <origin xyz="-0.006849999999999986 -2.7755575615628914e-17 -0.05429999999999999" rpy="3.141592653589793 1.6653345369377348e-16 1.5707963267948981"/>
-    <parent link="r_shoulder_2"/>
-    <child link="r_arm_ft"/>
   </joint>
   <link name="r_foot_front_ft"/>
   <joint name="r_foot_front_ft_fixed_joint" type="fixed">
@@ -3259,28 +3247,6 @@
   <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>
   </gazebo>
-  <gazebo reference="l_arm_ft_sensor">
-    <sensor name="l_arm_ft" type="force_torque">
-      <always_on>1</always_on>
-      <update_rate>100</update_rate>
-      <force_torque>
-        <frame>sensor</frame>
-        <measure_direction>child_to_parent</measure_direction>
-      </force_torque>
-      <pose>-3.46945e-18 0 0 3.14159 1.94289e-16 -1.5708 </pose>
-      <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="l_arm_ft" type="force_torque">
-    <parent joint="l_arm_ft_sensor"/>
-    <force_torque>
-      <frame>sensor</frame>
-      <measure_direction>child_to_parent</measure_direction>
-    </force_torque>
-    <origin rpy="3.14159 1.94289e-16 -1.5708 " xyz="-3.46945e-18 0 0"/>
-  </sensor>
   <gazebo reference="l_foot_front_ft_sensor">
     <sensor name="l_foot_front_ft" type="force_torque">
       <always_on>1</always_on>
@@ -3346,28 +3312,6 @@
       <measure_direction>child_to_parent</measure_direction>
     </force_torque>
     <origin rpy="3.14159 -2.02132e-15 2.61799 " xyz="5.20417e-18 0 0"/>
-  </sensor>
-  <gazebo reference="r_arm_ft_sensor">
-    <sensor name="r_arm_ft" type="force_torque">
-      <always_on>1</always_on>
-      <update_rate>100</update_rate>
-      <force_torque>
-        <frame>sensor</frame>
-        <measure_direction>child_to_parent</measure_direction>
-      </force_torque>
-      <pose>0 0 0 -3.14159 -2.77556e-17 1.5708 </pose>
-      <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <sensor name="r_arm_ft" type="force_torque">
-    <parent joint="r_arm_ft_sensor"/>
-    <force_torque>
-      <frame>sensor</frame>
-      <measure_direction>child_to_parent</measure_direction>
-    </force_torque>
-    <origin rpy="-3.14159 -2.77556e-17 1.5708 " xyz="0 0 0"/>
   </sensor>
   <gazebo reference="r_foot_front_ft_sensor">
     <sensor name="r_foot_front_ft" type="force_torque">

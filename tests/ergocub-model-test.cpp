@@ -449,7 +449,7 @@ bool checkFTSensorsAreOddAndNotNull(iDynTree::ModelLoader & mdlLoader)
 }
 
 /**
- * All the iCub have a even and not null number of F/T sensors.
+ * All the ergoCub have a even and not null number of F/T sensors.
  */
 bool checkFTSensorsAreEvenAndNotNull(iDynTree::ModelLoader & mdlLoader)
 {
@@ -524,9 +524,9 @@ bool checkFTSensorsAreCorrectlyOriented(iDynTree::KinDynComputations & comp)
                            0.5, 0.866025, 0,
                             0, 0, -1);
 
-    bool ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameLeftArmExpected, "l_arm_ft");
-    ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameRightArmExpected, "r_arm_ft") && ok;
-    ok = checkFrameIsCorrectlyOriented(comp, rootLink_L_sensorFrameExpectedLeg, "l_leg_ft") && ok;
+    // bool ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameLeftArmExpected, "l_arm_ft");
+    // ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameRightArmExpected, "r_arm_ft") && ok;
+    bool ok = checkFrameIsCorrectlyOriented(comp, rootLink_L_sensorFrameExpectedLeg, "l_leg_ft");
     ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedLeg, "r_leg_ft") && ok;
     ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "l_foot_rear_ft") && ok;
     ok = checkFrameIsCorrectlyOriented(comp, rootLink_R_sensorFrameExpectedFoot, "r_foot_rear_ft") && ok;
@@ -687,9 +687,9 @@ bool checkAllFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGi
     iDynTree::SensorsList sensors = mdlLoader.sensors();
 
 
-    bool ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "l_arm_ft");
-    ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "r_arm_ft") && ok;
-    ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "l_leg_ft") && ok;
+    // bool ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "l_arm_ft");
+    // ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "r_arm_ft") && ok;
+    bool ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "l_leg_ft");
     ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "r_leg_ft") && ok;
     ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "l_foot_rear_ft") && ok;
     ok = checkFTMeasurementFrameGivenBySensorTagsIsCoherentWithMeasurementFrameGivenByFrame(modelPath, comp, sensors, "r_foot_rear_ft") && ok;
