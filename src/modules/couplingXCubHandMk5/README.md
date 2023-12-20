@@ -4,22 +4,6 @@
 
 This is the device for [YARP](https://www.yarp.it/) for handling the coupling of the [hands mk5](https://icub-tech-iit.github.io/documentation/hands/hands_mk5_coupling/)
 
-
-### Build and install yarp-device-realsense2
-
-```bash
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=<installation_path> -DENABLE_couplingXCubHandMk5=BOOL:ON ..
-make
-make install
-```
-
-In order to make the device detectable, add `<installation_path>/share/yarp` to the `YARP_DATA_DIRS` environment variable of the system.
-
-Alternatively, if `YARP` has been installed using the [robotology-superbuild](https://github.com/robotology/robotology-superbuild), it is possible to use `<directory-where-you-downloaded-robotology-superbuild>/build/install` as the `<installation_path>`.
-
-
 ## Device documentation
 
 This device driver exposes the `yarp::dev::IJointCoupling` interface to getting
