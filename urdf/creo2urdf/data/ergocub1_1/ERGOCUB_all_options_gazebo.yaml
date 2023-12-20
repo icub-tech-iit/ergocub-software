@@ -717,6 +717,11 @@ assignedCollisionGeometry:
         shape: box
         size: [0.117, 0.100, 0.006]
         origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: l_hand_palm
+      geometricShape:
+        shape: box
+        size: [0.1,0.025,0.09]
+        origin: [0.0,0.0,-0.05,0.0,0.0,0.0]
     - linkName: l_hand_thumb_2
       geometricShape:
         shape: cylinder
@@ -777,6 +782,11 @@ assignedCollisionGeometry:
         radius: 0.008
         lenght: 0.050
         origin: [0.0,0.004,-0.020,0.0,0.0,0.0]
+    - linkName: r_hand_palm
+      geometricShape:
+        shape: box
+        size: [0.1,0.025,0.09]
+        origin: [0.0,0.0,-0.05,0.0,0.0,0.0]
     - linkName: r_hand_thumb_2
       geometricShape:
         shape: cylinder
