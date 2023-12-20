@@ -540,11 +540,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
@@ -663,11 +660,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
@@ -1230,11 +1224,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_1.stl" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
@@ -1353,11 +1344,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_1.stl" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
