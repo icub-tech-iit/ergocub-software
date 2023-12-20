@@ -10,7 +10,7 @@ yarp_prepare_plugin(couplingXCubHandMk5
                     CATEGORY device
                     TYPE CouplingXCubHandMk5
                     INCLUDE CouplingXCubHandMk5.h
-                    DEFAULT OFF)
+                    DEFAULT ON)
 
 if(ENABLE_couplingXCubHandMk5)
 
