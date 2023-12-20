@@ -9,6 +9,7 @@
 #include "CouplingXCubHandMk5.h"
 #include <yarp/os/LogStream.h>
 #include <cmath>
+#include <array>
 
 
 YARP_LOG_COMPONENT(COUPLINGXCUBHANDMK5, "yarp.device.couplingXCubHandMk5")
