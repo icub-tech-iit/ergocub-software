@@ -5,7 +5,7 @@ Main collector of ergoCub specific SW
 
 ### Dependencies
 
-Before installing `ergocub-software`, please be sure that you've installed [YARP](https://www.yarp.it/latest//) 3.9.0 or higher on your machine.
+Before installing `ergocub-software`, please be sure that you've installed [`YARP`](https://www.yarp.it/latest//) 3.9.0 or higher on your machine.
 
 ### Compiling from source
 
@@ -17,7 +17,7 @@ cmake -DCMAKE_INSTALL_PREFIX=<install-prefix> ..
 make
 (make install)
 ```
-`ergocub` for Gazebo Classic simulation model needs a gazebo-yarp-plugins latest devel (FIXME put commit).
+`ergocub` for Gazebo Classic simulation model needs a `gazebo-yarp-plugins` [latest master](https://github.com/robotology/gazebo-yarp-plugins/commit/c89280295d53279049bb7521cf6b6b3400130f23).
 
 In order to use the model, the following env variables must be configured:
 ```sh
