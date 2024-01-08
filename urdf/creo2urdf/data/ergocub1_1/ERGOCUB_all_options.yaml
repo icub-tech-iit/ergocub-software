@@ -702,30 +702,30 @@ exportedFrames:
 
 # Sensors options
 forceTorqueSensors:
-    # - jointName: l_arm_ft_sensor
-    #   directionChildToParent: Yes
-    #   exportFrameInURDF: Yes
-    #   frame: sensor
-    #   frameName: SCSYS_L_SHOULDER_2_FT
-    #   linkName: l_shoulder_2
-    #   sensorName: l_arm_ft
-    #   sensorBlobs:
-    #   - |
-    #       <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-    #         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
-    #       </plugin>
-    # - jointName: r_arm_ft_sensor
-    #   directionChildToParent: Yes
-    #   exportFrameInURDF: Yes
-    #   frame: sensor
-    #   frameName: SCSYS_R_SHOULDER_2_FT
-    #   linkName: r_shoulder_2
-    #   sensorName: r_arm_ft
-    #   sensorBlobs:
-    #   - |
-    #       <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-    #         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
-    #       </plugin>
+    - jointName: l_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_L_SHOULDER_2_FT
+      linkName: l_shoulder_2
+      sensorName: l_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_R_SHOULDER_2_FT
+      linkName: r_shoulder_2
+      sensorName: r_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
     # left leg
     - jointName: l_leg_ft_sensor
       directionChildToParent: Yes
