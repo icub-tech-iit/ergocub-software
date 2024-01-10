@@ -7,6 +7,7 @@ copyright: BSD 3-Clause License
 repo_name: icub-tech-iit/ergocub-software
 repo_url: https://github.com/icub-tech-iit/ergocub-software/
 edit_uri: 'edit/master/doc/mkdocs/docs'
+docs_dir: '../../'
 
 markdown_extensions:
   - attr_list
@@ -92,8 +93,8 @@ theme:
 
 
 nav:
-    - Home: 'index.md'
+    - Home: 'README.md'
     - Documentation: https://icub-tech-iit.github.io/ergocub-software/doc/doxygen/doc/html/index.html
     - Modules:
-        - Getting started: 'modules_intro.md'
-        - ergoCubEmotions: 'ergoCubEmotions.md'
+        - Getting started: 'doc/mkdocs/docs/modules_intro.md'
+        - ergoCubEmotions: 'src/modules/ergoCubEmotions/README.md'

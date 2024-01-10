@@ -2,4 +2,4 @@
 
 These are the modules currently available:
 
-- [ergoCubEmotions](ergoCubEmotions.md)
+- [ergoCubEmotions](../../../src/modules/ergoCubEmotions/README.md)
