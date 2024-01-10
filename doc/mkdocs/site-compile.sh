@@ -1,3 +1,4 @@
 #!/bin/bash
 
-mkdocs build -c -v --site-dir site
+cd ../../
+mkdocs build -c -v --site-dir doc/mkdocs/site

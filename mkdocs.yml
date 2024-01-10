@@ -7,6 +7,7 @@ copyright: BSD 3-Clause License
 repo_name: icub-tech-iit/ergocub-software
 repo_url: https://github.com/icub-tech-iit/ergocub-software/
 edit_uri: 'edit/master/doc/mkdocs/docs'
+docs_dir: 'doc/mkdocs/docs'
 
 markdown_extensions:
   - attr_list
@@ -17,6 +18,7 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
+  - pymdownx.snippets
   - pymdownx.inlinehilite
   - pymdownx.highlight
   - pymdownx.keys
@@ -96,4 +98,4 @@ nav:
     - Documentation: https://icub-tech-iit.github.io/ergocub-software/doc/doxygen/doc/html/index.html
     - Modules:
         - Getting started: 'modules_intro.md'
-        - ergoCubEmotions: 'ergoCubEmotions.md'
+        - ergoCubEmotions: 'ergocubemotions.md'
