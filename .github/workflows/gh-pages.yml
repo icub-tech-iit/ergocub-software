@@ -58,6 +58,7 @@ jobs:
           mv doc/mkdocs/site/* ./
 
       - name: Commit and push
+        if: github.event_name == 'push'
         run: |
           git add .
           git commit -m "Publish site"
