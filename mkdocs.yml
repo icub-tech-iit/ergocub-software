@@ -99,3 +99,4 @@ nav:
     - Modules:
         - Getting started: 'modules_intro.md'
         - ergoCubEmotions: 'ergocubemotions.md'
+        - CHANGELOG: 'CHANGELOG.md'
