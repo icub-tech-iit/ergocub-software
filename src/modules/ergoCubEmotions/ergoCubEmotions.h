@@ -49,6 +49,8 @@ class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL {
         std::vector<std::string> avlEmotions;
         cv::Mat img;
         std::mutex mutex;
+        std::vector<cv::VideoCapture> videoCaptures;
+        std::vector<std::string> videoFileNames;
 };
 
 #endif

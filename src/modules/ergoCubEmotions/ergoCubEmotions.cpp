@@ -57,6 +57,13 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
         std::pair<std::string, std::string> par = std::make_pair(type, filePath);
         imgMap[name] = par;
+
+        if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
+        {
+            videoFileNames.push_back(filePath);
+            VideoCapture cap(filePath);
+            videoCaptures.push_back(cap);
+        }
     }
 
     for(int j = 0; j < nTransitions; j++)
@@ -88,6 +95,13 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string filePath = rf.findFile(file);
         std::pair<std::string, std::string> par = std::make_pair(source, destination);
         transitionMap[par] = filePath;
+
+        if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
+        {
+            videoFileNames.push_back(filePath);
+            VideoCapture cap(filePath);
+            videoCaptures.push_back(cap);
+        }
     }
 
     isTransition = true;
@@ -159,7 +173,16 @@ bool ErgoCubEmotions::updateModule()
         {
             showTransition(current_local, command_local);
         }
-        VideoCapture cap(info.second);
+
+        VideoCapture cap;
+        for (size_t i = 0; i < videoFileNames.size(); i++)
+        {
+            if(info.second == videoFileNames[i])
+            {
+                cap = videoCaptures.at(i);
+            }
+        }
+        
         Mat frame;
 
         while(cap.isOpened())
@@ -205,7 +228,14 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
     {
         if(k->first.first == current && k->first.second == desired)
         {
-            VideoCapture capTrans(k->second);
+            VideoCapture capTrans;
+            for (size_t i = 0; i < videoFileNames.size(); i++)
+            {
+                if(k->second == videoFileNames[i])
+                {
+                    capTrans = videoCaptures.at(i);
+                }
+            }
             Mat frameTrans;
 
             while(capTrans.isOpened())
