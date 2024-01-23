@@ -99,8 +99,6 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
         {
             videoFileNames.push_back(filePath);
-            VideoCapture cap(filePath);
-            videoCaptures.push_back(cap);
         }
     }
 
