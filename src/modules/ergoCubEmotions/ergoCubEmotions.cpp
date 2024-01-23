@@ -195,6 +195,7 @@ bool ErgoCubEmotions::updateModule()
             imshow("emotion", frame);
             pollKey();
         }
+        cap.release();
     }
 
     return true;
@@ -233,7 +234,7 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
             {
                 if(k->second == videoFileNames[i])
                 {
-                    capTrans = videoCaptures.at(i);
+                    capTrans.open(videoFileNames[i]);
                 }
             }
             Mat frameTrans;
