@@ -30,6 +30,10 @@
     <!-- INERTIAL SENSOR-->
     <xi:include href="wrappers/inertials/head-inertials_wrapper.xml" />
     <xi:include href="wrappers/inertials/waist-inertials_wrapper.xml" />
+    <xi:include href="wrappers/inertials/left_foot-IMU_remapper.xml" />
+    <xi:include href="wrappers/inertials/left_foot-IMU_wrapper.xml" />
+    <xi:include href="wrappers/inertials/right_foot-IMU_remapper.xml" />
+    <xi:include href="wrappers/inertials/right_foot-IMU_wrapper.xml" />
 
     <!--  HEAD SENSORS -->
     <xi:include href="sensors/rgbd_camera_wrapper.xml" />
