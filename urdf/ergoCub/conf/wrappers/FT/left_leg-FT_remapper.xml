@@ -6,6 +6,9 @@
         <param name="SixAxisForceTorqueSensorsNames">
           (l_leg_ft l_foot_rear_ft l_foot_front_ft)
         </param>
+        <param name="TemperatureSensorsNames">
+            (l_leg_ft l_foot_rear_ft l_foot_front_ft)
+        </param>
         <action phase="startup" level="5" type="attach">
             <paramlist name="networks">
              <elem name="left_leg_ft"> ergocub_left_leg_ft </elem>
