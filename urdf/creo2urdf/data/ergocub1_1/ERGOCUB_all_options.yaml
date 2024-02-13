@@ -1441,7 +1441,7 @@ XMLBlobs:
     # right arm
     - |
             <gazebo>
-            <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
+            <plugin name="controlboard_right_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_arm.ini</yarpConfigurationFile>
             <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
             </plugin>
