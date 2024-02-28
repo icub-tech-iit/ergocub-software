@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.7.0] - 2024-02-28
+
 - Expose imu of the ft sensors in the feet(https://github.com/icub-tech-iit/ergocub-software/pull/217)
 - `ergoCubEmotions` now consume less cpu (https://github.com/icub-tech-iit/ergocub-software/issues/213)
 - ergoCubV1: fixed the names r/l_upperarm with r/l_upper_arm(https://github.com/icub-tech-iit/ergocub-software/issues/197)
