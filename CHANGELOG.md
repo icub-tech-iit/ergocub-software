@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [0.7.1] - 2024-02-29
+
+- ergoCubV1_1*: fix feet imus placement (https://github.com/icub-tech-iit/ergocub-software/pull/222)
+
 ## [0.7.0] - 2024-02-28
 
 - Expose imu of the ft sensors in the feet(https://github.com/icub-tech-iit/ergocub-software/pull/217)
