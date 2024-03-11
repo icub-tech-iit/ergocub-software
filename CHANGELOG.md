@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [0.7.2] - 2024-03-11
+
 ## [0.7.1] - 2024-02-29
 
 - ergoCubV1_1*: fix feet imus placement (https://github.com/icub-tech-iit/ergocub-software/pull/222)
