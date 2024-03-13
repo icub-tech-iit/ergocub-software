@@ -6,7 +6,7 @@
         <param name="topic_name"> /joint_states </param>
         <param name="period"> 0.010 </param>
         <action phase="startup" level="10" type="attach">
-            <param name="device"> alljoints_mc </param>
+            <param name="device"> alljoints_mc-coupling </param>
         </action>
         <action phase="shutdown" level="15" type="detach" />
     </device>
