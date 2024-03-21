@@ -49,8 +49,11 @@ yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
 ```
 
 ## URDF generation
+
 This repository hosts the configuration files for generating ergoCub urdf via [`creo2urdf`](https://github.com/icub-tech-iit/creo2urdf).
-You can find there the relative documentation on how write those configuration files.
+You can find there the relative documentation on how write those configuration files, and more details in the README of the following folders:
+* [`urdf/creo2urdf/data/ergocub1_0`](./urdf/creo2urdf/data/ergocub1_0)
+* [`urdf/creo2urdf/data/ergocub1_1`](./urdf/creo2urdf/data/ergocub1_1)
 
 ### Maintainers
 This repository is maintained by:
