@@ -49,8 +49,17 @@ yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
 ```
 
 ## URDF generation
-This repository hosts the configuration files for generating ergoCub urdf via [`creo2urdf`](https://github.com/icub-tech-iit/creo2urdf).
-You can find there the relative documentation on how write those configuration files.
+
+This repository hosts the configuration files for generating ergoCub urdf. To generate the URDF, you need to have access to the `cad-mechanics` repo (that is currently private, if you need access ask it to the ergocub-software mantainer) and install the following repos and software:
+* You need to install the version of Creo required by [`cad-mechanics`](https://github.com/icub-tech-iit/cad-mechanics/).
+* You need to install the repos that contain the CAD models, i.e. cad-libraries (see https://github.com/icub-tech-iit/cad-libraries/wiki/Configure-PTC-Creo-with-cad-libraries) and cad-mechanics https://github.com/icub-tech-iit/cad-mechanics/.
+* You need to install creo2urdf following the README in https://github.com/icub-tech-iit/creo2urdf, either from source or using the binary available for each release.
+
+The CAD files used to generate the URDF models have been prepare according to the procedure described in https://github.com/icub-tech-iit/cad-libraries/wiki/Prepare-PTC-Creo-Mechanism-for-URDF .
+
+You can find there the relative documentation on how write those configuration files, and more details in the README of the following folders:
+* [`urdf/creo2urdf/data/ergocub1_0`](./urdf/creo2urdf/data/ergocub1_0)
+* [`urdf/creo2urdf/data/ergocub1_1`](./urdf/creo2urdf/data/ergocub1_1)
 
 ### Maintainers
 This repository is maintained by:
