@@ -1601,7 +1601,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_leg.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
 
@@ -1790,6 +1790,16 @@ XMLBlobs:
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
                 <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"></plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
             </gazebo>
 
     - |
