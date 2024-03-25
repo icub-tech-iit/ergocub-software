@@ -2997,6 +2997,16 @@
     <disableFixedJointLumping>true</disableFixedJointLumping>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_torso.ini</yarpConfigurationFile>
     </plugin>
@@ -3085,6 +3095,31 @@
     <fdir1>0 0 0</fdir1>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_left_leg" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
     </plugin>
@@ -3164,6 +3199,31 @@
     <fdir1>0 0 0</fdir1>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+      <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_right_leg" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_leg.ini</yarpConfigurationFile>
     </plugin>
@@ -3190,6 +3250,21 @@
   </gazebo>
   <gazebo reference="r_ankle_roll">
     <implicitSpringDamper>1</implicitSpringDamper>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+      <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+    </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
@@ -3303,7 +3378,7 @@
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
@@ -3311,11 +3386,6 @@
   </gazebo>
   <gazebo>
     <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
   </gazebo>
   <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>
@@ -3330,9 +3400,6 @@
       </force_torque>
       <pose>-3.46945e-18 0 0 3.14159 1.94289e-16 -1.5708 </pose>
       <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3357,9 +3424,6 @@
       <plugin name="left_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="l_foot_front_ft" type="force_torque">
@@ -3380,9 +3444,6 @@
       </force_torque>
       <pose>0 0 0 1.25667e-16 2.20112e-17 -2.0944 </pose>
       <plugin name="left_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3407,9 +3468,6 @@
       <plugin name="left_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="l_leg_ft" type="force_torque">
@@ -3430,9 +3488,6 @@
       </force_torque>
       <pose>0 0 0 -3.14159 -2.77556e-17 1.5708 </pose>
       <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3457,9 +3512,6 @@
       <plugin name="right_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="r_foot_front_ft" type="force_torque">
@@ -3480,9 +3532,6 @@
       </force_torque>
       <pose>3.46945e-18 0 0 -1.0903e-16 -1.44222e-16 -2.0944 </pose>
       <plugin name="right_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3507,9 +3556,6 @@
       <plugin name="right_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
         <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
-        <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="r_leg_ft" type="force_torque">
@@ -3526,9 +3572,6 @@
       <update_rate>100.000000</update_rate>
       <pose>-0.0043 -0.0055 0.0382345 -3.14159 -9.68848e-15 1.5708 </pose>
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3617,9 +3660,6 @@
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="realsense_imu_0" type="accelerometer">
@@ -3657,9 +3697,6 @@
       <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
         <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
-        <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="lasersensor_head" type="ray">
@@ -3672,9 +3709,6 @@
       <update_rate>100.000000</update_rate>
       <pose>0 0 0 1.25667e-16 2.20112e-17 -2.0944 </pose>
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
@@ -3691,9 +3725,6 @@
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="l_foot_rear_ft_imu" type="accelerometer">
@@ -3708,9 +3739,6 @@
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
       </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
-      </plugin>
     </sensor>
   </gazebo>
   <sensor name="r_foot_front_ft_imu" type="accelerometer">
@@ -3723,9 +3751,6 @@
       <update_rate>100.000000</update_rate>
       <pose>3.46945e-18 0 0 -1.0903e-16 -1.44222e-16 -2.0944 </pose>
       <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
-        <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
-      </plugin>
-      <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
         <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
       </plugin>
     </sensor>
