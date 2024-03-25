@@ -1788,7 +1788,7 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
             </gazebo>
 
