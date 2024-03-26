@@ -10,10 +10,11 @@ yarp_prepare_plugin(couplingXCubHandMk5
                     CATEGORY device
                     TYPE CouplingXCubHandMk5
                     INCLUDE CouplingXCubHandMk5.h
+                    GENERATE_PARSER
                     DEFAULT ON)
 
 if(ENABLE_couplingXCubHandMk5)
-
+  option(ALLOW_DEVICE_PARAM_PARSER_GENERATION "Generate the param parser for couplingXCubHandMk5 device" OFF)
   yarp_add_plugin(yarp_couplingXCubHandMk5)
 
   if(MSVC)
@@ -21,7 +22,9 @@ if(ENABLE_couplingXCubHandMk5)
   endif()
 
   target_sources(yarp_couplingXCubHandMk5 PRIVATE CouplingXCubHandMk5.cpp
-                                                  CouplingXCubHandMk5.h)
+                                                  CouplingXCubHandMk5.h
+                                                  CouplingXCubHandMk5_ParamsParser.cpp
+                                                  CouplingXCubHandMk5_ParamsParser.h)
 
   target_link_libraries(yarp_couplingXCubHandMk5 PRIVATE YARP::YARP_os
                                                          YARP::YARP_dev)
