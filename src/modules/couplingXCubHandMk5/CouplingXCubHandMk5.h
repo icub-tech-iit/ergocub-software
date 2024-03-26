@@ -12,6 +12,7 @@
 #include <yarp/os/LogComponent.h>
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/ImplementJointCoupling.h>
+#include "CouplingXCubHandMk5_ParamsParser.h"
 
 #include <unordered_map>
 #include <vector>
@@ -38,7 +39,8 @@ struct FingerParameters
 /** TBD
  */
 class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
-                            public yarp::dev::ImplementJointCoupling {
+                            public yarp::dev::ImplementJointCoupling,
+                            public CouplingXCubHandMk5_ParamsParser {
 public:
     CouplingXCubHandMk5() = default;
     virtual ~CouplingXCubHandMk5() override = default;
@@ -82,8 +84,8 @@ private:
      */
     double evaluateCoupledJointJacobian(const double& q1, const std::string& finger_name);
 
-    bool parseFingerParameters(yarp::os::Searchable& config);
-    bool parseCouplingParameters(yarp::os::Searchable& config);
+    bool populateFingerParameters();
+    bool populateCouplingParameters();
 };
 
 #endif // COUPLINGXCUBHANDMK5_H
