@@ -1301,6 +1301,74 @@ XMLBlobs:
               <parent link="r_ankle_2" />
               <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.016000000000000004 0 -0.07019999999999993" />
             </sensor>
+    # left arm IMU 
+    - |
+            <gazebo reference="l_shoulder_2">
+              <sensor name="l_arm_ft_imu" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <pose>0.0 -0.004350 -0.05430 3.14159265 -0.0 -1.57079633</pose>
+                <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+                  <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+                </plugin>
+              </sensor>
+            </gazebo>
+    - |
+            <sensor name="l_arm_ft_imu" type="accelerometer">
+              <parent link="l_shoulder_2" />
+              <origin rpy="3.14159265 -0.0 -1.57079633" xyz="0.0 -0.004350 -0.05430" />
+            </sensor>
+      # right arm IMU 
+    - |
+            <gazebo reference="r_shoulder_2">
+              <sensor name="r_arm_ft_imu" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <pose>0.0 0.006850 -0.05430 3.14159265 -0.0 1.57079633</pose>
+                <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+                  <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+                </plugin>
+              </sensor>
+            </gazebo>
+    - |
+            <sensor name="r_arm_ft_imu" type="accelerometer">
+              <parent link="r_shoulder_2" />
+              <origin rpy="3.14159265 -0.0 1.57079633" xyz="0.0 0.006850 -0.05430" />
+            </sensor>
+    # left leg IMU 
+    - |
+            <gazebo reference="l_hip_2">
+              <sensor name="l_leg_ft_imu" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <pose>0.03670 0.0 -0.08970 3.14159265 -0.0 2.61799368</pose>
+                <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+                  <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+                </plugin>
+              </sensor>
+            </gazebo>
+    - |
+            <sensor name="l_leg_ft_imu" type="accelerometer">
+              <parent link="l_hip_2" />
+              <origin rpy="3.14159265 -0.0 2.61799368" xyz="0.03670 0.0 -0.08970" />
+            </sensor>
+      # right leg IMU 
+    - |
+            <gazebo reference="r_hip_2">
+              <sensor name="r_leg_ft_imu" type="imu">
+                <always_on>1</always_on>
+                <update_rate>100</update_rate>
+                <pose>0.03670 0.0 -0.08970 3.14159265 -0.0 -2.61799368</pose>
+                <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+                  <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+                </plugin>
+              </sensor>
+            </gazebo>
+    - |
+            <sensor name="r_leg_ft_imu" type="accelerometer">
+              <parent link="r_hip_2" />
+              <origin rpy="3.14159265 -0.0 -2.61799368" xyz="0.03670 0.0 -0.08970" />
+            </sensor>
     # imu waist (workaround since simmechanics was not updated)
     - |
             <link name="waist_imu_0"/>

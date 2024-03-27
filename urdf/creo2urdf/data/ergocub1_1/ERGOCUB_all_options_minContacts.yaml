@@ -1307,7 +1307,50 @@ sensors:
         <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
         </plugin>
-
+  - frameName: SCSYS_L_SHOULDER_2_FT
+    linkName: l_shoulder_3
+    sensorName: l_arm_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_SHOULDER_2_FT
+    linkName: r_shoulder_3
+    sensorName: r_arm_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_L_HIP_2_FT
+    linkName: l_hip_3
+    sensorName: l_leg_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_HIP_2_FT
+    linkName: r_hip_3
+    sensorName: r_leg_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
 assignedMasses:
  torso_1   : 2.0645667
 
