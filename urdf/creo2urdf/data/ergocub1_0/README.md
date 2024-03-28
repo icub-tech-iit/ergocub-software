@@ -6,8 +6,6 @@
 > 
 > The simulation model CAD has not been updated for a while, we are keeping the yaml up-to-date but if changes are needed in the robot model it is better to apply them directly to the urdf instead of generating with `creo2urdf`.
 
-All this time I have been keeping up-to-date the yaml to be usable when we will regenerate the model via creo2urdf, but for sure before it required fixes on simulation model CAD that right now we do not have the workforce to do. 
-
 This is the mapping between the CAD files, the files contained in this folder and the files contained in `ergocub-software/urdf/ergoCub/robots`:
 
 | CAD model in `cad-mechanics` | yaml file | csv file | YARP_ROBOT_NAME |
