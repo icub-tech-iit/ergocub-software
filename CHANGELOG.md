@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - ergoCubSN001/ergoCubGazeboV1_1*: fix orientation of inertias (https://github.com/icub-tech-iit/ergocub-software/pull/226)
+- Added `gz-sim` support (https://github.com/icub-tech-iit/ergocub-software/pull/230)
 
 ## [0.7.2] - 2024-03-11
 
