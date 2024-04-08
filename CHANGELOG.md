@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added xml files for running the publish of physical joints quantities (https://github.com/icub-tech-iit/ergocub-software/pull/227)
 - ergoCubSN001/ergoCubGazeboV1_1*: fix orientation of inertias (https://github.com/icub-tech-iit/ergocub-software/pull/226)
 - Added `gz-sim` support (https://github.com/icub-tech-iit/ergocub-software/pull/230)
 
