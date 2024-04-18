@@ -1,5 +1,3 @@
-includes: [../ergocub1_1/base_1_1.yaml]
-
 assignedMasses:
  head   : 1.6902682
 
