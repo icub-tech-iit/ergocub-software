@@ -14,6 +14,8 @@ endmacro()
 # Model generated with simmechanics
 add_ergocub_model_test(ergoCubGazeboV1)
 add_ergocub_model_test(ergoCubGazeboV1_1)
+add_ergocub_model_test(ergoCubGazeboV1_2)
 add_ergocub_model_test(ergoCubSN000)
 add_ergocub_model_test(ergoCubSN001)
+add_ergocub_model_test(ergoCubSN002)
 
