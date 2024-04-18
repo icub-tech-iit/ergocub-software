@@ -14,10 +14,12 @@
 #include <cmath>
 #include <cstdlib>
 
-bool isergoCub1_1Model(const std::string& modelPath)
+bool isNotergoCub1Model(const std::string& modelPath)
 {
     return (modelPath.find("SN001") != std::string::npos ||
-            modelPath.find("GazeboV1_1") != std::string::npos);
+            modelPath.find("GazeboV1_1") != std::string::npos ||
+            modelPath.find("SN002") != std::string::npos ||
+            modelPath.find("GazeboV1_2") != std::string::npos);
 }
 
 inline bool checkDoubleAreEqual(const double & val1,
@@ -258,7 +260,7 @@ bool checkSolesAreParallelAndCorrectlyPlaced(iDynTree::KinDynComputations & comp
 
 
 
-bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isergoCub1_1Model)
+bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1Model)
 {
 
     std::vector<std::string> axisNames;
@@ -319,7 +321,7 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isergoCub1_1M
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.116648,0.227771,0.966702));
     axisNames.push_back("r_thumb_add");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.329847,0.160871,0.930227));
-    if (!isergoCub1_1Model) {
+    if (!isNotergoCub1Model) {
         axisNames.push_back("r_thumb_prox");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.525416,0.838737,-0.143034));
         axisNames.push_back("r_thumb_dist");
@@ -740,7 +742,7 @@ int main(int argc, char ** argv)
     comp.setRobotState(qj,dqj,grav);
 
     // Check axis
-    if( !checkAxisDirections(comp, isergoCub1_1Model(modelPath)) )
+    if( !checkAxisDirections(comp, isNotergoCub1Model(modelPath)) )
     {
         return EXIT_FAILURE;
     }
