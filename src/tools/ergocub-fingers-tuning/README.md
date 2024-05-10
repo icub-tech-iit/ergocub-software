@@ -47,4 +47,7 @@ Copy the `.csv` datasets created with `ident-finger` in the `data` folder. Then:
 1. Add to the path the folders `data` and `scripts`
 2. Open the live script `identification_tuning.mlx`
 3. Check the file names of the training and validation sets
+   - the file opened is the last one, unless the user run **init_ws** which resets the file name
+   - **init_ws** must also be run as the first command to insure the livescript works.
 4. Run it by pressing "Run" or F5
+5. check the plots: anytime the fingers are not moving, the PID parameters are screwed up see e.g. [here](https://github.com/icub-tech-iit/ergocub-design-lowerarm/issues/245#issuecomment-2095469706)
