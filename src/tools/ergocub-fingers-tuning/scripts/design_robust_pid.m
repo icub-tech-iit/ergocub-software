@@ -4,16 +4,41 @@
 %
 function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals)
 
+
     arguments
-        usys {mustBeA(usys, ["tf", "uss", "ss"])}
+        usys  {mustBeA(usys, ["tf", "uss", "ss"])}
         SoftGoals {mustBeA(SoftGoals, "TuningGoal.SystemLevel")}
         HardGoals {mustBeA(HardGoals, "TuningGoal.SystemLevel")}
     end
 
     %% define the tunable controller
-    C = tunablePID('C', 'PI');
-    C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
-    C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+
+    choice = menu('Choose Model', 'PI', 'PID');
+  
+    switch choice
+
+    case (1)
+            C = tunablePID('C', 'PI');
+            C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+            C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+            %disp('PI')
+            assignin('base','tYpe','PI');
+    case (2)
+            C = tunablePID('C', 'PID');
+            C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+            C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+            C.Kd.Minimum = -inf;    C.Kd.Maximum = 0;
+            C.Tf.Minimum = 0.01;   C.Tf.Maximum = 0.1;    % N = 1/Tf
+            %disp('PID')
+            assignin('base','tYpe','PID');
+
+    otherwise 
+        disp('scegli PI o PID')
+
+    end
+    %C = tunablePID('C', 'PI');
+    %C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+    %C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
     %C.Kd.Minimum = -inf;    C.Kd.Maximum = 0;
     %C.Tf.Minimum = 10 * Ts;   C.Tf.Maximum = 100 * Ts;    % N = 1/Tf
     C.TimeUnit = 'seconds';
