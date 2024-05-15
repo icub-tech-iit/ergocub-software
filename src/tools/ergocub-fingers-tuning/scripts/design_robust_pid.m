@@ -33,7 +33,7 @@ function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals)
             assignin('base','tYpe','PID');
 
     otherwise 
-        disp('scegli PI o PID')
+        disp('`re-run and choose PI or PID')
 
     end
     %C = tunablePID('C', 'PI');
