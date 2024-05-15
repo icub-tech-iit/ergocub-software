@@ -2,13 +2,13 @@
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it, simeone.dussoni@iit.it
 %
-function t = Reshape_dataset(file, tau, downsample, interpola)
+function t = Reshape_dataset(file, tau, downsample, interpolate)
 
     arguments
         file {mustBeFile}
         tau (1, 1) {mustBeNonnegative}
         downsample (1,1) {mustBeInteger}
-        interpola (1,1) {mustBeInteger}
+        interpolate (1,1) {mustBeInteger}
     end
 
     training_table = readtable(file);
@@ -20,7 +20,7 @@ function t = Reshape_dataset(file, tau, downsample, interpola)
     end
     Ts = mean(diff(training_table_temp.time)); % Ts is  now computed directly from data rather than imposed as a parameters
 
-    if(Ts >0.002 && interpola > 0.5) % resampling with interpolation
+    if(Ts >0.002 && interpolate > 0.5) % resampling with interpolation
         ttable = interp1(training_table_temp.time,table2array(training_table_temp), [0:0.001:training_table.time(end)],'spline');
         training_table = array2table(ttable);
         training_table.Properties.VariableNames = {'time','pwm','theta','pid', 'pwmsp'};
