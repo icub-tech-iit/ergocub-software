@@ -52,5 +52,5 @@ Copy the `.csv` datasets created with `ident-finger` in the `data` folder. Then:
    - it's better to also 'clear all output' by right-clicking in the livescript otherwise the report can be filled with old data and plots!
 4. Run it by pressing "Run" or F5
    - sometimes (very often) the final command 'export' doesn't produce a complete pdf file. re-run this line by selecting it until the pdf looks fine 
-5. check the plots: anytime the fingers are not moving, the PID parameters are screwed up see e.g. [here](https://github.com/icub-tech-iit/ergocub-design-lowerarm/issues/245#issuecomment-2095469706)
+5. check the plots: if the fingers are not moving, then the PID gains are most likely not up to the task; e.g., see [here](https://github.com/icub-tech-iit/ergocub-design-lowerarm/issues/245#issuecomment-2095469706).
 
