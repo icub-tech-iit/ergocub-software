@@ -1,6 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Copyright (C) 2024 Fondazione Istitito Italiano di Tecnologia (IIT)
 % All Rights Reserved.
+% Authors: simeone.dussoni@iit.it
+%
 function init_ws()
   f_path = [];
   f_name = [];
