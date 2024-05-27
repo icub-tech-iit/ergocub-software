@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.7.4] - 2024-05-27
+
+- Refactor YAMLs for using the includes creo2urdf parameter(https://github.com/icub-tech-iit/ergocub-software/pull/240)
+- Add ergoCubSN002/V1_2 (https://github.com/icub-tech-iit/ergocub-software/pull/242)
+
 ## [0.7.3] - 2024-04-10
 
 - Added xml files for running the publish of physical joints quantities (https://github.com/icub-tech-iit/ergocub-software/pull/227)
