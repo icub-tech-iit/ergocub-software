@@ -961,6 +961,7 @@ assignedCollisionGeometry:
 
 assignedMasses:
  torso_1   : 2.0645667
+ head: 1.972127893184972
 
 assignedInertias:
   # This is due to https://github.com/robotology/icub-models/issues/33
@@ -968,6 +969,10 @@ assignedInertias:
     xx: 0.0074060860
     yy: 0.0059470733
     zz: 0.0031780111
+  - linkName: head
+    xx: 0.007991907355842523
+    yy: 0.009883124315185845
+    zz: 0.00786000669468763
 
 assignedColors:
   root_link   : [0.70, 0.70, 0.70, 1]
@@ -1116,7 +1121,7 @@ XMLBlobs:
               <parent link="r_ankle_2" />
               <origin rpy="0.0 -0.0 -2.0943952105869315" xyz="0.016000000000000004 0 -0.07019999999999993" />
             </sensor>
-    # left arm IMU 
+    # left arm IMU
     - |
             <gazebo reference="l_shoulder_2">
               <sensor name="l_arm_ft_imu" type="imu">
@@ -1133,7 +1138,7 @@ XMLBlobs:
               <parent link="l_shoulder_2" />
               <origin rpy="3.14159265 -0.0 -1.57079633" xyz="-0.004350 0.0 -0.05430" />
             </sensor>
-      # right arm IMU 
+      # right arm IMU
     - |
             <gazebo reference="r_shoulder_2">
               <sensor name="r_arm_ft_imu" type="imu">
@@ -1150,7 +1155,7 @@ XMLBlobs:
               <parent link="r_shoulder_2" />
               <origin rpy="3.14159265 -0.0 1.57079633" xyz="-0.006850 0.0 -0.05430" />
             </sensor>
-    # left leg IMU 
+    # left leg IMU
     - |
             <gazebo reference="l_hip_2">
               <sensor name="l_leg_ft_imu" type="imu">
@@ -1167,7 +1172,7 @@ XMLBlobs:
               <parent link="l_hip_2" />
               <origin rpy="3.14159265 -0.0 2.61799368" xyz="0.03670 0.0 -0.08970" />
             </sensor>
-      # right leg IMU 
+      # right leg IMU
     - |
             <gazebo reference="r_hip_2">
               <sensor name="r_leg_ft_imu" type="imu">
