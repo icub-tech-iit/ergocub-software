@@ -72,29 +72,13 @@ double CouplingXCubHandMk5::evaluateCoupledJointJacobian(const double& q1, const
 }
 
 
-bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
+bool CouplingXCubHandMk5::populateFingerParameters()
 {
-
-    yarp::os::Bottle& hand_params = config.findGroup("COUPLING_PARAMS");
-    if(hand_params.isNull())
-    {
-        yCError(COUPLINGXCUBHANDMK5)<<"Missing COUPLING_PARAMS section in the configuration file";
-        return false;
-    }
-    auto L0x    = hand_params.findGroup("L0x");
-    auto L0y    = hand_params.findGroup("L0y");
-    auto q2bias = hand_params.findGroup("q2bias");
-    auto q1off  = hand_params.findGroup("q1off");
-    auto k      = hand_params.findGroup("k");
-    auto d      = hand_params.findGroup("d");
-    auto l      = hand_params.findGroup("l");
-    auto b      = hand_params.findGroup("b");
-
     constexpr int nFingers = 5;
     // All the +1 is because the first element of the bottle is the name of the group
-    if(L0x.size()!=nFingers+1 || L0y.size()!=nFingers+1 || q2bias.size()!=nFingers+1 ||
-       q1off.size()!=nFingers+1 || k.size()!=nFingers+1 || d.size()!=nFingers+1 ||
-       l.size()!=nFingers+1 || b.size()!=nFingers+1 )
+    if(m_COUPLING_PARAMS_L0x.size()!=nFingers   || m_COUPLING_PARAMS_L0y.size()!=nFingers || m_COUPLING_PARAMS_q2bias.size()!=nFingers ||
+       m_COUPLING_PARAMS_q1off.size()!=nFingers || m_COUPLING_PARAMS_k.size()!=nFingers   || m_COUPLING_PARAMS_d.size()!=nFingers      ||
+       m_COUPLING_PARAMS_l.size()!=nFingers     || m_COUPLING_PARAMS_b.size()!=nFingers )
     {
         yCError(COUPLINGXCUBHANDMK5)<<"Invalid hand parameters, check your configuration file";
         return false;
@@ -104,105 +88,46 @@ bool CouplingXCubHandMk5::parseFingerParameters(yarp::os::Searchable& config)
     const std::array<std::string,5> names = {"thumb", "index", "middle", "ring", "pinky"};
     for (std::size_t i = 0; i < names.size(); i++)
     {
-        mFingerParameters.insert({names.at(i), {L0x.get(i+1).asFloat32(), L0y.get(i+1).asFloat32(), q2bias.get(i+1).asFloat32(),
-                                  q1off.get(i+1).asFloat32(), k.get(i+1).asFloat32(), d.get(i+1).asFloat32(),
-                                  l.get(i+1).asFloat32(), b.get(i+1).asFloat32()}});
+        mFingerParameters.insert({names.at(i), {m_COUPLING_PARAMS_L0x[i], m_COUPLING_PARAMS_L0y[i], m_COUPLING_PARAMS_q2bias[i],
+                                  m_COUPLING_PARAMS_q1off[i], m_COUPLING_PARAMS_k[i], m_COUPLING_PARAMS_d[i],
+                                  m_COUPLING_PARAMS_l[i], m_COUPLING_PARAMS_b[i]}});
     }
 
     return true;
 }
 
-bool CouplingXCubHandMk5::parseCouplingParameters(yarp::os::Searchable& config) {
+bool CouplingXCubHandMk5::populateCouplingParameters() {
     yarp::sig::VectorOf<size_t> coupled_physical_joints{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
     yarp::sig::VectorOf<size_t> coupled_actuated_axes{0, 1, 2, 3, 4, 5};
-    std::vector<std::string> physical_joint_names;
-    std::vector<std::string> actuated_axes_names;
     std::vector<std::pair<double, double>> physical_joint_limits;
 
-    yarp::os::Bottle& physical_joint_names_bottle = config.findGroup("jointNames");
-
-    if (physical_joint_names_bottle.isNull()) {
-        yCError(COUPLINGXCUBHANDMK5) << "Error cannot find jointNames." ;
-        return false;
-    }
-
-    yCDebug(COUPLINGXCUBHANDMK5) << "Requested joints:" << physical_joint_names_bottle.toString();
-
-    for (size_t i = 1; i < physical_joint_names_bottle.size(); i++) {
-        physical_joint_names.push_back(physical_joint_names_bottle.get(i).asString().c_str());
-    }
-
-    yarp::os::Bottle& coupling_params = config.findGroup("COUPLING");
-    if (coupling_params.size() ==0)
+    physical_joint_limits.resize(m_jointNames.size());
+    for (int i = 0; i< m_jointNames.size(); i++)
     {
-        yCError(COUPLINGXCUBHANDMK5) << "Missing param in COUPLING section";
-        return false;
+        physical_joint_limits[i] = std::make_pair(m_LIMITS_jntPosMin[i], m_LIMITS_jntPosMax[i]);
     }
-    yCDebug(COUPLINGXCUBHANDMK5) << "Requested couplings:" << coupling_params.toString();
-
-    yarp::os::Bottle& actuated_axes_names_bottle = coupling_params.findGroup("actuatedAxesNames");
-
-    if (actuated_axes_names_bottle.isNull()) {
-        yCError(COUPLINGXCUBHANDMK5) << "Error cannot find actuatedAxesNames." ;
-        return false;
-    }
-
-    for (size_t i = 1; i < actuated_axes_names_bottle.size(); i++) {
-        actuated_axes_names.push_back(actuated_axes_names_bottle.get(i).asString().c_str());
-    }
-    physical_joint_limits.resize(physical_joint_names.size());
-    yarp::os::Bottle& limits_bottle = config.findGroup("LIMITS");
-    if (!limits_bottle.isNull())
-    {
-        yarp::os::Bottle& pos_limit_min = limits_bottle.findGroup("jntPosMin");
-        if (!pos_limit_min.isNull() && static_cast<size_t>(pos_limit_min.size()) == physical_joint_limits.size()+1)
-        {
-            for(size_t i = 0; i < physical_joint_limits.size(); ++i)
-            {
-                physical_joint_limits[i].first = pos_limit_min.get(i+1).asFloat64();
-            }
-        }
-        else
-        {
-            yCError(COUPLINGXCUBHANDMK5) << "Failed to parse jntPosMin parameter";
-            return false;
-        }
-        yarp::os::Bottle& pos_limit_max = limits_bottle.findGroup("jntPosMax");
-        if (!pos_limit_max.isNull() && static_cast<size_t>(pos_limit_max.size()) == physical_joint_limits.size()+1)
-        {
-            for(size_t i = 0; i < physical_joint_limits.size(); ++i)
-            {
-                physical_joint_limits[i].second = pos_limit_max.get(i+1).asFloat64();
-
-            }
-        }
-        else
-        {
-            yCError(COUPLINGXCUBHANDMK5) << "Failed to parse jntPosMax parameter";
-            return false;
-        }
-    }
-    else
-    {
-        yCError(COUPLINGXCUBHANDMK5) << "Failed to parse LIMITS parameter";
-        return false;
-    }
-    initialise(coupled_physical_joints, coupled_actuated_axes, physical_joint_names, actuated_axes_names, physical_joint_limits);
+    initialise(coupled_physical_joints, coupled_actuated_axes, m_jointNames, m_COUPLING_actuatedAxesNames, physical_joint_limits);
     return true;
 }
 
 bool CouplingXCubHandMk5::open(yarp::os::Searchable& config) {
 
-    // TODO INVOKE ImplementCoupling::initialise()
-    bool ok = parseFingerParameters(config);
-    if (!ok) {
-        yCError(COUPLINGXCUBHANDMK5) << "Error parsing finger parameters";
+    if(!parseParams(config)) {
+        yCError(COUPLINGXCUBHANDMK5) << "Error parsing parameters";
         return false;
     }
 
-    ok &= parseCouplingParameters(config);
+    yCDebug(COUPLINGXCUBHANDMK5) << "Opening CouplingXCubHandMk5"<<config.toString();
+
+    bool ok = populateCouplingParameters();
     if (!ok) {
         yCError(COUPLINGXCUBHANDMK5) << "Error parsing coupling parameters";
+        return false;
+    }
+
+    ok = ok && populateFingerParameters();
+    if (!ok) {
+        yCError(COUPLINGXCUBHANDMK5) << "Error parsing finger parameters";
         return false;
     }
 
