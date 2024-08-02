@@ -31,6 +31,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     Bottle &bGroup = rf.findGroup("general");
     nExpressions = bGroup.find("num_expressions").asInt32();
     nTransitions = bGroup.find("num_transitions").asInt32();
+    fullscreen = bGroup.find("fullscreen").asBool();
 
     for(int i = 0; i < nExpressions; i++)
     {
@@ -105,8 +106,13 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     isTransition = true;
     command = "neutral";
 
-    namedWindow("emotion", WND_PROP_FULLSCREEN);
-    setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+    if(fullscreen){
+        namedWindow("emotion", WND_PROP_FULLSCREEN);
+        setWindowProperty("emotion", WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);
+    }
+    else{
+        namedWindow("emotion", WINDOW_NORMAL);
+    }
 
     cmdPort.open("/ergoCubEmotions/rpc");
     attach(cmdPort);
