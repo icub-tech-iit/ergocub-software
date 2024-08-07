@@ -2823,6 +2823,16 @@
     </plugin>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_torso.ini</yarpConfigurationFile>
     </plugin>
@@ -2936,6 +2946,11 @@
     </plugin>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_left_leg" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
     </plugin>
@@ -3037,6 +3052,11 @@
   <gazebo>
     <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
