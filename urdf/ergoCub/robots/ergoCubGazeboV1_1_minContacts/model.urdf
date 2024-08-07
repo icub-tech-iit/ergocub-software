@@ -172,36 +172,6 @@
       </geometry>
     </collision>
   </link>
-  <joint name="l_shoulder_pitch" type="revolute">
-    <origin xyz="-0.013518676842610159 0.06704761117227499 0.12351981080941767" rpy="0.2536123238732541 -0.05203160550449479 -0.27527873241387235"/>
-    <axis xyz="-3.452099717193846e-16 1.0000000000000002 3.0531133177191805e-16"/>
-    <parent link="chest"/>
-    <child link="l_shoulder_1"/>
-    <limit lower="-2.9670597283903604" upper="0.6108652381980153" effort="1e+9" velocity="1e+9"/>
-    <dynamics damping="2" friction="0"/>
-  </joint>
-  <link name="l_shoulder_1">
-    <inertial>
-      <mass value="0.7913756606310043"/>
-      <origin xyz="1.4824275422014796e-4 0.06782971819041986 5.036196460999898e-4" rpy="0 -0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
-  </link>
   <joint name="neck_pitch" type="revolute">
     <origin xyz="0.004861512347971912 4.1253975310307907e-16 0.22529999999999994" rpy="-1.541978321110266e-15 -2.0480667158215426e-15 -1.389802281096855e-15"/>
     <axis xyz="2.6472211157644926e-18 -1 -7.807858529815144e-16"/>
@@ -220,6 +190,36 @@
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
         <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_shoulder_pitch" type="revolute">
+    <origin xyz="-0.013518676842610159 0.06704761117227499 0.12351981080941767" rpy="0.2536123238732541 -0.05203160550449479 -0.27527873241387235"/>
+    <axis xyz="-3.452099717193846e-16 1.0000000000000002 3.0531133177191805e-16"/>
+    <parent link="chest"/>
+    <child link="l_shoulder_1"/>
+    <limit lower="-2.9670597283903604" upper="0.6108652381980153" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="l_shoulder_1">
+    <inertial>
+      <mass value="0.7913756606310043"/>
+      <origin xyz="1.4824275422014796e-4 0.06782971819041986 5.036196460999898e-4" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="">
         <color rgba="0.6 0.6 0.6 1"/>
@@ -829,96 +829,6 @@
       </geometry>
     </collision>
   </link>
-  <joint name="neck_roll" type="revolute">
-    <origin xyz="8.673617379884035e-19 6.416192023745373e-17 0.009499999999999786" rpy="-1.7364294099408703e-15 -2.980403162017727e-16 1.580860396783509e-15"/>
-    <axis xyz="1 -1.6820355477448088e-15 -3.806893332301044e-15"/>
-    <parent link="neck_2"/>
-    <child link="neck_3"/>
-    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9"/>
-    <dynamics damping="2" friction="0"/>
-  </joint>
-  <link name="neck_3">
-    <inertial>
-      <mass value="0.17811376821431446"/>
-      <origin xyz="7.590511663558711e-4 -4.0916906938460536e-5 0.036035516549226765" rpy="0 -0 0"/>
-      <inertia ixx="9.70548692219775e-5" ixy="1.7629468835177367e-7" ixz="6.130672988864901e-6" iyy="1.0759851740143377e-4" iyz="-2.503969674072287e-7" izz="3.626415440724103e-5"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_3.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="neck_yaw" type="revolute">
-    <origin xyz="-1.43982048506075e-16 -4.1419339784385294e-17 0.06914999999999999" rpy="1.2720090288173385e-15 -3.1687776687987536e-15 3.715432083235576e-16"/>
-    <axis xyz="3.1628618281392715e-15 1.6479574685948862e-15 0.9999999999999998"/>
-    <parent link="neck_3"/>
-    <child link="head"/>
-    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="1e+9" velocity="1e+9"/>
-    <dynamics damping="2" friction="0"/>
-  </joint>
-  <link name="head">
-    <inertial>
-      <mass value="1.972127893184972"/>
-      <origin xyz="-0.01620091412622722 -0.002268813231724542 0.03500744217497026" rpy="0 -0 0"/>
-      <inertia ixx="0.007991907355842523" ixy="1.8186740348760937e-4" ixz="-1.9244538977657914e-4" iyy="0.009883124315185845" iyz="-3.994074771344834e-5" izz="0.00786000669468763"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="camera_tilt" type="revolute">
-    <origin xyz="0.06250999999999993 -3.0000000001105853e-5 0.07639250000000064" rpy="9.166950960511526e-15 2.595819949100105e-4 1.9343583275079285e-15"/>
-    <axis xyz="-3.1332662159460226e-17 -1 -1.3036401662462866e-15"/>
-    <parent link="head"/>
-    <child link="realsense"/>
-    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
-    <dynamics damping="2" friction="0"/>
-  </joint>
-  <link name="realsense">
-    <inertial>
-      <mass value="0.0973042045264468"/>
-      <origin xyz="-0.01566548310600667 0.004519995218644514 0.002745610154123612" rpy="0 -0 0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_realsense.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
-  </link>
   <joint name="l_shoulder_roll" type="revolute">
     <origin xyz="0.005000000000000011 0.09329999999999987 -3.0531133177191805e-16" rpy="2.6895152771544417e-14 1.790234627208065e-15 -2.3314683517128287e-15"/>
     <axis xyz="1 4.891920202255013e-16 3.3029134982598896e-15"/>
@@ -1477,6 +1387,96 @@
       </geometry>
       <material name="">
         <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_roll" type="revolute">
+    <origin xyz="8.673617379884035e-19 6.416192023745373e-17 0.009499999999999786" rpy="-1.7364294099408703e-15 -2.980403162017727e-16 1.580860396783509e-15"/>
+    <axis xyz="1 -1.6820355477448088e-15 -3.806893332301044e-15"/>
+    <parent link="neck_2"/>
+    <child link="neck_3"/>
+    <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="neck_3">
+    <inertial>
+      <mass value="0.17811376821431446"/>
+      <origin xyz="7.590511663558711e-4 -4.0916906938460536e-5 0.036035516549226765" rpy="0 -0 0"/>
+      <inertia ixx="9.70548692219775e-5" ixy="1.7629468835177367e-7" ixz="6.130672988864901e-6" iyy="1.0759851740143377e-4" iyz="-2.503969674072287e-7" izz="3.626415440724103e-5"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="neck_yaw" type="revolute">
+    <origin xyz="-1.43982048506075e-16 -4.1419339784385294e-17 0.06914999999999999" rpy="1.2720090288173385e-15 -3.1687776687987536e-15 3.715432083235576e-16"/>
+    <axis xyz="3.1628618281392715e-15 1.6479574685948862e-15 0.9999999999999998"/>
+    <parent link="neck_3"/>
+    <child link="head"/>
+    <limit lower="-0.7853981633974483" upper="0.7853981633974483" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="head">
+    <inertial>
+      <mass value="1.972127893184972"/>
+      <origin xyz="-0.01620091412622722 -0.002268813231724542 0.03500744217497026" rpy="0 -0 0"/>
+      <inertia ixx="0.007991907355842523" ixy="1.8186740348760937e-4" ixz="-1.9244538977657914e-4" iyy="0.009883124315185845" iyz="-3.994074771344834e-5" izz="0.00786000669468763"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <box size="0 0 0"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="camera_tilt" type="revolute">
+    <origin xyz="0.06250999999999993 -3.0000000001105853e-5 0.07639250000000064" rpy="9.166950960511526e-15 2.595819949100105e-4 1.9343583275079285e-15"/>
+    <axis xyz="-3.1332662159460226e-17 -1 -1.3036401662462866e-15"/>
+    <parent link="head"/>
+    <child link="realsense"/>
+    <limit lower="-0.5235987755982988" upper="0.5235987755982988" effort="1e+9" velocity="1e+9"/>
+    <dynamics damping="2" friction="0"/>
+  </joint>
+  <link name="realsense">
+    <inertial>
+      <mass value="0.0973042045264468"/>
+      <origin xyz="-0.01566548310600667 0.004519995218644514 0.002745610154123612" rpy="0 -0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 -0 0"/>
+      <geometry>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_realsense.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
     <collision>
@@ -2823,6 +2823,16 @@
     </plugin>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_torso.ini</yarpConfigurationFile>
     </plugin>
@@ -2936,6 +2946,11 @@
     </plugin>
   </gazebo>
   <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
     <plugin name="controlboard_left_leg" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
     </plugin>
@@ -3037,6 +3052,11 @@
   <gazebo>
     <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
