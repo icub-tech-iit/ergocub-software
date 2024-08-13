@@ -9,7 +9,7 @@
         <param name="defaultContactFrames">(l_hand_palm,r_hand_palm,root_link,l_foot_front,l_foot_rear,r_foot_front,r_foot_rear,l_upper_leg,r_upper_leg)</param>
         <param name="imuFrameName">head_imu_0</param>
         <param name="useJointVelocity">true</param>
-        <param name="useJointAcceleration">true</param>
+        <param name="useJointAcceleration">false</param>
         <param name="imuFilterCutoffInHz">3.0</param>
         <param name="forceTorqueFilterCutoffInHz">3.0</param>
         <param name="jointVelFilterCutoffInHz">3.0</param> <!-- used if useJointVelocity is set to true -->
