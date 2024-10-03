@@ -8,7 +8,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_root_link_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_root_link.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="root_link_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -17,7 +17,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_root_link_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_root_link.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -30,7 +30,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_hip_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -39,7 +39,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -60,7 +60,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_hip_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -69,7 +69,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -97,7 +97,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_hip_3_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -106,7 +106,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -125,7 +125,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_upper_leg_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -134,7 +134,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -155,7 +155,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_lower_leg_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -164,7 +164,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -185,7 +185,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_ankle_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -194,7 +194,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -215,7 +215,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_ankle_2_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -224,7 +224,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -259,14 +259,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_rear.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_foot_rear_color">
         <color rgba="1 0.51 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.0193" rpy="0 0 0"/>
       <geometry>
         <box size="0.117 0.1 0.006"/>
       </geometry>
@@ -294,14 +294,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_foot_front.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_foot_front_color">
         <color rgba="1 0.51 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.0193" rpy="0 0 0"/>
       <geometry>
         <box size="0.117 0.1 0.006"/>
       </geometry>
@@ -322,7 +322,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_hip_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -331,7 +331,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -352,7 +352,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_hip_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -361,7 +361,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -389,7 +389,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_hip_3_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -398,7 +398,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -417,7 +417,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_upper_leg_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -426,7 +426,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upper_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -447,7 +447,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_lower_leg_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -456,7 +456,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_lower_leg_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -477,7 +477,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_ankle_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -486,7 +486,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -507,7 +507,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_ankle_2_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -516,7 +516,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -551,14 +551,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_front_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_front.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_foot_front_color">
         <color rgba="1 0.51 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.0193" rpy="0 0 0"/>
       <geometry>
         <box size="0.117 0.1 0.006"/>
       </geometry>
@@ -579,14 +579,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_rear_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_foot_rear.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_foot_rear_color">
         <color rgba="1 0.51 0.0 1"/>
       </material>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 -0.0193" rpy="0 0 0"/>
       <geometry>
         <box size="0.117 0.1 0.006"/>
       </geometry>
@@ -614,7 +614,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="torso_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -623,7 +623,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -644,7 +644,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="torso_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -653,7 +653,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_torso_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -674,7 +674,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_chest_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_chest.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="chest_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -683,7 +683,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_chest_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_chest.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -704,7 +704,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="neck_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -713,7 +713,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -734,7 +734,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="neck_3_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -743,7 +743,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_neck_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -764,7 +764,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="head_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -773,7 +773,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_head.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -808,7 +808,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_realsense_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_realsense.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -817,7 +817,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_realsense_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_realsense.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -852,7 +852,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_shoulder_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -861,7 +861,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -882,7 +882,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_shoulder_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -891,7 +891,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -919,7 +919,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_shoulder_3_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -928,7 +928,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -947,7 +947,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -956,7 +956,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -977,7 +977,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_forearm_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -986,7 +986,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1007,7 +1007,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_wrist_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -1016,7 +1016,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1037,7 +1037,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -1046,7 +1046,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1067,7 +1067,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1"/>
@@ -1076,7 +1076,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1097,7 +1097,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow">
         <color rgba="1 1 0 1"/>
@@ -1106,7 +1106,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1127,7 +1127,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink">
         <color rgba="1 0 1 1"/>
@@ -1136,7 +1136,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1241,7 +1241,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="cyan">
         <color rgba="0 1 1 1"/>
@@ -1250,7 +1250,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1271,7 +1271,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -1280,7 +1280,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1301,7 +1301,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -1310,7 +1310,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1415,7 +1415,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dblue">
         <color rgba="0 0 0.8 1"/>
@@ -1424,7 +1424,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1445,7 +1445,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dgreen">
         <color rgba="0.1 0.8 0.1 1"/>
@@ -1454,7 +1454,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1559,7 +1559,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -1568,7 +1568,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1589,7 +1589,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -1598,7 +1598,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1703,7 +1703,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -1712,7 +1712,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1733,7 +1733,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -1742,7 +1742,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1763,7 +1763,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1"/>
@@ -1772,7 +1772,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_r_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1877,7 +1877,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_shoulder_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -1886,7 +1886,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1907,7 +1907,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_shoulder_2_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -1916,7 +1916,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1944,7 +1944,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_shoulder_3_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -1953,7 +1953,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1972,7 +1972,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow">
         <color rgba="1 1 0 1"/>
@@ -1981,7 +1981,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upperarm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2002,7 +2002,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_forearm_color">
         <color rgba="0.3 0.3 0.3 1"/>
@@ -2011,7 +2011,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2032,7 +2032,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_wrist_1_color">
         <color rgba="0.9 0.9 0.9 1"/>
@@ -2041,7 +2041,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2062,7 +2062,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink">
         <color rgba="1 0 1 1"/>
@@ -2071,7 +2071,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2092,7 +2092,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="cyan">
         <color rgba="0 1 1 1"/>
@@ -2101,7 +2101,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_palm_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2122,7 +2122,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -2131,7 +2131,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2152,7 +2152,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -2161,7 +2161,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2266,7 +2266,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dblue">
         <color rgba="0 0 0.8 1"/>
@@ -2275,7 +2275,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2296,7 +2296,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dgreen">
         <color rgba="0.1 0.8 0.1 1"/>
@@ -2305,7 +2305,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2326,7 +2326,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -2335,7 +2335,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2440,7 +2440,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -2449,7 +2449,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2470,7 +2470,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -2479,7 +2479,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2584,7 +2584,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -2593,7 +2593,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2614,7 +2614,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1"/>
@@ -2623,7 +2623,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2644,7 +2644,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow">
         <color rgba="1 1 0 1"/>
@@ -2653,7 +2653,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_3_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2758,7 +2758,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink">
         <color rgba="1 0 1 1"/>
@@ -2767,7 +2767,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_1_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -2788,7 +2788,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="cyan">
         <color rgba="0 1 1 1"/>
@@ -2797,7 +2797,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_2_prt.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_l_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
