@@ -114,7 +114,15 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         namedWindow("emotion", WINDOW_NORMAL);
     }
 
-    cmdPort.open("/ergoCubEmotions/rpc");
+    std::string portprefix{""};
+    if(rf.check("portprefix") && rf.find("portprefix").isString()) {
+        portprefix = rf.find("portprefix").asString();
+        if (portprefix[0] != '/') {
+            yError()<<"Portprefix does not start with /, closing";
+            return false;
+        }
+    }
+    cmdPort.open(portprefix+"/ergoCubEmotions/rpc");
     attach(cmdPort);
     return true;
 }
