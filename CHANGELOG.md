@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- Add nice looking meshes for both SN000 and SN0001/2 ergocub models (https://github.com/icub-tech-iit/ergocub-software/pull/288)
+
+## [0.7.5] - 2024-09-03
+- Fix alljoints inertials to work also on gz-sim (https://github.com/icub-tech-iit/ergocub-software/pull/250)
+- ergoCub1_0: fix mass and inertia of the head (https://github.com/icub-tech-iit/ergocub-software/pull/249)
+- Add angry emotion and not fullscreem mode to ergoCubEmotions (https://github.com/icub-tech-iit/ergocub-software/pull/258)
 
 ## [0.7.4] - 2024-05-27
 
