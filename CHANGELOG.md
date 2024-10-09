@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 - Add nice looking meshes for both SN000 and SN0001/2 ergocub models (https://github.com/icub-tech-iit/ergocub-software/pull/266)
+- Fixed `waist_imu_0` position (https://github.com/icub-tech-iit/ergocub-software/pull/267)
 
 ## [0.7.5] - 2024-09-03
 - Fix alljoints inertials to work also on gz-sim (https://github.com/icub-tech-iit/ergocub-software/pull/250)
