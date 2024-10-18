@@ -33,10 +33,8 @@ jobs:
     - name: Dependencies
       shell: bash -l {0}
       run: |
-        # Compilation related dependencies
-        conda install cmake compilers make ninja pkg-config
-        # Actual dependencies
-        conda install ycm-cmake-modules yarp opencv idyntree
+        # Install ependencies
+        conda install cmake compilers make ninja pkg-config ycm-cmake-modules yarp opencv idyntree
 
     - name: Configure [Linux&macOS]
       if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
