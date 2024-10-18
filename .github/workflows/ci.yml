@@ -29,8 +29,6 @@ jobs:
       with:
         miniforge-variant: Miniforge3
         miniforge-version: latest
-        channels: conda-forge,robotology
-        channel-priority: true
 
     - name: Dependencies
       shell: bash -l {0}
