@@ -8,7 +8,7 @@
 # Detect if we are doing a standalone build of the ergocub-models
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
   cmake_minimum_required(VERSION 3.22.1)
-  project(ergocub-models)
+  project(ergocub-models LANGUAGES NONE)
   set(BUILD_PREFIX "ergoCub")
   include(GNUInstallDirs)
 endif()
