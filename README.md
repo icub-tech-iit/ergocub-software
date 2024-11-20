@@ -34,14 +34,14 @@ Alternatively, if `YARP` has been installed using the [robotology-superbuild](ht
 
 ### Use conda binary packages
 
-This repository is packaged as `ergocub-software` in the `conda-forge` conda channel, see https://anaconda.org/conda-forge/ergocub-software .
+This repository is packaged as `ergocub-software` in the `conda-forge` conda channel, see https://anaconda.org/conda-forge/ergocub-software and https://github.com/conda-forge/ergocub-software-feedstock .
 
 To create an environment with it, just add it during the environment creation as any other conda package, for example:
 ~~~
 conda create -n ergocubenv -c conda-forge ergocub-software
 ~~~
 
-If you only need to use the ergoCub URDF models and you do not want to install the full dependencies of the `ergocub-software` (that include YARP and OpenCV), you can also install the lightweigh dependency free package `ergocub-models`:
+If you only need to use the ergoCub URDF models and you do not want to install the full dependencies of the `ergocub-software` (that include YARP and OpenCV), you can also install the lightweight dependency free package `ergocub-models`:
 ~~~
 conda create -n ergocubenv -c conda-forge ergocub-models
 ~~~
