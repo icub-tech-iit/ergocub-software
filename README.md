@@ -34,12 +34,19 @@ Alternatively, if `YARP` has been installed using the [robotology-superbuild](ht
 
 ### Use conda binary packages
 
-This repository is packaged as `ergocub-software` in the `robotology` conda channel, see https://anaconda.org/robotology/ergocub-software .
+This repository is packaged as `ergocub-software` in the `conda-forge` conda channel, see https://anaconda.org/conda-forge/ergocub-software .
 
 To create an environment with it, just add it during the environment creation as any other conda package, for example:
 ~~~
-conda create -n ergocubenv -c conda-forge -c robotology ergocub-software
+conda create -n ergocubenv -c conda-forge ergocub-software
 ~~~
+
+If you only need to use the ergoCub URDF models and you do not want to install the full dependencies of the `ergocub-software` (that include YARP and OpenCV), you can also install the lightweigh dependency free package `ergocub-models`:
+~~~
+conda create -n ergocubenv -c conda-forge ergocub-models
+~~~
+
+The `ergocub-software` package depends on `ergocub-models`, so if you need both you can just install `ergocub-software`.
 
 ## Run Whole-body-dynamics
 Currently whole-body-dynamics does not run along with `ergoCubGazeboV1`. To start it please run the following command in a console once `yarpserver` and
