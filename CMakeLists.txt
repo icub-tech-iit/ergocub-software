@@ -24,6 +24,7 @@ include(AddUninstallTarget)
 
 option(BUILD_TESTING "Run tests for the generated models" OFF)
 option(COMPILE_ergoCubEmotions "Compile the module controlling the ergoCub emotions" OFF)
+option(COMPILE_ergoCubModels "Configure and install the URDF models of the ergoCub robots" ON)
 
 if(MSVC)
   set(CMAKE_DEBUG_POSTFIX "d")
@@ -53,16 +54,10 @@ if(NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 set(BUILD_PREFIX "ergoCub")
-add_subdirectory(urdf)
 
-# Install empty ergoCub file in <prefix>/share/ament_index/resource_index/packages
-# so that ergoCub package is found by ROS2
-# See https://github.com/robotology/icub-models/issues/177
-# and https://github.com/icub-tech-iit/ergocub-software/issues/59
-file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file "")
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file
-        DESTINATION share/ament_index/resource_index/packages
-        RENAME ergoCub)
+if (COMPILE_ergoCubModels)
+  add_subdirectory(urdf)
+endif()
 
 # TODO to be defined
 if (BUILD_TESTING)

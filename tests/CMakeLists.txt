@@ -7,8 +7,10 @@ add_executable(ergocub-model-test ergocub-model-test.cpp)
 target_link_libraries(ergocub-model-test ${iDynTree_LIBRARIES} YARP::YARP_os)
 
 macro(add_ergocub_model_test yarpRobotName)
-    add_test(NAME ${yarpRobotName}ConsistencyCheck
+    if (COMPILE_ergoCubModels)
+        add_test(NAME ${yarpRobotName}ConsistencyCheck
              COMMAND ergocub-model-test --model ${CMAKE_BINARY_DIR}/${BUILD_PREFIX}/robots/${yarpRobotName}/model.urdf)
+    endif()
 endmacro()
 
 # Model generated with simmechanics
@@ -18,4 +20,3 @@ add_ergocub_model_test(ergoCubGazeboV1_2)
 add_ergocub_model_test(ergoCubSN000)
 add_ergocub_model_test(ergoCubSN001)
 add_ergocub_model_test(ergoCubSN002)
-

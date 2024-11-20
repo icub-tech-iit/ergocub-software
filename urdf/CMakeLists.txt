@@ -5,6 +5,13 @@
 # BSD-3-Clause license. See the accompanying LICENSE file for details.
 
 
+# Detect if we are doing a standalone build of the ergocub-models
+if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+  cmake_minimum_required(VERSION 3.22.1)
+  project(ergocub-models LANGUAGES NONE)
+  set(BUILD_PREFIX "ergoCub")
+  include(GNUInstallDirs)
+endif()
 
 set(GAZEBO_SUPPORTED_MODELS "")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1")
@@ -83,3 +90,12 @@ endforeach()
 
 # install the directory
 install(DIRECTORY ${CMAKE_BINARY_DIR}/${BUILD_PREFIX} DESTINATION share)
+
+# Install empty ergoCub file in <prefix>/share/ament_index/resource_index/packages
+# so that ergoCub package is found by ROS2
+# See https://github.com/robotology/icub-models/issues/177
+# and https://github.com/icub-tech-iit/ergocub-software/issues/59
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file "")
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ergoCub_empty_file
+        DESTINATION share/ament_index/resource_index/packages
+        RENAME ergoCub)
