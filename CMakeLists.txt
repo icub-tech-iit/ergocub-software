@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.12)
 project(ergocub-software LANGUAGES C CXX
                          VERSION 0.7.6)
 
-find_package(YARP 3.9.0 REQUIRED)
+find_package(YARP 3.10.0 REQUIRED)
 
 # Give error if add_dependencies is called on a non-existing target
 if(POLICY CMP0046)
