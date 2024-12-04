@@ -51,7 +51,7 @@ function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals, pidType)
     T = connect(usys, C, Sum, input_names, {'y'} ,  analysis_points);
     
     %% Tune system
-    tuneopts = systuneOptions('MaxIter', 100, 'RandomStart', 10, 'UseParallel', false, "Display", "off");
+    tuneopts = systuneOptions('MaxIter', 100, 'RandomStart', 10, 'UseParallel', false, Display="final");
     
     Gcl = systune(T, SoftGoals, HardGoals, tuneopts);
     
