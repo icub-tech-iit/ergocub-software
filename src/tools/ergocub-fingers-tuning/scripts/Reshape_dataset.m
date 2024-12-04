@@ -18,6 +18,8 @@ function [t, Ts] = Reshape_dataset(file, tau, downsample, interpolate, sampling_
         [a, t_index] = findpeaks(abs(diff(training_table.theta)));
         training_table_temp = training_table(t_index,:);
         training_table_temp.Properties.VariableNames = {'time','pwm','theta','pid', 'pwmsp'};
+    else
+        training_table_temp = training_table;
     end
     Ts = mean(diff(training_table_temp.time)); % Ts is  now computed directly from data rather than imposed as a parameters
 
