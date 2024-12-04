@@ -2,13 +2,14 @@
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it, simeone.dussoni@iit.it
 %
-function t = Reshape_dataset(file, tau, downsample, interpolate)
+function [t, Ts] = Reshape_dataset(file, tau, downsample, interpolate, sampling_time_significant_digits)
 
     arguments
         file {mustBeFile}
         tau (1, 1) {mustBeNonnegative}
         downsample (1,1) {mustBeInteger}
         interpolate (1,1) {mustBeInteger}
+        sampling_time_significant_digits (1,1) {mustBeInteger}
     end
 
     training_table = readtable(file);
@@ -19,6 +20,8 @@ function t = Reshape_dataset(file, tau, downsample, interpolate)
         training_table_temp.Properties.VariableNames = {'time','pwm','theta','pid', 'pwmsp'};
     end
     Ts = mean(diff(training_table_temp.time)); % Ts is  now computed directly from data rather than imposed as a parameters
+
+    Ts = floor(Ts*10^(sampling_time_significant_digits))/10^(sampling_time_significant_digits); % truncate to the millisecond
 
     if(Ts >0.002 && interpolate > 0.5) % resampling with interpolation
         ttable = interp1(training_table_temp.time,table2array(training_table_temp), [0:0.001:training_table.time(end)],'spline');
@@ -49,6 +52,6 @@ function t = Reshape_dataset(file, tau, downsample, interpolate)
     vel = [t1_dot theta_f_dot];
     vel_uf = [t1_dot theta_dot];
 
-    t = table(t1_dot, pwm(:,2), vel(:,2), vel_uf(:,2), pos(:, 2), training_table.theta(1:end-1), 'VariableNames', {'Time', 'pwm', 'vel', 'vel_uf', 'pos', 'pos_uf'});
-
+    t = table(t1_dot, pwm(:,2), vel(:,2), vel_uf(:,2), pos(:, 2), training_table.theta(1:end-1), ...
+        'VariableNames', {'Time', 'pwm', 'vel', 'vel_uf', 'pos', 'pos_uf'});
 end 

@@ -2,28 +2,27 @@
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it
 %
-function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals)
+function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals, pidType)
 
 
     arguments
         usys  {mustBeA(usys, ["tf", "uss", "ss"])}
         SoftGoals {mustBeA(SoftGoals, "TuningGoal.SystemLevel")}
         HardGoals {mustBeA(HardGoals, "TuningGoal.SystemLevel")}
+        pidType {mustBeA(pidType, "char")}
     end
 
     %% define the tunable controller
-
-    choice = menu('Choose Model', 'PI', 'PID');
   
-    switch choice
+    switch pidType
 
-    case (1)
+    case ('PI')
             C = tunablePID('C', 'PI');
             C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
             C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
             %disp('PI')
             assignin('base','tYpe','PI');
-    case (2)
+    case ('PID')
             C = tunablePID('C', 'PID');
             C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
             C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
