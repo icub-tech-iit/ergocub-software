@@ -53,6 +53,7 @@ function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals, pidType)
     %% Tune system
     tuneopts = systuneOptions('MaxIter', 100, 'RandomStart', 10, 'UseParallel', false, Display="final");
     
+    rng(0);
     Gcl = systune(T, SoftGoals, HardGoals, tuneopts);
     
     tunedValue = getTunedValue(Gcl);
