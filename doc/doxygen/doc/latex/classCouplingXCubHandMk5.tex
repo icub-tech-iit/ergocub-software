@@ -1,0 +1,77 @@
+\doxysection{Coupling\+XCub\+Hand\+Mk5 Class Reference}
+\label{classCouplingXCubHandMk5}\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+
+
+TBD.  
+
+
+
+
+{\ttfamily \#include $<$Coupling\+XCub\+Hand\+Mk5.\+h$>$}
+
+
+
+Inherits yarp\+::dev\+::\+Device\+Driver, and yarp\+::dev\+::\+Implement\+Joint\+Coupling.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classCouplingXCubHandMk5_ab6dd9c0bdbcfe389b1504eb3067b6713}} 
+bool {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Pos} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, yarp\+::sig\+::\+Vector \&act\+Axes\+Pos) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a50565b4a525bd4aa0c8b54670d62f8c1}} 
+bool {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Vel} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel, yarp\+::sig\+::\+Vector \&act\+Axes\+Vel) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a9e3edf606b9ca3ab2db0256ee8ad9ba7}} 
+bool {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Acc} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Acc, yarp\+::sig\+::\+Vector \&act\+Axes\+Acc) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a1820ce244fa0aa13fe91e500478f4684}} 
+bool {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Trq} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Trq, yarp\+::sig\+::\+Vector \&act\+Axes\+Trq) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a3376beea39fb91507063771391658b6c}} 
+bool {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Pos} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a39e3704b8d04df44b46bd04d8237fe86}} 
+bool {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Vel} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Vel, yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_a88b2f0cc6367a5b6fa985892e59e2528}} 
+bool {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Acc} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Vel, const yarp\+::sig\+::\+Vector \&act\+Axes\+Acc, yarp\+::sig\+::\+Vector \&phys\+Joints\+Acc) override
+\item 
+\mbox{\label{classCouplingXCubHandMk5_aef1e3eb02a8284e95e3c154c710a57e0}} 
+bool {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Trq} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Trq, yarp\+::sig\+::\+Vector \&phys\+Joints\+Trq) override
+\item 
+bool \mbox{\hyperlink{classCouplingXCubHandMk5_a040915e77182bf9322275e81e53afbad}{open}} (yarp\+::os\+::\+Searchable \&config) override
+\begin{DoxyCompactList}\small\item\em Configure with a set of options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TBD. 
+
+Definition at line 40 of file Coupling\+XCub\+Hand\+Mk5.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{classCouplingXCubHandMk5_a040915e77182bf9322275e81e53afbad}} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!open@{open}}
+\index{open@{open}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool Coupling\+XCub\+Hand\+Mk5\+::open (\begin{DoxyParamCaption}\item[{yarp\+::os\+::\+Searchable \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Configure with a set of options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The options to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the object could be configured. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/coupling\+XCub\+Hand\+Mk5/Coupling\+XCub\+Hand\+Mk5.\+h\end{DoxyCompactItemize}
