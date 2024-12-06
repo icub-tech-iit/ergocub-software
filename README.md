@@ -5,7 +5,7 @@ Main collector of ergoCub specific SW
 
 ### Dependencies
 
-Before installing `ergocub-software`, please be sure that you've installed [`YARP`](https://www.yarp.it/latest//) 3.9.0 or higher on your machine.
+Before installing `ergocub-software`, please be sure that you've installed [`YARP`](https://www.yarp.it/latest//) 3.10.0 or higher on your machine.
 
 ### Compiling from source
 
