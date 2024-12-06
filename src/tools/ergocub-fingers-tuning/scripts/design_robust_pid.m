@@ -2,18 +2,42 @@
 % All Rights Reserved
 % Authors: mattia.fussi@iit.it
 %
-function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals)
+function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals, pidType)
+
 
     arguments
-        usys {mustBeA(usys, ["tf", "uss", "ss"])}
+        usys  {mustBeA(usys, ["tf", "uss", "ss"])}
         SoftGoals {mustBeA(SoftGoals, "TuningGoal.SystemLevel")}
         HardGoals {mustBeA(HardGoals, "TuningGoal.SystemLevel")}
+        pidType {mustBeA(pidType, "char")}
     end
 
     %% define the tunable controller
-    C = tunablePID('C', 'PI');
-    C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
-    C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+  
+    switch pidType
+
+    case ('PI')
+            C = tunablePID('C', 'PI');
+            C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+            C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+            %disp('PI')
+            assignin('base','tYpe','PI');
+    case ('PID')
+            C = tunablePID('C', 'PID');
+            C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+            C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
+            C.Kd.Minimum = -inf;    C.Kd.Maximum = 0;
+            C.Tf.Minimum = 0.01;   C.Tf.Maximum = 0.1;    % N = 1/Tf
+            %disp('PID')
+            assignin('base','tYpe','PID');
+
+    otherwise 
+        disp('`re-run and choose PI or PID')
+
+    end
+    %C = tunablePID('C', 'PI');
+    %C.Kp.Minimum = -inf;    C.Kp.Maximum = 0;
+    %C.Ki.Minimum = -inf;    C.Ki.Maximum = 0;
     %C.Kd.Minimum = -inf;    C.Kd.Maximum = 0;
     %C.Tf.Minimum = 10 * Ts;   C.Tf.Maximum = 100 * Ts;    % N = 1/Tf
     C.TimeUnit = 'seconds';
@@ -27,8 +51,9 @@ function [C, T] = design_robust_pid(usys, SoftGoals, HardGoals)
     T = connect(usys, C, Sum, input_names, {'y'} ,  analysis_points);
     
     %% Tune system
-    tuneopts = systuneOptions('MaxIter', 100, 'RandomStart', 10, 'UseParallel', false, "Display", "off");
+    tuneopts = systuneOptions('MaxIter', 100, 'RandomStart', 10, 'UseParallel', false, Display="final");
     
+    rng(0);
     Gcl = systune(T, SoftGoals, HardGoals, tuneopts);
     
     tunedValue = getTunedValue(Gcl);

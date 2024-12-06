@@ -29,7 +29,7 @@ function [rmse,h] = plot_results(model, idd_training, idd_validation, training_T
     rmse(1, 1) = struct;
     
     timevec = 0:validation_Ts:((length(idd_validation.InputData)-1)*validation_Ts);
-    [y_out, time] = lsim(model, idd_validation.InputData(1:end), timevec(1:end));
+    [y_out, time] = lsim(model, idd_validation.InputData, timevec);
     plot(time, y_out, "-")
     ylabel("Angular vel (deg/s)")
     xlabel("Time (sec)")
@@ -37,9 +37,7 @@ function [rmse,h] = plot_results(model, idd_training, idd_validation, training_T
     plot(timevec(1:end), idd_validation.OutputData(1:end));
     title("Validation data")
     h2 = gca;
-    
-    linkaxes([h1, h2], 'x')
-    
+        
     rmse(1).name = "Validation set " + string(1) + " result";
     rmse(1).value = rms(y_out - idd_validation.OutputData);
     
