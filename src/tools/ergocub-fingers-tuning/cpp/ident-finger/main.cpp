@@ -186,6 +186,7 @@ int main(int argc, char *argv[]) {
           pwm_thr->resetStat();
           break;
         }
+        Time::delay(0.1);
       }
     }
   }
