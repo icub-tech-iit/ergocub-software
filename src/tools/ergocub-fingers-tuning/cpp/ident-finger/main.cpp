@@ -41,8 +41,6 @@ IControlMode *iCm{nullptr};
 IEncoders *iEnc{nullptr};
 IPidControl *iPid{nullptr};
 
-double t0 = 0;
-
 std::vector<DataExperiment> data_vec;
 
 class PWMThread : public PeriodicThread {
@@ -55,16 +53,15 @@ private:
   double pwm_ = 0;
   double thr_min = 0;
   double thr_max = 0;
-  double v = 0;
+  double t0 = 0;
 
 public:
-  PWMThread(double ts, ResourceFinder &rf, uint8_t joint_id)
-      : PeriodicThread(ts), rf_(rf), j(joint_id) {}
+  PWMThread(double ts, ResourceFinder &rf, uint8_t joint_id, double min,
+            double max)
+      : PeriodicThread(ts), rf_(rf), j(joint_id), thr_min(min), thr_max(max) {}
 
   bool threadInit() {
-    auto limits = rf_.find("limits").asList();
-    thr_min = limits->get(0).asFloat64();
-    thr_max = limits->get(1).asFloat64();
+    t0 = Time::now();
     return true;
   }
 
@@ -75,17 +72,21 @@ public:
     iPid->getPidOutput(VOCAB_PIDTYPE_POSITION, j, &data.pid_out);
     iPwm->getDutyCycle(j, &data.pwm_read);
 
-    if (data.enc >= thr_max && pwm_ > .1) {
-      done_h = true;
-      pwm_ = -pwm_;
-      iPwm->setRefDutyCycle(j, pwm_);
+    data_vec.push_back(std::move(data));
 
-    } else if (data.enc <= thr_min && pwm_ < -0.1) {
-      done_l = true;
+    const bool above_max = data.enc >= thr_max && pwm_ > .1;
+    const bool below_min = data.enc <= thr_min && pwm_ < -.1;
+
+    if (above_max || below_min) {
+      if (above_max) {
+        done_h = true;
+      } else {
+        done_l = true;
+      }
       pwm_ = -pwm_;
       iPwm->setRefDutyCycle(j, pwm_);
     }
-    data_vec.push_back(std::move(data));
+    yDebugThrottle(15, "Acquisition in progress...");
   }
 
   bool isDone() { return done_h && done_l; }
@@ -130,17 +131,31 @@ int main(int argc, char *argv[]) {
   rf.setQuiet(true);
 
   auto port = rf.check("port", Value("/ergocub/left_arm")).asString();
-  auto cycles = rf.check("cycles", Value(10)).asInt32();
+  auto cycles = rf.check("cycles", Value(2)).asInt32();
   auto timeout = rf.check("timeout", Value(5.0)).asFloat64();
   auto filename = rf.check("filename", Value("output.csv")).asString();
   auto pwm_list = rf.find("pwm-values").asList();
   auto Ts = rf.check("period", Value(0.001)).asFloat64();
   auto joint_id = rf.check("joint-id", Value(12)).asInt8();
+  auto limits = rf.find("limits").asList();
+
+  if (limits->size() <= 1) {
+    yError("Insufficient number of limits specified, exiting.");
+    return EXIT_FAILURE;
+  }
+  auto thr_min = limits->get(0).asFloat64();
+  auto thr_max = limits->get(1).asFloat64();
+
+  if (pwm_list->size() <= 0) {
+    yError("No PWM values were specified, exiting.");
+    return EXIT_FAILURE;
+  }
 
   Property conf;
   conf.put("device", "remote_controlboard");
   conf.put("remote", port);
-  conf.put("local", "/logger");
+  conf.put("local", "/ident");
+  conf.put("carrier", "fast_tcp");
 
   PolyDriver m_driver;
   if (!m_driver.open(conf)) {
@@ -151,48 +166,48 @@ int main(int argc, char *argv[]) {
   if (!(m_driver.view(iPos) && m_driver.view(iPwm) && m_driver.view(iCm) &&
         m_driver.view(iEnc) && m_driver.view(iPid))) {
     m_driver.close();
-    yError() << "Failed to view interfaces";
+    yError("Failed to view interfaces");
     return EXIT_FAILURE;
   }
 
-  std::vector<double> pwm_values;
-
-  for (size_t i = 0; i < pwm_list->size(); ++i) {
-    pwm_values.push_back(pwm_list->get(i).asFloat64());
+  if (int N = 0; iPos->getAxes(&N), (joint_id >= N)) {
+    yError("Invalid joint-id");
+    return EXIT_FAILURE;
   }
 
-  std::unique_ptr<PWMThread> pwm_thr =
-      std::make_unique<PWMThread>(Ts, rf, joint_id);
+  Time::delay(0.05); // add small delay before reading values
+
+  std::unique_ptr<PWMThread> pwm_thread =
+      std::make_unique<PWMThread>(Ts, rf, joint_id, thr_min, thr_max);
 
   std::ofstream file;
   file.open(filename);
-  data_vec.reserve(100000);
+  data_vec.reserve(10000);
 
   resetPosition(joint_id);
-
   iCm->setControlMode(joint_id, VOCAB_CM_PWM);
   iPwm->setRefDutyCycle(joint_id, 0.0);
 
-  t0 = Time::now();
-  pwm_thr->start();
+  pwm_thread->start();
 
-  for (auto pwm : pwm_values) {
+  yInfo("Started data collection: %lu pwm values, %d cycles", pwm_list->size(),
+        cycles);
+
+  for (int j = 0; j < pwm_list->size(); j++) {
+
+    pwm_thread->setInputs(pwm_list->get(j).asFloat64());
+    
     for (int i = 0; i < cycles; i++) {
-      pwm_thr->setInputs(pwm);
-      yDebug() << "(pwm, cycle n): (" << pwm << i << ")";
-      while (true) {
-        if (pwm_thr->isDone() || pwm_thr->getIterations() > (timeout / Ts)) {
-          pwm_thr->resetFlags();
-          pwm_thr->resetStat();
-          break;
-        }
-        Time::delay(0.1);
+      while (!pwm_thread->isDone() &&
+             pwm_thread->getIterations() < (timeout / Ts)) {
+        Time::delay(0.05);
       }
+      pwm_thread->resetFlags();
+      pwm_thread->resetStat();
     }
   }
 
-  pwm_thr->stop();
-
+  pwm_thread->stop();
   resetPosition(joint_id);
 
   for (const auto &d : data_vec) {
@@ -203,6 +218,6 @@ int main(int argc, char *argv[]) {
   m_driver.close();
   file.close();
 
-  yInfo() << "Done.";
+  yInfo("Done");
   return EXIT_SUCCESS;
 }
