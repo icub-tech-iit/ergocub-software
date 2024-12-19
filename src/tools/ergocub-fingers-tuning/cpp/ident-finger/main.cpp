@@ -74,8 +74,8 @@ public:
 
     data_vec.push_back(std::move(data));
 
-    const bool above_max = data.enc >= thr_max && pwm_ > .1;
-    const bool below_min = data.enc <= thr_min && pwm_ < -.1;
+    const bool above_max = data.enc >= thr_max && pwm_ < -.1;
+    const bool below_min = data.enc <= thr_min && pwm_ > .1;
 
     if (above_max || below_min) {
       if (above_max) {
@@ -128,6 +128,7 @@ int main(int argc, char *argv[]) {
 
   ResourceFinder rf;
   rf.configure(argc, argv);
+  rf.setVerbose(false);
   rf.setQuiet(true);
 
   auto port = rf.check("port", Value("/ergocub/left_arm")).asString();
