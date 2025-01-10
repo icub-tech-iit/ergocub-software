@@ -1,0 +1,64 @@
+\doxysection{ergo\+Cub\+Emotions.\+h}
+\label{ergoCubEmotions_8h_source}\index{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/ergoCubEmotions/ergoCubEmotions.h@{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/ergoCubEmotions/ergoCubEmotions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023\ Fondazione\ Istituto\ Italiano\ di\ Tecnologia\ (IIT)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ Rights\ Reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_ERGOCUBEMOTIONS\_\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_ERGOCUBEMOTIONS\_\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <yarp/os/RFModule.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <yarp/os/ResourceFinder.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <yarp/os/RpcServer.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <yarp/os/Thread.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <opencv2/core.hpp>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <opencv2/highgui.hpp>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <opencv2/videoio.hpp>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}ergoCubEmotions\_IDL.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }ErgoCubEmotions\ :\ \textcolor{keyword}{public}\ yarp::os::RFModule,\ \textcolor{keyword}{public}\ ergoCubEmotions\_IDL}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ ErgoCubEmotions();}
+\DoxyCodeLine{00030\ \ \ \ \ \string~ErgoCubEmotions();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ attach(yarp::os::RpcServer\ \&source);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ configure(yarp::os::ResourceFinder\ \&config);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ close();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ updateModule();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ getPeriod();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ setEmotion(\textcolor{keyword}{const}\ std::string\ \&command);}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<std::string>\ availableEmotions();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ showTransition(\textcolor{keyword}{const}\ std::string\ \&current,\ \textcolor{keyword}{const}\ std::string\ \&desired);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ yarp::os::RpcServer\ cmdPort;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ nExpressions;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ nTransitions;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTransition;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ fullscreen;}
+\DoxyCodeLine{00047\ \ \ \ \ std::unordered\_map<std::string,\ std::pair<std::string,\ std::string>>\ imgMap;}
+\DoxyCodeLine{00048\ \ \ \ \ std::map<std::pair<std::string,\ std::string>,\ std::string>\ transitionMap;}
+\DoxyCodeLine{00049\ \ \ \ \ std::string\ command;}
+\DoxyCodeLine{00050\ \ \ \ \ std::string\ currentCommand;}
+\DoxyCodeLine{00051\ \ \ \ \ std::vector<std::string>\ avlEmotions;}
+\DoxyCodeLine{00052\ \ \ \ \ cv::Mat\ img;}
+\DoxyCodeLine{00053\ \ \ \ \ std::mutex\ mutex;}
+\DoxyCodeLine{00054\ \ \ \ \ std::vector<cv::VideoCapture>\ videoCaptures;}
+\DoxyCodeLine{00055\ \ \ \ \ std::vector<std::string>\ videoFileNames;}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
