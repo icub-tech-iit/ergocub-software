@@ -1,9 +1,0 @@
-assignedMasses:
- head   : 1.6902682
-
-assignedInertias:
-
-  - linkName: head
-    xx: 0.0097840569
-    yy: 0.010869342
-    zz: 0.0070099259
