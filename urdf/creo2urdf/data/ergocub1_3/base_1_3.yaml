@@ -15,6 +15,7 @@ rename:
     SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_pitch
     SIM_ECUB_1-3_CHEST--SIM_HEAD_NECK_1: neck_fixed_joint
     SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_HEAD_NECK_2: neck_pitch # It will be fixed
+    SIM_ECUB_1-1_TORSO_2--SIM_ECUB_1-3_CHEST: torso_yaw
 
 
 
