@@ -8,7 +8,7 @@
 // This is an automatically generated file. Please do not edit it.
 // It will be re-generated if the cmake flag ALLOW_DEVICE_PARAM_PARSER_GERNERATION is ON.
 
-// Generated on: Mon Apr  8 16:16:47 2024
+// Generated on: Mon Feb 10 16:15:42 2025
 
 
 #include "CouplingXCubHandMk5_ParamsParser.h"
@@ -31,7 +31,6 @@ std::vector<std::string> CouplingXCubHandMk5_ParamsParser::getListOfParams() con
     params.push_back("jointNames");
     params.push_back("LIMITS::jntPosMin");
     params.push_back("LIMITS::jntPosMax");
-    params.push_back("COUPLING::device");
     params.push_back("COUPLING::actuatedAxesNames");
     params.push_back("COUPLING::actuatedAxesPosMin");
     params.push_back("COUPLING::actuatedAxesPosMax");
@@ -152,24 +151,6 @@ bool      CouplingXCubHandMk5_ParamsParser::parseParams(const yarp::os::Searchab
             return false;
         }
         prop_check.unput("LIMITS::jntPosMax");
-    }
-
-    //Parser of parameter COUPLING::device
-    {
-        yarp::os::Bottle sectionp;
-        sectionp = config.findGroup("COUPLING");
-        if (sectionp.check("device"))
-        {
-            m_COUPLING_device = sectionp.find("device").asString();
-            yCInfo(CouplingXCubHandMk5ParamsCOMPONENT) << "Parameter 'COUPLING::device' using value:" << m_COUPLING_device;
-        }
-        else
-        {
-            yCError(CouplingXCubHandMk5ParamsCOMPONENT) << "Mandatory parameter 'COUPLING::device' not found!";
-            yCError(CouplingXCubHandMk5ParamsCOMPONENT) << "Description of the parameter: Name of the device that handles the coupling";
-            return false;
-        }
-        prop_check.unput("COUPLING::device");
     }
 
     //Parser of parameter COUPLING::actuatedAxesNames
@@ -574,7 +555,6 @@ std::string      CouplingXCubHandMk5_ParamsParser::getDocumentationOfDeviceParam
     doc = doc + std::string("'jointNames': Names of the physical joints\n");
     doc = doc + std::string("'LIMITS::jntPosMin': Phyisical joints' position minimum\n");
     doc = doc + std::string("'LIMITS::jntPosMax': Phyisical joints' position maximum\n");
-    doc = doc + std::string("'COUPLING::device': Name of the device that handles the coupling\n");
     doc = doc + std::string("'COUPLING::actuatedAxesNames': Names of the actuated axes\n");
     doc = doc + std::string("'COUPLING::actuatedAxesPosMin': Actuated axes' position minimum\n");
     doc = doc + std::string("'COUPLING::actuatedAxesPosMax': Actuated axes' position maximum\n");
@@ -588,8 +568,8 @@ std::string      CouplingXCubHandMk5_ParamsParser::getDocumentationOfDeviceParam
     doc = doc + std::string("'COUPLING_PARAMS::b': Distance between L0 and P0\n");
     doc = doc + std::string("\n");
     doc = doc + std::string("Here are some examples of invocation command with yarpdev, with all params:\n");
-    doc = doc + " yarpdev --device couplingXCubHandMk5 --jointNames <mandatory_value> --LIMITS::jntPosMin <mandatory_value> --LIMITS::jntPosMax <mandatory_value> --COUPLING::device <mandatory_value> --COUPLING::actuatedAxesNames <mandatory_value> --COUPLING::actuatedAxesPosMin <mandatory_value> --COUPLING::actuatedAxesPosMax <mandatory_value> --COUPLING_PARAMS::L0x <mandatory_value> --COUPLING_PARAMS::L0y <mandatory_value> --COUPLING_PARAMS::q2bias <mandatory_value> --COUPLING_PARAMS::q1off <mandatory_value> --COUPLING_PARAMS::k <mandatory_value> --COUPLING_PARAMS::d <mandatory_value> --COUPLING_PARAMS::l <mandatory_value> --COUPLING_PARAMS::b <mandatory_value>\n";
+    doc = doc + " yarpdev --device couplingXCubHandMk5 --jointNames <mandatory_value> --LIMITS::jntPosMin <mandatory_value> --LIMITS::jntPosMax <mandatory_value> --COUPLING::actuatedAxesNames <mandatory_value> --COUPLING::actuatedAxesPosMin <mandatory_value> --COUPLING::actuatedAxesPosMax <mandatory_value> --COUPLING_PARAMS::L0x <mandatory_value> --COUPLING_PARAMS::L0y <mandatory_value> --COUPLING_PARAMS::q2bias <mandatory_value> --COUPLING_PARAMS::q1off <mandatory_value> --COUPLING_PARAMS::k <mandatory_value> --COUPLING_PARAMS::d <mandatory_value> --COUPLING_PARAMS::l <mandatory_value> --COUPLING_PARAMS::b <mandatory_value>\n";
     doc = doc + std::string("Using only mandatory params:\n");
-    doc = doc + " yarpdev --device couplingXCubHandMk5 --jointNames <mandatory_value> --LIMITS::jntPosMin <mandatory_value> --LIMITS::jntPosMax <mandatory_value> --COUPLING::device <mandatory_value> --COUPLING::actuatedAxesNames <mandatory_value> --COUPLING::actuatedAxesPosMin <mandatory_value> --COUPLING::actuatedAxesPosMax <mandatory_value> --COUPLING_PARAMS::L0x <mandatory_value> --COUPLING_PARAMS::L0y <mandatory_value> --COUPLING_PARAMS::q2bias <mandatory_value> --COUPLING_PARAMS::q1off <mandatory_value> --COUPLING_PARAMS::k <mandatory_value> --COUPLING_PARAMS::d <mandatory_value> --COUPLING_PARAMS::l <mandatory_value> --COUPLING_PARAMS::b <mandatory_value>\n";
+    doc = doc + " yarpdev --device couplingXCubHandMk5 --jointNames <mandatory_value> --LIMITS::jntPosMin <mandatory_value> --LIMITS::jntPosMax <mandatory_value> --COUPLING::actuatedAxesNames <mandatory_value> --COUPLING::actuatedAxesPosMin <mandatory_value> --COUPLING::actuatedAxesPosMax <mandatory_value> --COUPLING_PARAMS::L0x <mandatory_value> --COUPLING_PARAMS::L0y <mandatory_value> --COUPLING_PARAMS::q2bias <mandatory_value> --COUPLING_PARAMS::q1off <mandatory_value> --COUPLING_PARAMS::k <mandatory_value> --COUPLING_PARAMS::d <mandatory_value> --COUPLING_PARAMS::l <mandatory_value> --COUPLING_PARAMS::b <mandatory_value>\n";
     doc = doc + std::string("=============================================\n\n");    return doc;
 }
