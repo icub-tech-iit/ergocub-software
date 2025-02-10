@@ -18,8 +18,8 @@ list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_minContacts")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_1")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_1_minContacts")
-list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_2")
-list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_2_minContacts")
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_3")
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboV1_3_minContacts")
 
 
 
