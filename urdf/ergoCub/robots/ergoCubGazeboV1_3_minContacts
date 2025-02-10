@@ -18,11 +18,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_root_link.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_hip_pitch" type="revolute">
@@ -51,11 +48,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_hip_pitch" type="revolute">
@@ -84,11 +78,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="torso_roll" type="revolute">
@@ -103,7 +94,7 @@
     <inertial>
       <mass value="2.0645667"/>
       <origin xyz="-0.00963997362197503 6.168494736287859e-4 0.08244231288506354" rpy="0 -0 0"/>
-      <inertia ixx="0.005816920576319003" ixy="-6.9752032776433695e-6" ixz="-7.227736063238389e-4" iyy="0.007094744408479672" iyz="-1.2586871224008617e-5" izz="0.002953654264837283"/>
+      <inertia ixx="0.007406085999999999" ixy="0" ixz="0" iyy="0.0059470732999999994" iyz="0" izz="0.0031780111"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -117,11 +108,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_torso_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="torso_pitch" type="revolute">
@@ -150,11 +138,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_torso_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="torso_yaw" type="revolute">
@@ -183,11 +168,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-3_chest.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="neck_pitch" type="revolute">
@@ -216,11 +198,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
@@ -235,7 +214,7 @@
     <inertial>
       <mass value="0.7913756606310043"/>
       <origin xyz="1.4824275422014796e-4 0.06782971819041986 5.036196460999898e-4" rpy="0 -0 0"/>
-      <inertia ixx="0.0012090260632276477" ixy="3.837452877706498e-6" ixz="3.4979966648173376e-7" iyy="3.2970130687487713e-4" iyz="1.0257960656819495e-5" izz="0.0011953232413247816"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -249,11 +228,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_shoulder_pitch" type="revolute">
@@ -268,7 +244,7 @@
     <inertial>
       <mass value="0.7922822880502421"/>
       <origin xyz="1.7243569867328445e-4 -0.06784040318161474 4.7600094527533443e-4" rpy="0 -0 0"/>
-      <inertia ixx="0.0012096539626434014" ixy="-3.680808987116546e-6" ixz="8.229428308001538e-7" iyy="3.3067105254799123e-4" iyz="-1.0172274013350282e-5" izz="0.0011958286331174221"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -282,11 +258,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_shoulder_roll" type="revolute">
@@ -301,7 +274,7 @@
     <inertial>
       <mass value="0.4392272062642899"/>
       <origin xyz="0.005113618901434032 -2.13348557806331e-4 -0.020425805469504787" rpy="0 -0 0"/>
-      <inertia ixx="2.9042245268154257e-4" ixy="-9.557527654531481e-7" ixz="-9.749291990105912e-5" iyy="4.271705089556584e-4" iyz="-1.2227717602335833e-6" izz="2.6647274612786855e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -315,11 +288,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_arm_ft_sensor" type="fixed">
@@ -331,7 +301,7 @@
     <inertial>
       <mass value="0.271466272759966"/>
       <origin xyz="-8.31167799586717e-5 -3.0654831449927755e-5 -0.007966545320293866" rpy="0 -0 0"/>
-      <inertia ixx="7.620284216410257e-5" ixy="-3.654997747197785e-7" ixz="-3.6240077897294374e-8" iyy="7.648716704064904e-5" iyz="-6.051355657868799e-8" izz="1.2740184766279634e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -345,11 +315,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_shoulder_yaw" type="revolute">
@@ -378,11 +345,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_upperarm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_elbow" type="revolute">
@@ -397,7 +361,7 @@
     <inertial>
       <mass value="1.4760712424977045"/>
       <origin xyz="-0.01830687629472739 -0.002214887320910963 -0.08814943647449926" rpy="0 -0 0"/>
-      <inertia ixx="0.004018141035792247" ixy="-1.0169837170335636e-6" ixz="-6.092751707960711e-5" iyy="0.004094401103638503" iyz="2.3622606931134418e-5" izz="0.00151761593950533"/>
+      <inertia ixx="0.009999999999999998" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -411,11 +375,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_forearm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_wrist_yaw" type="revolute">
@@ -430,7 +391,7 @@
     <inertial>
       <mass value="0.12269276206782376"/>
       <origin xyz="-1.4544607175177166e-4 1.559247070407055e-4 0.022377800821402394" rpy="0 -0 0"/>
-      <inertia ixx="4.9948289621641885e-5" ixy="-2.784766720355678e-7" ixz="6.019515820494411e-7" iyy="4.9363344899850536e-5" iyz="-7.101822163237812e-7" izz="5.04085543186966e-5"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -444,11 +405,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_wrist_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_wrist_roll" type="revolute">
@@ -463,7 +421,7 @@
     <inertial>
       <mass value="0.021188357245777188"/>
       <origin xyz="5.05499045400093e-11 7.897372606293362e-4 -0.004696960055006527" rpy="0 -0 0"/>
-      <inertia ixx="1.5886797233767314e-6" ixy="3.7411538116720276e-13" ixz="-1.6476959268145782e-14" iyy="1.6075566141746972e-6" iyz="7.534291394795915e-8" izz="2.5064167139343093e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -477,11 +435,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_wrist_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
@@ -496,7 +451,7 @@
     <inertial>
       <mass value="0.2020068404688116"/>
       <origin xyz="-0.003982157972782507 -0.0021135289059891482 -0.05842371394186491" rpy="0 -0 0"/>
-      <inertia ixx="1.4279727238409082e-4" ixy="4.3471459905317745e-6" ixz="-1.2099467097336674e-5" iyy="2.1040345151106222e-4" iyz="4.7767131643957866e-6" izz="1.0688011837800253e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -510,11 +465,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_palm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_index_add" type="revolute">
@@ -529,7 +481,7 @@
     <inertial>
       <mass value="0.019232477290189804"/>
       <origin xyz="-0.008420124408709713 0.003850331678233287 -0.01714942611279774" rpy="0 -0 0"/>
-      <inertia ixx="2.6266478205033898e-6" ixy="1.0045828131985182e-7" ixz="-4.4428748588513116e-7" iyy="2.811973348231671e-6" iyz="-3.9646985411500977e-8" izz="1.21028376665746e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -543,11 +495,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
@@ -562,7 +511,7 @@
     <inertial>
       <mass value="0.007486365997467528"/>
       <origin xyz="5.610258533731913e-5 0.0011131046827904112 -0.01742880983276912" rpy="0 -0 0"/>
-      <inertia ixx="1.5923690026243956e-6" ixy="-7.6859949856616e-10" ixz="-9.576514629966624e-9" iyy="1.5225016121802755e-6" iyz="1.1152097367596593e-7" izz="3.177134212214704e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -576,11 +525,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
@@ -595,7 +541,7 @@
     <inertial>
       <mass value="0.006357585733638135"/>
       <origin xyz="3.616260147435227e-5 0.0012147050941129778 -0.015053109692718447" rpy="0 -0 0"/>
-      <inertia ixx="1.1594224636752146e-6" ixy="1.9700677724003336e-10" ixz="-5.145341462812334e-9" iyy="1.1056270005627898e-6" iyz="9.04498861481507e-8" izz="2.7294425194037764e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -609,11 +555,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
@@ -628,7 +571,7 @@
     <inertial>
       <mass value="0.007486365997467528"/>
       <origin xyz="5.6102585337293107e-5 0.0011131045999587252 -0.017428809839565573" rpy="0 -0 0"/>
-      <inertia ixx="1.5923690066834338e-6" ixy="-7.685995334343241e-10" ixz="-9.576514632814455e-9" iyy="1.5225016134675864e-6" iyz="1.115209689762951e-7" izz="3.177134239925537e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -642,11 +585,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
@@ -661,7 +601,7 @@
     <inertial>
       <mass value="0.02894174189037044"/>
       <origin xyz="0.0183756324403817 -4.55521018183358e-5 0.002126473485347669" rpy="0 -0 0"/>
-      <inertia ixx="2.6227221096875315e-6" ixy="-2.6657118889494294e-7" ixz="3.408188388661989e-7" iyy="7.222316801810369e-6" iyz="1.3067300647554165e-7" izz="5.813428900568859e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -675,11 +615,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
@@ -694,7 +631,7 @@
     <inertial>
       <mass value="0.00669603218404702"/>
       <origin xyz="-0.014887264468035837 -0.0011329726380328586 6.26600593671145e-5" rpy="0 -0 0"/>
-      <inertia ixx="2.822738702941517e-7" ixy="-9.431423655785553e-8" ixz="-7.94903600654804e-9" iyy="1.1148767778556382e-6" iyz="7.629054803653638e-10" izz="1.1785117216493283e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -708,11 +645,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
@@ -727,7 +661,7 @@
     <inertial>
       <mass value="0.00683159462238797"/>
       <origin xyz="0.016086236544425966 0.0026526877650291103 4.703179416121195e-5" rpy="0 -0 0"/>
-      <inertia ixx="2.881152136289015e-7" ixy="5.927787437409324e-8" ixz="7.046450596142318e-9" iyy="1.4727314074745805e-6" iyz="-1.1370823402676918e-10" izz="1.4681073090610674e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -741,11 +675,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
@@ -760,7 +691,7 @@
     <inertial>
       <mass value="0.007251413355667432"/>
       <origin xyz="4.43251343077225e-5 0.00275470906266162 -0.018890876418029168" rpy="0 -0 0"/>
-      <inertia ixx="1.9331833105730582e-6" ixy="-7.989212176587309e-11" ixz="-7.904608363472145e-9" iyy="1.9365695874997407e-6" iyz="-7.314014027601115e-8" izz="3.168091312615482e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -774,11 +705,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
@@ -793,7 +721,7 @@
     <inertial>
       <mass value="0.007240237490764073"/>
       <origin xyz="2.1391072559044655e-5 0.0027712863562942003 -0.018930305880602127" rpy="0 -0 0"/>
-      <inertia ixx="1.925475606102824e-6" ixy="-4.3197295418411515e-10" ixz="-3.753180689187112e-9" iyy="1.929147380651044e-6" iyz="-7.607784499660943e-8" izz="3.1621036318191297e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -807,11 +735,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
@@ -826,7 +751,7 @@
     <inertial>
       <mass value="0.007251413355667432"/>
       <origin xyz="4.432513430769475e-5 0.0027547091926723166 -0.018890876399070666" rpy="0 -0 0"/>
-      <inertia ixx="1.933183310574237e-6" ixy="-7.989206743982703e-11" ixz="-7.904608363479557e-9" iyy="1.9365732602456635e-6" iyz="-7.313677768867388e-8" izz="3.168054585139121e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -840,11 +765,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
@@ -859,7 +781,7 @@
     <inertial>
       <mass value="0.007486365997467528"/>
       <origin xyz="5.610258533736423e-5 0.0011131050125119946 -0.01742880980571504" rpy="0 -0 0"/>
-      <inertia ixx="1.5923689864672536e-6" ixy="-7.685993601390065e-10" ixz="-9.576514618642257e-9" iyy="1.5225016070540494e-6" iyz="1.1152099238402203e-7" izz="3.1771341019039245e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -873,11 +795,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
@@ -892,7 +811,7 @@
     <inertial>
       <mass value="0.007251413355667432"/>
       <origin xyz="4.432513430773638e-5 0.0027547026217409343 -0.01889087735725714" rpy="0 -0 0"/>
-      <inertia ixx="1.9331833106031376e-6" ixy="-7.989481683614064e-11" ixz="-7.904608320181986e-9" iyy="1.9365664798884807e-6" iyz="-7.313734234921826e-8" izz="3.168122388413564e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -906,11 +825,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
@@ -925,7 +841,7 @@
     <inertial>
       <mass value="0.44093319265387243"/>
       <origin xyz="0.007519395712385758 1.8727197477702573e-4 -0.020486062588588566" rpy="0 -0 0"/>
-      <inertia ixx="2.9145977319834226e-4" ixy="1.1454484909976663e-6" ixz="-9.910474228153797e-5" iyy="4.316468020210048e-4" iyz="1.4378502430788573e-6" izz="2.711572335339609e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -939,11 +855,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_arm_ft_sensor" type="fixed">
@@ -955,7 +868,7 @@
     <inertial>
       <mass value="0.271466272759966"/>
       <origin xyz="8.311677995862313e-5 3.065483169523153e-5 -0.007966545320293866" rpy="0 -0 0"/>
-      <inertia ixx="7.620284216408771e-5" ixy="-3.6549977471418807e-7" ixz="3.624007789477276e-8" iyy="7.648716704064355e-5" iyz="6.05135559486276e-8" izz="1.2740184766278623e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -969,11 +882,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
@@ -1002,11 +912,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_upperarm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_elbow" type="revolute">
@@ -1021,7 +928,7 @@
     <inertial>
       <mass value="1.4604487031386884"/>
       <origin xyz="-0.018553263328673478 0.0023119252259846124 -0.08919372240797706" rpy="0 -0 0"/>
-      <inertia ixx="0.003893738896214435" ixy="-3.4642535094897738e-6" ixz="-4.190258302572787e-5" iyy="0.003967428265005762" iyz="-1.2157659778638894e-5" izz="0.0015062007003231051"/>
+      <inertia ixx="0.009999999999999998" ixy="0" ixz="0" iyy="0.010000000000000002" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1035,11 +942,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_forearm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_wrist_yaw" type="revolute">
@@ -1054,7 +958,7 @@
     <inertial>
       <mass value="0.1226928"/>
       <origin xyz="1.4545073498396788e-4 -1.5595311920038601e-4 0.022377795694245" rpy="0 -0 0"/>
-      <inertia ixx="4.99469100996649e-5" ixy="-2.787171151199186e-7" ixz="-6.017806812164961e-7" iyy="4.93613984105829e-5" iyz="7.090130898393705e-7" izz="5.040833558305853e-5"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1068,11 +972,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_wrist_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_wrist_roll" type="revolute">
@@ -1087,7 +988,7 @@
     <inertial>
       <mass value="0.02118836"/>
       <origin xyz="-7.4183919215875535e-9 -7.897157534373368e-4 -0.0046969679508168105" rpy="0 -0 0"/>
-      <inertia ixx="1.588238425453937e-6" ixy="-2.165272906156668e-11" ixz="7.915941092897307e-11" iyy="1.6073132474088142e-6" iyz="-7.554073452985005e-8" izz="2.5064973929673043e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1101,11 +1002,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_wrist_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_wrist_pitch" type="revolute">
@@ -1120,7 +1018,7 @@
     <inertial>
       <mass value="0.20364988213680776"/>
       <origin xyz="-0.003950502224178115 0.0019881930945492288 -0.058015852438740544" rpy="0 -0 0"/>
-      <inertia ixx="1.461813098502197e-4" ixy="-3.793772344466637e-6" ixz="-1.1466988740793722e-5" iyy="2.145411925003367e-4" iyz="-3.736671542252551e-6" izz="1.0648405292544985e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1134,11 +1032,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_palm.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_index_add" type="revolute">
@@ -1153,7 +1048,7 @@
     <inertial>
       <mass value="0.01923264"/>
       <origin xyz="0.008430306749277854 0.0038510231844406384 -0.017148502808541133" rpy="0 -0 0"/>
-      <inertia ixx="2.6252721263619075e-6" ixy="-9.94793061395749e-8" ixz="4.4747998977494927e-7" iyy="2.8117732161881507e-6" iyz="-3.9466206080886376e-8" izz="1.2100925115556048e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1167,11 +1062,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
@@ -1186,7 +1078,7 @@
     <inertial>
       <mass value="0.007486366"/>
       <origin xyz="5.609414423399586e-5 0.0010938363913530202 -0.0174225309754375" rpy="0 -0 0"/>
-      <inertia ixx="1.5929480475374711e-6" ixy="-9.219821293951626e-10" ixz="-9.505332652309699e-9" iyy="1.5230397093076881e-6" iyz="1.1029328740444945e-7" izz="3.1819719384777893e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1200,11 +1092,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
@@ -1219,7 +1108,7 @@
     <inertial>
       <mass value="0.006357586"/>
       <origin xyz="3.6554577562467744e-5 0.0012135491682558897 -0.015052861815374408" rpy="0 -0 0"/>
-      <inertia ixx="1.1595706744459758e-6" ixy="1.817145860874702e-10" ixz="-5.131228041325918e-9" iyy="1.1053210733791516e-6" iyz="9.124017197402374e-8" izz="2.734185829473546e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1233,11 +1122,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
@@ -1252,7 +1138,7 @@
     <inertial>
       <mass value="0.007486366"/>
       <origin xyz="5.610953414397422e-5 0.001113903955753115 -0.017428756834488968" rpy="0 -0 0"/>
-      <inertia ixx="1.5926175322430852e-6" ixy="-7.593027571592815e-10" ixz="-9.630025713700034e-9" iyy="1.522746441882303e-6" iyz="1.1162272723786417e-7" izz="3.177930886696654e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1266,11 +1152,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
@@ -1285,7 +1168,7 @@
     <inertial>
       <mass value="0.029029542280278556"/>
       <origin xyz="-0.018039176431428286 -0.0028662725726853466 0.0021177719486905056" rpy="0 -0 0"/>
-      <inertia ixx="2.7178312304541084e-6" ixy="-3.676108153783739e-7" ixz="-2.7762391665657096e-7" iyy="7.273678916289491e-6" iyz="1.0493561895389714e-7" izz="5.835849245332402e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1299,11 +1182,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
@@ -1318,7 +1198,7 @@
     <inertial>
       <mass value="0.00669603218404702"/>
       <origin xyz="0.014887264468035857 0.0011329726380328031 6.266005936719776e-5" rpy="0 -0 0"/>
-      <inertia ixx="2.82273870293961e-7" ixy="-9.431423655787125e-8" ixz="7.949036006532621e-9" iyy="1.1148767778556158e-6" iyz="-7.629054803910611e-10" izz="1.1785117216489732e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1332,11 +1212,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
@@ -1351,7 +1228,7 @@
     <inertial>
       <mass value="0.006831595"/>
       <origin xyz="0.016086252532748233 0.0026526887310780456 4.701425890352162e-5" rpy="0 -0 0"/>
-      <inertia ixx="2.8800798429683427e-7" ixy="5.926758782001814e-8" ixz="6.997805198870725e-9" iyy="1.472681587075844e-6" iyz="-2.1551532736764057e-11" izz="1.4681159324831446e-6"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1365,11 +1242,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
@@ -1384,7 +1258,7 @@
     <inertial>
       <mass value="0.007251413"/>
       <origin xyz="4.433654030530642e-5 0.0027546754597598533 -0.01889085949732494" rpy="0 -0 0"/>
-      <inertia ixx="1.9331168483007796e-6" ixy="-8.964055458821853e-11" ixz="-7.917778264767445e-9" iyy="1.9366717747954655e-6" iyz="-7.299706676136226e-8" izz="3.1694089240456203e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1398,11 +1272,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
@@ -1417,7 +1288,7 @@
     <inertial>
       <mass value="0.007240237"/>
       <origin xyz="2.2378292628411067e-5 0.0027712834790767915 -0.018930353878106154" rpy="0 -0 0"/>
-      <inertia ixx="1.9251949577353665e-6" ixy="-4.6071411032444134e-10" ixz="-3.7359984605543596e-9" iyy="1.9290048779043837e-6" iyz="-7.606337504739766e-8" izz="3.162424517550918e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1431,11 +1302,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
@@ -1450,7 +1318,7 @@
     <inertial>
       <mass value="0.007251413"/>
       <origin xyz="4.4316320155644157e-5 0.0027547229469275236 -0.018890877319942878" rpy="0 -0 0"/>
-      <inertia ixx="1.933060230194342e-6" ixy="-1.5243567957691928e-10" ixz="-7.8198851655833e-9" iyy="1.9366210236852174e-6" iyz="-7.316224558810137e-8" izz="3.1681825706684464e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1464,11 +1332,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
@@ -1483,7 +1348,7 @@
     <inertial>
       <mass value="0.007486366"/>
       <origin xyz="5.6100110941745274e-5 0.001113133191428639 -0.01742880406449937" rpy="0 -0 0"/>
-      <inertia ixx="1.5919421212473372e-6" ixy="-8.197016561018782e-10" ixz="-9.495218356033137e-9" iyy="1.5224880972680802e-6" iyz="1.1144592625272454e-7" izz="3.1764737598732553e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1497,11 +1362,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
@@ -1516,7 +1378,7 @@
     <inertial>
       <mass value="0.007251413"/>
       <origin xyz="4.431356673249148e-5 0.0027546711855188366 -0.018890916917498335" rpy="0 -0 0"/>
-      <inertia ixx="1.932816895772585e-6" ixy="-1.721386036062205e-10" ixz="-7.819556637146551e-9" iyy="1.9363709956455972e-6" iyz="-7.306511833741725e-8" izz="3.169078614257433e-7"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1530,11 +1392,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.5 0.5 0.5 1"/>
-      </material>
     </collision>
   </link>
   <joint name="neck_roll" type="revolute">
@@ -1563,11 +1422,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="neck_yaw" type="revolute">
@@ -1582,7 +1438,7 @@
     <inertial>
       <mass value="1.6902682"/>
       <origin xyz="-0.01620091412622722 -0.002268813231724542 0.03500744217497026" rpy="0 -0 0"/>
-      <inertia ixx="0.0097840569" ixy="0" ixz="0" iyy="0.010869342" iyz="0" izz="0.0070099259"/>
+      <inertia ixx="0.007991907355842523" ixy="1.8186740348760937e-4" ixz="-1.9244538977657914e-4" iyy="0.009883124315185845" iyz="-3.994074771344834e-5" izz="0.00786000669468763"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1596,11 +1452,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="camera_tilt" type="revolute">
@@ -1615,7 +1468,7 @@
     <inertial>
       <mass value="0.0973042045264468"/>
       <origin xyz="-0.01566548310600667 0.004519995218644514 0.002745610154123612" rpy="0 -0 0"/>
-      <inertia ixx="1.3363140922191058e-4" ixy="4.7877399688365374e-5" ixz="2.5482221369268495e-5" iyy="1.8708641575714753e-4" iyz="-7.171072206331662e-6" izz="2.963329027014652e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1629,11 +1482,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_realsense.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_hip_roll" type="revolute">
@@ -1662,11 +1512,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_leg_ft_sensor" type="fixed">
@@ -1692,11 +1539,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_hip_yaw" type="revolute">
@@ -1725,11 +1569,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_upper_leg.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_knee" type="revolute">
@@ -1758,11 +1599,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_lower_leg.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ankle_pitch" type="revolute">
@@ -1777,7 +1615,7 @@
     <inertial>
       <mass value="0.3481278950635556"/>
       <origin xyz="-0.0013672309746954776 -6.60186959019704e-4 -0.014087432401547305" rpy="0 -0 0"/>
-      <inertia ixx="2.473401259521522e-4" ixy="8.99187320178455e-6" ixz="-1.033697569192024e-5" iyy="5.75349339563699e-4" iyz="5.5239266965789845e-5" izz="4.6267603893513845e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1791,11 +1629,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_ankle_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_ankle_roll" type="revolute">
@@ -1810,7 +1645,7 @@
     <inertial>
       <mass value="1.5418216247038539"/>
       <origin xyz="0.04052646811695935 -8.642493098851012e-5 -0.023871143533700234" rpy="0 -0 0"/>
-      <inertia ixx="0.002144088293229702" ixy="2.3071453411493782e-5" ixz="0.0013223759105869606" iyy="0.009438348902378931" iyz="-3.077717707147486e-5" izz="0.009024460701602049"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.009999999999999998" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1824,11 +1659,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_ankle_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="r_foot_front_ft_sensor" type="fixed">
@@ -1840,7 +1672,7 @@
     <inertial>
       <mass value="0.22110467939552797"/>
       <origin xyz="5.879202911245884e-4 -3.747924692820703e-9 -0.02000061661590058" rpy="0 -0 0"/>
-      <inertia ixx="1.912506447891574e-4" ixy="2.357895453228089e-19" ixz="-3.4706466956949253e-9" iyy="2.6091266876367765e-4" iyz="5.375663344600725e-18" izz="4.500881026346283e-4"/>
+      <inertia ixx="0.009999999999999998" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1867,7 +1699,7 @@
     <inertial>
       <mass value="0.22110467939552797"/>
       <origin xyz="5.879202911244878e-4 -3.747924665065128e-9 -0.020000616615901023" rpy="0 -0 0"/>
-      <inertia ixx="1.9125064478893547e-4" ixy="2.3192252624427304e-19" ixz="-3.4706466752314563e-9" iyy="2.609126687634939e-4" iyz="5.375663150730269e-18" izz="4.5008810263463014e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -1911,11 +1743,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_leg_ft_sensor" type="fixed">
@@ -1941,11 +1770,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_3.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_hip_yaw" type="revolute">
@@ -1974,11 +1800,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_upper_leg.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_knee" type="revolute">
@@ -2007,11 +1830,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_lower_leg.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ankle_pitch" type="revolute">
@@ -2026,7 +1846,7 @@
     <inertial>
       <mass value="0.3481278951519182"/>
       <origin xyz="-0.0013852125067176195 6.601869600093568e-4 -0.014087432474324535" rpy="0 -0 0"/>
-      <inertia ixx="2.473401268224257e-4" ixy="-8.882076128769303e-6" ixz="-7.868443555728613e-6" iyy="5.753321096553087e-4" iyz="-5.523926679103168e-5" izz="4.6265880787367867e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -2040,11 +1860,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_ankle_1.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_ankle_roll" type="revolute">
@@ -2059,7 +1876,7 @@
     <inertial>
       <mass value="1.5418216247038539"/>
       <origin xyz="0.0405224005088543 -9.790751646740482e-5 -0.02387114353368558" rpy="0 -0 0"/>
-      <inertia ixx="0.00213706133623208" ixy="1.9973294407387216e-5" ixz="0.0013251325687512008" iyy="0.00943819778520643" iyz="-1.5070602593015444e-5" izz="0.00901728262743037"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.010000000000000002" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -2073,11 +1890,8 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_ankle_2.obj" scale="0.001 0.001 0.001"/>
+        <box size="0 0 0"/>
       </geometry>
-      <material name="">
-        <color rgba="1 1 1 1"/>
-      </material>
     </collision>
   </link>
   <joint name="l_foot_front_ft_sensor" type="fixed">
@@ -2089,7 +1903,7 @@
     <inertial>
       <mass value="0.22110467939552797"/>
       <origin xyz="5.879202911245329e-4 -3.747924692820703e-9 -0.02000061661590158" rpy="0 -0 0"/>
-      <inertia ixx="1.9125064478898706e-4" ixy="2.0351856158593786e-19" ixz="-3.470646686211968e-9" iyy="2.6091266876353844e-4" iyz="9.784057075164868e-21" izz="4.5008810263460987e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -2116,7 +1930,7 @@
     <inertial>
       <mass value="0.22110467939552797"/>
       <origin xyz="5.879202911244826e-4 -3.7479246789429155e-9 -0.020000616615901134" rpy="0 -0 0"/>
-      <inertia ixx="1.912506447889398e-4" ixy="2.0351856158593786e-19" ixz="-3.470646677571385e-9" iyy="2.6091266876349345e-4" iyz="9.784057075164868e-21" izz="4.50088102634634e-4"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
