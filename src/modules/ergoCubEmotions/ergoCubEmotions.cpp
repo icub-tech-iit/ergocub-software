@@ -32,6 +32,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     nExpressions = bGroup.find("num_expressions").asInt32();
     nTransitions = bGroup.find("num_transitions").asInt32();
     fullscreen = bGroup.find("fullscreen").asBool();
+    int graphic_elements = bGroup.find("num_graphics").asInt32();
 
     for(int i = 0; i < nExpressions; i++)
     {
@@ -101,6 +102,31 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         {
             videoFileNames.push_back(filePath);
         }
+    }
+
+    for (int j = 0; j < graphic_elements; j++)
+    {
+        std::ostringstream element_j;
+        element_j << "graphic_" << j;
+        std::string group_name = element_j.str();
+        auto& elementGroup = rf.findGroup(group_name);
+        if (elementGroup.isNull())
+        {
+            yError() << "Missing group" << group_name;
+            return false;
+        }
+        auto element = GraphicElement::parse(elementGroup);
+        if (!element)
+        {
+            yError() << "Failed to parse graphic element" << group_name;
+            return false;
+        }
+        if (graphicElements.find(element->name) != graphicElements.end())
+        {
+            yError() << "Duplicate graphic element" << element->name;
+            return false;
+        }
+        graphicElements[element->name] = element;
     }
 
     isTransition = true;
@@ -175,8 +201,7 @@ bool ErgoCubEmotions::updateModule()
         else
         {
             img = img_tmp;
-            imshow("emotion", img);
-            pollKey();
+            updateFrame();
         }
     }
     else if(info.first == "video")
@@ -194,7 +219,7 @@ bool ErgoCubEmotions::updateModule()
                 cap = videoCaptures.at(i);
             }
         }
-        
+
         Mat frame;
 
         while(cap.isOpened())
@@ -202,10 +227,11 @@ bool ErgoCubEmotions::updateModule()
             cap >> frame;
             if(frame.empty())
             {
+                pollKey();
                 break;
             }
-            imshow("emotion", frame);
-            pollKey();
+            img = frame;
+            updateFrame();
         }
         cap.release();
     }
@@ -258,8 +284,8 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
                 {
                     break;
                 }
-                imshow("emotion", frameTrans);
-                pollKey();
+                img = frameTrans;
+                updateFrame();
             }
             capTrans.release();
             return;
@@ -270,4 +296,203 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
 std::vector<std::string> ErgoCubEmotions::availableEmotions()
 {
     return avlEmotions;
+}
+
+void ErgoCubEmotions::updateFrame()
+{
+    //Use a led for listening with different colors and an animation for speaking
+    //use one led also for thinking
+    imgEdited = img.clone();
+    for (auto& element : graphicElements)
+    {
+        element.second->draw(imgEdited);
+    }
+    imshow("emotion", imgEdited);
+    pollKey();
+}
+
+std::shared_ptr<GraphicElement> GraphicElement::parse(const yarp::os::Bottle& options)
+{
+    if (!options.check("type"))
+    {
+        yError() << "Missing type in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("name"))
+    {
+        yError() << "Missing name in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    std::string name = options.find("name").asString();
+    std::string type = options.find("type").asString();
+    if (type == "circle")
+    {
+        std::shared_ptr<GraphicElement> output = Circle::parse(options);
+        output->name = name;
+        return output;
+    }
+    else if (type == "stadium")
+    {
+        std::shared_ptr<GraphicElement> output = Stadium::parse(options);
+        output->name = name;
+        return output;
+    }
+    else
+    {
+        yError() << "Unknown type" << type;
+        return std::shared_ptr<GraphicElement>();
+    }
+}
+
+Circle::Circle(cv::Point center, int radius, cv::Scalar color)
+    : center(center), radius(radius), color(color)
+{
+}
+
+void Circle::draw(cv::Mat& img)
+{
+    circle(img, center, radius, color, FILLED);
+}
+
+std::shared_ptr<GraphicElement> Circle::parse(const yarp::os::Bottle& options)
+{
+    if (!options.check("center"))
+    {
+        yError() << "Missing center option!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("radius"))
+    {
+        yError() << "Missing radius in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("color_rgb"))
+    {
+        yError() << "Missing color_rgb in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    auto center = options.find("center").asList();
+    if (!center || center->size() != 2)
+    {
+        yError() << "Center must have 2 elements!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!center->get(0).isInt32() || !center->get(1).isInt32())
+    {
+        yError() << "Center elements must be integers!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    cv::Point centerPoint(center->get(0).asInt32(), center->get(1).asInt32());
+
+    auto& radius = options.find("radius");
+    if (!radius.isInt32())
+    {
+        yError() << "Radius must be an integer!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    auto color = options.find("color_rgb").asList();
+    if (!color || color->size() != 3)
+    {
+        yError() << "color_rgb must have 3 elements!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!color->get(0).isInt32() || !color->get(1).isInt32() || !color->get(2).isInt32())
+    {
+        yError() << "Color elements must be integers!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    // RGB to BGR
+    cv::Scalar colorScalar(color->get(2).asInt32(), color->get(1).asInt32(), color->get(0).asInt32());
+    return std::make_shared<Circle>(centerPoint, radius.asInt32(), colorScalar);
+}
+
+Stadium::Stadium(cv::Point center, int height, int width, cv::Scalar color)
+    : center(center), height(height), width(width), color(color)
+{
+}
+
+void Stadium::draw(cv::Mat& img)
+{
+    // Calculate the radius of the semicircles
+    int radius = height / 2;
+
+    // Calculate the coordinates of the rectangle
+    Point rectTopLeft(center.x - width / 2, center.y - radius);
+    Point rectBottomRight(center.x + width / 2, center.y + radius);
+
+    // Draw the rectangle
+    rectangle(img, rectTopLeft, rectBottomRight, color, FILLED);
+
+    // Draw the semicircles
+    ellipse(img, Point(center.x - width / 2, center.y), Size(radius, radius), 270, 180, 360, color, FILLED);
+    ellipse(img, Point(center.x + width / 2, center.y), Size(radius, radius), 90, 180, 360, color, FILLED);
+}
+
+std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
+{
+    if (!options.check("center"))
+    {
+        yError() << "Missing center option!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("height"))
+    {
+        yError() << "Missing height in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("width"))
+    {
+        yError() << "Missing width in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!options.check("color_rgb"))
+    {
+        yError() << "Missing color_rgb in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    auto center = options.find("center").asList();
+    if (!center || center->size() != 2)
+    {
+        yError() << "Center must have 2 elements!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!center->get(0).isInt32() || !center->get(1).isInt32())
+    {
+        yError() << "Center elements must be integers!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    cv::Point centerPoint(center->get(0).asInt32(), center->get(1).asInt32());
+
+    auto& height = options.find("height");
+    if (!height.isInt32())
+    {
+        yError() << "Height must be an integer!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    auto& width = options.find("width");
+    if (!width.isInt32())
+    {
+        yError() << "Width must be an integer!";
+        return std::shared_ptr<GraphicElement>();
+    }
+
+    auto color = options.find("color_rgb").asList();
+    if (!color || color->size() != 3)
+    {
+        yError() << "color_rgb must have 3 elements!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!color->get(0).isInt32() || !color->get(1).isInt32() || !color->get(2).isInt32())
+    {
+        yError() << "Color elements must be integers!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    // RGB to BGR
+    cv::Scalar colorScalar(color->get(2).asInt32(), color->get(1).asInt32(), color->get(0).asInt32());
+    return std::make_shared<Stadium>(centerPoint, height.asInt32(), width.asInt32(), colorScalar);
 }
