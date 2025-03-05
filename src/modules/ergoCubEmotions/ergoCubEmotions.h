@@ -29,7 +29,9 @@ class GraphicElement
 {
 public:
     std::string name;
+    cv::Scalar color; //BGR
     std::atomic<bool> visible {true};
+    std::mutex mutex;
 
     virtual void draw(cv::Mat& img) = 0;
 
@@ -41,10 +43,6 @@ class Circle : public GraphicElement
 public:
     cv::Point center;
     int radius;
-    cv::Scalar color; //BGR
-
-    Circle() = default;
-    Circle(cv::Point center, int radius, cv::Scalar color);
 
     void draw(cv::Mat& img) override;
 
@@ -56,10 +54,6 @@ struct Stadium : public GraphicElement
     cv::Point center;
     int height;
     int width;
-    cv::Scalar color; //BGR
-
-    Stadium() = default;
-    Stadium(cv::Point center, int height, int width, cv::Scalar color);
 
     void draw(cv::Mat& img) override;
 
@@ -83,6 +77,7 @@ public:
     void showTransition(const std::string &current, const std::string &desired);
 
     bool setGraphicVisibility(const std::string& name, const bool visible) override;
+    bool setGraphicColor(const std::string& name, const double r, const double g, const double b) override;
     std::vector<std::string> availableGraphics() override;
 
     void updateFrame();

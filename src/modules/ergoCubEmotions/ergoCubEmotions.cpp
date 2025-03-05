@@ -307,6 +307,19 @@ bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool v
     return true;
 }
 
+bool ErgoCubEmotions::setGraphicColor(const std::string& name, const double r, const double g, const double b)
+{
+    auto element = graphicElements.find(name);
+    if (element == graphicElements.end())
+    {
+        yError() << "Unknown graphic element" << name;
+        return false;
+    }
+    std::lock_guard<std::mutex> guard(element->second->mutex);
+    element->second->color = cv::Scalar(b, g, r);
+    return true;
+}
+
 std::vector<std::string> ErgoCubEmotions::availableGraphics()
 {
     std::vector<std::string> output;
@@ -348,10 +361,31 @@ std::shared_ptr<GraphicElement> GraphicElement::parse(const yarp::os::Bottle& op
         yError() << "Missing name in options!";
         return std::shared_ptr<GraphicElement>();
     }
+    if (!options.check("color_rgb"))
+    {
+        yError() << "Missing color_rgb in options!";
+        return std::shared_ptr<GraphicElement>();
+    }
 
     std::string name = options.find("name").asString();
     std::string type = options.find("type").asString();
     bool visible = options.check("visible", yarp::os::Value(true)).asBool();
+
+    auto color = options.find("color_rgb").asList();
+    if (!color || color->size() != 3)
+    {
+        yError() << "color_rgb must have 3 elements!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    if (!color->get(0).isInt32() || !color->get(1).isInt32() || !color->get(2).isInt32())
+    {
+        yError() << "Color elements must be integers!";
+        return std::shared_ptr<GraphicElement>();
+    }
+    // RGB to BGR
+    cv::Scalar colorScalar(color->get(2).asInt32(), color->get(1).asInt32(), color->get(0).asInt32());
+
+
     std::shared_ptr<GraphicElement> output;
     if (type == "circle")
     {
@@ -370,19 +404,16 @@ std::shared_ptr<GraphicElement> GraphicElement::parse(const yarp::os::Bottle& op
     {
         output->name = name;
         output->visible = visible;
+        output->color = colorScalar;
     }
 
     return output;
 
 }
 
-Circle::Circle(cv::Point center, int radius, cv::Scalar color)
-    : center(center), radius(radius), color(color)
-{
-}
-
 void Circle::draw(cv::Mat& img)
 {
+    std::lock_guard<std::mutex> guard(mutex);
     if (!visible)
     {
         return;
@@ -400,11 +431,6 @@ std::shared_ptr<GraphicElement> Circle::parse(const yarp::os::Bottle& options)
     if (!options.check("radius"))
     {
         yError() << "Missing radius in options!";
-        return std::shared_ptr<GraphicElement>();
-    }
-    if (!options.check("color_rgb"))
-    {
-        yError() << "Missing color_rgb in options!";
         return std::shared_ptr<GraphicElement>();
     }
 
@@ -428,29 +454,17 @@ std::shared_ptr<GraphicElement> Circle::parse(const yarp::os::Bottle& options)
         return std::shared_ptr<GraphicElement>();
     }
 
-    auto color = options.find("color_rgb").asList();
-    if (!color || color->size() != 3)
-    {
-        yError() << "color_rgb must have 3 elements!";
-        return std::shared_ptr<GraphicElement>();
-    }
-    if (!color->get(0).isInt32() || !color->get(1).isInt32() || !color->get(2).isInt32())
-    {
-        yError() << "Color elements must be integers!";
-        return std::shared_ptr<GraphicElement>();
-    }
-    // RGB to BGR
-    cv::Scalar colorScalar(color->get(2).asInt32(), color->get(1).asInt32(), color->get(0).asInt32());
-    return std::make_shared<Circle>(centerPoint, radius.asInt32(), colorScalar);
-}
+    auto output = std::make_shared<Circle>();
 
-Stadium::Stadium(cv::Point center, int height, int width, cv::Scalar color)
-    : center(center), height(height), width(width), color(color)
-{
+    output->center = centerPoint;
+    output->radius = radius.asInt32();
+
+    return output;
 }
 
 void Stadium::draw(cv::Mat& img)
 {
+    std::lock_guard<std::mutex> guard(mutex);
     if (!visible)
     {
         return;
@@ -487,11 +501,6 @@ std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
         yError() << "Missing width in options!";
         return std::shared_ptr<GraphicElement>();
     }
-    if (!options.check("color_rgb"))
-    {
-        yError() << "Missing color_rgb in options!";
-        return std::shared_ptr<GraphicElement>();
-    }
 
     auto center = options.find("center").asList();
     if (!center || center->size() != 2)
@@ -520,18 +529,9 @@ std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
         return std::shared_ptr<GraphicElement>();
     }
 
-    auto color = options.find("color_rgb").asList();
-    if (!color || color->size() != 3)
-    {
-        yError() << "color_rgb must have 3 elements!";
-        return std::shared_ptr<GraphicElement>();
-    }
-    if (!color->get(0).isInt32() || !color->get(1).isInt32() || !color->get(2).isInt32())
-    {
-        yError() << "Color elements must be integers!";
-        return std::shared_ptr<GraphicElement>();
-    }
-    // RGB to BGR
-    cv::Scalar colorScalar(color->get(2).asInt32(), color->get(1).asInt32(), color->get(0).asInt32());
-    return std::make_shared<Stadium>(centerPoint, height.asInt32(), width.asInt32(), colorScalar);
+    auto output = std::make_shared<Stadium>();
+    output->center = centerPoint;
+    output->height = height.asInt32();
+    output->width = width.asInt32();
+    return output;
 }
