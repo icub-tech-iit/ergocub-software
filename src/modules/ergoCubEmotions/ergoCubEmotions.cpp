@@ -227,7 +227,9 @@ bool ErgoCubEmotions::updateModule()
             cap >> frame;
             if(frame.empty())
             {
-                pollKey();
+                // We still need to update the frame in case of
+                // graphic elements updates
+                updateFrame();
                 break;
             }
             img = frame;
@@ -293,6 +295,29 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
     }
 }
 
+bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool visible)
+{
+    auto element = graphicElements.find(name);
+    if (element == graphicElements.end())
+    {
+        yError() << "Unknown graphic element" << name;
+        return false;
+    }
+    element->second->visible = visible;
+    return true;
+}
+
+std::vector<std::string> ErgoCubEmotions::availableGraphics()
+{
+    std::vector<std::string> output;
+
+    for (auto& element : graphicElements)
+    {
+        output.push_back(element.first);
+    }
+    return output;
+}
+
 std::vector<std::string> ErgoCubEmotions::availableEmotions()
 {
     return avlEmotions;
@@ -326,23 +351,29 @@ std::shared_ptr<GraphicElement> GraphicElement::parse(const yarp::os::Bottle& op
 
     std::string name = options.find("name").asString();
     std::string type = options.find("type").asString();
+    bool visible = options.check("visible", yarp::os::Value(true)).asBool();
+    std::shared_ptr<GraphicElement> output;
     if (type == "circle")
     {
-        std::shared_ptr<GraphicElement> output = Circle::parse(options);
-        output->name = name;
-        return output;
+        output = Circle::parse(options);
     }
     else if (type == "stadium")
     {
-        std::shared_ptr<GraphicElement> output = Stadium::parse(options);
-        output->name = name;
-        return output;
+        output = Stadium::parse(options);
     }
     else
     {
         yError() << "Unknown type" << type;
-        return std::shared_ptr<GraphicElement>();
     }
+
+    if (output)
+    {
+        output->name = name;
+        output->visible = visible;
+    }
+
+    return output;
+
 }
 
 Circle::Circle(cv::Point center, int radius, cv::Scalar color)
@@ -352,6 +383,10 @@ Circle::Circle(cv::Point center, int radius, cv::Scalar color)
 
 void Circle::draw(cv::Mat& img)
 {
+    if (!visible)
+    {
+        return;
+    }
     circle(img, center, radius, color, FILLED);
 }
 
@@ -416,6 +451,10 @@ Stadium::Stadium(cv::Point center, int height, int width, cv::Scalar color)
 
 void Stadium::draw(cv::Mat& img)
 {
+    if (!visible)
+    {
+        return;
+    }
     // Calculate the radius of the semicircles
     int radius = height / 2;
 

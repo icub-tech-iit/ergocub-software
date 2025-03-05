@@ -29,6 +29,7 @@ class GraphicElement
 {
 public:
     std::string name;
+    std::atomic<bool> visible {true};
 
     virtual void draw(cv::Mat& img) = 0;
 
@@ -71,15 +72,18 @@ public:
     ErgoCubEmotions();
     ~ErgoCubEmotions();
 
-    bool attach(yarp::os::RpcServer &source);
-    bool configure(yarp::os::ResourceFinder &config);
-    bool close();
-    bool updateModule();
-    double getPeriod();
+    bool attach(yarp::os::RpcServer &source) override;
+    bool configure(yarp::os::ResourceFinder &config) override;
+    bool close() override;
+    bool updateModule() override;
+    double getPeriod() override;
 
-    bool setEmotion(const std::string &command);
-    std::vector<std::string> availableEmotions();
+    bool setEmotion(const std::string &command) override;
+    std::vector<std::string> availableEmotions() override;
     void showTransition(const std::string &current, const std::string &desired);
+
+    bool setGraphicVisibility(const std::string& name, const bool visible) override;
+    std::vector<std::string> availableGraphics() override;
 
     void updateFrame();
 

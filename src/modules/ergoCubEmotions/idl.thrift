@@ -30,4 +30,18 @@ service ergoCubEmotions_IDL
         * @return a list of commands.
         */
         list<string> availableEmotions();
+
+        /**
+        * Change the visibility of a specific graphic.
+        * @param name is the name of the graphic that will be set.
+        * @param visible is the visibility of the graphic.
+        * @return true/false on success/failure.
+        */
+        bool setGraphicVisibility(1:string name, 2:bool visible);
+
+        /**
+        * Print the list of all the available graphics.
+        * @return a list of names.
+        */
+        list<string> availableGraphics();
 }
