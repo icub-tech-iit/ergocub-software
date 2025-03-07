@@ -15,6 +15,7 @@
 
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
 #include "ergoCubEmotions_IDL.h"
@@ -22,6 +23,42 @@
 #include <mutex>
 #include <map>
 #include <unordered_map>
+#include <memory>
+
+class GraphicElement
+{
+public:
+    std::string name;
+    cv::Scalar color; //BGR
+    std::atomic<bool> visible {true};
+    std::mutex mutex;
+
+    virtual void draw(cv::Mat& img) = 0;
+
+    static std::shared_ptr<GraphicElement> parse(const yarp::os::Bottle& options);
+};
+
+class Circle : public GraphicElement
+{
+public:
+    cv::Point center;
+    int radius;
+
+    void draw(cv::Mat& img) override;
+
+    static std::shared_ptr<GraphicElement> parse(const yarp::os::Bottle& options);
+};
+
+struct Stadium : public GraphicElement
+{
+    cv::Point center;
+    int height;
+    int width;
+
+    void draw(cv::Mat& img) override;
+
+    static std::shared_ptr<GraphicElement> parse(const yarp::os::Bottle& options);
+};
 
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL
 {
@@ -29,15 +66,21 @@ public:
     ErgoCubEmotions();
     ~ErgoCubEmotions();
 
-    bool attach(yarp::os::RpcServer &source);
-    bool configure(yarp::os::ResourceFinder &config);
-    bool close();
-    bool updateModule();
-    double getPeriod();
+    bool attach(yarp::os::RpcServer &source) override;
+    bool configure(yarp::os::ResourceFinder &config) override;
+    bool close() override;
+    bool updateModule() override;
+    double getPeriod() override;
 
-    bool setEmotion(const std::string &command);
-    std::vector<std::string> availableEmotions();
+    bool setEmotion(const std::string &command) override;
+    std::vector<std::string> availableEmotions() override;
     void showTransition(const std::string &current, const std::string &desired);
+
+    bool setGraphicVisibility(const std::string& name, const bool visible) override;
+    bool setGraphicColor(const std::string& name, const double r, const double g, const double b) override;
+    std::vector<std::string> availableGraphics() override;
+
+    void updateFrame();
 
     yarp::os::RpcServer cmdPort;
     int nExpressions;
@@ -49,10 +92,11 @@ public:
     std::string command;
     std::string currentCommand;
     std::vector<std::string> avlEmotions;
-    cv::Mat img;
+    cv::Mat img, imgEdited;
     std::mutex mutex;
     std::vector<cv::VideoCapture> videoCaptures;
     std::vector<std::string> videoFileNames;
+    std::unordered_map<std::string, std::shared_ptr<GraphicElement>> graphicElements;
 };
 
 #endif
