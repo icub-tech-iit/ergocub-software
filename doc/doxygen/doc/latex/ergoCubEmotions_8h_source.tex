@@ -1,0 +1,108 @@
+\doxysection{ergo\+Cub\+Emotions.\+h}
+\label{ergoCubEmotions_8h_source}\index{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/ergoCubEmotions/ergoCubEmotions.h@{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/ergoCubEmotions/ergoCubEmotions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2023\ Fondazione\ Istituto\ Italiano\ di\ Tecnologia\ (IIT)\ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ All\ Rights\ Reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ \_\_ERGOCUBEMOTIONS\_\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ \_\_ERGOCUBEMOTIONS\_\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <yarp/os/RFModule.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <yarp/os/ResourceFinder.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <yarp/os/RpcServer.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <yarp/os/Thread.h>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <opencv2/core.hpp>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <opencv2/highgui.hpp>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc.hpp>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <opencv2/videoio.hpp>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}ergoCubEmotions\_IDL.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }GraphicElement}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00032\ \ \ \ \ cv::Scalar\ color;\ \textcolor{comment}{//BGR}}
+\DoxyCodeLine{00033\ \ \ \ \ std::atomic<bool>\ visible\ \{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00034\ \ \ \ \ std::mutex\ mutex;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ draw(cv::Mat\&\ img)\ =\ 0;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<GraphicElement>\ parse(\textcolor{keyword}{const}\ yarp::os::Bottle\&\ options);}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }Circle\ :\ \textcolor{keyword}{public}\ GraphicElement}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ cv::Point\ center;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ radius;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(cv::Mat\&\ img)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<GraphicElement>\ parse(\textcolor{keyword}{const}\ yarp::os::Bottle\&\ options);}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }Stadium\ :\ \textcolor{keyword}{public}\ GraphicElement}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ cv::Point\ center;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{int}\ height;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ width;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ draw(cv::Mat\&\ img)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{static}\ std::shared\_ptr<GraphicElement>\ parse(\textcolor{keyword}{const}\ yarp::os::Bottle\&\ options);}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }ErgoCubEmotions\ :\ \textcolor{keyword}{public}\ yarp::os::RFModule,\ \textcolor{keyword}{public}\ ergoCubEmotions\_IDL}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ ErgoCubEmotions();}
+\DoxyCodeLine{00067\ \ \ \ \ \string~ErgoCubEmotions();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ attach(yarp::os::RpcServer\ \&source)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ configure(yarp::os::ResourceFinder\ \&config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ close()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ updateModule()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ getPeriod()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ setEmotion(\textcolor{keyword}{const}\ std::string\ \&command)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00076\ \ \ \ \ std::vector<std::string>\ availableEmotions()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ showTransition(\textcolor{keyword}{const}\ std::string\ \&current,\ \textcolor{keyword}{const}\ std::string\ \&desired);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ setGraphicVisibility(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ visible)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ setGraphicColor(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ r,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ g,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ b)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00081\ \ \ \ \ std::vector<std::string>\ availableGraphics()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ updateFrame();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ yarp::os::RpcServer\ cmdPort;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{int}\ nExpressions;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ nTransitions;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ isTransition;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ fullscreen;}
+\DoxyCodeLine{00090\ \ \ \ \ std::unordered\_map<std::string,\ std::pair<std::string,\ std::string>>\ imgMap;}
+\DoxyCodeLine{00091\ \ \ \ \ std::map<std::pair<std::string,\ std::string>,\ std::string>\ transitionMap;}
+\DoxyCodeLine{00092\ \ \ \ \ std::string\ command;}
+\DoxyCodeLine{00093\ \ \ \ \ std::string\ currentCommand;}
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<std::string>\ avlEmotions;}
+\DoxyCodeLine{00095\ \ \ \ \ cv::Mat\ img,\ imgEdited;}
+\DoxyCodeLine{00096\ \ \ \ \ std::mutex\ mutex;}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<cv::VideoCapture>\ videoCaptures;}
+\DoxyCodeLine{00098\ \ \ \ \ std::vector<std::string>\ videoFileNames;}
+\DoxyCodeLine{00099\ \ \ \ \ std::unordered\_map<std::string,\ std::shared\_ptr<GraphicElement>>\ graphicElements;}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
