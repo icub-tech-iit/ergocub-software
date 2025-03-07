@@ -87,6 +87,7 @@ public:
     int nTransitions;
     bool isTransition;
     bool fullscreen;
+    std::atomic<bool> shouldUpdate { false };
     std::unordered_map<std::string, std::pair<std::string, std::string>> imgMap;
     std::map<std::pair<std::string, std::string>, std::string> transitionMap;
     std::string command;

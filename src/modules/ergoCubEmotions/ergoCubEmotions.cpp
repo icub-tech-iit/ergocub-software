@@ -183,6 +183,7 @@ bool ErgoCubEmotions::updateModule()
             currentCommand = command;
         }
         isTransition = false;
+        shouldUpdate = false;
     }
 
 
@@ -222,7 +223,7 @@ bool ErgoCubEmotions::updateModule()
 
         Mat frame;
 
-        while(cap.isOpened())
+        while(cap.isOpened() && !shouldUpdate)
         {
             cap >> frame;
             if(frame.empty())
@@ -235,7 +236,7 @@ bool ErgoCubEmotions::updateModule()
             img = frame;
             updateFrame();
         }
-        cap.release();
+        cap.set(CAP_PROP_POS_MSEC, 0.0); //Restart the video
     }
 
     return true;
@@ -252,12 +253,16 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
     }
 
     this->command = command;
-    isTransition = true;
 
     if (currentCommand == command)
     {
         yWarning() << command << "is already set!";
         isTransition = false;
+    }
+    else
+    {
+        isTransition = true;
+        shouldUpdate = true;
     }
 
     return true;
@@ -279,7 +284,7 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
             }
             Mat frameTrans;
 
-            while(capTrans.isOpened())
+            while(capTrans.isOpened() && !shouldUpdate)
             {
                 capTrans >> frameTrans;
                 if(frameTrans.empty())
