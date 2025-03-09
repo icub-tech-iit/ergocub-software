@@ -49,6 +49,15 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string file = bExpression.find("file").asString();
         std::string filePath = rf.findFile(file);
 
+        if (filePath.empty())
+        {
+            yError() << "The path for the file" << file
+                     << "for the emotion" << name
+                     << "got resolved to an empty path."
+                     << " The specified file may not exist.";
+            return false;
+        }
+
         avlEmotions.emplace_back(name);
 
         if(std::count(avlEmotions.begin(), avlEmotions.end(), name) > 1)
@@ -62,8 +71,15 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
         if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
         {
+            VideoCapture cap;
+            if (!cap.open(filePath))
+            {
+                yError() << "Could not open the file" << file
+                         << "with path" << filePath
+                         << "for the expression" << name;
+                return false;
+            }
             videoFileNames.push_back(filePath);
-            VideoCapture cap(filePath);
             videoCaptures.push_back(cap);
         }
     }
