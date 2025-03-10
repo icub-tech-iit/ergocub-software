@@ -201,6 +201,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 bool ErgoCubEmotions::close()
 {
     std::lock_guard<std::mutex> guard(mutex);
+    shouldUpdate = true;
     cmdPort.close();
     destroyAllWindows();
     return true;
@@ -557,18 +558,33 @@ std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
 
 bool VideoSource::open(const std::string& path)
 {
-    return cap.open(path);
+    bool output = cap.open(path);
+    if (!output)
+    {
+        return false;
+    }
+    fps = cap.get(CAP_PROP_FPS);
+    return true;
 }
 
 cv::Mat VideoSource::newImage()
 {
+    double currentTime = yarp::os::Time::now();
+    if (lastFrameTime > 0.0)
+    {
+        double elapsedTime = currentTime - lastFrameTime;
+        double frameTime = 1.0 / fps;
+        yarp::os::Time::delay(std::max(0.0, frameTime - elapsedTime));
+    }
     cap >> frame;
+    lastFrameTime = yarp::os::Time::now();
     return frame;
 }
 
 void VideoSource::restart()
 {
     cap.set(CAP_PROP_POS_MSEC, 0.0);
+    lastFrameTime = -1.0;
 }
 
 bool ImageSource::open(const std::string& path)

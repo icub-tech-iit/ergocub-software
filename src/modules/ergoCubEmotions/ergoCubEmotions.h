@@ -72,6 +72,9 @@ class VideoSource : public Source
 {
     cv::VideoCapture cap;
     cv::Mat frame;
+    double fps {30.0};
+    double lastFrameTime{ -1.0 };
+
 public:
     bool open(const std::string& path);
     cv::Mat newImage() override;
