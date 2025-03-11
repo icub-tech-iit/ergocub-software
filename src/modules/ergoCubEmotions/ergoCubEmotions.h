@@ -31,6 +31,7 @@ public:
     std::string name;
     cv::Scalar color; //BGR
     std::atomic<bool> visible {true};
+    std::atomic<bool> updated{ true };
     std::mutex mutex;
 
     virtual void draw(cv::Mat& img) = 0;
@@ -114,7 +115,7 @@ public:
     bool setGraphicColor(const std::string& name, const double r, const double g, const double b) override;
     std::vector<std::string> availableGraphics() override;
 
-    void updateFrame();
+    void updateFrame(bool image_updated);
 
     yarp::os::RpcServer cmdPort;
     int nExpressions;

@@ -284,7 +284,7 @@ bool ErgoCubEmotions::updateModule()
     while (!img_tmp.empty() && !shouldUpdate)
     {
         img = img_tmp;
-        updateFrame();
+        updateFrame(true);
         img_tmp = source->newImage();
         updatedOnce = true;
     }
@@ -292,7 +292,7 @@ bool ErgoCubEmotions::updateModule()
     {
         // We still need to update the frame in case of
         // graphic elements updates
-        updateFrame();
+        updateFrame(false);
     }
     if (img_tmp.empty() && source->loop)
     {
@@ -348,7 +348,7 @@ void ErgoCubEmotions::showTransition(const std::string& current, const std::stri
     while (!img_tmp.empty() && !shouldUpdate)
     {
         img = img_tmp;
-        updateFrame();
+        updateFrame(true);
         img_tmp = source.newImage();
     }
     source.restart();
@@ -363,6 +363,10 @@ bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool v
         return false;
     }
     element->second->visible = visible;
+    if (visible)
+    {
+        element->second->updated = true;
+    }
     return true;
 }
 
@@ -376,6 +380,7 @@ bool ErgoCubEmotions::setGraphicColor(const std::string& name, const double r, c
     }
     std::lock_guard<std::mutex> guard(element->second->mutex);
     element->second->color = cv::Scalar(b, g, r);
+    element->second->updated = true;
     return true;
 }
 
@@ -395,10 +400,29 @@ std::vector<std::string> ErgoCubEmotions::availableEmotions()
     return avlEmotions;
 }
 
-void ErgoCubEmotions::updateFrame()
+void ErgoCubEmotions::updateFrame(bool image_updated)
 {
-    //Use a led for listening with different colors and an animation for speaking
-    //use one led also for thinking
+    //Update only if some graphic elements are visible and to update
+    bool graphics_to_update = false;
+    for (auto& element : graphicElements)
+    {
+        if (element.second->visible && element.second->updated)
+        {
+            graphics_to_update = true;
+            break;
+        }
+    }
+
+    if (!graphics_to_update)
+    {
+        if (image_updated)
+        {
+            imshow("emotion", img);
+        }
+        pollKey();
+        return;
+    }
+
     imgEdited = img.clone();
     for (auto& element : graphicElements)
     {
@@ -478,6 +502,7 @@ void Circle::draw(cv::Mat& img)
         return;
     }
     circle(img, center, radius, color, FILLED);
+    updated = false;
 }
 
 std::shared_ptr<GraphicElement> Circle::parse(const yarp::os::Bottle& options)
@@ -541,6 +566,7 @@ void Stadium::draw(cv::Mat& img)
     // Draw the semicircles
     ellipse(img, Point(center.x - width / 2, center.y), Size(radius, radius), 270, 180, 360, color, FILLED);
     ellipse(img, Point(center.x + width / 2, center.y), Size(radius, radius), 90, 180, 360, color, FILLED);
+    updated = false;
 }
 
 std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
