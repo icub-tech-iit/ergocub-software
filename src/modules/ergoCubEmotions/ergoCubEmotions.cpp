@@ -362,11 +362,8 @@ bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool v
         yError() << "Unknown graphic element" << name;
         return false;
     }
+    element->second->updated = element->second->visible != visible;
     element->second->visible = visible;
-    if (visible)
-    {
-        element->second->updated = true;
-    }
     return true;
 }
 
@@ -412,26 +409,29 @@ void ErgoCubEmotions::updateFrame(bool image_updated)
             graphics_visible = true;
         }
 
-        if (element.second->visible && element.second->updated)
+        if (element.second->updated)
         {
             graphics_to_update = true;
-            break;
         }
     }
 
-    if (!graphics_visible)
+    if (!graphics_visible && !graphics_to_update)
     {
         if (image_updated)
         {
+            // Only update the frame if there is a new image
+            // and no graphic elements are visible
+            // and have not been updated
             imshow("emotion", img);
         }
         pollKey();
         return;
     }
 
-    if (graphics_visible && !graphics_to_update && !image_updated)
+    if (!graphics_to_update && !image_updated)
     {
-        imshow("emotion", imgEdited);
+        // The image is not updated, nor the graphics
+        // so do not update the frame
         pollKey();
         return;
     }
