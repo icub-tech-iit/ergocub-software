@@ -34,6 +34,14 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     fullscreen = bGroup.find("fullscreen").asBool();
     int graphic_elements = bGroup.find("num_graphics").asInt32();
 
+    if (nExpressions <= 0)
+    {
+        yError() << "Number of expressions must be greater than 0!";
+        return false;
+    }
+
+    std::string defaultExpression = bGroup.find("default").asString();
+
     for(int i = 0; i < nExpressions; i++)
     {
         std::ostringstream expression_i;
@@ -48,6 +56,11 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string type = bExpression.find("type").asString();
         std::string file = bExpression.find("file").asString();
         std::string filePath = rf.findFile(file);
+
+        if (defaultExpression.empty())
+        {
+            defaultExpression = name;
+        }
 
         if (filePath.empty())
         {
@@ -176,7 +189,12 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     }
 
     isTransition = true;
-    command = "neutral";
+    if (emotions.find(defaultExpression) == emotions.end())
+    {
+        yError() << "The default expression " << defaultExpression << "has not been found!";
+        return false;
+    }
+    command = defaultExpression;
 
     if(fullscreen){
         namedWindow("emotion", WND_PROP_FULLSCREEN);
