@@ -80,6 +80,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         else if (type == "video")
         {
             auto source = std::make_shared<VideoSource>();
+            source->loop = bExpression.check("loop", yarp::os::Value(false)).asBool();
             if (!source->open(filePath))
             {
                 yError() << "Could not open the video" << file
@@ -222,12 +223,22 @@ bool ErgoCubEmotions::updateModule()
         isTransition_local = isTransition;
         current_local = currentCommand;
         command_local = command;
-        auto it = emotions.find(command);
-        if (it != emotions.end())
+        auto new_it = emotions.find(command);
+        if (new_it == emotions.end())
         {
-            currentCommand = command;
-            source = it->second;
+            // This should not have happened
+            // since the same check is done in
+            // setEmotion call
+            yError() << command << "not found!";
+            return false;
         }
+        auto current_it = emotions.find(currentCommand);
+        if (current_it != emotions.end())
+        {
+            current_it->second->restart();
+        }
+        currentCommand = command;
+        source = new_it->second;
         isTransition = false;
         shouldUpdate = false;
     }
@@ -258,7 +269,10 @@ bool ErgoCubEmotions::updateModule()
         // graphic elements updates
         updateFrame();
     }
-    source->restart();
+    if (img_tmp.empty() && source->loop)
+    {
+        source->restart();
+    }
     return true;
 }
 

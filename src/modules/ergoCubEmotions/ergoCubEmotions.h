@@ -64,6 +64,7 @@ public:
 class Source
 {
 public:
+    bool loop{ false };
     virtual cv::Mat newImage() = 0;
     virtual void restart() = 0;
 };
