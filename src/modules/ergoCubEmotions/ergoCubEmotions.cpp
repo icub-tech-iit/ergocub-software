@@ -403,9 +403,15 @@ std::vector<std::string> ErgoCubEmotions::availableEmotions()
 void ErgoCubEmotions::updateFrame(bool image_updated)
 {
     //Update only if some graphic elements are visible and to update
+    bool graphics_visible = false;
     bool graphics_to_update = false;
     for (auto& element : graphicElements)
     {
+        if (element.second->visible)
+        {
+            graphics_visible = true;
+        }
+
         if (element.second->visible && element.second->updated)
         {
             graphics_to_update = true;
@@ -413,12 +419,19 @@ void ErgoCubEmotions::updateFrame(bool image_updated)
         }
     }
 
-    if (!graphics_to_update)
+    if (!graphics_visible)
     {
         if (image_updated)
         {
             imshow("emotion", img);
         }
+        pollKey();
+        return;
+    }
+
+    if (graphics_visible && !graphics_to_update && !image_updated)
+    {
+        imshow("emotion", imgEdited);
         pollKey();
         return;
     }
