@@ -647,6 +647,10 @@ bool VideoSource::open(const std::string& path)
 
 cv::Mat VideoSource::newImage()
 {
+    if (shouldRestart)
+    {
+        return cv::Mat();
+    }
     double currentTime = yarp::os::Time::now();
     if (lastFrameTime > 0.0)
     {
@@ -656,6 +660,7 @@ cv::Mat VideoSource::newImage()
     }
     cap >> frame;
     lastFrameTime = yarp::os::Time::now();
+    shouldRestart = frame.empty();
     return frame;
 }
 
@@ -663,6 +668,7 @@ void VideoSource::restart()
 {
     cap.set(CAP_PROP_POS_MSEC, 0.0);
     lastFrameTime = -1.0;
+    shouldRestart = false;
 }
 
 bool ImageSource::open(const std::string& path)

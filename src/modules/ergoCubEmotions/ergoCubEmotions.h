@@ -76,6 +76,7 @@ class VideoSource : public Source
     cv::Mat frame;
     double fps {30.0};
     double lastFrameTime{ -1.0 };
+    bool shouldRestart{ false };
 
 public:
     bool open(const std::string& path);
