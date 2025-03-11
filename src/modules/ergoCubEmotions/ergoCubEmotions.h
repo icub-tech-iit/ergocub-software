@@ -103,6 +103,8 @@ public:
     bool close() override;
     bool updateModule() override;
     double getPeriod() override;
+    bool interruptModule() override;
+
 
     bool setEmotion(const std::string &command) override;
     std::vector<std::string> availableEmotions() override;

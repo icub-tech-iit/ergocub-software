@@ -231,6 +231,13 @@ double ErgoCubEmotions::getPeriod()
     return 1.0;
 }
 
+bool ErgoCubEmotions::interruptModule()
+{
+    //Exits the while loops in updateModule
+    shouldUpdate = true;
+    return true;
+}
+
 bool ErgoCubEmotions::updateModule()
 {
     bool isTransition_local;
