@@ -258,7 +258,7 @@ bool ErgoCubEmotions::updateModule()
             return false;
         }
         auto current_it = emotions.find(currentCommand);
-        if (current_it != emotions.end())
+        if (current_it != emotions.end() && currentCommand != command)
         {
             current_it->second->restart();
         }
@@ -270,7 +270,7 @@ bool ErgoCubEmotions::updateModule()
 
     if (!source)
     {
-        yError() << "Unknown emotion" << command_local;
+        yError() << "The source of" << command_local << "is empty. It should not have happened.";
         return false;
     }
 
