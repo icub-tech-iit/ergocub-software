@@ -31,6 +31,7 @@ public:
     std::string name;
     cv::Scalar color; //BGR
     std::atomic<bool> visible {true};
+    std::atomic<bool> updated{ true };
     std::mutex mutex;
 
     virtual void draw(cv::Mat& img) = 0;
@@ -42,22 +43,55 @@ class Circle : public GraphicElement
 {
 public:
     cv::Point center;
-    int radius;
+    int radius {0};
 
     void draw(cv::Mat& img) override;
 
     static std::shared_ptr<GraphicElement> parse(const yarp::os::Bottle& options);
 };
 
-struct Stadium : public GraphicElement
+class Stadium : public GraphicElement
 {
+public:
     cv::Point center;
-    int height;
-    int width;
+    int height {0};
+    int width {0};
 
     void draw(cv::Mat& img) override;
 
     static std::shared_ptr<GraphicElement> parse(const yarp::os::Bottle& options);
+};
+
+class Source
+{
+public:
+    bool loop{ false };
+    virtual cv::Mat newImage() = 0;
+    virtual void restart() = 0;
+};
+
+class VideoSource : public Source
+{
+    cv::VideoCapture cap;
+    cv::Mat frame;
+    double fps {30.0};
+    double lastFrameTime{ -1.0 };
+    bool shouldRestart{ false };
+
+public:
+    bool open(const std::string& path);
+    cv::Mat newImage() override;
+    void restart() override;
+};
+
+class ImageSource : public Source
+{
+    cv::Mat img;
+    bool shouldRestart{ false };
+public:
+    bool open(const std::string& path);
+    cv::Mat newImage() override;
+    void restart() override;
 };
 
 class ErgoCubEmotions : public yarp::os::RFModule, public ergoCubEmotions_IDL
@@ -71,6 +105,8 @@ public:
     bool close() override;
     bool updateModule() override;
     double getPeriod() override;
+    bool interruptModule() override;
+
 
     bool setEmotion(const std::string &command) override;
     std::vector<std::string> availableEmotions() override;
@@ -80,22 +116,21 @@ public:
     bool setGraphicColor(const std::string& name, const double r, const double g, const double b) override;
     std::vector<std::string> availableGraphics() override;
 
-    void updateFrame();
+    void updateFrame(bool image_updated);
 
     yarp::os::RpcServer cmdPort;
     int nExpressions;
     int nTransitions;
     bool isTransition;
     bool fullscreen;
-    std::unordered_map<std::string, std::pair<std::string, std::string>> imgMap;
-    std::map<std::pair<std::string, std::string>, std::string> transitionMap;
+    std::atomic<bool> shouldUpdate { false };
+    std::unordered_map<std::string, std::shared_ptr<Source>> emotions;
+    std::unordered_map<std::string, std::unordered_map<std::string, VideoSource>> transitions;
     std::string command;
     std::string currentCommand;
     std::vector<std::string> avlEmotions;
     cv::Mat img, imgEdited;
     std::mutex mutex;
-    std::vector<cv::VideoCapture> videoCaptures;
-    std::vector<std::string> videoFileNames;
     std::unordered_map<std::string, std::shared_ptr<GraphicElement>> graphicElements;
 };
 

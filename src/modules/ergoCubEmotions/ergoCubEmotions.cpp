@@ -34,6 +34,14 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     fullscreen = bGroup.find("fullscreen").asBool();
     int graphic_elements = bGroup.find("num_graphics").asInt32();
 
+    if (nExpressions <= 0)
+    {
+        yError() << "Number of expressions must be greater than 0!";
+        return false;
+    }
+
+    std::string defaultExpression = bGroup.find("default").asString();
+
     for(int i = 0; i < nExpressions; i++)
     {
         std::ostringstream expression_i;
@@ -49,23 +57,59 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string file = bExpression.find("file").asString();
         std::string filePath = rf.findFile(file);
 
-        avlEmotions.emplace_back(name);
-
-        if(std::count(avlEmotions.begin(), avlEmotions.end(), name) > 1)
+        if (defaultExpression.empty())
         {
-            yError() << name << "is not a unique expression";
+            defaultExpression = name;
+        }
+
+        if (filePath.empty())
+        {
+            yError() << "The path of the file" << file
+                     << "for the emotion" << name
+                     << "got resolved to an empty path."
+                     << " The specified file may not exist.";
             return false;
         }
 
-        std::pair<std::string, std::string> par = std::make_pair(type, filePath);
-        imgMap[name] = par;
-
-        if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
+        if (emotions.count(name))
         {
-            videoFileNames.push_back(filePath);
-            VideoCapture cap(filePath);
-            videoCaptures.push_back(cap);
+            yError() << name << "is not a unique expression!";
+            return false;
         }
+
+
+        if (type == "image")
+        {
+            auto source = std::make_shared<ImageSource>();
+            if (!source->open(filePath))
+            {
+                yError() << "Could not open the image" << file
+                         << "with path" << filePath
+                         << "for the expression" << name;
+                return false;
+            }
+            emotions[name] = source;
+        }
+        else if (type == "video")
+        {
+            auto source = std::make_shared<VideoSource>();
+            source->loop = bExpression.check("loop", yarp::os::Value(false)).asBool();
+            if (!source->open(filePath))
+            {
+                yError() << "Could not open the video" << file
+                         << "with path" << filePath
+                         << "for the expression" << name;
+                return false;
+            }
+            emotions[name] = source;
+        }
+        else
+        {
+            yError() << "Unknown type" << type << "for expression" << name;
+            return false;
+        }
+
+        avlEmotions.emplace_back(name);
     }
 
     for(int j = 0; j < nTransitions; j++)
@@ -81,13 +125,13 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
         std::string source = bTransition.find("source").asString();
         std::string destination = bTransition.find("destination").asString();
 
-        if(imgMap.count(source) < 1 || imgMap.count(destination) < 1)
+        if(emotions.count(source) == 0 || emotions.count(destination) == 0)
         {
             yError() << "Transition" << j << "is pointing to a non existing emotion!";
             return false;
         }
 
-        if(transitionMap.count({source, destination}))
+        if (transitions.count(source) != 0 && transitions[source].count(destination) != 0)
         {
             yError() << "Transition from" << source << "to" << destination << "is not unique!";
             return false;
@@ -95,13 +139,28 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 
         std::string file = bTransition.find("file").asString();
         std::string filePath = rf.findFile(file);
-        std::pair<std::string, std::string> par = std::make_pair(source, destination);
-        transitionMap[par] = filePath;
 
-        if(!(std::count(videoFileNames.begin(), videoFileNames.end(), filePath)))
+        if (filePath.empty())
         {
-            videoFileNames.push_back(filePath);
+            yError() << "The path of the file" << file
+                << "for the transition from" << source
+                << "to" << destination
+                << "got resolved to an empty path."
+                << " The specified file may not exist.";
+            return false;
         }
+
+        VideoSource transition;
+        if (!transition.open(filePath))
+        {
+            yError() << "Could not open the file" << file
+                     << "with path" << filePath
+                     << "for the transition from" << source
+                     << "to" << destination;
+            return false;
+        }
+
+        transitions[source][destination] = transition;
     }
 
     for (int j = 0; j < graphic_elements; j++)
@@ -130,7 +189,12 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
     }
 
     isTransition = true;
-    command = "neutral";
+    if (emotions.find(defaultExpression) == emotions.end())
+    {
+        yError() << "The default expression " << defaultExpression << "has not been found!";
+        return false;
+    }
+    command = defaultExpression;
 
     if(fullscreen){
         namedWindow("emotion", WND_PROP_FULLSCREEN);
@@ -156,6 +220,7 @@ bool ErgoCubEmotions::configure(ResourceFinder& rf)
 bool ErgoCubEmotions::close()
 {
     std::lock_guard<std::mutex> guard(mutex);
+    shouldUpdate = true;
     cmdPort.close();
     destroyAllWindows();
     return true;
@@ -166,78 +231,73 @@ double ErgoCubEmotions::getPeriod()
     return 1.0;
 }
 
+bool ErgoCubEmotions::interruptModule()
+{
+    //Exits the while loops in updateModule
+    shouldUpdate = true;
+    return true;
+}
+
 bool ErgoCubEmotions::updateModule()
 {
     bool isTransition_local;
-    std::pair<std::string, std::string> info;
     std::string current_local, command_local;
+    std::shared_ptr<Source> source;
     {
         std::lock_guard<std::mutex> guard(mutex);
         isTransition_local = isTransition;
         current_local = currentCommand;
         command_local = command;
-        auto it = imgMap.find(command);
-        if (it != imgMap.end())
+        auto new_it = emotions.find(command);
+        if (new_it == emotions.end())
         {
-            info = it->second;
-            currentCommand = command;
+            // This should not have happened
+            // since the same check is done in
+            // setEmotion call
+            yError() << command << "not found!";
+            return false;
         }
+        auto current_it = emotions.find(currentCommand);
+        if (current_it != emotions.end() && currentCommand != command)
+        {
+            current_it->second->restart();
+        }
+        currentCommand = command;
+        source = new_it->second;
         isTransition = false;
+        shouldUpdate = false;
     }
 
-
-    if(info.first == "image")
+    if (!source)
     {
-        if(isTransition_local)
-        {
-            showTransition(current_local, command_local);
-        }
-        Mat img_tmp = imread(info.second);
-        if(img_tmp.empty())
-        {
-            yDebug() << "Could not read the image!";
-            return true;
-        }
-        else
-        {
-            img = img_tmp;
-            updateFrame();
-        }
+        yError() << "The source of" << command_local << "is empty. It should not have happened.";
+        return false;
     }
-    else if(info.first == "video")
+
+    if (isTransition_local)
     {
-        if(isTransition_local)
-        {
-            showTransition(current_local, command_local);
-        }
-
-        VideoCapture cap;
-        for (size_t i = 0; i < videoFileNames.size(); i++)
-        {
-            if(info.second == videoFileNames[i])
-            {
-                cap = videoCaptures.at(i);
-            }
-        }
-
-        Mat frame;
-
-        while(cap.isOpened())
-        {
-            cap >> frame;
-            if(frame.empty())
-            {
-                // We still need to update the frame in case of
-                // graphic elements updates
-                updateFrame();
-                break;
-            }
-            img = frame;
-            updateFrame();
-        }
-        cap.release();
+        showTransition(current_local, command_local);
     }
 
+    Mat img_tmp = source->newImage();
+    bool updatedOnce = false;
+    while (!img_tmp.empty() && !shouldUpdate)
+    {
+        img = img_tmp;
+        updateFrame(true);
+        img_tmp = source->newImage();
+        updatedOnce = true;
+    }
+    if (!updatedOnce)
+    {
+        // We still need to update the frame in case of
+        // graphic elements updates
+        updateFrame(false);
+    }
+    if (img_tmp.empty() && source->loop)
+    {
+        source->restart();
+    }
     return true;
 }
 
@@ -245,19 +305,23 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
 {
     std::lock_guard<std::mutex> guard(mutex);
 
-    if(imgMap.find(command) == imgMap.end())
+    if(emotions.find(command) == emotions.end())
     {
         yError() << command << "not found!";
         return false;
     }
 
     this->command = command;
-    isTransition = true;
 
     if (currentCommand == command)
     {
         yWarning() << command << "is already set!";
         isTransition = false;
+    }
+    else
+    {
+        isTransition = true;
+        shouldUpdate = true;
     }
 
     return true;
@@ -265,34 +329,29 @@ bool ErgoCubEmotions::setEmotion(const std::string& command)
 
 void ErgoCubEmotions::showTransition(const std::string& current, const std::string& desired)
 {
-    for(auto k = transitionMap.cbegin(); k!= transitionMap.cend(); k++)
+    auto sourceIter = transitions.find(current);
+    if (sourceIter == transitions.end())
     {
-        if(k->first.first == current && k->first.second == desired)
-        {
-            VideoCapture capTrans;
-            for (size_t i = 0; i < videoFileNames.size(); i++)
-            {
-                if(k->second == videoFileNames[i])
-                {
-                    capTrans.open(videoFileNames[i]);
-                }
-            }
-            Mat frameTrans;
-
-            while(capTrans.isOpened())
-            {
-                capTrans >> frameTrans;
-                if(frameTrans.empty())
-                {
-                    break;
-                }
-                img = frameTrans;
-                updateFrame();
-            }
-            capTrans.release();
-            return;
-        }
+        return;
     }
+
+    auto transitionIter = sourceIter->second.find(desired);
+
+    if (transitionIter == sourceIter->second.end())
+    {
+        return;
+    }
+
+    VideoSource& source = transitionIter->second;
+
+    Mat img_tmp = source.newImage();
+    while (!img_tmp.empty() && !shouldUpdate)
+    {
+        img = img_tmp;
+        updateFrame(true);
+        img_tmp = source.newImage();
+    }
+    source.restart();
 }
 
 bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool visible)
@@ -303,6 +362,7 @@ bool ErgoCubEmotions::setGraphicVisibility(const std::string& name, const bool v
         yError() << "Unknown graphic element" << name;
         return false;
     }
+    element->second->updated = element->second->visible != visible;
     element->second->visible = visible;
     return true;
 }
@@ -317,6 +377,7 @@ bool ErgoCubEmotions::setGraphicColor(const std::string& name, const double r, c
     }
     std::lock_guard<std::mutex> guard(element->second->mutex);
     element->second->color = cv::Scalar(b, g, r);
+    element->second->updated = true;
     return true;
 }
 
@@ -336,10 +397,45 @@ std::vector<std::string> ErgoCubEmotions::availableEmotions()
     return avlEmotions;
 }
 
-void ErgoCubEmotions::updateFrame()
+void ErgoCubEmotions::updateFrame(bool image_updated)
 {
-    //Use a led for listening with different colors and an animation for speaking
-    //use one led also for thinking
+    //Update only if some graphic elements are visible and to update
+    bool graphics_visible = false;
+    bool graphics_to_update = false;
+    for (auto& element : graphicElements)
+    {
+        if (element.second->visible)
+        {
+            graphics_visible = true;
+        }
+
+        if (element.second->updated)
+        {
+            graphics_to_update = true;
+        }
+    }
+
+    if (!graphics_visible && !graphics_to_update)
+    {
+        if (image_updated)
+        {
+            // Only update the frame if there is a new image
+            // and no graphic elements are visible
+            // and have not been updated
+            imshow("emotion", img);
+        }
+        pollKey();
+        return;
+    }
+
+    if (!graphics_to_update && !image_updated)
+    {
+        // The image is not updated, nor the graphics
+        // so do not update the frame
+        pollKey();
+        return;
+    }
+
     imgEdited = img.clone();
     for (auto& element : graphicElements)
     {
@@ -419,6 +515,7 @@ void Circle::draw(cv::Mat& img)
         return;
     }
     circle(img, center, radius, color, FILLED);
+    updated = false;
 }
 
 std::shared_ptr<GraphicElement> Circle::parse(const yarp::os::Bottle& options)
@@ -482,6 +579,7 @@ void Stadium::draw(cv::Mat& img)
     // Draw the semicircles
     ellipse(img, Point(center.x - width / 2, center.y), Size(radius, radius), 270, 180, 360, color, FILLED);
     ellipse(img, Point(center.x + width / 2, center.y), Size(radius, radius), 90, 180, 360, color, FILLED);
+    updated = false;
 }
 
 std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
@@ -534,4 +632,65 @@ std::shared_ptr<GraphicElement> Stadium::parse(const yarp::os::Bottle& options)
     output->height = height.asInt32();
     output->width = width.asInt32();
     return output;
+}
+
+bool VideoSource::open(const std::string& path)
+{
+    bool output = cap.open(path);
+    if (!output)
+    {
+        return false;
+    }
+    fps = cap.get(CAP_PROP_FPS);
+    return true;
+}
+
+cv::Mat VideoSource::newImage()
+{
+    if (shouldRestart)
+    {
+        return cv::Mat();
+    }
+    double currentTime = yarp::os::Time::now();
+    if (lastFrameTime > 0.0)
+    {
+        double elapsedTime = currentTime - lastFrameTime;
+        double frameTime = 1.0 / fps;
+        yarp::os::Time::delay(std::max(0.0, frameTime - elapsedTime));
+    }
+    cap >> frame;
+    lastFrameTime = yarp::os::Time::now();
+    shouldRestart = frame.empty();
+    return frame;
+}
+
+void VideoSource::restart()
+{
+    cap.set(CAP_PROP_POS_MSEC, 0.0);
+    lastFrameTime = -1.0;
+    shouldRestart = false;
+}
+
+bool ImageSource::open(const std::string& path)
+{
+    img = imread(path);
+    return !img.empty();
+}
+
+cv::Mat ImageSource::newImage()
+{
+    if (shouldRestart)
+    {
+        // We notify that the image has been read
+        // as is the case for the video source
+        // when we reach the end of the video
+        return cv::Mat();
+    }
+    shouldRestart = true;
+    return img;
+}
+
+void ImageSource::restart()
+{
+    shouldRestart = false;
 }
