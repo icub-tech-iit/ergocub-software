@@ -8,8 +8,10 @@ originRPY: [0.0,0.0,0.0]
 scale: [0.001,0.001,0.001]
 filenameformat: "package://ergoCub/meshes/simmechanics/%s.obj"
 epsilon: 2e-4
+exportMeshes: No
 
 forcelowercase: Yes
+
 
 rename:
     # upperbody
