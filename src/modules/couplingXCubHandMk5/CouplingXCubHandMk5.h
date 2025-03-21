@@ -12,6 +12,7 @@
 #include <yarp/os/LogComponent.h>
 #include <yarp/dev/DeviceDriver.h>
 #include <yarp/dev/ImplementJointCoupling.h>
+#include <yarp/dev/IJacobianCoupling.h>
 #include "CouplingXCubHandMk5_ParamsParser.h"
 
 #include <unordered_map>
@@ -40,6 +41,7 @@ struct FingerParameters
  */
 class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
                             public yarp::dev::ImplementJointCoupling,
+                            public yarp::dev::IJacobianCoupling,
                             public CouplingXCubHandMk5_ParamsParser {
 public:
     CouplingXCubHandMk5() = default;
@@ -52,6 +54,8 @@ public:
     bool convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) override;
     bool convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) override;
     bool convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) override;
+    bool evaluateJacobianFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, yarp::sig::Matrix& actAxesToPhysJointsVelJacobian) override;
+    bool evaluateJacobianFromPhysicalJointsToActuatedAxeseVel(const yarp::sig::Vector& physJointsPos, yarp::sig::Matrix& physJointsToActAxesVelJacobian) override;
 
     // //DeviceDriver
     /**
