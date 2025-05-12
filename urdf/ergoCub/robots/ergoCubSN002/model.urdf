@@ -103,7 +103,7 @@
     <inertial>
       <mass value="2.0645667"/>
       <origin xyz="-0.00963997362197503 6.168494736287859e-4 0.08244231288506354" rpy="0 -0 0"/>
-      <inertia ixx="0.005816920576319003" ixy="-6.9752032776433695e-6" ixz="-7.227736063238389e-4" iyy="0.007094744408479672" iyz="-1.2586871224008617e-5" izz="0.002953654264837283"/>
+      <inertia ixx="0.007406085999999999" ixy="0" ixz="0" iyy="0.0059470732999999994" iyz="0" izz="0.0031780111"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
@@ -3372,6 +3372,11 @@
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+      <yarpConfigurationFile>model://ergoCub/conf/rgbd_camera.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
   <gazebo reference="r_shoulder_pitch">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
@@ -3408,6 +3413,9 @@
   </gazebo>
   <gazebo>
     <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
   </gazebo>
   <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>
