@@ -3372,6 +3372,11 @@
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+      <yarpConfigurationFile>model://ergoCub/conf/rgbd_camera.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
   <gazebo reference="r_shoulder_pitch">
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
@@ -3408,6 +3413,9 @@
   </gazebo>
   <gazebo>
     <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+  </gazebo>
+  <gazebo>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
   </gazebo>
   <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>
