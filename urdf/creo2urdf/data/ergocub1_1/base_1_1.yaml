@@ -1647,7 +1647,7 @@ XMLBlobs:
     - |
             <gazebo>
             <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-            <yarpConfigurationFile>model://ergoCub/conf/rgbd_camera.ini</yarpConfigurationFile>
+            <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera</yarpConfigurationFile>
             </plugin>
             </gazebo>
     - |
