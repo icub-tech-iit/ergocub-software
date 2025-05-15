@@ -3232,6 +3232,9 @@
     <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
   </gazebo>
   <gazebo>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+  </gazebo>
+  <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>
   </gazebo>
   <gazebo reference="l_arm_ft_sensor">
