@@ -883,11 +883,6 @@ sensors:
     - |
         <visualize>false</visualize>
 
-    - |
-        <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-          <yarpConfigurationFile>model://ergoCub/conf/sensors/gz_sim_ergocub_rgbd_camera.ini</yarpConfigurationFile>
-        </plugin>
-
   - frameName: SCSYS_HEAD_RGB
     linkName: realsense
     sensorName: realsense_head_rgb
@@ -1578,6 +1573,12 @@ XMLBlobs:
             <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_head.ini</yarpConfigurationFile>
             </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+                <yarpConfigurationFile>model://ergoCub/conf/sensors/gz_sim_ergocub_rgbd_camera.ini</yarpConfigurationFile>
+              </plugin>
             </gazebo>
     - |
             <gazebo>
