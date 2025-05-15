@@ -1735,3 +1735,8 @@ XMLBlobs:
             <gazebo>
             <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
             </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
+            </gazebo>
