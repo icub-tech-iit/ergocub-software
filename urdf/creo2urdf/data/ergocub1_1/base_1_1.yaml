@@ -816,6 +816,7 @@ sensors:
         <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
         </plugin>
+# This sensor works only with gazebo classic
   - frameName: SCSYS_HEAD_RGB
     linkName: realsense
     sensorName: realsense_head_depth
@@ -849,6 +850,42 @@ sensors:
     - |
         <plugin name="ergocub_yarp_gazebo_plugin_depthCamera" filename="libgazebo_yarp_depthCamera.so">
             <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera.ini</yarpConfigurationFile>
+        </plugin>
+# This sensor works only with gz-sim
+  - frameName: SCSYS_HEAD_RGB
+    linkName: realsense
+    sensorName: realsense_head_rgbd
+    sensorType: "rgbd_camera"
+    updateRate: "30"
+    sensorBlobs:
+    - |
+        <camera name="intel_realsense_rgbd_camera">
+          <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
+          <horizontal_fov>1.2217</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.175</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+    - |
+        <visualize>false</visualize>
+
+    - |
+        <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
+          <yarpConfigurationFile>model://ergoCub/conf/sensors/gz_sim_ergocub_rgbd_camera.ini</yarpConfigurationFile>
         </plugin>
 
   - frameName: SCSYS_HEAD_RGB
@@ -1643,14 +1680,6 @@ XMLBlobs:
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
-
-    - |
-            <gazebo>
-            <plugin name="gzyarp::DepthCamera" filename="gz-sim-yarp-depthcamera-system">
-            <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera</yarpConfigurationFile>
-            </plugin>
-            </gazebo>
-    - |
     - |
             <gazebo reference="r_shoulder_pitch">
               <implicitSpringDamper>1</implicitSpringDamper>
@@ -1688,7 +1717,7 @@ XMLBlobs:
     - |
             <gazebo>
               <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
             </gazebo>
 
