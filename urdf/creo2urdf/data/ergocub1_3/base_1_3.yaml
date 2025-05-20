@@ -1,3 +1,7 @@
+filenameformat: "package://ergoCub/meshes/simmechanics/%s.stl"
+epsilon: 2e-4
+exportMeshes: yes
+
 assignedMasses:
  head   : 1.6902682
 
@@ -10,12 +14,52 @@ assignedInertias:
 
 rename:
     # upperbody
-    SIM_ECUB_1-3_CHEST: chest
-    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_L_SHOULDER_1: l_shoulder_pitch
-    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_pitch
-    SIM_ECUB_1-3_CHEST--SIM_HEAD_NECK_1: neck_fixed_joint
-    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_HEAD_NECK_2: neck_pitch # It will be fixed
-    SIM_ECUB_1-1_TORSO_2--SIM_ECUB_1-3_CHEST: torso_yaw
+    SIM_ECUB_1-3_CHEST_WO_NECK: chest
+    SIM_ECUB_1-3_HEAD_NECK_1: neck_1
+    SIM_ECUB_1-3_HEAD_NECK_2: neck_2
+    SIM_ECUB_1-3_HEAD_NECK_3: neck_3
+    SIM_ECUB_1-3_CHEST_WO_NECK--SIM_ECUB_1-1_L_SHOULDER_1: l_shoulder_pitch
+    SIM_ECUB_1-3_CHEST_WO_NECK--SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_pitch
+    SIM_ECUB_1-3_CHEST_WO_NECK--SIM_ECUB_1-3_HEAD_NECK_1: neck_fixed_joint
+    SIM_ECUB_1-3_HEAD_NECK_1--SIM_ECUB_1-3_HEAD_NECK_2: neck_pitch
+    SIM_ECUB_1-3_HEAD_NECK_2--SIM_ECUB_1-3_HEAD_NECK_3: neck_roll
+    SIM_ECUB_1-3_HEAD_NECK_3--SIM_ECUB_1-1_HEAD: neck_yaw
+    SIM_ECUB_1-1_TORSO_2--SIM_ECUB_1-3_CHEST_WO_NECK: torso_yaw
 
+reverseRotationAxis:
+    r_shoulder_roll
+    r_shoulder_pitch
+    r_shoulder_yaw
+    l_elbow
+    r_hip_pitch
+    l_ankle_roll
+    l_hip_pitch
+    l_hip_roll
+    l_hip_yaw
+    neck_pitch
+    r_knee
+    r_ankle_pitch
+    l_wrist_roll
+    l_wrist_yaw
+    l_thumb_add
+    l_thumb_prox
+    l_thumb_dist
+    l_index_prox
+    l_index_dist
+    l_index_add
+    l_middle_prox
+    l_middle_dist
+    l_pinkie_prox
+    l_pinkie_dist
+    r_thumb_dist
+    r_thumb_prox
+    r_index_prox
+    r_index_dist
+    r_middle_prox
+    r_middle_dist
+    r_ring_dist
+    r_ring_prox
+    r_pinkie_dist
+    r_pinkie_prox
 
 
