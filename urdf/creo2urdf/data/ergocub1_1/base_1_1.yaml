@@ -6,9 +6,9 @@ originXYZ: [0.0,0.0,0.80]
 originRPY: [0.0,0.0,0.0]
 # Meshes options
 scale: [0.001,0.001,0.001]
-filenameformat: "package://ergoCub/meshes/simmechanics/%s.obj"
+filenameformat: "package://ergoCub/meshes/simmechanics/%s.stl"
 epsilon: 2e-4
-exportMeshes: No
+exportMeshes: Yes
 
 forcelowercase: Yes
 
@@ -1113,7 +1113,6 @@ reverseRotationAxis:
     l_hip_roll
     l_hip_yaw
     neck_pitch
-    neck_roll
     r_knee
     r_ankle_pitch
     l_wrist_roll
