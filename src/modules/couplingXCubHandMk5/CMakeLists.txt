@@ -6,6 +6,18 @@
 
 yarp_configure_plugins_installation(ergocub-software)
 
+# The committed versions of the param parsers is not compatible with YARP 3.12.0, so depending on the YARP version we set
+# the option to automatically run the generator to ON if we detect an incompatible YARP version. This can be changed when
+# compatibility with YARP 3.11 is dropped and YARP 3.12 compatible param parser are generated
+if(YARP_VERSION VERSION_LESS 3.11.100)
+  set(ALLOW_DEVICE_PARAM_PARSER_GENERATION_DEFAULT_VALUE OFF)
+else()
+  set(ALLOW_DEVICE_PARAM_PARSER_GENERATION_DEFAULT_VALUE ON)
+endif()
+# This must be before the call to yarp_prepare_plugin, otherwise the default value specified there
+# will override the default value specified here
+option(ALLOW_DEVICE_PARAM_PARSER_GENERATION "Generate the param parser for couplingXCubHandMk5 device" ${ALLOW_DEVICE_PARAM_PARSER_GENERATION_DEFAULT_VALUE})
+
 yarp_prepare_plugin(couplingXCubHandMk5
                     CATEGORY device
                     TYPE CouplingXCubHandMk5
@@ -14,7 +26,6 @@ yarp_prepare_plugin(couplingXCubHandMk5
                     DEFAULT ON)
 
 if(ENABLE_couplingXCubHandMk5)
-  option(ALLOW_DEVICE_PARAM_PARSER_GENERATION "Generate the param parser for couplingXCubHandMk5 device" OFF)
   yarp_add_plugin(yarp_couplingXCubHandMk5)
 
   if(MSVC)
