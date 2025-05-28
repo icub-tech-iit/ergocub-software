@@ -204,15 +204,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-3_head_neck_1.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="">
-        <color rgba="0.6 0.6 0.6 1"/>
-      </material>
-    </collision>
   </link>
   <joint name="neck_pitch" type="revolute">
     <origin xyz="0.00865 1.2535963832308504e-17 0.04500000000000015" rpy="-1.0361039135815426e-16 -9.72407665511517e-16 2.2204471080416672e-16"/>
