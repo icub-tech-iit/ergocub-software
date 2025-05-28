@@ -18,8 +18,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_root_link.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_hip_pitch" type="revolute">
@@ -48,8 +51,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_hip_pitch" type="revolute">
@@ -78,8 +84,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_roll" type="revolute">
@@ -108,8 +117,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_torso_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_pitch" type="revolute">
@@ -138,8 +150,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_torso_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="torso_yaw" type="revolute">
@@ -168,8 +183,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_chest.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="neck_pitch" type="revolute">
@@ -198,8 +216,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
@@ -228,8 +249,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_pitch" type="revolute">
@@ -258,8 +282,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_roll" type="revolute">
@@ -288,8 +315,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_arm_ft_sensor" type="fixed">
@@ -315,8 +345,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_shoulder_yaw" type="revolute">
@@ -345,8 +378,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_elbow" type="revolute">
@@ -375,8 +411,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_yaw" type="revolute">
@@ -405,8 +444,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_roll" type="revolute">
@@ -435,8 +477,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
@@ -465,8 +510,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_add" type="revolute">
@@ -495,8 +543,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
@@ -525,8 +576,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
@@ -555,8 +609,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
@@ -585,8 +642,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
@@ -615,8 +675,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
@@ -645,8 +708,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
@@ -675,8 +741,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
@@ -705,8 +774,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
@@ -735,8 +807,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
@@ -765,8 +840,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
@@ -795,8 +873,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
@@ -825,8 +906,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
@@ -855,8 +939,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_arm_ft_sensor" type="fixed">
@@ -882,8 +969,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_shoulder_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
@@ -912,8 +1002,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_upperarm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_elbow" type="revolute">
@@ -942,8 +1035,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_forearm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_yaw" type="revolute">
@@ -972,8 +1068,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_wrist_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_roll" type="revolute">
@@ -1002,8 +1101,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_wrist_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_wrist_pitch" type="revolute">
@@ -1032,8 +1134,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_palm.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_add" type="revolute">
@@ -1062,8 +1167,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
@@ -1092,8 +1200,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
@@ -1122,8 +1233,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
@@ -1152,8 +1266,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
@@ -1182,8 +1299,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
@@ -1212,8 +1332,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
@@ -1242,8 +1365,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_thumb_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
@@ -1272,8 +1398,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_ring_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
@@ -1302,8 +1431,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_pinkie_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
@@ -1332,8 +1464,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_middle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
@@ -1362,8 +1497,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
@@ -1392,8 +1530,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hand_index_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
     </collision>
   </link>
   <joint name="neck_roll" type="revolute">
@@ -1422,8 +1563,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head_neck_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="neck_yaw" type="revolute">
@@ -1452,8 +1596,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_head.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="camera_tilt" type="revolute">
@@ -1482,8 +1629,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_realsense.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_hip_roll" type="revolute">
@@ -1512,8 +1662,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_leg_ft_sensor" type="fixed">
@@ -1539,8 +1692,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_hip_yaw" type="revolute">
@@ -1569,8 +1725,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_knee" type="revolute">
@@ -1599,8 +1758,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ankle_pitch" type="revolute">
@@ -1629,8 +1791,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_ankle_roll" type="revolute">
@@ -1659,8 +1824,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_r_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="r_foot_front_ft_sensor" type="fixed">
@@ -1743,8 +1911,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_leg_ft_sensor" type="fixed">
@@ -1770,8 +1941,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_hip_3.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_hip_yaw" type="revolute">
@@ -1800,8 +1974,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_upper_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_knee" type="revolute">
@@ -1830,8 +2007,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_lower_leg.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ankle_pitch" type="revolute">
@@ -1860,8 +2040,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_ankle_1.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="0.6 0.6 0.6 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_ankle_roll" type="revolute">
@@ -1890,8 +2073,11 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 -0 0"/>
       <geometry>
-        <box size="0 0 0"/>
+        <mesh filename="package://ergoCub/meshes/simmechanics/sim_ecub_1-1_l_ankle_2.obj" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="">
+        <color rgba="1 1 1 1"/>
+      </material>
     </collision>
   </link>
   <joint name="l_foot_front_ft_sensor" type="fixed">
