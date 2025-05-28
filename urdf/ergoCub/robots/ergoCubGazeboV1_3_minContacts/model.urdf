@@ -15,12 +15,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_hip_pitch" type="revolute">
     <origin xyz="0.02109999999999964 0.050500000000000836 1.942890293094024e-16" rpy="3.958535957527503e-15 3.810968172190701e-15 1.167434911886406e-16"/>
@@ -45,12 +39,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_pitch" type="revolute">
     <origin xyz="0.021099999999999643 -0.05049999999999917 -2.220446049250313e-16" rpy="3.986223624290839e-15 9.012328668422501e-14 4.978996250550603e-17"/>
@@ -75,12 +63,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_roll" type="revolute">
     <origin xyz="-2.23890229767886e-18 -5.551115123142428e-20 0.060500000000000095" rpy="0 -2.2470258116354473e-44 5.656623812198896e-30"/>
@@ -105,12 +87,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_pitch" type="revolute">
     <origin xyz="-7.290101862283748e-17 5.551115123142428e-20 0.11799999999999995" rpy="3.972379790909169e-15 2.710505431213761e-20 -5.6565161406289144e-30"/>
@@ -135,12 +111,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="torso_yaw" type="revolute">
     <origin xyz="1.3429321484223738e-16 2.0428995009916363e-16 0.06446999999999985" rpy="-6.085995463684481e-15 -2.027654770291252e-15 1.0592997798766822e-15"/>
@@ -165,12 +135,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_pitch" type="revolute">
     <origin xyz="-0.013518676842609899 0.06704761117227469 0.12351981080941814" rpy="0.2536123238732621 -0.052031605504493116 -0.2752787324138745"/>
@@ -195,12 +159,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_pitch" type="revolute">
     <origin xyz="-0.013518676842610013 -0.06704761117227458 0.12351981080941819" rpy="-0.2536123238732659 -0.052031605504493005 0.27527873241387185"/>
@@ -225,12 +183,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_fixed_joint" type="fixed">
     <origin xyz="-0.0037500000000000176 7.776068354139607e-18 0.18229999999999996" rpy="2.384521650826854e-16 -8.870011704085565e-17 -1.725433700530891e-15"/>
@@ -285,12 +237,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_roll" type="revolute">
     <origin xyz="1.0408340855860843e-17 -1.533495552763227e-17 0.009499999999999953" rpy="-1.9428902930943237e-16 1.530873018019556e-15 8.88178419700126e-16"/>
@@ -315,12 +261,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="neck_yaw" type="revolute">
     <origin xyz="-1.734723475976807e-18 1.005727623029929e-23 0.06914999999999993" rpy="2.1582026845670447e-16 -1.3864778836778403e-15 -7.326653381347455e-15"/>
@@ -345,12 +285,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="camera_tilt" type="revolute">
     <origin xyz="0.06250999999999984 -3.0000000000784225e-5 0.07639250000000014" rpy="9.638795761816718e-15 2.5958199361637385e-4 6.82613313682484e-15"/>
@@ -375,12 +309,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_roll" type="revolute">
     <origin xyz="0.007499999999999448 -0.09330000000000005 -1.3877787807814457e-15" rpy="-2.109423746787796e-15 9.672818102046676e-15 -7.605027718682318e-15"/>
@@ -405,12 +333,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_arm_ft_sensor" type="fixed">
     <origin xyz="-0.006850000000000004 -5.551115123125783e-17 -0.054300000000000015" rpy="-2.220446049250312e-16 -2.3592239273284576e-16 1.6098233857064762e-15"/>
@@ -432,12 +354,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_shoulder_yaw" type="revolute">
     <origin xyz="-7.979727989493313e-17 5.551115123125783e-17 -0.02249999999999998" rpy="-5.55111512312578e-17 -3.0531133177191805e-16 7.660538869913577e-15"/>
@@ -462,12 +378,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_elbow" type="revolute">
     <origin xyz="0.01000000000000002 0.0015000000000005287 -0.12369999999999992" rpy="-4.1633363423443286e-16 -5.842548667089886e-15 -8.326672684688652e-15"/>
@@ -492,12 +402,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_yaw" type="revolute">
     <origin xyz="-0.014999999999999767 -0.0019999999999965323 -0.1943500000000011" rpy="-2.081668171172164e-15 -1.1587952819525071e-14 -2.997602166487915e-15"/>
@@ -522,12 +426,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_roll" type="revolute">
     <origin xyz="1.4224732503009818e-16 2.498001805406602e-16 1.3877787807814457e-16" rpy="3.8857805861880484e-16 5.551115123125783e-17 -1.6653345369377353e-16"/>
@@ -552,12 +450,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
     <origin xyz="-4.85722573273506e-17 0 2.7755575615628914e-17" rpy="2.2204460492503136e-16 -5.551115123125783e-17 -3.88578058618805e-16"/>
@@ -582,12 +474,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_add" type="revolute">
     <origin xyz="0.02250000000000002 0.0015000000000002234 -0.06859999999999983" rpy="-1.625331490597858e-15 0.29670597283904 3.141592653589792"/>
@@ -612,12 +498,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_middle_prox" type="revolute">
     <origin xyz="0.009599999988882939 0.00150000000000039 -0.1030000000010361" rpy="-1.8596235662471376e-15 -1.0793124727292991e-10 3.1415926535897927"/>
@@ -642,12 +522,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
     <origin xyz="-0.035982680943166166 0.002377759579109573 -0.09206828131946371" rpy="4.1095343980510334e-4 -0.08726646259972864 3.1154127148098776"/>
@@ -672,12 +546,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ring_prox" type="revolute">
     <origin xyz="-0.015417755568684424 0.001849813728471178 -0.09788067183717986" rpy="2.019965811910767e-14 -0.08726646270762471 3.11541271480963"/>
@@ -702,12 +570,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_thumb_add" type="revolute">
     <origin xyz="0.023374863252664337 0.003000000000000058 -0.03452383847607743" rpy="1.566711369727914e-15 -0.226892802651332 -5.127419028200447e-16"/>
@@ -732,12 +594,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_thumb_prox" type="revolute">
     <origin xyz="0.0380746544995605 0.003469109580325286 -0.0036017448035497446" rpy="-1.7697290685198344 -0.13749152761469902 -2.965379613992927"/>
@@ -762,12 +618,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_thumb_dist" type="revolute">
     <origin xyz="-0.035000000003687984 0.0014999999936707586 -1.0737244426906045e-12" rpy="-1.87424381570267e-11 1.845751329554446e-11 3.1415926535883125"/>
@@ -792,12 +642,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ring_dist" type="revolute">
     <origin xyz="-1.498102770308707e-11 -0.0015000000002765024 -0.040000000000737446" rpy="-5.828670879282074e-16 1.0789557441936992e-10 2.461919557106285e-13"/>
@@ -822,12 +666,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
     <origin xyz="4.5102810375396984e-17 -0.001514193309379297 -0.03499938883211873" rpy="-0.0012956915198213642 -1.8735013540549517e-16 -2.775557561562892e-16"/>
@@ -852,12 +690,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_middle_dist" type="revolute">
     <origin xyz="-1.5434174771566944e-11 -0.0014999999999999736 -0.0399999999989637" rpy="-7.535550930470877e-8 1.0793281546295219e-10 0"/>
@@ -882,12 +714,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_prox" type="revolute">
     <origin xyz="-0.009192533317427379 0 -0.030713451316238316" rpy="-3.0531133177191805e-16 -2.42861286636753e-16 -1.110223024625157e-16"/>
@@ -912,12 +738,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_index_dist" type="revolute">
     <origin xyz="4.163336342344337e-17 -0.0014999999999998348 -0.040000000000000036" rpy="2.220446049250313e-16 9.020562075079397e-17 5.551115123125785e-17"/>
@@ -942,12 +762,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_roll" type="revolute">
     <origin xyz="0.0049999999999999 0.09329999999999991 -1.1102230246251565e-15" rpy="2.042810365310288e-14 2.886579864025407e-15 -1.4988010832439613e-15"/>
@@ -972,12 +786,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_arm_ft_sensor" type="fixed">
     <origin xyz="-0.004349999999999986 -2.7755575615628914e-17 -0.05430000000000004" rpy="2.2204460492503136e-16 6.938893903907228e-18 1.4988010832439621e-15"/>
@@ -999,12 +807,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_shoulder_yaw" type="revolute">
     <origin xyz="4.163336342344337e-17 -5.551115123125783e-17 -0.022499999999999937" rpy="-3.3029134982598486e-15 -3.002459392220658e-14 6.383782391594671e-15"/>
@@ -1029,12 +831,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_elbow" type="revolute">
     <origin xyz="0.009999999999996342 -0.0014999999999996405 -0.12369999999999956" rpy="-3.1641356201817088e-15 -3.134298376394895e-14 -7.827072323607395e-15"/>
@@ -1059,12 +855,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_yaw" type="revolute">
     <origin xyz="-0.014999999999992455 0.0020000000000007234 -0.1943500000000013" rpy="-2.775557561562897e-16 -7.741723928589295e-14 -5.551115123125795e-17"/>
@@ -1089,12 +879,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_roll" type="revolute">
     <origin xyz="2.7755575615628914e-17 1.942890293094024e-16 2.7755575615628914e-17" rpy="3.885780586188047e-16 9.71445146547012e-17 -4.440892098500624e-16"/>
@@ -1119,12 +903,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_wrist_pitch" type="revolute">
     <origin xyz="-1.214306433183765e-16 -1.6653345369377348e-16 0" rpy="-4.163336342344336e-16 1.0798191507621624e-10 3.330669073875468e-16"/>
@@ -1149,12 +927,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_add" type="revolute">
     <origin xyz="0.02249999999999998 -0.0015000000000006952 -0.06859999999999966" rpy="-8.126657451512499e-16 -0.29670597224465534 5.804755322508928e-17"/>
@@ -1179,12 +951,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_middle_prox" type="revolute">
     <origin xyz="0.00960000000000016 -0.0015000000000005842 -0.10299999999999959" rpy="5.479728916549446e-4 1.4363510381087963e-15 -8.32667268468867e-16"/>
@@ -1209,12 +975,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_pinkie_prox" type="revolute">
     <origin xyz="-0.035982322249527285 -0.0023883158589564635 -0.09206560929209856" rpy="-1.9934591492976922e-5 0.08728175651239228 0.02618761244812705"/>
@@ -1239,12 +999,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ring_prox" type="revolute">
     <origin xyz="-0.015417755558120038 -0.0018498137284707894 -0.09788067183884419" rpy="-4.001819369804634e-5 0.08726646259973214 0.026179938779914452"/>
@@ -1269,12 +1023,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_add" type="revolute">
     <origin xyz="0.02337486325639077 -0.0030000000000002525 -0.03452383847355461" rpy="-0.04044970061859103 0.22331918636553513 2.9608435412698353"/>
@@ -1299,12 +1047,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_prox" type="revolute">
     <origin xyz="-0.038093197449591214 -0.0032591938585579128 -0.0036017448035497446" rpy="1.37186358506996 0.1374915276146556 -3.1415926535689005"/>
@@ -1329,12 +1071,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_thumb_dist" type="revolute">
     <origin xyz="0.03500000000368915 -0.001499999993667872 1.0741685319004546e-12" rpy="1.8750459518379624e-11 -1.8465340367868066e-11 -1.4806766923669552e-12"/>
@@ -1359,12 +1095,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ring_dist" type="revolute">
     <origin xyz="1.4987329953475292e-11 -0.0015000000002768354 -0.04000000000073728" rpy="-1.2044308636062927e-4 -1.0794291155358238e-10 -2.509104035652854e-13"/>
@@ -1389,12 +1119,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_pinkie_dist" type="revolute">
     <origin xyz="1.4015903021524778e-11 -0.0014999999962120036 -0.03500000000709719" rpy="-4.438681233740257e-5 -1.0794289073690067e-10 -2.489120021209601e-13"/>
@@ -1419,12 +1143,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_middle_dist" type="revolute">
     <origin xyz="1.5440777129116512e-11 -0.001499999999999363 -0.03999999999896309" rpy="0.017535706363213464 -1.0797945176888035e-10 5.917488721252084e-14"/>
@@ -1449,12 +1167,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_prox" type="revolute">
     <origin xyz="0.009192533346793458 0 -0.030713451309624218" rpy="-2.220446049250313e-16 -7.023612108580934e-10 -8.326672684688674e-16"/>
@@ -1479,12 +1191,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_index_dist" type="revolute">
     <origin xyz="-5.551115123125783e-17 -0.0014999999999999458 -0.039999999999999813" rpy="-7.482326172536533e-8 1.734723475976807e-16 -6.106226635438361e-16"/>
@@ -1509,12 +1215,6 @@
         <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_roll" type="revolute">
     <origin xyz="-0.047250000000000625 -0.033099999999999824 -0.009000000000000091" rpy="-2.73316156054826e-16 2.504641391024977e-16 -3.1036377681447894e-15"/>
@@ -1539,12 +1239,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_leg_ft_sensor" type="fixed">
     <origin xyz="0.036699999999999976 -5.551115123125783e-17 -0.08969999999999992" rpy="-1.3775953441385743e-15 5.490828022886651e-16 1.6105578736269433e-15"/>
@@ -1566,12 +1260,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_hip_yaw" type="revolute">
     <origin xyz="-2.8275992658421956e-16 0.014999999999999764 -0.07269999999999871" rpy="-3.9451416337953255e-15 7.430123072146073e-16 1.2193157749540274e-6"/>
@@ -1596,12 +1284,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_knee" type="revolute">
     <origin xyz="0.01060000963260985 0.00789998707525931 -0.17970000000000058" rpy="6.892643261935339e-14 -6.650159361880639e-14 -1.219315770090442e-6"/>
@@ -1626,12 +1308,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ankle_pitch" type="revolute">
     <origin xyz="-5.936223734792634e-15 -0.03190000000000005 -0.3210000000000002" rpy="-2.9932805576414174e-15 -2.0242047360524565e-14 8.880636788937802e-17"/>
@@ -1656,12 +1332,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_ankle_roll" type="revolute">
     <origin xyz="-0.052750000000001546 0.018200000000000008 -0.0349999999999977" rpy="-1.0176053241861382e-24 3.8838282931741325e-14 -9.278622199115707e-23"/>
@@ -1686,12 +1356,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="r_foot_front_ft_sensor" type="fixed">
     <origin xyz="0.13525000000000004 0 -0.04789999999999972" rpy="2.6613913647124785e-17 -9.20811369242055e-17 -1.4551888385804406e-15"/>
@@ -1770,12 +1434,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_leg_ft_sensor" type="fixed">
     <origin xyz="0.036699999999999844 -1.3877787807814457e-17 -0.08970000000000003" rpy="-1.1075796462727634e-15 -1.9903300580169828e-30 2.775557561562846e-16"/>
@@ -1797,12 +1455,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_hip_yaw" type="revolute">
     <origin xyz="-8.396061623727746e-16 -0.014999999999999944 -0.07269999999999993" rpy="3.0118838875648327e-16 1.1431429037212378e-14 -2.775557561562751e-16"/>
@@ -1827,12 +1479,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_knee" type="revolute">
     <origin xyz="0.010600000000000822 -0.007900000000000185 -0.17969999999999958" rpy="1.970486418692682e-16 -1.1419428146632273e-14 2.8602839935211434e-15"/>
@@ -1857,12 +1503,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ankle_pitch" type="revolute">
     <origin xyz="-4.468647674116255e-15 0.03189999999999981 -0.3209999999999995" rpy="-1.9704864186927032e-16 -8.673617379880112e-19 -1.8683953730959558e-16"/>
@@ -1887,12 +1527,6 @@
         <color rgba="0.6 0.6 0.6 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_ankle_roll" type="revolute">
     <origin xyz="-0.052750000000000324 -0.01819999999999991 -0.03499999999999959" rpy="3.340196646750626e-19 1.1217589357404033e-14 -2.3665827156630354e-30"/>
@@ -1917,12 +1551,6 @@
         <color rgba="1 1 1 1"/>
       </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 -0 0"/>
-      <geometry>
-        <box size="0 0 0"/>
-      </geometry>
-    </collision>
   </link>
   <joint name="l_foot_front_ft_sensor" type="fixed">
     <origin xyz="0.13524999999999998 -5.551115123125783e-17 -0.04789999999999894" rpy="-8.997944700177166e-31 1.9428902930939596e-16 -9.788946385468152e-16"/>
