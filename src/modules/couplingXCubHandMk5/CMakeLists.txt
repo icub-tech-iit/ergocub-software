@@ -38,9 +38,11 @@ if(ENABLE_couplingXCubHandMk5)
                                                   CouplingXCubHandMk5_ParamsParser.h)
 
   target_link_libraries(yarp_couplingXCubHandMk5 PRIVATE YARP::YARP_os
-                                                         YARP::YARP_dev)
+                                                         YARP::YARP_dev
+                                                         YARP::YARP_math)
   list(APPEND YARP_${YARP_PLUGIN_MASTER}_PRIVATE_DEPS YARP_os
-                                                      YARP_dev)
+                                                      YARP_dev
+                                                      YARP_math)
 
   yarp_install(TARGETS yarp_couplingXCubHandMk5
                EXPORT YARP_${YARP_PLUGIN_MASTER}
