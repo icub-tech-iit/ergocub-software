@@ -56,6 +56,7 @@ private:
   double t0 = 0;
 
 public:
+  double dpos_dV{1.0};
   PWMThread(double ts, ResourceFinder &rf, uint8_t joint_id, double min,
             double max)
       : PeriodicThread(ts), rf_(rf), j(joint_id), thr_min(min), thr_max(max) {}
@@ -74,8 +75,8 @@ public:
 
     data_vec.push_back(std::move(data));
 
-    const bool above_max = data.enc >= thr_max && pwm_ < -.1;
-    const bool below_min = data.enc <= thr_min && pwm_ > .1;
+    const bool above_max = data.enc >= thr_max;
+    const bool below_min = data.enc <= thr_min;
 
     if (above_max || below_min) {
       if (above_max) {
@@ -84,7 +85,7 @@ public:
         done_l = true;
       }
       pwm_ = -pwm_;
-      iPwm->setRefDutyCycle(j, pwm_);
+      iPwm->setRefDutyCycle(j, dpos_dV * pwm_);
     }
     yDebugThrottle(15, "Acquisition in progress...");
   }
@@ -93,7 +94,7 @@ public:
 
   void setInputs(double pwm) {
     pwm_ = pwm;
-    iPwm->setRefDutyCycle(j, pwm_);
+    iPwm->setRefDutyCycle(j, dpos_dV * pwm_);
   }
 
   void resetFlags() {
@@ -181,6 +182,15 @@ int main(int argc, char *argv[]) {
   std::unique_ptr<PWMThread> pwm_thread =
       std::make_unique<PWMThread>(Ts, rf, joint_id, thr_min, thr_max);
 
+  yarp::dev::Pid pidInfo;
+  auto ok = iPid->getPid(VOCAB_PIDTYPE_POSITION,joint_id,&pidInfo);
+  if (!ok) {
+    yError("Failed to get PID info for joint %d", joint_id);
+    m_driver.close();
+    return EXIT_FAILURE;
+  }
+  pwm_thread->dpos_dV=(pidInfo.kp>=0.0?-1.0:1.0);
+
   std::ofstream file;
   file.open(filename);
   data_vec.reserve(10000);
@@ -197,7 +207,7 @@ int main(int argc, char *argv[]) {
   for (int j = 0; j < pwm_list->size(); j++) {
 
     pwm_thread->setInputs(pwm_list->get(j).asFloat64());
-    
+
     for (int i = 0; i < cycles; i++) {
       while (!pwm_thread->isDone() &&
              pwm_thread->getIterations() < (timeout / Ts)) {
