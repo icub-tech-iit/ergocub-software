@@ -75,8 +75,14 @@ public:
 
     data_vec.push_back(std::move(data));
 
-    const bool above_max = data.enc >= thr_max;
-    const bool below_min = data.enc <= thr_min;
+    // Check if the encoder position is above or below the thresholds
+    // If data.enc >= thr_max, above_max will be true, and pwm_ will be inverted. On the next cycle,
+    // if the joint hasn't moved enough and data.enc is still >= thr_max, above_max will be true again,
+    // and pwm_ will be inverted back to its original sign. This will cause the motor to jitter at the
+    // mechanical limit until the joint eventually moves away.
+
+    const bool above_max = data.enc >= thr_max && (pwm_sign_multiplier * pwm_ > 0.0);
+    const bool below_min = data.enc <= thr_min && (pwm_sign_multiplier * pwm_ < 0.0);
 
     if (above_max || below_min) {
       if (above_max) {
