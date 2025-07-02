@@ -1,8 +1,8 @@
-# ergocub-fingers-tuning
+# joint-pid-tuning
 
-This folder contains material used to tune the PID controllers for index and middle fingers of the ergoCub hands.
+This folder contains material used to tune the PID gains for controlling a generic joint.
 
-The C++ programs contained in `cpp` are used to move one of the fingers in order to get the I/O identification data (`joint-open-loop-move`) and to verify the performance with repeated cycles (`joint-position-move`).
+The C++ programs contained in `cpp` are used to move one joint in order to get the I/O identification data (`joint-open-loop-move`) and to verify the performance with repeated cycles (`joint-position-move`).
 
 The MATLAB live script uses the datasets contained in `data` to identify a simple linear model of the finger, then runs the robust tuning procedure of a PI controller.
 
