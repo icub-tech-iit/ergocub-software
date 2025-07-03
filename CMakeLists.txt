@@ -22,6 +22,10 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 include(AddUninstallTarget)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}")
+
 option(BUILD_TESTING "Run tests for the generated models" OFF)
 option(COMPILE_ergoCubEmotions "Compile the module controlling the ergoCub emotions" OFF)
 option(COMPILE_ergoCubModels "Configure and install the URDF models of the ergoCub robots" ON)
