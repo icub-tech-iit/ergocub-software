@@ -17,15 +17,20 @@ The executable to run can be then found in the `build` or `install` folder.
 After building it, navigate to the `build` folder, and then launch it with your desired arguments, e.g.:
 
 ```bash
-./joint-open-loop-move --port /ergocub/left_arm --joint-id 10 --cycles 5 --limits "(5 20)" <degrees> --pwm-values "(10 20 30)" <perc> --timeout 5 <sec> --filename output.csv
+./bin/joint-open-loop-move --port /ergocub/left_arm --joint-id 10 --cycles 5 --limits "(5 20)" --pwm-values "(10 20 30)" --timeout 5 --filename output.csv
 ```
+
+The units of measure are:
+- `limits`: degrees
+- `pwm-valuse`: %
+- `timeout`: seconds
 
 #### joint-position-move
 
 After building it, navigate to the `build` folder, and then launch it with your desired arguments, e.g.:
 
 ```bash
-./joint-position-move --robot ergocub --part left_arm --set-point 60 --filename output.csv
+./bin/joint-position-move --robot ergocub --part left_arm --set-point 60 --filename output.csv
 ```
 
 ### MATLAB scripts
