@@ -88,7 +88,6 @@ rename:
     SIM_ECUB_1-1_HEAD_NECK_3--SIM_ECUB_1-1_HEAD: neck_yaw
     SIM_ECUB_1-1_HEAD--SIM_ECUB_1-1_REALSENSE: camera_tilt
     # left forearm
-    SIM_ECUB_1-1_L_UPPERARM: l_upper_arm
     SIM_ECUB_1-1_L_FOREARM: l_forearm
     SIM_ECUB_1-1_L_WRIST_1: l_wrist_1
     SIM_ECUB_1-1_L_WRIST_2: l_wrist_2
@@ -122,7 +121,6 @@ rename:
     SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_PINKIE_1: l_pinkie_prox
     SIM_ECUB_1-1_L_HAND_PINKIE_1--SIM_ECUB_1-1_L_HAND_PINKIE_2: l_pinkie_dist
     # right forearm
-    SIM_ECUB_1-1_R_UPPERARM: r_upper_arm
     SIM_ECUB_1-1_R_FOREARM: r_forearm
     SIM_ECUB_1-1_R_WRIST_1: r_wrist_1
     SIM_ECUB_1-1_R_WRIST_2: r_wrist_2
