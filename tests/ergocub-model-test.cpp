@@ -334,14 +334,6 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.525416,0.838737,0.143034));
         axisNames.push_back("l_index_add");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.250563,-0.935113,-0.250563));
-        axisNames.push_back("r_index_prox");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.947223,0.290266,0.136064));
-        axisNames.push_back("r_index_dist");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.947223,0.290266,0.136064));
-        axisNames.push_back("l_index_prox");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.947223,0.290266,-0.136064));
-        axisNames.push_back("l_index_dist");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.947223,0.290266,-0.136064));
     }
     else {
         axisNames.push_back("r_thumb_prox");
@@ -356,15 +348,16 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.439716,0.892571,0.0998355));
         axisNames.push_back("l_index_add");
         expectedDirectionInRootLink.push_back(iDynTree::Direction(0.250563,0.935113,0.250563));
-        axisNames.push_back("r_index_prox");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.884949,0.32618,0.332372));
-        axisNames.push_back("r_index_dist");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(0.884949,0.32618,0.332372));
-        axisNames.push_back("l_index_prox");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.884949,0.32618,-0.332372));
-        axisNames.push_back("l_index_dist");
-        expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.884949,0.32618,-0.332372));
+
     }
+    axisNames.push_back("l_index_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.884949,0.32618,-0.332372));
+    axisNames.push_back("l_index_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.884949,0.32618,-0.332372));
+    axisNames.push_back("r_index_prox");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.884949,0.32618,0.332372));
+    axisNames.push_back("r_index_dist");
+    expectedDirectionInRootLink.push_back(iDynTree::Direction(0.884949,0.32618,0.332372));
     axisNames.push_back("r_middle_prox");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(0.961047,0.271447,0.0520081));
     axisNames.push_back("r_middle_dist");
@@ -403,10 +396,11 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
     axisNames.push_back("l_pinkie_dist");
     expectedDirectionInRootLink.push_back(iDynTree::Direction(-0.973762,0.226085,0.0259272));
-
+    bool ok = true;
 
     for(int i=0; i < axisNames.size(); i++)
     {
+
         std::string axisToCheck = axisNames[i];
         iDynTree::Axis axisInRootLink;
         iDynTree::Direction expectedDirection = expectedDirectionInRootLink[i];
@@ -420,11 +414,11 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1
         {
             std::cerr << "ergocub-model-test error:" << axisToCheck << " got direction of " << axisInRootLink.getDirection().toString()
                   << " instead of expected " << expectedDirection.toString() << std::endl;
-            return false;
+            ok = ok && false;
         }
     }
 
-    return true;
+    return ok;
 }
 
 /**
