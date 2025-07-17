@@ -68,10 +68,6 @@ rename:
 
 linkFrames:
   # left forearm
-  - linkName: l_upper_arm
-    frameName: SCSYS_L_UPPERARM
-  - linkName: l_forearm
-    frameName: SCSYS_L_FOREARM
   - linkName: l_wrist_1
     frameName: SCSYS_L_WRIST_1
   - linkName: l_wrist_2
@@ -103,10 +99,6 @@ linkFrames:
   - linkName: l_hand_pinkie_2
     frameName: SCSYS_L_HAND_PINKIE_DIST # WRONG NAME
     # right forearm
-  - linkName: r_upper_arm
-    frameName: SCSYS_R_UPPERARM
-  - linkName: r_forearm
-    frameName: SCSYS_R_FOREARM
   - linkName: r_wrist_1
     frameName: SCSYS_R_WRIST_YAW # WRONG NAME
   - linkName: r_wrist_2
