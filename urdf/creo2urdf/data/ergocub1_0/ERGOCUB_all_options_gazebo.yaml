@@ -1,1 +1,1 @@
-includes: [../ergocub1_1/base_1_1.yaml, base_1_0.yaml, ..\common\gazebo_addon.yaml]
+includes: [..\ergocub1_1\base_1_1.yaml, base_1_0.yaml, ..\common\gazebo_addon.yaml]
