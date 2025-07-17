@@ -494,8 +494,8 @@
     </visual>
   </link>
   <joint name="r_thumb_prox" type="revolute">
-    <origin xyz="0.0380746544995605 0.003469109580325286 -0.0036017448035497446" rpy="-1.7697290685198344 -0.13749152761469902 -2.965379613992927"/>
-    <axis xyz="9.992007221626409e-16 -1.1102230246251565e-15 -0.9999999999999997"/>
+    <origin xyz="0.03807465450414745 0.0034691095803254524 -0.00360174479782005" rpy="1.4305744122463542 0.1970305979429557 -1.4222071875138238"/>
+    <axis xyz="-1.0000000000000009 1.872826893567492e-11 -1.8454855699179262e-11"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
     <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
@@ -503,8 +503,8 @@
   </joint>
   <link name="r_hand_thumb_2">
     <inertial>
-      <mass value="0.00669603218404702"/>
-      <origin xyz="-0.014887264468035837 -0.0011329726380328586 6.26600593671145e-5" rpy="0 -0 0"/>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691406974989604e-5 3.0451621296398446e-4 -0.014894613060785539" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -518,8 +518,8 @@
     </visual>
   </link>
   <joint name="r_thumb_dist" type="revolute">
-    <origin xyz="-0.035000000003687984 0.0014999999936707586 -1.0737244426906045e-12" rpy="-1.87424381570267e-11 1.845751329554446e-11 3.1415926535883125"/>
-    <axis xyz="1.8458673825549887e-11 1.8743298579870785e-11 -0.9999999999999999"/>
+    <origin xyz="1.3877787807814457e-16 -0.003710625528295569 -0.03483505788984404" rpy="-0.06328877395262145 1.9984014443252818e-15 1.3940237852949593e-14"/>
+    <axis xyz="-1.000000000000002 -2.971595758838737e-14 1.4943549901063601e-15"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
     <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
@@ -527,8 +527,8 @@
   </joint>
   <link name="r_hand_thumb_3">
     <inertial>
-      <mass value="0.00683159462238797"/>
-      <origin xyz="0.016086236544425966 0.0026526877650291103 4.703179416121195e-5" rpy="0 -0 0"/>
+      <mass value="0.008481423658381124"/>
+      <origin xyz="-2.860185154315853e-5 0.0027378892568393487 -0.01693593729163307" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -947,8 +947,8 @@
     </visual>
   </link>
   <joint name="l_thumb_prox" type="revolute">
-    <origin xyz="-0.038093197449591214 -0.0032591938585579128 -0.0036017448035497446" rpy="1.37186358506996 0.1374915276146556 -3.1415926535689005"/>
-    <axis xyz="5.134781488891349e-16 3.1363800445660672e-15 -0.9999999999999996"/>
+    <origin xyz="-0.03809319745486384 -0.00325919385934903 -0.003601744797988693" rpy="1.430574412281424 -0.1970305979835069 1.598420226952676"/>
+    <axis xyz="-0.9999999999999997 -3.108124868589357e-12 1.9784020602320318e-10"/>
     <parent link="l_hand_thumb_1"/>
     <child link="l_hand_thumb_2"/>
     <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
@@ -956,8 +956,8 @@
   </joint>
   <link name="l_hand_thumb_2">
     <inertial>
-      <mass value="0.00669603218404702"/>
-      <origin xyz="0.014887264468035857 0.0011329726380328031 6.266005936719776e-5" rpy="0 -0 0"/>
+      <mass value="0.00744305878263309"/>
+      <origin xyz="1.1691393252494242e-5 3.0451625727886955e-4 -0.014894613059881514" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -971,8 +971,8 @@
     </visual>
   </link>
   <joint name="l_thumb_dist" type="revolute">
-    <origin xyz="0.03500000000368915 -0.001499999993667872 1.0741685319004546e-12" rpy="1.8750459518379624e-11 -1.8465340367868066e-11 -1.4806766923669552e-12"/>
-    <axis xyz="-1.846719305254041e-11 -1.8750709318560158e-11 -0.9999999999999996"/>
+    <origin xyz="0 -0.0037106254246525028 -0.03483505790088365" rpy="-0.06328877097738353 7.771561172376096e-16 3.094746681142625e-15"/>
+    <axis xyz="-0.9999999999999996 4.264304541333322e-12 1.800053762580437e-10"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
     <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
@@ -980,8 +980,8 @@
   </joint>
   <link name="l_hand_thumb_3">
     <inertial>
-      <mass value="0.006831595"/>
-      <origin xyz="0.016086252532748233 0.0026526887310780456 4.701425890352162e-5" rpy="0 -0 0"/>
+      <mass value="0.00839103052424309"/>
+      <origin xyz="-2.8909987974501394e-5 0.0027777675147018788 -0.016956792352400222" rpy="0 -0 0"/>
       <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
     </inertial>
     <visual>
@@ -1956,73 +1956,73 @@
   </joint>
   <link name="l_hand_thumb_skin_0"/>
   <joint name="l_hand_thumb_skin_0_fixed_joint" type="fixed">
-    <origin xyz="0.026405457778888957 -0.002433918058236617 5.551115123125783e-17" rpy="-1.5707963267948963 1.1102230246251565e-16 2.793301925464017"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_0"/>
   </joint>
   <link name="l_hand_thumb_skin_1"/>
   <joint name="l_hand_thumb_skin_1_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286963 -0.0031311476143920103 0.0033000000000000806" rpy="-1.5707963267948961 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_1"/>
   </joint>
   <link name="l_hand_thumb_skin_10"/>
   <joint name="l_hand_thumb_skin_10_fixed_joint" type="fixed">
-    <origin xyz="0.032766684597958076 -0.004081940988398508 -0.0032999999999999696" rpy="-1.5707963267948961 -5.551115123125783e-17 -3.075707298047779"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_10"/>
   </joint>
   <link name="l_hand_thumb_skin_11"/>
   <joint name="l_hand_thumb_skin_11_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286963 -0.0031311476143919825 -0.0032999999999999696" rpy="-1.5707963267948961 -0 2.790891229256258"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_11"/>
   </joint>
   <link name="l_hand_thumb_skin_2"/>
   <joint name="l_hand_thumb_skin_2_fixed_joint" type="fixed">
-    <origin xyz="0.030192049408458998 -0.0037582416535800467 0" rpy="-1.5707963267948961 -0 2.8764776596464054"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_2"/>
   </joint>
   <link name="l_hand_thumb_skin_3"/>
   <joint name="l_hand_thumb_skin_3_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795809 -0.004081940988398536 0.003300000000000025" rpy="-1.5707963267948961 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_3"/>
   </joint>
   <link name="l_hand_thumb_skin_4"/>
   <joint name="l_hand_thumb_skin_4_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000006 -0.0011923206886612636 0.005929525942276415" rpy="-3.1415926535897927 3.3306690738754696e-16 -3.1415926535883125"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_4"/>
   </joint>
   <link name="l_hand_thumb_skin_5"/>
   <joint name="l_hand_thumb_skin_5_fixed_joint" type="fixed">
-    <origin xyz="0.034821366118633415 -0.0034840921633512156 8.326672684688674e-17" rpy="-1.5707963267948963 -2.220446049250313e-16 -2.6595476565932565"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_5"/>
   </joint>
   <link name="l_hand_thumb_skin_6"/>
   <joint name="l_hand_thumb_skin_6_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404151985 -0.0018288017188734795 0.003300000000000053" rpy="1.5707963267948968 -2.7755575615628914e-16 -2.399827721490722"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_6"/>
   </joint>
   <link name="l_hand_thumb_skin_7"/>
   <joint name="l_hand_thumb_skin_7_fixed_joint" type="fixed">
-    <origin xyz="0.03825964091188104 -2.9018466437893964e-4 0" rpy="-1.570554204626614 -3.384708831138008e-4 -2.1917443860728234"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_7"/>
   </joint>
   <link name="l_hand_thumb_skin_8"/>
   <joint name="l_hand_thumb_skin_8_fixed_joint" type="fixed">
-    <origin xyz="0.03676963440415201 -0.001828801718873424 -0.003299999999999942" rpy="-2.3592109405351698 0.6231239758157896 -2.6159603834403367"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_8"/>
   </joint>
   <link name="l_hand_thumb_skin_9"/>
   <joint name="l_hand_thumb_skin_9_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000007 -0.0011923206886612636 -0.005929525942276359" rpy="-2.7645689049691455 0.25312544974719003 -3.042753660865159"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="l_hand_thumb_3"/>
     <child link="l_hand_thumb_skin_9"/>
   </joint>
@@ -2322,73 +2322,73 @@
   </joint>
   <link name="r_hand_thumb_skin_0"/>
   <joint name="r_hand_thumb_skin_0_fixed_joint" type="fixed">
-    <origin xyz="0.02640545777888894 -0.002433918058236617 0" rpy="-1.5707963267948961 2.220446049250313e-16 2.793301925464017"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_0"/>
   </joint>
   <link name="r_hand_thumb_skin_1"/>
   <joint name="r_hand_thumb_skin_1_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286932 -0.0031311476143919825 0.003300000000000025" rpy="-1.570796326794896 -7.216449660063518e-16 -2.1816615649914324"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_1"/>
   </joint>
   <link name="r_hand_thumb_skin_10"/>
   <joint name="r_hand_thumb_skin_10_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795807 -0.00408194098839848 -0.003300000000000025" rpy="-1.5707963267948961 5.551115123125783e-17 -3.075707298047779"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_10"/>
   </joint>
   <link name="r_hand_thumb_skin_11"/>
   <joint name="r_hand_thumb_skin_11_fixed_joint" type="fixed">
-    <origin xyz="0.028280418005286953 -0.0031311476143919825 -0.0032999999999999974" rpy="-1.5707963267948961 1.6653345369377348e-16 2.790891229256258"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_11"/>
   </joint>
   <link name="r_hand_thumb_skin_2"/>
   <joint name="r_hand_thumb_skin_2_fixed_joint" type="fixed">
-    <origin xyz="0.030192049408458994 -0.003758241653580019 0" rpy="-1.5707963267948961 2.7755575615628914e-16 2.8764776596464054"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_2"/>
   </joint>
   <link name="r_hand_thumb_skin_3"/>
   <joint name="r_hand_thumb_skin_3_fixed_joint" type="fixed">
-    <origin xyz="0.03276668459795803 -0.004081940988398508 0.0032999999999999974" rpy="-1.570796326794896 -8.326672684688674e-16 -2.1816615649914324"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_3"/>
   </joint>
   <link name="r_hand_thumb_skin_4"/>
   <joint name="r_hand_thumb_skin_4_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000006 -0.0011923206886612636 0.005929525942276415" rpy="-3.1415926535897927 2.220446049250313e-16 -3.1415926535883125"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_4"/>
   </joint>
   <link name="r_hand_thumb_skin_5"/>
   <joint name="r_hand_thumb_skin_5_fixed_joint" type="fixed">
-    <origin xyz="0.03482136611863341 -0.0034840921633512434 0" rpy="-1.5707963267948961 -1.6653345369377348e-16 -2.659547656593256"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_5"/>
   </joint>
   <link name="r_hand_thumb_skin_6"/>
   <joint name="r_hand_thumb_skin_6_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404151964 -0.0018288017188734518 0.0032999999999999974" rpy="1.570796326794897 -2.220446049250313e-16 -2.399827721490722"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_6"/>
   </joint>
   <link name="r_hand_thumb_skin_7"/>
   <joint name="r_hand_thumb_skin_7_fixed_joint" type="fixed">
-    <origin xyz="0.03825964091188099 -2.901846643789119e-4 0" rpy="-1.5705542046266139 -3.3847088311368976e-4 -2.191744386072823"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_7"/>
   </joint>
   <link name="r_hand_thumb_skin_8"/>
   <joint name="r_hand_thumb_skin_8_fixed_joint" type="fixed">
-    <origin xyz="0.036769634404152 -0.0018288017188734518 -0.003300000000000025" rpy="-2.3592109405351698 0.6231239758157898 -2.6159603834403367"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_8"/>
   </joint>
   <link name="r_hand_thumb_skin_9"/>
   <joint name="r_hand_thumb_skin_9_fixed_joint" type="fixed">
-    <origin xyz="0.03300000000000001 -0.0011923206886612636 -0.005929525942276359" rpy="-2.7645689049691455 0.25312544974719 -3.042753660865159"/>
+    <origin xyz="0 0 0" rpy="0 -0 0"/>
     <parent link="r_hand_thumb_3"/>
     <child link="r_hand_thumb_skin_9"/>
   </joint>
