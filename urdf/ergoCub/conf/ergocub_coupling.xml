@@ -43,7 +43,7 @@
     <xi:include href="wrappers/inertials/alljoints-inertials_remapper.xml" />
 
     <!--  HEAD SENSORS -->
-    <!-- <xi:include href="sensors/rgbd_camera_wrapper.xml" /> -->
+    <xi:include href="sensors/rgbd_camera_wrapper.xml" />
     <xi:include href="sensors/lidar_wrapper.xml" />
 
     </devices>
