@@ -44,8 +44,8 @@ class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
                             public yarp::dev::IJacobianCoupling,
                             public CouplingXCubHandMk5_ParamsParser {
 public:
-    CouplingXCubHandMk5() = default;
-    virtual ~CouplingXCubHandMk5() override = default;
+
+    // yarp::dev::IJointCoupling
     bool convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) override;
     bool convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) override;
     bool convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) override;
@@ -54,6 +54,8 @@ public:
     bool convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) override;
     bool convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) override;
     bool convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) override;
+
+    // yarp::dev::IJacobianCoupling
     bool evaluateJacobianFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, yarp::sig::Matrix& actAxesToPhysJointsVelJacobian) override;
     bool evaluateJacobianFromPhysicalJointsToActuatedAxeseVel(const yarp::sig::Vector& physJointsPos, yarp::sig::Matrix& physJointsToActAxesVelJacobian) override;
 
