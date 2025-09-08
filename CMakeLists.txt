@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.12)
 
 project(ergocub-software LANGUAGES C CXX
-                         VERSION 0.7.9)
+                         VERSION 0.7.10)
 
 find_package(YARP 3.12.0 REQUIRED)
 
