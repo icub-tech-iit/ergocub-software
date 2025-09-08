@@ -899,7 +899,7 @@ sensors:
   - frameName: SCSYS_HEAD_S2_LASER
     linkName: head
     sensorName: lasersensor_head
-    sensorType: "ray"
+    sensorType: "gpu_lidar"
     updateRate: "100"
     sensorBlobs:
     - |
