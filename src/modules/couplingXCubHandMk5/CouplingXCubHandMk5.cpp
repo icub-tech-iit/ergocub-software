@@ -10,6 +10,7 @@
 #include <yarp/os/LogStream.h>
 #include <cmath>
 #include <array>
+#include <yarp/math/Math.h>
 
 
 YARP_LOG_COMPONENT(COUPLINGXCUBHANDMK5, "yarp.device.couplingXCubHandMk5")
@@ -193,10 +194,12 @@ bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesVel(const yarp:
 
 
 bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) {
+    yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesAcc: not implemented yet.";
     return false;
 }
 
 bool CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) {
+    yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesTrq: not implemented yet.";
     return false;
 }
 
@@ -262,7 +265,6 @@ bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp:
      * /dot{distal_joint} = \partial{distal_joint}{proximal_joint} \dot{proximal_joint}.
      */
 
-
     /* thumb_add <-- thumb_add */
     physJointsVel[0] = actAxesVel[0];
     /* thumb_prox <-- thumb_oc */
@@ -292,8 +294,65 @@ bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp:
 }
 
 bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) {
+    yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsAcc: not implemented yet.";
     return false;
 }
 bool CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) {
+    yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsTrq: not implemented yet.";
+    return false;
+}
+
+bool CouplingXCubHandMk5::evaluateJacobianFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, yarp::sig::Matrix& actAxesVelToPhysJointsVelJacobian) {
+    size_t nrOfPhysicalJoints;
+    size_t nrOfActuatedAxes;
+    auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
+    ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
+    if (!ok || actAxesPos.size() != nrOfActuatedAxes || actAxesVelToPhysJointsVelJacobian.rows() != nrOfPhysicalJoints || actAxesVelToPhysJointsVelJacobian.cols() != nrOfActuatedAxes) {
+        yCError(COUPLINGXCUBHANDMK5) << "evaluateJacobianFromActuatedAxesToPhysicalJointsVel: input vector or output matrix have wrong size";
+        return false;
+    }
+
+    /**
+     * Extract the current position of proximal joints from pos_feedback.
+     */
+    double lastThumbProx  = actAxesPos[1];
+    double lastIndexProx  = actAxesPos[3];
+    double lastMiddleProx = actAxesPos[4];
+    double lastRingProx   = actAxesPos[5];
+    double lastPinkyProx  = actAxesPos[5];
+
+    /*                      0  1  2  3  4  5                       */
+    /*  0|thumb_add   |   0|1  0  0  0  0  0|                      */
+    /*  1|thumb_prox  |   1|0  1  0  0  0  0|                      */
+    /*  2|thumb_dist  |   2|0 cl  0  0  0  0|    0|thumb_add    |  */
+    /*  3|index_add   |   3|0  0  1  0  0  0|    1|thumb_oc     |  */
+    /*  4|index_prox  |   4|0  0  0  1  0  0|    2|index_add    |  */
+    /*  5|index_dist  | = 5|0  0  0 cl  0  0| *  3|index_oc     |  */
+    /*  6|middle_prox |   6|0  0  0  0  1  0|    4|middle_oc    |  */
+    /*  7|middle_dist |   7|0  0  0  0 cl  0|    5|ring_pinky_oc|  */
+    /*  8|ring_prox   |   8|0  0  0  0  0  1|                      */
+    /*  9|ring_dist   |   9|0  0  0  0  0 cl|                      */
+    /* 10|pinky_prox  |  10|0  0  0  0  0  1|                      */
+    /* 11|pinky_dist  |  11|0  0  0  0  0 cl|                      */
+
+    actAxesVelToPhysJointsVelJacobian.zero();
+    actAxesVelToPhysJointsVelJacobian( 0,0) = 1;
+    actAxesVelToPhysJointsVelJacobian( 1,1) = 1;
+    actAxesVelToPhysJointsVelJacobian( 2,1) = evaluateCoupledJointJacobian(lastThumbProx, "thumb");
+    actAxesVelToPhysJointsVelJacobian( 3,2) = 1;
+    actAxesVelToPhysJointsVelJacobian( 4,3) = 1;
+    actAxesVelToPhysJointsVelJacobian( 5,3) = evaluateCoupledJointJacobian(lastIndexProx, "index");
+    actAxesVelToPhysJointsVelJacobian( 6,4) = 1;
+    actAxesVelToPhysJointsVelJacobian( 7,4) = evaluateCoupledJointJacobian(lastMiddleProx, "middle");
+    actAxesVelToPhysJointsVelJacobian( 8,5) = 1;
+    actAxesVelToPhysJointsVelJacobian( 9,5) = evaluateCoupledJointJacobian(lastRingProx, "ring");
+    actAxesVelToPhysJointsVelJacobian(10,5) = 1;
+    actAxesVelToPhysJointsVelJacobian(11,5) = evaluateCoupledJointJacobian(lastPinkyProx, "pinky");
+
+    return true;
+}
+
+bool CouplingXCubHandMk5::evaluateJacobianFromPhysicalJointsToActuatedAxeseVel(const yarp::sig::Vector& physJointsPos, yarp::sig::Matrix& physJointsToActAxesVelJacobian) {
+    yCDebugOnce(COUPLINGXCUBHANDMK5) << "evaluateJacobianFromPhysicalJointsToActuatedAxeseVel: not implemented yet.";
     return false;
 }
