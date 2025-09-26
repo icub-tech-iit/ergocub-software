@@ -59,18 +59,10 @@ yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
 
 For using the models stored in this repository in `gz-sim`, it is needed a world file that imports these plugins:
 ```xml
-    <gazebo>
-      <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
-    </gazebo>
-    <gazebo>
-      <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
-    </gazebo>
-    <gazebo>
-      <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
-    </gazebo>
-    <gazebo>
-      <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
-    </gazebo>
+<plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"/>
+<plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/>
+<plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+<plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
 ```
 
 ## URDF generation
