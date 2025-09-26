@@ -1723,22 +1723,3 @@ XMLBlobs:
                 <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
               </plugin>
             </gazebo>
-
-    - |
-            <gazebo>
-              <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"></plugin>
-            </gazebo>
-
-    - |
-            <gazebo>
-              <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
-            </gazebo>
-    - |
-            <gazebo>
-            <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
-            </gazebo>
-
-    - |
-            <gazebo>
-              <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"/>
-            </gazebo>
