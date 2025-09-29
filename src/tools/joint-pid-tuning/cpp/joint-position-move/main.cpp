@@ -84,8 +84,8 @@ int main(int argc, char * argv[])
 
     auto t0 = Time::now();
     // Homing
-    iPos->setRefSpeed(joint_id, 40.);
-    iPos->setRefAcceleration(joint_id, std::numeric_limits<double>::max());
+    iPos->setTrajSpeed(joint_id, 40.);
+    iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
     iPos->positionMove(joint_id, 0.);
     auto done{ false };
     auto cycle_done{ false };
@@ -108,7 +108,7 @@ int main(int argc, char * argv[])
 
             DataExperiment data;
             iEnc->getEncoder(joint_id, &data.enc);
-            iPos->setRefSpeed(joint_id, ref_speed);
+            iPos->setTrajSpeed(joint_id, ref_speed);
             iPos->positionMove(joint_id, set_point_to_apply);
 
             //auto t0 = Time::now();
@@ -119,8 +119,8 @@ int main(int argc, char * argv[])
 
             while (!cycle_done) {
                 data.t = Time::now() - t0;
-                iPid->getPidReference(VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_ref);
-                iPid->getPidOutput(VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_out);
+                iPid->getPidReference(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_ref);
+                iPid->getPidOutput(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION, joint_id, &data.pid_out);
                 iEnc->getEncoder(joint_id, &data.enc);
 
                 if (Time::now() - t1 >= 0.01) {
@@ -159,8 +159,8 @@ int main(int argc, char * argv[])
     }
 
     // Homing
-    iPos->setRefSpeed(joint_id, 40.);
-    iPos->setRefAcceleration(joint_id, std::numeric_limits<double>::max());
+    iPos->setTrajSpeed(joint_id, 40.);
+    iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
     iPos->positionMove(joint_id, 0.);
     while (!done) {
         iPos->checkMotionDone(joint_id, &done);
