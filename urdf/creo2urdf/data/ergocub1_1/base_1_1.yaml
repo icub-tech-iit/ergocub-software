@@ -912,14 +912,14 @@ sensors:
         <ray>
           <scan>
             <horizontal>
-              <samples>360</samples>
-              <resolution>2</resolution>
+              <samples>720</samples>
+              <resolution>0.5</resolution>
               <min_angle>0</min_angle>
               <max_angle>6.28</max_angle>
             </horizontal>
           </scan>
           <range>
-            <min>0.04</min>
+            <min>0.2</min>
             <max>5</max>
             <resolution>0.01</resolution>
           </range>
