@@ -1,0 +1,94 @@
+\doxysection{Coupling\+XCub\+Hand\+Mk5.\+h}
+\label{CouplingXCubHandMk5_8h_source}\index{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/CouplingXCubHandMk5.h@{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/CouplingXCubHandMk5.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2006-\/2023\ Istituto\ Italiano\ di\ Tecnologia\ (IIT)}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ This\ software\ may\ be\ modified\ and\ distributed\ under\ the\ terms\ of\ the}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ BSD-\/3-\/Clause\ license.\ See\ the\ accompanying\ LICENSE\ file\ for\ details.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ COUPLINGXCUBHANDMK5\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ COUPLINGXCUBHANDMK5\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <yarp/os/LogComponent.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <yarp/dev/DeviceDriver.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <yarp/dev/ImplementJointCoupling.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <yarp/dev/IJacobianCoupling.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}CouplingXCubHandMk5\_ParamsParser.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ YARP\_DECLARE\_LOG\_COMPONENT(COUPLINGXCUBHANDMK5)}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00028\ struct\ FingerParameters}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{double}\ L0x;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{double}\ L0y;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{double}\ q2bias;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{double}\ q1off;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ k;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ d;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ l;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ b;}
+\DoxyCodeLine{00038\ \};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }CouplingXCubHandMk5\ :\ \textcolor{keyword}{public}\ yarp::dev::DeviceDriver,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ yarp::dev::ImplementJointCoupling,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ yarp::dev::IJacobianCoupling,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ CouplingXCubHandMk5\_ParamsParser\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ yarp::dev::IJointCoupling}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromPhysicalJointsToActuatedAxesPos(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsPos,\ yarp::sig::Vector\&\ actAxesPos)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromPhysicalJointsToActuatedAxesVel(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsVel,\ yarp::sig::Vector\&\ actAxesVel)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromPhysicalJointsToActuatedAxesAcc(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsVel,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsAcc,\ yarp::sig::Vector\&\ actAxesAcc)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromPhysicalJointsToActuatedAxesTrq(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsTrq,\ yarp::sig::Vector\&\ actAxesTrq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromActuatedAxesToPhysicalJointsPos(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesPos,\ yarp::sig::Vector\&\ physJointsPos)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromActuatedAxesToPhysicalJointsVel(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesVel,\ yarp::sig::Vector\&\ physJointsVel)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromActuatedAxesToPhysicalJointsAcc(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesVel,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesAcc,\ yarp::sig::Vector\&\ physJointsAcc)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ convertFromActuatedAxesToPhysicalJointsTrq(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesPos,\ \textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesTrq,\ yarp::sig::Vector\&\ physJointsTrq)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\ yarp::dev::IJacobianCoupling}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ evaluateJacobianFromActuatedAxesToPhysicalJointsVel(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ actAxesPos,\ yarp::sig::Matrix\&\ actAxesToPhysJointsVelJacobian)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ evaluateJacobianFromPhysicalJointsToActuatedAxeseVel(\textcolor{keyword}{const}\ yarp::sig::Vector\&\ physJointsPos,\ yarp::sig::Matrix\&\ physJointsToActAxesVelJacobian)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ //DeviceDriver}}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ open(yarp::os::Searchable\&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::unordered\_map<std::string,\ FingerParameters>\ mFingerParameters;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ *\ This\ method\ implements\ the\ law\ q2\ =\ q2(q1)\ from}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ *\ https://icub-\/tech-\/iit.github.io/documentation/hands/hands\_mk5\_coupling,}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ *\ i.e.,\ the\ absolute\ angle\ of\ the\ distal\ joint\ q2\ with\ respect\ to\ the\ palm.}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ \ *\ The\ inputs\ q1\ and\ the\ return\ value\ of\ the\ function\ are\ in\ degrees.}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{double}\ evaluateCoupledJoint(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ q1,\ \textcolor{keyword}{const}\ std::string\&\ finger\_name);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ *\ This\ method\ implements\ the\ law\ \(\backslash\)frac\{\(\backslash\)partial\{q2\}\}\{\(\backslash\)partial\{q1\}\}\ from}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ *\ https://icub-\/tech-\/iit.github.io/documentation/hands/hands\_mk5\_coupling,}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ *\ i.e.,\ the\ jacobian\ of\ the\ absolute\ angle\ of\ the\ distal\ joint\ q2\ measured\ from\ the\ palm,}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ \ \ *\ with\ respect\ to\ the\ proximal\ joint\ q1.}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ \ \ \ \ *\ The\ input\ q1\ is\ in\ degrees.}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{double}\ evaluateCoupledJointJacobian(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ q1,\ \textcolor{keyword}{const}\ std::string\&\ finger\_name);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ populateFingerParameters();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ populateCouplingParameters();}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COUPLINGXCUBHANDMK5\_H}}
+
+\end{DoxyCode}
