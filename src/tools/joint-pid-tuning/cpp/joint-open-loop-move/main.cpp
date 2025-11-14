@@ -70,7 +70,7 @@ public:
     data.t = Time::now() - t0;
     data.pwm_set = pwm_;
     iEnc->getEncoder(j, &data.enc);
-    iPid->getPidOutput(VOCAB_PIDTYPE_POSITION, j, &data.pid_out);
+    iPid->getPidOutput(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION, j, &data.pid_out);
     iPwm->getDutyCycle(j, &data.pwm_read);
 
     data_vec.push_back(std::move(data));
@@ -112,8 +112,8 @@ public:
 bool resetPosition(uint8_t j) {
   iPwm->setRefDutyCycle(j, 0.0);
   iCm->setControlMode(j, VOCAB_CM_POSITION);
-  iPos->setRefSpeed(j, 25.0);
-  iPos->setRefAcceleration(j, std::numeric_limits<double>::max());
+  iPos->setTrajSpeed(j, 25.0);
+  iPos->setTrajAcceleration(j, std::numeric_limits<double>::max());
   iPos->positionMove(j, 0.);
   bool done = false;
 
@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
       std::make_unique<PWMThread>(Ts, rf, joint_id, thr_min, thr_max);
 
   yarp::dev::Pid pidInfo;
-  auto ok = iPid->getPid(VOCAB_PIDTYPE_POSITION,joint_id,&pidInfo);
+  auto ok = iPid->getPid(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION,joint_id,&pidInfo);
   if (!ok) {
     yError("Failed to get PID info for joint %d", joint_id);
     m_driver.close();
