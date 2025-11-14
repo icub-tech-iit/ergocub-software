@@ -247,7 +247,7 @@ yarp::dev::ReturnValue CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJoi
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || actAxesPos.size() != nrOfActuatedAxes || physJointsVel.size() != nrOfPhysicalJoints || actAxesVel.size() != nrOfActuatedAxes) {
-        yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
+        yCError(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsVel: input or output vectors have wrong size";
         return yarp::dev::ReturnValue::return_code::return_value_error_generic;
     }
 
