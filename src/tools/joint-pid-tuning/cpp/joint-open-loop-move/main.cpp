@@ -112,8 +112,13 @@ public:
 bool resetPosition(uint8_t j) {
   iPwm->setRefDutyCycle(j, 0.0);
   iCm->setControlMode(j, VOCAB_CM_POSITION);
+  #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
   iPos->setTrajSpeed(j, 25.0);
   iPos->setTrajAcceleration(j, std::numeric_limits<double>::max());
+  #else
+  iPos->setRefSpeed(j, 25.0);
+  iPos->setRefAcceleration(j, std::numeric_limits<double>::max());
+  #endif
   iPos->positionMove(j, 0.);
   bool done = false;
 

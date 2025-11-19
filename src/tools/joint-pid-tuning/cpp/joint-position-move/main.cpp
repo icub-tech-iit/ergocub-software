@@ -84,8 +84,13 @@ int main(int argc, char * argv[])
 
     auto t0 = Time::now();
     // Homing
+    #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
     iPos->setTrajSpeed(joint_id, 40.);
     iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
+    #else
+    iPos->setRefSpeed(joint_id, 40.);
+    iPos->setRefAcceleration(joint_id, std::numeric_limits<double>::max());
+    #endif
     iPos->positionMove(joint_id, 0.);
     auto done{ false };
     auto cycle_done{ false };
@@ -108,7 +113,11 @@ int main(int argc, char * argv[])
 
             DataExperiment data;
             iEnc->getEncoder(joint_id, &data.enc);
+            #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
             iPos->setTrajSpeed(joint_id, ref_speed);
+            #else
+            iPos->setRefSpeed(joint_id, ref_speed);
+            #endif
             iPos->positionMove(joint_id, set_point_to_apply);
 
             //auto t0 = Time::now();
@@ -159,8 +168,13 @@ int main(int argc, char * argv[])
     }
 
     // Homing
+    #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
     iPos->setTrajSpeed(joint_id, 40.);
     iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
+    #else
+    iPos->setRefSpeed(joint_id, 40.);
+    iPos->setRefAcceleration(joint_id, std::numeric_limits<double>::max());
+    #endif
     iPos->positionMove(joint_id, 0.);
     while (!done) {
         iPos->checkMotionDone(joint_id, &done);
