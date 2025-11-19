@@ -21,6 +21,7 @@
 #include <yarp/dev/IPidControl.h>
 #include <yarp/dev/IControlMode.h>
 #include <yarp/dev/IEncoders.h>
+#include <yarp/conf/version.h>
 
 using namespace yarp::os;
 using namespace yarp::dev;
@@ -84,7 +85,7 @@ int main(int argc, char * argv[])
 
     auto t0 = Time::now();
     // Homing
-    #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
+    #if YARP_VERSION_MAJOR >= 4
     iPos->setTrajSpeed(joint_id, 40.);
     iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
     #else
@@ -113,7 +114,7 @@ int main(int argc, char * argv[])
 
             DataExperiment data;
             iEnc->getEncoder(joint_id, &data.enc);
-            #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
+            #if YARP_VERSION_MAJOR >= 4
             iPos->setTrajSpeed(joint_id, ref_speed);
             #else
             iPos->setRefSpeed(joint_id, ref_speed);
@@ -168,7 +169,7 @@ int main(int argc, char * argv[])
     }
 
     // Homing
-    #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
+    #if YARP_VERSION_MAJOR >= 4
     iPos->setTrajSpeed(joint_id, 40.);
     iPos->setTrajAcceleration(joint_id, std::numeric_limits<double>::max());
     #else

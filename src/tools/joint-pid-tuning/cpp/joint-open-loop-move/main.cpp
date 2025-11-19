@@ -23,6 +23,7 @@
 #include <yarp/os/PeriodicThread.h>
 #include <yarp/os/ResourceFinder.h>
 #include <yarp/os/Time.h>
+#include <yarp/conf/version.h>
 
 using namespace yarp::os;
 using namespace yarp::dev;
@@ -112,7 +113,8 @@ public:
 bool resetPosition(uint8_t j) {
   iPwm->setRefDutyCycle(j, 0.0);
   iCm->setControlMode(j, VOCAB_CM_POSITION);
-  #ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
+  //#ifdef YARP_DEV_RETURN_VALUE_IS_GE_40
+  #if YARP_VERSION_MAJOR >= 4
   iPos->setTrajSpeed(j, 25.0);
   iPos->setTrajAcceleration(j, std::numeric_limits<double>::max());
   #else
