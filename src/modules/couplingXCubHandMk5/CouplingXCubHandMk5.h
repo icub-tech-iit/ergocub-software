@@ -47,14 +47,14 @@ class CouplingXCubHandMk5 : public yarp::dev::DeviceDriver,
 public:
 
     // yarp::dev::IJointCoupling
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) override;
-    YARP_DEV_RETURN_VALUE_TYPE_CH312 convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) override;
+    YARP_DEV_RETURN_VALUE_TYPE_CH40 convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) override;
 
     // yarp::dev::IJacobianCoupling
     bool evaluateJacobianFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, yarp::sig::Matrix& actAxesToPhysJointsVelJacobian) override;

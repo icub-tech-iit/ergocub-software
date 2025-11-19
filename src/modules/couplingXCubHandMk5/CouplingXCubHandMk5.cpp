@@ -135,14 +135,14 @@ bool CouplingXCubHandMk5::open(yarp::os::Searchable& config) {
     return ok;
 }
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesPos(const yarp::sig::Vector& physJointsPos, yarp::sig::Vector& actAxesPos) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsPos.size() != nrOfPhysicalJoints || actAxesPos.size() != nrOfActuatedAxes) {
         yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesPos: input or output vectors have wrong size";
-        return YARP_DEV_RETURN_VALUE_ERROR_METHOD_FAILED_CH312;
+        return YARP_DEV_RETURN_VALUE_ERROR_METHOD_FAILED_CH40;
     }
 
     /* thumb_add <-- thumb_add */
@@ -161,17 +161,17 @@ YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsT
      * is controlled using the encoder on the pinkie_prox as feedback
      */
     actAxesPos[5] = physJointsPos[10];
-    return YARP_DEV_RETURN_VALUE_OK_CH312;
+    return YARP_DEV_RETURN_VALUE_OK_CH40;
 }
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesVel(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, yarp::sig::Vector& actAxesVel) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsVel.size() != nrOfPhysicalJoints || actAxesVel.size() != nrOfActuatedAxes) {
         yCError(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesVel: input or output vectors have wrong size";
-        return YARP_DEV_RETURN_VALUE_ERROR_METHOD_FAILED_CH312;
+        return YARP_DEV_RETURN_VALUE_ERROR_METHOD_FAILED_CH40;
     }
     /* thumb_add <-- thumb_add */
     actAxesVel[0] = physJointsVel[0];
@@ -189,29 +189,29 @@ YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsT
      * is controlled using the encoder on the pinkie_prox as feedback
      */
     actAxesVel[5] = physJointsVel[10];
-    return YARP_DEV_RETURN_VALUE_OK_CH312;
+    return YARP_DEV_RETURN_VALUE_OK_CH40;
 }
 
 
- YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc){
+ YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesAcc(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsVel, const yarp::sig::Vector& physJointsAcc, yarp::sig::Vector& actAxesAcc){
     yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesAcc: not implemented yet.";
-    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH312;
+    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH40;
 }
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromPhysicalJointsToActuatedAxesTrq(const yarp::sig::Vector& physJointsPos, const yarp::sig::Vector& physJointsTrq, yarp::sig::Vector& actAxesTrq) {
     yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromPhysicalJointsToActuatedAxesTrq: not implemented yet.";
-    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH312;
+    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH40;
 }
 
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsPos(const yarp::sig::Vector& actAxesPos, yarp::sig::Vector& physJointsPos) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || physJointsPos.size() != nrOfPhysicalJoints || actAxesPos.size() != nrOfActuatedAxes) {
         yCError(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsPos: input or output vectors have wrong size";
-        return YARP_DEV_RETURN_VALUE_ERROR_GENERIC_CH312;
+        return YARP_DEV_RETURN_VALUE_ERROR_GENERIC_CH40;
     }
     physJointsPos[0] = actAxesPos[0];
     /* thumb_prox <-- thumb_oc */
@@ -237,18 +237,18 @@ YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToP
     /* pinky_dist <-- coupling_law(pinky_prox) */
     physJointsPos[11] = evaluateCoupledJoint(physJointsPos[10], "pinky");
 
-    return YARP_DEV_RETURN_VALUE_OK_CH312;
+    return YARP_DEV_RETURN_VALUE_OK_CH40;
 }
 
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, yarp::sig::Vector& physJointsVel) {
     size_t nrOfPhysicalJoints;
     size_t nrOfActuatedAxes;
     auto ok = getNrOfPhysicalJoints(nrOfPhysicalJoints);
     ok = ok && getNrOfActuatedAxes(nrOfActuatedAxes);
     if (!ok || actAxesPos.size() != nrOfActuatedAxes || physJointsVel.size() != nrOfPhysicalJoints || actAxesVel.size() != nrOfActuatedAxes) {
         yCError(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsVel: input or output vectors have wrong size";
-        return YARP_DEV_RETURN_VALUE_ERROR_GENERIC_CH312;
+        return YARP_DEV_RETURN_VALUE_ERROR_GENERIC_CH40;
     }
 
     /**
@@ -290,16 +290,16 @@ YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToP
     /* pinky_dist <-- coupling_law(pinky_prox) */
     physJointsVel[11] = evaluateCoupledJointJacobian(lastPinkyProx, "pinky") * physJointsVel[10];
 
-    return YARP_DEV_RETURN_VALUE_OK_CH312;
+    return YARP_DEV_RETURN_VALUE_OK_CH40;
 }
 
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsAcc(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesVel, const yarp::sig::Vector& actAxesAcc, yarp::sig::Vector& physJointsAcc) {
     yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsAcc: not implemented yet.";
-    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH312;
+    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH40;
 }
-YARP_DEV_RETURN_VALUE_TYPE_CH312 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) {
+YARP_DEV_RETURN_VALUE_TYPE_CH40 CouplingXCubHandMk5::convertFromActuatedAxesToPhysicalJointsTrq(const yarp::sig::Vector& actAxesPos, const yarp::sig::Vector& actAxesTrq, yarp::sig::Vector& physJointsTrq) {
     yCDebugOnce(COUPLINGXCUBHANDMK5) << "convertFromActuatedAxesToPhysicalJointsTrq: not implemented yet.";
-    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH312;
+    return YARP_DEV_RETURN_VALUE_ERROR_NOT_IMPLEMENTED_BY_DEVICE_CH40;
 }
 
 bool CouplingXCubHandMk5::evaluateJacobianFromActuatedAxesToPhysicalJointsVel(const yarp::sig::Vector& actAxesPos, yarp::sig::Matrix& actAxesVelToPhysJointsVelJacobian) {
