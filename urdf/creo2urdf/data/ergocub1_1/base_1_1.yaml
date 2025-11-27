@@ -1687,15 +1687,3 @@ XMLBlobs:
             <gazebo reference="r_wrist_yaw">
               <implicitSpringDamper>1</implicitSpringDamper>
             </gazebo>
-    - |
-            <gazebo>
-              <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-              </plugin>
-            </gazebo>
-    - |
-            <gazebo>
-              <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-              </plugin>
-            </gazebo>

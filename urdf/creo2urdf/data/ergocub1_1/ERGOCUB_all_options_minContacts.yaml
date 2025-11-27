@@ -25,3 +25,15 @@ XMLBlobs:
             <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
             </plugin>
             </gazebo>
+    - |
+            <gazebo>
+              <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
