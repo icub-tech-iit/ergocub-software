@@ -3395,6 +3395,16 @@
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
+  <gazebo>
+    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+  </gazebo>
   <link name="waist_imu_0"/>
   <joint name="waist_imu_0_fixed_joint" type="fixed">
     <origin xyz="0.0606 -0.00639428 0.01745" rpy="1.5708 -0.000105208 -1.5708"/>
@@ -3855,16 +3865,6 @@
   </gazebo>
   <gazebo reference="r_wrist_yaw">
     <implicitSpringDamper>1</implicitSpringDamper>
-  </gazebo>
-  <gazebo>
-    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
   </gazebo>
   <gazebo>
     <pose>0.000000 0.000000 0.800000 0.000000 0.000000 0.000000</pose>

@@ -3867,16 +3867,6 @@
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
   <gazebo>
-    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
-      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
     </plugin>
@@ -3894,6 +3884,16 @@
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+      <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
