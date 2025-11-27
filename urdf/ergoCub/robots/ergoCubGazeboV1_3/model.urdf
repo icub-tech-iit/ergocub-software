@@ -3405,6 +3405,26 @@
     <parent link="r_hip_3"/>
     <origin rpy="3.14159 2.98881e-16 -2.61799 " xyz="1.21431e-17 2.77556e-17 5.55112e-17"/>
   </sensor>
+  <gazebo>
+    <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+    </plugin>
+  </gazebo>
   <link name="waist_imu_0"/>
   <joint name="waist_imu_0_fixed_joint" type="fixed">
     <origin xyz="0.0606 -0.00639428 0.01745" rpy="1.5708 -0.000105208 -1.5708"/>
@@ -3874,26 +3894,6 @@
   <gazebo>
     <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
       <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
-    </plugin>
-  </gazebo>
-  <gazebo>
-    <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
