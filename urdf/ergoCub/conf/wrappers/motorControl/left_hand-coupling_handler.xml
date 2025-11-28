@@ -4,7 +4,8 @@
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="left_hand-coupling_handler" type="controlBoardCouplingHandler">
     <param name="coupling_device"> couplingXCubHandMk5 </param>
     <param name="jointNames"> (l_thumb_add l_thumb_prox l_thumb_dist l_index_add l_index_prox l_index_dist l_middle_prox l_middle_dist l_ring_prox l_ring_dist l_pinkie_prox l_pinkie_dist) </param>
-    <group name="LIMITS">
+    <!-- Hand mk5.1
+     <group name="LIMITS">
         <param name="jntVelMax"> (100.0   100.0 100.0 100.0 100.0 100.0  100.0 100.0  100.0 100.0   100.0 100.0) </param>
         <param name="jntPosMax"> (100.0   90.0  101.4 15.0  90.0  103.1  90.0  103.1  90.0  103.1   90.0  98.7 ) </param>
         <param name="jntPosMin"> (-100.0 -90.0 -101.4 -15.0 -90.0 -103.1 -90.0 -103.1 -90.0  -103.1 -90.0 -98.7) </param>
@@ -23,7 +24,29 @@
         <param name="d">      ( 0.03503 0.04003 0.04003 0.04003 0.03503) </param>
         <param name="l">      ( 0.00604 0.00604 0.00604 0.00604 0.00608) </param>
         <param name="b">      ( 0.00640 0.00640 0.00640 0.00640 0.00640) </param>
+    </group> -->
+    <!-- Hand mk5.2 -->
+    <group name="LIMITS">
+        <param name="jntVelMax"> (100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0) </param>
+        <param name="jntPosMax"> (100.0 98.0 101.78 15.0 98.0 98.35 98.0 98.35 98.0 98.35 98.0 101.78) </param>
+        <param name="jntPosMin"> (0.0 3.63 0.0 0.0 5.75 0.0 5.75 0.0 5.75 0.0 5.75 2.78) </param>
     </group>
+    <group name="COUPLING">
+        <param name="actuatedAxesNames"> (l_thumb_add l_thumb_oc l_index_add l_index_oc l_middle_oc l_ring_pinky_oc) </param>
+        <param name="actuatedAxesPosMin"> (0.0 3.63 0.0 5.75 5.75 5.75) </param>
+        <param name="actuatedAxesPosMax"> (100.0 98.0 15.0 98.0 98.0 98.0) </param>
+    </group>
+    <group name="COUPLING_PARAMS">
+        <param name="L0x"> (-0.0050 -0.0050 -0.0050 -0.0050 -0.0050) </param>
+        <param name="L0y"> (0.0040 0.0040 0.0040 0.0040 0.0040) </param>
+        <param name="q2bias"> (-162.27 -156.18 -156.18 -156.18 -162.27) </param>
+        <param name="q1off"> (2.45 2.15 2.15 2.15 2.45) </param>
+        <param name="k"> (0.03415 0.03913 0.03913 0.03913 0.03418) </param>
+        <param name="d"> (0.03503 0.04003 0.04003 0.04003 0.03503) </param>
+        <param name="l"> (0.00604 0.00604 0.00604 0.00604 0.00608) </param>
+        <param name="b"> (0.00640 0.00640 0.00640 0.00640 0.00640) </param>
+    </group>
+
     <action phase="startup" level="5" type="attach">
         <param name="device"> left_hand_hardware_device </param>
     </action>
