@@ -1,0 +1,86 @@
+\doxysection{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}
+\label{CouplingXCubHandMk5__ParamsParser_8h_source}\index{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/CouplingXCubHandMk5\_ParamsParser.h@{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/CouplingXCubHandMk5\_ParamsParser.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ SPDX-\/FileCopyrightText:\ 2023-\/2023\ Istituto\ Italiano\ di\ Tecnologia\ (IIT)}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ LGPL-\/2.1-\/or-\/later}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ Generated\ by\ yarpDeviceParamParserGenerator\ (2.0)}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ This\ is\ an\ automatically\ generated\ file.\ Please\ do\ not\ edit\ it.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ It\ will\ be\ re-\/generated\ if\ the\ cmake\ flag\ ALLOW\_DEVICE\_PARAM\_PARSER\_GERNERATION\ is\ ON.}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ Generated\ on:\ Wed\ Jun\ 18\ 14:16:07\ 2025}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COUPLINGXCUBHANDMK5\_PARAMSPARSER\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COUPLINGXCUBHANDMK5\_PARAMSPARSER\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <yarp/os/Searchable.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <yarp/dev/IDeviceDriverParams.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{class\ }CouplingXCubHandMk5\_ParamsParser\ :\ \textcolor{keyword}{public}\ yarp::dev::IDeviceDriverParams}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ CouplingXCubHandMk5\_ParamsParser();}
+\DoxyCodeLine{00058\ \ \ \ \ \string~CouplingXCubHandMk5\_ParamsParser()\ \textcolor{keyword}{override}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_device\_classname\ =\ \{\textcolor{stringliteral}{"{}CouplingXCubHandMk5"{}}\};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_device\_name\ =\ \{\textcolor{stringliteral}{"{}couplingXCubHandMk5"{}}\};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_parser\_is\_strict\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{struct\ }parser\_version\_type}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ major\ =\ 2;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minor\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ parser\_version\_type\ m\_parser\_version\ =\ \{\};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::string\ m\_provided\_configuration;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_jointNames\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_LIMITS\_jntPosMin\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_LIMITS\_jntPosMax\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_actuatedAxesNames\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_actuatedAxesPosMin\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_actuatedAxesPosMax\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_L0x\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_L0y\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_q2bias\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_q1off\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_k\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_d\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_l\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ m\_COUPLING\_PARAMS\_b\_defaultValue\ =\ \{\textcolor{stringliteral}{"{}"{}}\};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::vector<std::string>\ m\_jointNames\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00089\ \ \ \ \ std::vector<double>\ m\_LIMITS\_jntPosMin\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00090\ \ \ \ \ std::vector<double>\ m\_LIMITS\_jntPosMax\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00091\ \ \ \ \ std::vector<std::string>\ m\_COUPLING\_actuatedAxesNames\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00092\ \ \ \ \ std::vector<double>\ m\_COUPLING\_actuatedAxesPosMin\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<double>\ m\_COUPLING\_actuatedAxesPosMax\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_L0x\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00095\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_L0y\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00096\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_q2bias\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00097\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_q1off\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00098\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_k\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00099\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_d\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00100\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_l\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00101\ \ \ \ \ std::vector<double>\ m\_COUPLING\_PARAMS\_b\ =\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ parseParams(\textcolor{keyword}{const}\ yarp::os::Searchable\ \&\ config)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00104\ \ \ \ \ std::string\ \ \ getDeviceClassName()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ m\_device\_classname;\ \}}
+\DoxyCodeLine{00105\ \ \ \ \ std::string\ \ \ getDeviceName()\textcolor{keyword}{\ const\ override\ }\{\ \textcolor{keywordflow}{return}\ m\_device\_name;\ \}}
+\DoxyCodeLine{00106\ \ \ \ \ std::string\ \ \ getDocumentationOfDeviceParams()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00107\ \ \ \ \ std::vector<std::string>\ getListOfParams()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ getParamValue(\textcolor{keyword}{const}\ std::string\&\ paramName,\ std::string\&\ paramValue)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00109\ \ \ \ \ std::string\ \ \ getConfiguration()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

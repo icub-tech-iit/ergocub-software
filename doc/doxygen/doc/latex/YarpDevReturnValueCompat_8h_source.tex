@@ -1,0 +1,95 @@
+\doxysection{Yarp\+Dev\+Return\+Value\+Compat.\+h}
+\label{YarpDevReturnValueCompat_8h_source}\index{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/YarpDevReturnValueCompat.h@{/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/couplingXCubHandMk5/YarpDevReturnValueCompat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ YARP\_DEV\_RETURN\_VALUE\_COMPAT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_COMPAT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ Defines\ YARP\_VERSION\_*\ macro}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <yarp/conf/version.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ These\ macros\ simplify\ the\ migration\ of\ the\ devices\ implementation\ from\ YARP\ 3.11\ to\ YARP\ 3.12,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ and\ from\ YARP\ 3.12\ to\ 4.0}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ where\ the\ interfaces\ migrated\ from\ using\ bool\ as\ return\ values\ to\ use\ yarp::dev::ReturnValue,}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ see\ https://github.com/robotology/yarp/discussions/3168}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ For\ the\ latest\ version\ of\ this\ header,\ check\ https://gist.github.com/traversaro/ab7ab377c70c50d312a7b5edd4da6242}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ For\ example\ on\ how\ to\ use\ this\ header,\ see\ the\ following\ PRs:}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ *\ https://github.com/robotology/gz-\/sim-\/yarp-\/plugins/pull/281}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ *\ https://github.com/robotology/gz-\/sim-\/yarp-\/plugins/pull/240}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ *\ https://github.com/robotology/icub-\/main/pull/1022}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ *\ https://github.com/robotology/gazebo-\/yarp-\/plugins/pull/696}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#if\ (YARP\_VERSION\_MAJOR\ >\ 3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ (YARP\_VERSION\_MAJOR\ ==\ 3\ \&\&\ YARP\_VERSION\_MINOR\ >\ 11)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ (YARP\_VERSION\_MAJOR\ ==\ 3\ \&\&\ YARP\_VERSION\_MINOR\ ==\ 12\ \&\&\ YARP\_VERSION\_PATCH\ >=\ 100)}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ Macro\ used\ to\ easily\ check\ if\ YARP\ is\ >=\ 3.12.0}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_IS\_GE\_312}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Macros\ for\ YARP\ 3.11\ and\ 3.12\ compatibility}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ The\ \_CH312\ suffix\ is\ used\ as\ this\ macro\ are\ used\ in\ the\ interface\ that\ migrated\ from\ bool}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ to\ yarp::dev::ReturnValue\ in\ YARP\ 3.12}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_TYPE\_CH312\ yarp::dev::ReturnValue}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_OK\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_ok)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_GENERIC\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_generic)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_IMPLEMENTED\_BY\_DEVICE\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_not\_implemented\_by\_device)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NWS\_NWC\_COMMUNICATION\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_nws\_nwc\_communication\_error)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_DEPRECATED\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_deprecated)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_METHOD\_FAILED\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_method\_failed)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_READY\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_not\_ready)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_UNITIALIZED\_CH312\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_uninitialized)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_TYPE\_CH312\ bool}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_OK\_CH312\ true}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_GENERIC\_CH312\ false}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_IMPLEMENTED\_BY\_DEVICE\_CH312\ false}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NWS\_NWC\_COMMUNICATION\_CH312\ false}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_DEPRECATED\_CH312\ false}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_METHOD\_FAILED\_CH312\ false}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_READY\_CH312\ false}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_UNITIALIZED\_CH312\ false}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#if\ (YARP\_VERSION\_MAJOR\ >\ 3)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ (YARP\_VERSION\_MAJOR\ ==\ 3\ \&\&\ YARP\_VERSION\_MINOR\ >\ 12)\ ||\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ (YARP\_VERSION\_MAJOR\ ==\ 3\ \&\&\ YARP\_VERSION\_MINOR\ ==\ 12\ \&\&\ YARP\_VERSION\_PATCH\ >=\ 100)}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ Macro\ used\ to\ easily\ check\ if\ YARP\ is\ >=\ 4.0.0}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_IS\_GE\_40}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ Macros\ for\ YARP\ 3.12\ and\ 4.0\ compatibility}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ The\ \_CH4\ suffix\ is\ used\ as\ this\ macro\ are\ used\ in\ the\ interface\ that\ migrated\ from\ bool}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ to\ yarp::dev::ReturnValue\ from\ YARP\ 3.12\ to\ YARP\ 4.0}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_TYPE\_CH40\ yarp::dev::ReturnValue}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_OK\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_ok)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_GENERIC\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_generic)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_IMPLEMENTED\_BY\_DEVICE\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_not\_implemented\_by\_device)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NWS\_NWC\_COMMUNICATION\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_nws\_nwc\_communication\_error)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_DEPRECATED\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_deprecated)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_METHOD\_FAILED\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_method\_failed)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_READY\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_error\_not\_ready)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_UNITIALIZED\_CH40\ yarp::dev::ReturnValue(yarp::dev::ReturnValue::return\_code::return\_value\_uninitialized)}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_TYPE\_CH40\ bool}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_OK\_CH40\ true}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_GENERIC\_CH40\ false}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_IMPLEMENTED\_BY\_DEVICE\_CH40\ false}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NWS\_NWC\_COMMUNICATION\_CH40\ false}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_DEPRECATED\_CH40\ false}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_METHOD\_FAILED\_CH40\ false}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_NOT\_READY\_CH40\ false}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ YARP\_DEV\_RETURN\_VALUE\_ERROR\_UNITIALIZED\_CH40\ false}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//\ YARP\_DEV\_RETURN\_VALUE\_COMPAT\_H}}
+
+\end{DoxyCode}
