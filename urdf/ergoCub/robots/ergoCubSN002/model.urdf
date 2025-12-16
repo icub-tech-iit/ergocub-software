@@ -3407,12 +3407,12 @@
   </sensor>
   <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_2.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
