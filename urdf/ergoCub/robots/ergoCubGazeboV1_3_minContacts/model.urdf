@@ -443,8 +443,8 @@
     </visual>
   </link>
   <joint name="r_wrist_pitch" type="revolute">
-    <origin xyz="0 -5.551115123125783e-17 0" rpy="3.6082248300317597e-16 2.7755575615628914e-17 0"/>
-    <axis xyz="2.4286128663675302e-17 -0.9999999999999998 -6.38378239159465e-16"/>
+    <origin xyz="-6.245004513516506e-17 -1.3877787807814457e-16 -1.1102230246251565e-16" rpy="1.387778780781446e-16 -2.5743296383495817e-15 -3.330669073875471e-16"/>
+    <axis xyz="3.5735303605122132e-16 -0.9999999999999998 -9.43689570931383e-16"/>
     <parent link="r_wrist_2"/>
     <child link="r_hand_palm"/>
     <limit lower="-0.3490658503988659" upper="0.3490658503988659" effort="1e+9" velocity="1e+9"/>
@@ -467,8 +467,8 @@
     </visual>
   </link>
   <joint name="r_index_add" type="revolute">
-    <origin xyz="0.02249999999999978 0.0015000000000001401 -0.06859999999999988" rpy="-1.683379043833496e-15 0.29670597283904016 3.141592653589792"/>
-    <axis xyz="-3.7239890901070985e-16 -0.9999999999999997 1.5769356119382653e-15"/>
+    <origin xyz="0.022499999999999756 0.0015000000000003344 -0.06859999999999983" rpy="-1.480212607508763e-15 0.2967059728390382 3.141592653589792"/>
+    <axis xyz="-3.723989090107058e-16 -0.9999999999999997 1.7434690656320414e-15"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_index_1"/>
     <limit lower="0" upper="0.2617993877991494" effort="1e+9" velocity="1e+9"/>
@@ -491,11 +491,11 @@
     </visual>
   </link>
   <joint name="r_middle_prox" type="revolute">
-    <origin xyz="0.009600000000000188 0.0015000000000003622 -0.10299999999999965" rpy="-0.17453292519943467 1.0894063429134349e-15 3.141592653589793"/>
-    <axis xyz="-0.9999999999999996 -4.378539634650277e-15 6.187310275036287e-16"/>
+    <origin xyz="0.009600000000000192 0.0015000000000006675 -0.1029999999999997" rpy="-1.1542863886937485e-10 8.673617379884035e-16 3.1415926535897927"/>
+    <axis xyz="-0.9999999999999997 -4.562322742105741e-15 1.5959455974425262e-15"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_middle_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_middle_1">
@@ -515,11 +515,11 @@
     </visual>
   </link>
   <joint name="r_pinkie_prox" type="revolute">
-    <origin xyz="-0.03598268094316605 0.0023777595791094897 -0.09206828131946332" rpy="-0.16539532549951783 -0.08726646259972758 3.1154127148098767"/>
-    <axis xyz="-1 4.0054765060304476e-15 -5.412337245047638e-16"/>
+    <origin xyz="-0.03598268094316618 0.0023777595791096284 -0.0920682813194636" rpy="4.109533671631981e-4 -0.08726646259972862 3.115412714809877"/>
+    <axis xyz="-0.9999999999999998 4.254497416259634e-15 -2.7755575615628914e-17"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_pinkie_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_pinkie_1">
@@ -539,11 +539,11 @@
     </visual>
   </link>
   <joint name="r_ring_prox" type="revolute">
-    <origin xyz="-0.015417755558119802 0.0018498137284709004 -0.09788067183884419" rpy="-0.16580627893946306 -0.0872664625997294 3.1154127148098762"/>
-    <axis xyz="-0.9999999999999998 -3.66200125778704e-15 -4.7878367936959876e-15"/>
+    <origin xyz="-0.01541775555811984 0.0018498137284709282 -0.09788067183884414" rpy="-7.278212650060107e-11 -0.08726646259972907 3.115412714809877"/>
+    <axis xyz="-0.9999999999999997 -3.66218915082032e-15 -4.371503159461554e-15"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_ring_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_ring_1">
@@ -563,8 +563,8 @@
     </visual>
   </link>
   <joint name="r_thumb_add" type="revolute">
-    <origin xyz="0.02337486325639067 0.003000000000000308 -0.034523838473554336" rpy="1.7376253373778942e-15 -0.22689280275926516 -1.3103404183505434e-15"/>
-    <axis xyz="9.992007221626409e-16 2.4213447972458613e-15 0.9999999999999998"/>
+    <origin xyz="0.02337486325639067 0.0030000000000002802 -0.034523838473554336" rpy="1.6236826923039338e-15 -0.2268928027592642 -9.685124831286622e-16"/>
+    <axis xyz="5.551115123125783e-17 2.400579033184047e-15 0.9999999999999997"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_thumb_1"/>
     <limit lower="0" upper="1.7453292519943295" effort="1e+9" velocity="1e+9"/>
@@ -587,11 +587,11 @@
     </visual>
   </link>
   <joint name="r_thumb_prox" type="revolute">
-    <origin xyz="0.038074654499560455 0.003469109580325397 -0.0036017448035497446" rpy="1.3258546570178447 0.1970305979589343 -1.4222071875351314"/>
-    <axis xyz="-1.0000000000000007 -1.4099832412739488e-14 2.3245294578089215e-15"/>
+    <origin xyz="0.03807465449956041 0.0034691095803252303 -0.003601744803549689" rpy="1.4305744121363377 0.19703059795893424 -1.4222071875351316"/>
+    <axis xyz="-1.0000000000000009 -1.3850032232198828e-14 2.55351295663786e-15"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.06335545184739416" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_thumb_2">
@@ -611,11 +611,11 @@
     </visual>
   </link>
   <joint name="r_thumb_dist" type="revolute">
-    <origin xyz="-8.326672684688674e-17 -0.003710625528295264 -0.03483505788984384" rpy="-0.0632887739526214 1.6653345369377348e-15 1.403044347370039e-14"/>
-    <axis xyz="-1.0000000000000018 -2.961881307373266e-14 1.7163995950313917e-15"/>
+    <origin xyz="-8.326672684688674e-17 -0.0037106255282955414 -0.03483505788984376" rpy="-0.0632887739526227 1.1102230246251565e-15 1.3156142841808081e-14"/>
+    <axis xyz="-1.0000000000000018 -3.053474706904843e-14 2.4380445610377233e-15"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
-    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_thumb_3">
@@ -635,11 +635,11 @@
     </visual>
   </link>
   <joint name="r_ring_dist" type="revolute">
-    <origin xyz="-3.642919299551295e-17 -0.0014999999999998903 -0.03999999999999987" rpy="-1.2490009027033016e-16 -2.463307335887066e-16 -2.2204460492503126e-16"/>
-    <axis xyz="-1.0000000000000002 3.434752482434079e-16 1.179611963664227e-16"/>
+    <origin xyz="2.8275992658421956e-16 -0.0014999999970887745 -0.04000000000010917" rpy="7.277983771203371e-11 -2.060851489460447e-15 -3.6082248300317592e-16"/>
+    <axis xyz="-0.9999999999999999 1.2143064331812404e-16 1.9671764217407813e-15"/>
     <parent link="r_hand_ring_1"/>
     <child link="r_hand_ring_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_ring_2">
@@ -659,11 +659,11 @@
     </visual>
   </link>
   <joint name="r_pinkie_dist" type="revolute">
-    <origin xyz="1.0408340855860843e-17 -0.0015141933093791582 -0.03499938883211856" rpy="-0.0012956915198227932 -4.163336342344337e-17 -3.053113317719179e-16"/>
-    <axis xyz="-1.0000000000000004 1.0424026751991168e-15 -2.6494887921797097e-15"/>
+    <origin xyz="2.8102520310824275e-16 -0.0015141933068321678 -0.03499938883222847" rpy="-0.001295691447042631 -2.6853519408120974e-15 -5.551115123125784e-17"/>
+    <axis xyz="-0.9999999999999999 1.1811805530917535e-15 3.2393701614668746e-17"/>
     <parent link="r_hand_pinkie_1"/>
     <child link="r_hand_pinkie_2"/>
-    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.04852015320544236" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_pinkie_2">
@@ -683,11 +683,11 @@
     </visual>
   </link>
   <joint name="r_middle_dist" type="revolute">
-    <origin xyz="4.163336342344337e-17 -0.0014999999999998903 -0.04000000000000015" rpy="-7.535550925613651e-8 -3.122502256758253e-17 0"/>
-    <axis xyz="-0.9999999999999994 -2.2360587989691486e-15 3.191891023114916e-15"/>
+    <origin xyz="3.469446951953614e-16 -0.0014999999953827503 -0.04000000000017301" rpy="-7.524008321935235e-8 -1.1379786002407855e-15 -1.6653345369377353e-16"/>
+    <axis xyz="-0.9999999999999997 -2.2915699498351828e-15 4.309052941908487e-15"/>
     <parent link="r_hand_middle_1"/>
     <child link="r_hand_middle_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_middle_2">
@@ -707,11 +707,11 @@
     </visual>
   </link>
   <joint name="r_index_prox" type="revolute">
-    <origin xyz="-0.009192533317427837 0 -0.03071345131623837" rpy="-0.17453292519943325 6.453171330633722e-16 -5.551115123125786e-16"/>
-    <axis xyz="-0.9999999999999994 3.3820636206682556e-15 -1.8100180513169683e-15"/>
+    <origin xyz="-0.00919253331742792 -1.1102230246251565e-16 -0.030713451316238427" rpy="-1.1542736211289652e-10 -2.7755575615628914e-16 5.551115123125786e-17"/>
+    <axis xyz="-0.9999999999999994 3.656797087580167e-15 -1.644517854829551e-15"/>
     <parent link="r_hand_index_1"/>
     <child link="r_hand_index_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_index_2">
@@ -731,11 +731,11 @@
     </visual>
   </link>
   <joint name="r_index_dist" type="revolute">
-    <origin xyz="-2.7755575615628914e-17 -0.0014999999999999458 -0.039999999999999813" rpy="9.020562075079397e-17 1.0061396160665481e-16 -1.110223024625157e-16"/>
-    <axis xyz="-0.9999999999999997 -2.567390744445675e-16 -5.707240235963695e-16"/>
+    <origin xyz="4.440892098500626e-16 -0.0014999999999996683 -0.039999999999999925" rpy="8.326672684688674e-17 -4.926614671774132e-16 -1.6653345369377353e-16"/>
+    <axis xyz="-0.9999999999999998 -2.5673907444456755e-16 -1.8041124150158784e-16"/>
     <parent link="r_hand_index_2"/>
     <child link="r_hand_index_3"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_index_3">
@@ -920,8 +920,8 @@
     </visual>
   </link>
   <joint name="l_index_add" type="revolute">
-    <origin xyz="0.022499999999999937 -0.0015000000000005842 -0.06859999999999958" rpy="-1.2480223945662112e-15 -0.2967059728390372 0"/>
-    <axis xyz="1.1340225320629764e-15 1 -1.5371148621453133e-15"/>
+    <origin xyz="0.022499999999999958 -0.0015000000000005842 -0.06859999999999963" rpy="-1.2770461711840297e-15 -0.29670597283903727 0"/>
+    <axis xyz="1.1340225320629768e-15 1.0000000000000002 -1.5371148621453145e-15"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_index_1"/>
     <limit lower="0" upper="0.2617993877991494" effort="1e+9" velocity="1e+9"/>
@@ -1068,7 +1068,7 @@
     <axis xyz="-0.9999999999999994 4.264221274732777e-12 1.800057093249481e-10"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
-    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_thumb_3">
@@ -1160,8 +1160,8 @@
     </visual>
   </link>
   <joint name="l_index_prox" type="revolute">
-    <origin xyz="0.009192533317427642 1.3877787807814457e-16 -0.030713451316238427" rpy="-1.1542722333501844e-10 2.42861286636753e-16 0"/>
-    <axis xyz="-1 8.604228435847113e-16 3.934352843595493e-15"/>
+    <origin xyz="0.009192533317427629 1.3877787807814457e-16 -0.030713451316238316" rpy="-1.1542722333501843e-10 2.983724378680108e-16 -5.5511151231257815e-17"/>
+    <axis xyz="-1.0000000000000002 8.604228435847115e-16 3.871902798460328e-15"/>
     <parent link="l_hand_index_1"/>
     <child link="l_hand_index_2"/>
     <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
@@ -2841,21 +2841,25 @@
   <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
+      <initialConfiguration>0.0 0.06335 0.0 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.048519</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
       <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
+      <initialConfiguration>0.0 0.06335 0.0 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.048519</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_3.ini</yarpConfigurationFile>
+      <initialConfiguration>0.0 0.06335 0.0 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.048519</initialConfiguration>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_3.ini</yarpConfigurationFile>
+      <initialConfiguration>0.0 0.06335 0.0 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.048519</initialConfiguration>
     </plugin>
   </gazebo>
   <link name="waist_imu_0"/>
