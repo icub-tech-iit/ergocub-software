@@ -92,8 +92,8 @@ public:
         done_l = true;
       }
       pwm_ = -pwm_;
-      iPwm->setRefDutyCycle(j, pwm_);
     }
+    iPwm->setRefDutyCycle(j, pwm_);
     yDebugThrottle(15, "Acquisition in progress...");
   }
 
@@ -101,7 +101,6 @@ public:
 
   void setInputs(double pwm) {
     pwm_ = pwm;
-    iPwm->setRefDutyCycle(j, pwm_);
   }
 
   void resetFlags() {
@@ -201,7 +200,7 @@ int main(int argc, char *argv[]) {
     m_driver.close();
     return EXIT_FAILURE;
   }
-  pwm_thread->pwm_sign_multiplier=(pidInfo.kp>=0.0?1.0:-1.0);
+  pwm_thread->pwm_sign_multiplier=(rf.check("reverse") ? -1.0 : 1.0);
 
   std::ofstream file;
   file.open(filename);
