@@ -19,7 +19,6 @@ After building it, navigate to the `build` folder, and then launch it with your 
 ```bash
 ./bin/joint-open-loop-move --port /ergocub/left_arm --joint-id 10 --cycles 5 --limits "(5 20)" --pwm-values "(10 20 30)" --timeout 5 --filename output.csv
 ```
-There is an optional `--reverse` parameter, which should be used when a positive PWM causes the motor encoder value to increase while the joint encoder value decreases.
 
 The units of measure are:
 - `limits`: degrees
