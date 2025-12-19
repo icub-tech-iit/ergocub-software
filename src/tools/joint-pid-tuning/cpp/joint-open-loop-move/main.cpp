@@ -103,7 +103,7 @@ public:
   bool isDone() { return done_h && done_l; }
 
   void setInputs(double pwm) {
-  pwm_.store(pwm);
+    pwm_.store(pwm);
   }
 
   void resetFlags() {
