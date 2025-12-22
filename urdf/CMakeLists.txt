@@ -21,6 +21,9 @@ list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboSN001_minContacts")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboSN003")
 list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboSN003_minContacts")
 
+# This model is handled externally from IIT
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboSN002")
+list(APPEND GAZEBO_SUPPORTED_MODELS "ergoCubGazeboSN002_minContacts")
 
 
 set(INSTALLED_URDF_MODELS "")
