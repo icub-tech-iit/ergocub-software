@@ -14,9 +14,9 @@ macro(add_ergocub_model_test yarpRobotName)
 endmacro()
 
 # Model generated with simmechanics
-add_ergocub_model_test(ergoCubGazeboV1)
-add_ergocub_model_test(ergoCubGazeboV1_1)
-add_ergocub_model_test(ergoCubGazeboV1_3)
+add_ergocub_model_test(ergoCubGazeboSN000)
+add_ergocub_model_test(ergoCubGazeboSN001)
+add_ergocub_model_test(ergoCubGazeboSN002)
 add_ergocub_model_test(ergoCubSN000)
 add_ergocub_model_test(ergoCubSN001)
 add_ergocub_model_test(ergoCubSN002)

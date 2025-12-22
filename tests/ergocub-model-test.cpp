@@ -17,9 +17,9 @@
 bool isNotergoCub1Model(const std::string& modelPath)
 {
     return (modelPath.find("SN001") != std::string::npos ||
-            modelPath.find("GazeboV1_1") != std::string::npos ||
+            modelPath.find("GazeboSN001") != std::string::npos ||
             modelPath.find("SN002") != std::string::npos ||
-            modelPath.find("GazeboV1_3") != std::string::npos);
+            modelPath.find("GazeboSN002") != std::string::npos);
 }
 
 inline bool checkDoubleAreEqual(const double & val1,

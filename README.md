@@ -49,7 +49,7 @@ conda create -n ergocubenv -c conda-forge ergocub-models
 The `ergocub-software` package depends on `ergocub-models`, so if you need both you can just install `ergocub-software`.
 
 ## Run Whole-body-dynamics
-Currently whole-body-dynamics does not run along with `ergoCubGazeboV1`. To start it please run the following command in a console once `yarpserver` and
+Currently whole-body-dynamics does not run along with `ergoCubGazeboSN001`. To start it please run the following command in a console once `yarpserver` and
 the robot has been placed in `gazebo`
 ```console
 yarprobotinterface --config conf/launch_wholebodydynamics_ecub.xml
@@ -78,9 +78,9 @@ This repository hosts the configuration files for generating ergoCub urdf. To ge
 The CAD files used to generate the URDF models have been prepare according to the procedure described in https://github.com/icub-tech-iit/cad-libraries/wiki/Prepare-PTC-Creo-Mechanism-for-URDF .
 
 You can find there the relative documentation on how write those configuration files, and more details in the README of the following folders:
-* [`urdf/creo2urdf/data/ergocub1_0`](./urdf/creo2urdf/data/ergocub1_0)
-* [`urdf/creo2urdf/data/ergocub1_1`](./urdf/creo2urdf/data/ergocub1_1)
-* [`urdf/creo2urdf/data/ergocub1_3`](./urdf/creo2urdf/data/ergocub1_3)
+* [`urdf/creo2urdf/data/ergocubSN000`](./urdf/creo2urdf/data/ergocubSN000)
+* [`urdf/creo2urdf/data/ergocubSN001`](./urdf/creo2urdf/data/ergocubSN001)
+* [`urdf/creo2urdf/data/ergocubSN002`](./urdf/creo2urdf/data/ergocubSN002)
 
 ### Maintainers
 This repository is maintained by:
