@@ -1,4 +1,4 @@
-includes: [..\ergocub1_1\base_1_1.yaml, base_1_3.yaml, ..\common\gazebo_addon.yaml, ..\common\minContacts_addon.yaml]
+includes: [..\ergocubSN001\base_SN001.yaml, base_SN002.yaml]
 
 XMLBlobs:
     - |
@@ -29,3 +29,4 @@ XMLBlobs:
             <initialConfiguration>0.0 0.06335 0.0 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.0 0.10036 0.048519</initialConfiguration>
             </plugin>
             </gazebo>
+

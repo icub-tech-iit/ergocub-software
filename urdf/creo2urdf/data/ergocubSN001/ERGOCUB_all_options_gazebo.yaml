@@ -1,4 +1,4 @@
-includes: [base_1_1.yaml]
+includes: [base_SN001.yaml, ..\common\gazebo_addon.yaml]
 
 XMLBlobs:
     - |
