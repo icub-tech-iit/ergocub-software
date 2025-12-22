@@ -80,7 +80,7 @@ The CAD files used to generate the URDF models have been prepare according to th
 You can find there the relative documentation on how write those configuration files, and more details in the README of the following folders:
 * [`urdf/creo2urdf/data/ergocubSN000`](./urdf/creo2urdf/data/ergocubSN000)
 * [`urdf/creo2urdf/data/ergocubSN001`](./urdf/creo2urdf/data/ergocubSN001)
-* [`urdf/creo2urdf/data/ergocubSN002`](./urdf/creo2urdf/data/ergocubSN002)
+* [`urdf/creo2urdf/data/ergocubSN003`](./urdf/creo2urdf/data/ergocubSN003)
 
 ### Maintainers
 This repository is maintained by:
