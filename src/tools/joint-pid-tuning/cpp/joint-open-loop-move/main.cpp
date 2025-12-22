@@ -10,6 +10,7 @@
 #include <fstream>
 #include <limits>
 #include <vector>
+#include <atomic>
 
 #include <yarp/dev/IControlMode.h>
 #include <yarp/dev/IEncoders.h>
@@ -51,7 +52,7 @@ private:
   bool done_l = false;
   DataExperiment data;
   uint8_t j = 0;
-  double pwm_ = 0;
+  std::atomic<double> pwm_{0.0};  
   double thr_min = 0;
   double thr_max = 0;
   double t0 = 0;
@@ -69,7 +70,8 @@ public:
 
   void run() {
     data.t = Time::now() - t0;
-    data.pwm_set = pwm_;
+    double current_pwm = pwm_.load();
+    data.pwm_set = current_pwm;
     iEnc->getEncoder(j, &data.enc);
     iPid->getPidOutput(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION, j, &data.pid_out);
     iPwm->getDutyCycle(j, &data.pwm_read);
@@ -82,8 +84,8 @@ public:
     // and pwm_ will be inverted back to its original sign. This will cause the motor to jitter at the
     // mechanical limit until the joint eventually moves away.
 
-    const bool above_max = data.enc >= thr_max && (pwm_sign_multiplier * pwm_ > 0.0);
-    const bool below_min = data.enc <= thr_min && (pwm_sign_multiplier * pwm_ < 0.0);
+    const bool above_max = data.enc >= thr_max && (pwm_sign_multiplier * current_pwm > 0.0);
+    const bool below_min = data.enc <= thr_min && (pwm_sign_multiplier * current_pwm < 0.0);
 
     if (above_max || below_min) {
       if (above_max) {
@@ -91,17 +93,17 @@ public:
       } else {
         done_l = true;
       }
-      pwm_ = -pwm_;
-      iPwm->setRefDutyCycle(j, pwm_);
+      current_pwm = -current_pwm;
+      pwm_.store(current_pwm);
     }
+    iPwm->setRefDutyCycle(j, current_pwm);
     yDebugThrottle(15, "Acquisition in progress...");
   }
 
   bool isDone() { return done_h && done_l; }
 
   void setInputs(double pwm) {
-    pwm_ = pwm;
-    iPwm->setRefDutyCycle(j, pwm_);
+    pwm_.store(pwm);
   }
 
   void resetFlags() {
@@ -196,6 +198,8 @@ int main(int argc, char *argv[]) {
 
   yarp::dev::Pid pidInfo;
   auto ok = iPid->getPid(PidControlTypeEnum::VOCAB_PIDTYPE_POSITION,joint_id,&pidInfo);
+  yDebug("PID info for joint %d: Kp=%f, Ki=%f, Kd=%f", joint_id, pidInfo.kp,
+          pidInfo.ki, pidInfo.kd);
   if (!ok) {
     yError("Failed to get PID info for joint %d", joint_id);
     m_driver.close();
