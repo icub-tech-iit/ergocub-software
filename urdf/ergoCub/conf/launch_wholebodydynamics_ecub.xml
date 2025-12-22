@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
 
-<robot name="ergoCubGazeboV1" build="1" xmlns:xi="http://www.w3.org/2001/XInclude">
+<robot name="ergoCubGazeboSN000" build="1" xmlns:xi="http://www.w3.org/2001/XInclude">
     <!-- controlboards -->
     <device name="torso_mc" type="remote_controlboard">
         <param name="remote"> /ergocubSim/torso </param>
@@ -39,12 +39,12 @@
         <param name="remote"> /ergocubSim/head/inertials </param>
         <param name="local"> /wholeBodyDynamics/imu </param>
     </device>
-    
+
     <device name="waist_inertial_hardware_device" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/waist/inertials </param>
         <param name="local"> /wholeBodyDynamics/waist_imu </param>
     </device>
-    
+
     <!-- six axis force torque sensors -->
     <device name="ergocub_left_arm_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/left_arm/FT </param>
@@ -54,7 +54,7 @@
     <device name="ergocub_right_arm_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/right_arm/FT </param>
         <param name="local"> /wholeBodyDynamics/right_arm_ft_sensor </param>
-    </device> 
+    </device>
 
     <device name="ergocub_left_leg_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/left_leg/FT </param>
@@ -64,8 +64,8 @@
     <device name="ergocub_right_leg_ft" type="multipleanalogsensorsclient">
         <param name="remote"> /ergocubSim/right_leg/FT </param>
         <param name="local"> /wholeBodyDynamics/right_leg_ft_sensor </param>
-    </device>  
-    
+    </device>
+
     <!-- estimators -->
     <xi:include href="estimators/wbd_ecub_sim.xml" />
 
