@@ -402,7 +402,7 @@
     <axis xyz="-0.9999999999999996 -4.562322741819007e-15 1.079337105802658e-10"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_middle_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_middle_1">
@@ -426,7 +426,7 @@
     <axis xyz="-0.9999999999999998 4.364801434782878e-15 0"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_pinkie_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_pinkie_1">
@@ -450,7 +450,7 @@
     <axis xyz="-0.9999999999999997 -2.498435601042699e-13 1.0789123761067998e-10"/>
     <parent link="r_hand_palm"/>
     <child link="r_hand_ring_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_ring_1">
@@ -498,7 +498,7 @@
     <axis xyz="-1.0000000000000009 1.872826893567492e-11 -1.8454855699179262e-11"/>
     <parent link="r_hand_thumb_1"/>
     <child link="r_hand_thumb_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.06335545184739416" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_thumb_2">
@@ -522,7 +522,7 @@
     <axis xyz="-1.000000000000002 -2.971595758838737e-14 1.4943549901063601e-15"/>
     <parent link="r_hand_thumb_2"/>
     <child link="r_hand_thumb_3"/>
-    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_thumb_3">
@@ -546,7 +546,7 @@
     <axis xyz="-0.9999999999999999 2.4672971998818127e-13 -1.0789569585001324e-10"/>
     <parent link="r_hand_ring_1"/>
     <child link="r_hand_ring_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_ring_2">
@@ -570,7 +570,7 @@
     <axis xyz="-0.9999999999999999 9.036247971209683e-16 -2.4586692098222613e-15"/>
     <parent link="r_hand_pinkie_1"/>
     <child link="r_hand_pinkie_2"/>
-    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.04852015320544236" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_pinkie_2">
@@ -594,7 +594,7 @@
     <axis xyz="-0.9999999999999998 -2.0695253452753748e-15 -1.0792969296086812e-10"/>
     <parent link="r_hand_middle_1"/>
     <child link="r_hand_middle_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_middle_2">
@@ -618,7 +618,7 @@
     <axis xyz="-0.9999999999999993 3.434752482434078e-15 -1.672273430841644e-15"/>
     <parent link="r_hand_index_1"/>
     <child link="r_hand_index_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_index_2">
@@ -642,7 +642,7 @@
     <axis xyz="-0.9999999999999993 -2.0122792321330975e-16 -4.510281037539697e-16"/>
     <parent link="r_hand_index_2"/>
     <child link="r_hand_index_3"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="r_hand_index_3">
@@ -855,7 +855,7 @@
     <axis xyz="-1.0000000000000004 1.6098145522958664e-16 4.176883423103147e-15"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_middle_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_middle_1">
@@ -879,7 +879,7 @@
     <axis xyz="-0.9999999998538295 7.644772463726695e-6 -1.529375771042174e-5"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_pinkie_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_pinkie_1">
@@ -903,7 +903,7 @@
     <axis xyz="-1.0000000000000002 4.364549018964596e-17 3.6637359812630166e-15"/>
     <parent link="l_hand_palm"/>
     <child link="l_hand_ring_1"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_ring_1">
@@ -951,7 +951,7 @@
     <axis xyz="-0.9999999999999997 -3.108124868589357e-12 1.9784020602320318e-10"/>
     <parent link="l_hand_thumb_1"/>
     <child link="l_hand_thumb_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.06335545184739416" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_thumb_2">
@@ -975,7 +975,7 @@
     <axis xyz="-0.9999999999999996 4.264304541333322e-12 1.800053762580437e-10"/>
     <parent link="l_hand_thumb_2"/>
     <child link="l_hand_thumb_3"/>
-    <limit lower="0" upper="1.7697638615222502" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_thumb_3">
@@ -999,7 +999,7 @@
     <axis xyz="-1 -2.617159685310911e-13 1.0794249544288393e-10"/>
     <parent link="l_hand_ring_1"/>
     <child link="l_hand_ring_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_ring_2">
@@ -1023,7 +1023,7 @@
     <axis xyz="-0.9999999998538309 7.645451042193251e-6 -1.5293310428212298e-5"/>
     <parent link="l_hand_pinkie_1"/>
     <child link="l_hand_pinkie_2"/>
-    <limit lower="0" upper="1.7226399717184033" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.04852015320544236" upper="1.7763961126798287" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_pinkie_2">
@@ -1047,7 +1047,7 @@
     <axis xyz="-1 1.952334931070572e-12 1.0795870667149422e-10"/>
     <parent link="l_hand_middle_1"/>
     <child link="l_hand_middle_2"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_middle_2">
@@ -1071,7 +1071,7 @@
     <axis xyz="-1 8.326672684688522e-17 7.023654435833748e-10"/>
     <parent link="l_hand_index_1"/>
     <child link="l_hand_index_2"/>
-    <limit lower="0" upper="1.5707963267948966" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0.10035643198967395" upper="1.710422666954443" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_index_2">
@@ -1095,7 +1095,7 @@
     <axis xyz="-1 -2.359224176539984e-16 4.163337069211178e-17"/>
     <parent link="l_hand_index_2"/>
     <child link="l_hand_index_3"/>
-    <limit lower="0" upper="1.7994344588061537" effort="1e+9" velocity="1e+9"/>
+    <limit lower="0" upper="1.7165313193364231" effort="1e+9" velocity="1e+9"/>
     <dynamics damping="2" friction="0"/>
   </joint>
   <link name="l_hand_index_3">
@@ -2819,22 +2819,22 @@
   </sensor>
   <gazebo>
     <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <gazebo>
     <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
-      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_3.ini</yarpConfigurationFile>
     </plugin>
   </gazebo>
   <link name="waist_imu_0"/>
