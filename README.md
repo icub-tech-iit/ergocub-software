@@ -1,6 +1,12 @@
 # ergocub-software
 Main collector of ergoCub specific SW
 
+> [!important]
+> Since:
+> - #356
+> the naming convention for the URDF models has changed. The models with the old names (with the suffix V1_X) are kept in the repository but are **deprecated, not maintained or tested.**
+> So please update your configuration files/sdf files in order to use the models with the SN00X suffix.
+
 ## Installation
 
 ### Dependencies
