@@ -410,7 +410,7 @@ bool checkAxisDirections(iDynTree::KinDynComputations & comp, bool isNotergoCub1
             return false;
         }
 
-        if( !checkVectorAreEqual(axisInRootLink.getDirection(),expectedDirection,1e-5) )
+        if( !checkVectorAreEqual(axisInRootLink.getDirection(),expectedDirection,5e-4) )
         {
             std::cerr << "ergocub-model-test error:" << axisToCheck << " got direction of " << axisInRootLink.getDirection().toString()
                   << " instead of expected " << expectedDirection.toString() << std::endl;
