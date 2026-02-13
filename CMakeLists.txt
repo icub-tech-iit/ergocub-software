@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.12)
 project(ergocub-software LANGUAGES C CXX
                          VERSION 0.8.0)
 
-find_package(YARP 3.12.0 COMPONENTS conf os sig dev math idl_tools REQUIRED)
+find_package(YARP COMPONENTS conf os sig dev math idl_tools REQUIRED)
 
 # Give error if add_dependencies is called on a non-existing target
 if(POLICY CMP0046)
