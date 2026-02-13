@@ -1,0 +1,691 @@
+\doxysection{Coupling\+XCub\+Hand\+Mk5 Class Reference}
+\label{classCouplingXCubHandMk5}\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+
+
+TBD.  
+
+
+
+
+{\ttfamily \#include $<$Coupling\+XCub\+Hand\+Mk5.\+h$>$}
+
+Inheritance diagram for Coupling\+XCub\+Hand\+Mk5\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCouplingXCubHandMk5}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\label{classCouplingXCubHandMk5_a27b7062d581ca3a58adda02ba70a6aa8} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Pos} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, yarp\+::sig\+::\+Vector \&act\+Axes\+Pos) override
+\item 
+\label{classCouplingXCubHandMk5_aa668fc9b575c037be2d72d687abf9553} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Vel} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel, yarp\+::sig\+::\+Vector \&act\+Axes\+Vel) override
+\item 
+\label{classCouplingXCubHandMk5_af4ef6f81c67e8c5b4a9b195701da20a8} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Acc} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Acc, yarp\+::sig\+::\+Vector \&act\+Axes\+Acc) override
+\item 
+\label{classCouplingXCubHandMk5_ae632b335dd410c53e3070d34606abe89} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Physical\+Joints\+To\+Actuated\+Axes\+Trq} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, const yarp\+::sig\+::\+Vector \&phys\+Joints\+Trq, yarp\+::sig\+::\+Vector \&act\+Axes\+Trq) override
+\item 
+\label{classCouplingXCubHandMk5_ad0130b870a0fbe6a1e1723a80a46a514} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Pos} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos) override
+\item 
+\label{classCouplingXCubHandMk5_a801aa997a331b22bf12ed4b81044575e} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Vel} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Vel, yarp\+::sig\+::\+Vector \&phys\+Joints\+Vel) override
+\item 
+\label{classCouplingXCubHandMk5_a72d62e58d203ae0ce8865794cbb4a0ba} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Acc} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Vel, const yarp\+::sig\+::\+Vector \&act\+Axes\+Acc, yarp\+::sig\+::\+Vector \&phys\+Joints\+Acc) override
+\item 
+\label{classCouplingXCubHandMk5_a56cdbcea1ed306c58110a13c8ebbe222} 
+YARP\+\_\+\+DEV\+\_\+\+RETURN\+\_\+\+VALUE\+\_\+\+TYPE\+\_\+\+CH40 {\bfseries convert\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Trq} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, const yarp\+::sig\+::\+Vector \&act\+Axes\+Trq, yarp\+::sig\+::\+Vector \&phys\+Joints\+Trq) override
+\item 
+\label{classCouplingXCubHandMk5_a4382b00c01313be15bb2aa29c234e226} 
+bool {\bfseries evaluate\+Jacobian\+From\+Actuated\+Axes\+To\+Physical\+Joints\+Vel} (const yarp\+::sig\+::\+Vector \&act\+Axes\+Pos, yarp\+::sig\+::\+Matrix \&act\+Axes\+To\+Phys\+Joints\+Vel\+Jacobian) override
+\item 
+\label{classCouplingXCubHandMk5_a22d8f305cbddd778a97965d8bd5bd7d7} 
+bool {\bfseries evaluate\+Jacobian\+From\+Physical\+Joints\+To\+Actuated\+Axese\+Vel} (const yarp\+::sig\+::\+Vector \&phys\+Joints\+Pos, yarp\+::sig\+::\+Matrix \&phys\+Joints\+To\+Act\+Axes\+Vel\+Jacobian) override
+\item 
+bool \mbox{\hyperlink{classCouplingXCubHandMk5_a040915e77182bf9322275e81e53afbad}{open}} (yarp\+::os\+::\+Searchable \&config) override
+\begin{DoxyCompactList}\small\item\em Configure with a set of options. \end{DoxyCompactList}\item 
+\label{classCouplingXCubHandMk5__ParamsParser_a97049ce33d0a01928c82e6f012b4a894} 
+bool {\bfseries parse\+Params} (const yarp\+::os\+::\+Searchable \&config) override
+\item 
+std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a307f6e91abbdec284adea6d2cae34549}{get\+Device\+Class\+Name}} () const override
+\item 
+std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a76ad5d3c8fadd4ede8b381b93a3e62db}{get\+Device\+Name}} () const override
+\item 
+\label{classCouplingXCubHandMk5__ParamsParser_a61252e7455cb1c11e45199cc73537b1a} 
+std\+::string {\bfseries get\+Documentation\+Of\+Device\+Params} () const override
+\item 
+\label{classCouplingXCubHandMk5__ParamsParser_a5f1e32b07a3d95515176caf4f0ecb116} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+List\+Of\+Params} () const override
+\item 
+\label{classCouplingXCubHandMk5__ParamsParser_a6533a47fee01c90436d17905e9b2fbd0} 
+bool {\bfseries get\+Param\+Value} (const std\+::string \&param\+Name, std\+::string \&param\+Value) const override
+\item 
+\label{classCouplingXCubHandMk5__ParamsParser_a0cfc8ee19286ad5f053a492fe822eccf} 
+std\+::string {\bfseries get\+Configuration} () const override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ab1933be0e58129a6c6dc189890f46407}{m\+\_\+device\+\_\+classname}} = \{"{}Coupling\+XCub\+Hand\+Mk5"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a63e860f8b0b49d28bb5de759624ed54b}{m\+\_\+device\+\_\+name}} = \{"{}coupling\+XCub\+Hand\+Mk5"{}\}
+\item 
+bool \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a4f740ce62b6ee80f140e781704c31001}{m\+\_\+parser\+\_\+is\+\_\+strict}} = false
+\item 
+const parser\+\_\+version\+\_\+type \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a95f69f7095088e8f1ed982cba3410f0a}{m\+\_\+parser\+\_\+version}} = \{\}
+\item 
+std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ab6e093ae137df50e35aa9f4036d766b7}{m\+\_\+provided\+\_\+configuration}}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a62b860d271fef7b4d74debc1a8c68e57}{m\+\_\+joint\+Names\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ac0f8c8f56df27674ec80040e33d2f05d}{m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Min\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a39fbc8aae3dc1da4e1cd2719023723b2}{m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Max\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a38ca2a18af26327b5bdfc6cbc6c6f106}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Names\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ac78a2b5ef57d1c5a169ac11581e21f45}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Min\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a7cc63d5ec6fcc0e41819f8d66c5d1fd0}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Max\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a743ea33229929efdd5f24389d6e31a57}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0x\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ab2166aa6d65bdd47cb8ed5ff6dbcefc7}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0y\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_aefe48fc190b9db74cda38ecd82ec6fc9}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q2bias\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a053598912bcc87c00598b052edd8b846}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q1off\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ae85dda6f59ea434a5e94b61bd3b002c4}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+k\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ae3c306d89f8e81f52b3c29ac57bddd0a}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+d\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ac0cafc826e4626fe51c6633e663af968}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+l\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+const std\+::string \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a30035949d1f13338d65c0ea4dfcd52ef}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+b\+\_\+default\+Value}} = \{"{}"{}\}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a48da977ef4bbff83bcecda8044ed9a98}{m\+\_\+joint\+Names}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a90c8f1ec1d87c4b3a14236bc5fbb4f19}{m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Min}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a1877e7fd0d6a8bbec4dffa4e30a3d216}{m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Max}} = \{\}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a945d9ea2e3aacd996e287704ffed35ef}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Names}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a7b075f9f84063239eb23d9411fe99a2d}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Min}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a1824ef0594eac62b4622ee10809a67fe}{m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Max}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_ae058b1bfaccdb612aa94029adc4e3e82}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0x}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a46e478fc12777e00cc1973b0d858bfdb}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0y}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a9bbf5fc4980f84fe90ec2877d721439d}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q2bias}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_acce5e2785f97d7e354cdd9be2e71b7d6}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q1off}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_aa41bf2f8658d591fc3b8cb8be0cb3488}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+k}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a045a846a8c35fb42455c9c927b7b0846}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+d}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a75c6894b74ca9014bb5591f09835be05}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+l}} = \{\}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classCouplingXCubHandMk5__ParamsParser_a37a6a119481f917231d255ef67069040}{m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+b}} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TBD. 
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5_8h_source_l00043}{43}} of file \mbox{\hyperlink{CouplingXCubHandMk5_8h_source}{Coupling\+XCub\+Hand\+Mk5.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\label{classCouplingXCubHandMk5__ParamsParser_a307f6e91abbdec284adea6d2cae34549} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!getDeviceClassName@{getDeviceClassName}}
+\index{getDeviceClassName@{getDeviceClassName}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{getDeviceClassName()}{getDeviceClassName()}}
+{\footnotesize\ttfamily std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::get\+Device\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00104}{104}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00104\ \{\ \textcolor{keywordflow}{return}\ m\_device\_classname;\ \}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a76ad5d3c8fadd4ede8b381b93a3e62db} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!getDeviceName@{getDeviceName}}
+\index{getDeviceName@{getDeviceName}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{getDeviceName()}{getDeviceName()}}
+{\footnotesize\ttfamily std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::get\+Device\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00105}{105}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \{\ \textcolor{keywordflow}{return}\ m\_device\_name;\ \}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5_a040915e77182bf9322275e81e53afbad} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!open@{open}}
+\index{open@{open}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily bool Coupling\+XCub\+Hand\+Mk5\+::open (\begin{DoxyParamCaption}\item[{yarp\+::os\+::\+Searchable \&}]{config }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Configure with a set of options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The options to use \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true iff the object could be configured. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Field Documentation}
+\label{classCouplingXCubHandMk5__ParamsParser_a945d9ea2e3aacd996e287704ffed35ef} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesNames@{m\_COUPLING\_actuatedAxesNames}}
+\index{m\_COUPLING\_actuatedAxesNames@{m\_COUPLING\_actuatedAxesNames}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesNames}{m\_COUPLING\_actuatedAxesNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Names = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00091}{91}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a38ca2a18af26327b5bdfc6cbc6c6f106} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesNames\_defaultValue@{m\_COUPLING\_actuatedAxesNames\_defaultValue}}
+\index{m\_COUPLING\_actuatedAxesNames\_defaultValue@{m\_COUPLING\_actuatedAxesNames\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesNames\_defaultValue}{m\_COUPLING\_actuatedAxesNames\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Names\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00076}{76}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a1824ef0594eac62b4622ee10809a67fe} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesPosMax@{m\_COUPLING\_actuatedAxesPosMax}}
+\index{m\_COUPLING\_actuatedAxesPosMax@{m\_COUPLING\_actuatedAxesPosMax}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesPosMax}{m\_COUPLING\_actuatedAxesPosMax}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Max = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00093}{93}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00093\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a7cc63d5ec6fcc0e41819f8d66c5d1fd0} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesPosMax\_defaultValue@{m\_COUPLING\_actuatedAxesPosMax\_defaultValue}}
+\index{m\_COUPLING\_actuatedAxesPosMax\_defaultValue@{m\_COUPLING\_actuatedAxesPosMax\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesPosMax\_defaultValue}{m\_COUPLING\_actuatedAxesPosMax\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Max\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00078}{78}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a7b075f9f84063239eb23d9411fe99a2d} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesPosMin@{m\_COUPLING\_actuatedAxesPosMin}}
+\index{m\_COUPLING\_actuatedAxesPosMin@{m\_COUPLING\_actuatedAxesPosMin}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesPosMin}{m\_COUPLING\_actuatedAxesPosMin}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Min = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00092}{92}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ac78a2b5ef57d1c5a169ac11581e21f45} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_actuatedAxesPosMin\_defaultValue@{m\_COUPLING\_actuatedAxesPosMin\_defaultValue}}
+\index{m\_COUPLING\_actuatedAxesPosMin\_defaultValue@{m\_COUPLING\_actuatedAxesPosMin\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_actuatedAxesPosMin\_defaultValue}{m\_COUPLING\_actuatedAxesPosMin\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+actuated\+Axes\+Pos\+Min\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00077}{77}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a37a6a119481f917231d255ef67069040} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_b@{m\_COUPLING\_PARAMS\_b}}
+\index{m\_COUPLING\_PARAMS\_b@{m\_COUPLING\_PARAMS\_b}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_b}{m\_COUPLING\_PARAMS\_b}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+b = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00101}{101}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a30035949d1f13338d65c0ea4dfcd52ef} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_b\_defaultValue@{m\_COUPLING\_PARAMS\_b\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_b\_defaultValue@{m\_COUPLING\_PARAMS\_b\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_b\_defaultValue}{m\_COUPLING\_PARAMS\_b\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+b\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00086}{86}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a045a846a8c35fb42455c9c927b7b0846} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_d@{m\_COUPLING\_PARAMS\_d}}
+\index{m\_COUPLING\_PARAMS\_d@{m\_COUPLING\_PARAMS\_d}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_d}{m\_COUPLING\_PARAMS\_d}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+d = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00099}{99}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00099\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ae3c306d89f8e81f52b3c29ac57bddd0a} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_d\_defaultValue@{m\_COUPLING\_PARAMS\_d\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_d\_defaultValue@{m\_COUPLING\_PARAMS\_d\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_d\_defaultValue}{m\_COUPLING\_PARAMS\_d\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+d\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00084}{84}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_aa41bf2f8658d591fc3b8cb8be0cb3488} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_k@{m\_COUPLING\_PARAMS\_k}}
+\index{m\_COUPLING\_PARAMS\_k@{m\_COUPLING\_PARAMS\_k}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_k}{m\_COUPLING\_PARAMS\_k}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+k = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00098}{98}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00098\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ae85dda6f59ea434a5e94b61bd3b002c4} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_k\_defaultValue@{m\_COUPLING\_PARAMS\_k\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_k\_defaultValue@{m\_COUPLING\_PARAMS\_k\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_k\_defaultValue}{m\_COUPLING\_PARAMS\_k\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+k\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00083}{83}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a75c6894b74ca9014bb5591f09835be05} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_l@{m\_COUPLING\_PARAMS\_l}}
+\index{m\_COUPLING\_PARAMS\_l@{m\_COUPLING\_PARAMS\_l}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_l}{m\_COUPLING\_PARAMS\_l}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+l = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00100}{100}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ae058b1bfaccdb612aa94029adc4e3e82} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_L0x@{m\_COUPLING\_PARAMS\_L0x}}
+\index{m\_COUPLING\_PARAMS\_L0x@{m\_COUPLING\_PARAMS\_L0x}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_L0x}{m\_COUPLING\_PARAMS\_L0x}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0x = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00094}{94}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a743ea33229929efdd5f24389d6e31a57} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_L0x\_defaultValue@{m\_COUPLING\_PARAMS\_L0x\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_L0x\_defaultValue@{m\_COUPLING\_PARAMS\_L0x\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_L0x\_defaultValue}{m\_COUPLING\_PARAMS\_L0x\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0x\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00079}{79}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a46e478fc12777e00cc1973b0d858bfdb} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_L0y@{m\_COUPLING\_PARAMS\_L0y}}
+\index{m\_COUPLING\_PARAMS\_L0y@{m\_COUPLING\_PARAMS\_L0y}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_L0y}{m\_COUPLING\_PARAMS\_L0y}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0y = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00095}{95}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00095\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ab2166aa6d65bdd47cb8ed5ff6dbcefc7} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_L0y\_defaultValue@{m\_COUPLING\_PARAMS\_L0y\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_L0y\_defaultValue@{m\_COUPLING\_PARAMS\_L0y\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_L0y\_defaultValue}{m\_COUPLING\_PARAMS\_L0y\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+\+L0y\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00080}{80}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ac0cafc826e4626fe51c6633e663af968} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_l\_defaultValue@{m\_COUPLING\_PARAMS\_l\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_l\_defaultValue@{m\_COUPLING\_PARAMS\_l\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_l\_defaultValue}{m\_COUPLING\_PARAMS\_l\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+l\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00085}{85}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_acce5e2785f97d7e354cdd9be2e71b7d6} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_q1off@{m\_COUPLING\_PARAMS\_q1off}}
+\index{m\_COUPLING\_PARAMS\_q1off@{m\_COUPLING\_PARAMS\_q1off}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_q1off}{m\_COUPLING\_PARAMS\_q1off}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q1off = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00097}{97}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a053598912bcc87c00598b052edd8b846} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_q1off\_defaultValue@{m\_COUPLING\_PARAMS\_q1off\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_q1off\_defaultValue@{m\_COUPLING\_PARAMS\_q1off\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_q1off\_defaultValue}{m\_COUPLING\_PARAMS\_q1off\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q1off\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00082}{82}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a9bbf5fc4980f84fe90ec2877d721439d} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_q2bias@{m\_COUPLING\_PARAMS\_q2bias}}
+\index{m\_COUPLING\_PARAMS\_q2bias@{m\_COUPLING\_PARAMS\_q2bias}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_q2bias}{m\_COUPLING\_PARAMS\_q2bias}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q2bias = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00096}{96}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00096\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_aefe48fc190b9db74cda38ecd82ec6fc9} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_COUPLING\_PARAMS\_q2bias\_defaultValue@{m\_COUPLING\_PARAMS\_q2bias\_defaultValue}}
+\index{m\_COUPLING\_PARAMS\_q2bias\_defaultValue@{m\_COUPLING\_PARAMS\_q2bias\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_COUPLING\_PARAMS\_q2bias\_defaultValue}{m\_COUPLING\_PARAMS\_q2bias\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+COUPLING\+\_\+\+PARAMS\+\_\+q2bias\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00081}{81}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ab1933be0e58129a6c6dc189890f46407} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_device\_classname@{m\_device\_classname}}
+\index{m\_device\_classname@{m\_device\_classname}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_device\_classname}{m\_device\_classname}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+device\+\_\+classname = \{"{}Coupling\+XCub\+Hand\+Mk5"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00061}{61}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{\textcolor{stringliteral}{"{}CouplingXCubHandMk5"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a63e860f8b0b49d28bb5de759624ed54b} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_device\_name@{m\_device\_name}}
+\index{m\_device\_name@{m\_device\_name}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_device\_name}{m\_device\_name}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+device\+\_\+name = \{"{}coupling\+XCub\+Hand\+Mk5"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00062}{62}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \{\textcolor{stringliteral}{"{}couplingXCubHandMk5"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a48da977ef4bbff83bcecda8044ed9a98} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_jointNames@{m\_jointNames}}
+\index{m\_jointNames@{m\_jointNames}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_jointNames}{m\_jointNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+joint\+Names = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00088}{88}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00088\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a62b860d271fef7b4d74debc1a8c68e57} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_jointNames\_defaultValue@{m\_jointNames\_defaultValue}}
+\index{m\_jointNames\_defaultValue@{m\_jointNames\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_jointNames\_defaultValue}{m\_jointNames\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+joint\+Names\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00073}{73}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00073\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a1877e7fd0d6a8bbec4dffa4e30a3d216} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_LIMITS\_jntPosMax@{m\_LIMITS\_jntPosMax}}
+\index{m\_LIMITS\_jntPosMax@{m\_LIMITS\_jntPosMax}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_LIMITS\_jntPosMax}{m\_LIMITS\_jntPosMax}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Max = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00090}{90}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a39fbc8aae3dc1da4e1cd2719023723b2} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_LIMITS\_jntPosMax\_defaultValue@{m\_LIMITS\_jntPosMax\_defaultValue}}
+\index{m\_LIMITS\_jntPosMax\_defaultValue@{m\_LIMITS\_jntPosMax\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_LIMITS\_jntPosMax\_defaultValue}{m\_LIMITS\_jntPosMax\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Max\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00075}{75}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00075\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a90c8f1ec1d87c4b3a14236bc5fbb4f19} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_LIMITS\_jntPosMin@{m\_LIMITS\_jntPosMin}}
+\index{m\_LIMITS\_jntPosMin@{m\_LIMITS\_jntPosMin}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_LIMITS\_jntPosMin}{m\_LIMITS\_jntPosMin}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Min = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00089}{89}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \{\};\ \textcolor{comment}{//This\ default\ value\ is\ autogenerated.\ It\ is\ highly\ recommended\ to\ provide\ a\ suggested\ value\ also\ for\ mandatory\ parameters.}}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ac0f8c8f56df27674ec80040e33d2f05d} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_LIMITS\_jntPosMin\_defaultValue@{m\_LIMITS\_jntPosMin\_defaultValue}}
+\index{m\_LIMITS\_jntPosMin\_defaultValue@{m\_LIMITS\_jntPosMin\_defaultValue}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_LIMITS\_jntPosMin\_defaultValue}{m\_LIMITS\_jntPosMin\_defaultValue}}
+{\footnotesize\ttfamily const std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+\+LIMITS\+\_\+jnt\+Pos\+Min\+\_\+default\+Value = \{"{}"{}\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00074}{74}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00074\ \{\textcolor{stringliteral}{"{}"{}}\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_a4f740ce62b6ee80f140e781704c31001} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_parser\_is\_strict@{m\_parser\_is\_strict}}
+\index{m\_parser\_is\_strict@{m\_parser\_is\_strict}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_parser\_is\_strict}{m\_parser\_is\_strict}}
+{\footnotesize\ttfamily bool Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+parser\+\_\+is\+\_\+strict = false\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00063}{63}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+\label{classCouplingXCubHandMk5__ParamsParser_a95f69f7095088e8f1ed982cba3410f0a} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_parser\_version@{m\_parser\_version}}
+\index{m\_parser\_version@{m\_parser\_version}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_parser\_version}{m\_parser\_version}}
+{\footnotesize\ttfamily const parser\+\_\+version\+\_\+type Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+parser\+\_\+version = \{\}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00069}{69}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{\};}
+
+\end{DoxyCode}
+\label{classCouplingXCubHandMk5__ParamsParser_ab6e093ae137df50e35aa9f4036d766b7} 
+\index{CouplingXCubHandMk5@{CouplingXCubHandMk5}!m\_provided\_configuration@{m\_provided\_configuration}}
+\index{m\_provided\_configuration@{m\_provided\_configuration}!CouplingXCubHandMk5@{CouplingXCubHandMk5}}
+\doxysubsubsection{\texorpdfstring{m\_provided\_configuration}{m\_provided\_configuration}}
+{\footnotesize\ttfamily std\+::string Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser\+::m\+\_\+provided\+\_\+configuration\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source_l00071}{71}} of file \mbox{\hyperlink{CouplingXCubHandMk5__ParamsParser_8h_source}{Coupling\+XCub\+Hand\+Mk5\+\_\+\+Params\+Parser.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/ergocub-\/software/ergocub-\/software/src/modules/coupling\+XCub\+Hand\+Mk5/Coupling\+XCub\+Hand\+Mk5.\+h\end{DoxyCompactItemize}

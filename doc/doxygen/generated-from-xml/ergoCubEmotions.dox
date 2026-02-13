@@ -1,0 +1,36 @@
+
+  /**
+  *
+  * @ingroup ergoCubEmotions
+  * \defgroup ergoCubEmotions ergoCubEmotions
+  * This module is responsible for controlling the ergoCub facial expressions.
+  * Version:0.6.0
+  * \author  Martina Gloria martina.gloria@iit.it
+  * \n
+  * \copyright Released under the terms of the BSD 3-Clause License.
+  * \section intro_sec Description
+  *
+  
+   This moudule aims to set the ergoCub facial expressions. It makes use of OpenCV libraries in order to visualize the images and the 
+   videos stored in a context called 'ergoCubEmotions' and installed in '${YARP_CONTEXTS_INSTALL_DIR}/ergoCubEmotions'.
+  
+  * \section parameters_sec Parameters
+  
+  * \section inputports_sec Input Ports
+  * 
+  * \section outputports_sec Output Ports
+  * 
+  *
+  * \section services_sec Services
+  * 
+  *- /ergoCubEmotions/rpc
+  *  [rpc-server]: 
+  * service port
+  * . This service is described in ergoCubEmotions_IDL (idl.thrift)
+  * 
+  *
+  * 
+  *
+  *
+  **/
+
