@@ -1,0 +1,403 @@
+XMLBlobs:
+    - |
+        <link name="l_hand_thumb_skin_xela5_0"/>
+    - |
+        <joint name="l_hand_thumb_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
+          <parent link="l_hand_thumb_3"/>
+          <child link="l_hand_thumb_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="l_hand_thumb_skin_xela5_1"/>
+    - |
+        <joint name="l_hand_thumb_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.29864e-3 2.29864e-3 -32.3759e-3" rpy="1.63745562 -0 0"/>
+          <parent link="l_hand_thumb_3"/>
+          <child link="l_hand_thumb_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="l_hand_thumb_skin_xela5_2"/>
+    - |
+        <joint name="l_hand_thumb_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30137e-3 -0.58136e-3 -32.3755e-3" rpy="3.14159265 -1.50415067 -1.57079633"/>
+          <parent link="l_hand_thumb_3"/>
+          <child link="l_hand_thumb_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="l_hand_thumb_skin_xela5_3"/>
+    - |
+        <joint name="l_hand_thumb_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.29899e-3 0.05891e-3 -27.9222e-3" rpy="1.21857414 -0 0"/>
+          <parent link="l_hand_thumb_3"/>
+          <child link="l_hand_thumb_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="l_hand_thumb_skin_xela5_4"/>
+    - |
+        <joint name="l_hand_thumb_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.30102e-3 0.05891e-3 -27.9218e-3" rpy="1.21857414 -0 0"/>
+          <parent link="l_hand_thumb_3"/>
+          <child link="l_hand_thumb_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="l_hand_index_skin_xela5_0"/>
+    - |
+        <joint name="l_hand_index_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="l_hand_index_3"/>
+          <child link="l_hand_index_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="l_hand_index_skin_xela5_1"/>
+    - |
+        <joint name="l_hand_index_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="l_hand_index_3"/>
+          <child link="l_hand_index_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="l_hand_index_skin_xela5_2"/>
+    - |
+        <joint name="l_hand_index_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="l_hand_index_3"/>
+          <child link="l_hand_index_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="l_hand_index_skin_xela5_3"/>
+    - |
+        <joint name="l_hand_index_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_index_3"/>
+          <child link="l_hand_index_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="l_hand_index_skin_xela5_4"/>
+    - |
+        <joint name="l_hand_index_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_index_3"/>
+          <child link="l_hand_index_skin_xela5_4"/>
+        </joint>
+    - | 
+        <link name="l_hand_middle_skin_xela5_0"/>
+    - |
+        <joint name="l_hand_middle_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="l_hand_middle_2"/>
+          <child link="l_hand_middle_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="l_hand_middle_skin_xela5_1"/>
+    - |
+        <joint name="l_hand_middle_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="l_hand_middle_2"/>
+          <child link="l_hand_middle_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="l_hand_middle_skin_xela5_2"/>
+    - |
+        <joint name="l_hand_middle_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="l_hand_middle_2"/>
+          <child link="l_hand_middle_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="l_hand_middle_skin_xela5_3"/>
+    - |
+        <joint name="l_hand_middle_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_middle_2"/>
+          <child link="l_hand_middle_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="l_hand_middle_skin_xela5_4"/>
+    - |
+        <joint name="l_hand_middle_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_middle_2"/>
+          <child link="l_hand_middle_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="l_hand_ring_skin_xela5_0"/>
+    - |
+        <joint name="l_hand_ring_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="l_hand_ring_2"/>
+          <child link="l_hand_ring_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="l_hand_ring_skin_xela5_1"/>
+    - |
+        <joint name="l_hand_ring_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="l_hand_ring_2"/>
+          <child link="l_hand_ring_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="l_hand_ring_skin_xela5_2"/>
+    - |
+        <joint name="l_hand_ring_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="l_hand_ring_2"/>
+          <child link="l_hand_ring_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="l_hand_ring_skin_xela5_3"/>
+    - |
+        <joint name="l_hand_ring_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_ring_2"/>
+          <child link="l_hand_ring_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="l_hand_ring_skin_xela5_4"/>
+    - |
+        <joint name="l_hand_ring_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="l_hand_ring_2"/>
+          <child link="l_hand_ring_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="l_hand_pinkie_skin_xela5_0"/>
+    - |
+        <joint name="l_hand_pinkie_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
+          <parent link="l_hand_pinkie_2"/>
+          <child link="l_hand_pinkie_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="l_hand_pinkie_skin_xela5_1"/>
+    - |
+        <joint name="l_hand_pinkie_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.29864e-3 2.29864e-3 -32.3759e-3" rpy="1.63745562 -0 0"/>
+          <parent link="l_hand_pinkie_2"/>
+          <child link="l_hand_pinkie_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="l_hand_pinkie_skin_xela5_2"/>
+    - |
+        <joint name="l_hand_pinkie_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30137e-3 -0.58136e-3 -32.3755e-3" rpy="3.14159265 -1.50415067 -1.57079633"/>
+          <parent link="l_hand_pinkie_2"/>
+          <child link="l_hand_pinkie_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="l_hand_pinkie_skin_xela5_3"/>
+    - |
+        <joint name="l_hand_pinkie_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.29899e-3 0.05891e-3 -27.9222e-3" rpy="1.21857414 -0 0"/>
+          <parent link="l_hand_pinkie_2"/>
+          <child link="l_hand_pinkie_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="l_hand_pinkie_skin_xela5_4"/>
+    - |
+        <joint name="l_hand_pinkie_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.30102e-3 0.05891e-3 -27.9218e-3" rpy="1.21857414 -0 0"/>
+          <parent link="l_hand_pinkie_2"/>
+          <child link="l_hand_pinkie_skin_xela5_4"/>
+        </joint>
+#right_hand
+    - |
+        <link name="r_hand_thumb_skin_xela5_0"/>
+    - |
+        <joint name="r_hand_thumb_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
+          <parent link="r_hand_thumb_3"/>
+          <child link="r_hand_thumb_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="r_hand_thumb_skin_xela5_1"/>
+    - |
+        <joint name="r_hand_thumb_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.29864e-3 2.29864e-3 -32.3759e-3" rpy="1.63745562 -0 0"/>
+          <parent link="r_hand_thumb_3"/>
+          <child link="r_hand_thumb_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="r_hand_thumb_skin_xela5_2"/>
+    - |
+        <joint name="r_hand_thumb_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30137e-3 -0.58136e-3 -32.3755e-3" rpy="3.14159265 -1.50415067 -1.57079633"/>
+          <parent link="r_hand_thumb_3"/>
+          <child link="r_hand_thumb_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="r_hand_thumb_skin_xela5_3"/>
+    - |
+        <joint name="r_hand_thumb_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.29899e-3 0.05891e-3 -27.9222e-3" rpy="1.21857414 -0 0"/>
+          <parent link="r_hand_thumb_3"/>
+          <child link="r_hand_thumb_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="r_hand_thumb_skin_xela5_4"/>
+    - |
+        <joint name="r_hand_thumb_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.30102e-3 0.05891e-3 -27.9218e-3" rpy="1.21857414 -0 0"/>
+          <parent link="r_hand_thumb_3"/>
+          <child link="r_hand_thumb_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="r_hand_index_skin_xela5_0"/>
+    - |
+        <joint name="r_hand_index_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="r_hand_index_3"/>
+          <child link="r_hand_index_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="r_hand_index_skin_xela5_1"/>
+    - |
+        <joint name="r_hand_index_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="r_hand_index_3"/>
+          <child link="r_hand_index_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="r_hand_index_skin_xela5_2"/>
+    - |
+        <joint name="r_hand_index_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="r_hand_index_3"/>
+          <child link="r_hand_index_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="r_hand_index_skin_xela5_3"/>
+    - |
+        <joint name="r_hand_index_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_index_3"/>
+          <child link="r_hand_index_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="r_hand_index_skin_xela5_4"/>
+    - |
+        <joint name="r_hand_index_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_index_3"/>
+          <child link="r_hand_index_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="r_hand_middle_skin_xela5_0"/>
+    - |
+        <joint name="r_hand_middle_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="r_hand_middle_2"/>
+          <child link="r_hand_middle_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="r_hand_middle_skin_xela5_1"/>
+    - |
+        <joint name="r_hand_middle_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="r_hand_middle_2"/>
+          <child link="r_hand_middle_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="r_hand_middle_skin_xela5_2"/>
+    - |
+        <joint name="r_hand_middle_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="r_hand_middle_2"/>
+          <child link="r_hand_middle_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="r_hand_middle_skin_xela5_3"/>
+    - |
+        <joint name="r_hand_middle_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_middle_2"/>
+          <child link="r_hand_middle_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="r_hand_middle_skin_xela5_4"/>
+    - |
+        <joint name="r_hand_middle_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_middle_2"/>
+          <child link="r_hand_middle_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="r_hand_ring_skin_xela5_0"/>
+    - |
+        <joint name="r_hand_ring_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="0 1.42986e-3 -41.0281e-3" rpy="3.14159265 -0.63140072 -1.57079633"/>
+          <parent link="r_hand_ring_2"/>
+          <child link="r_hand_ring_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="r_hand_ring_skin_xela5_1"/>
+    - |
+        <joint name="r_hand_ring_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="1.63752613 -0 0"/>
+          <parent link="r_hand_ring_2"/>
+          <child link="r_hand_ring_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="r_hand_ring_skin_xela5_2"/>
+    - |
+        <joint name="r_hand_ring_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30001e-3 -0.58007e-3 -37.3756e-3" rpy="3.14159265 -1.50400068 -1.57079633"/>
+          <parent link="r_hand_ring_2"/>
+          <child link="r_hand_ring_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="r_hand_ring_skin_xela5_3"/>
+    - |
+        <joint name="r_hand_ring_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.30001e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_ring_2"/>
+          <child link="r_hand_ring_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="r_hand_ring_skin_xela5_4"/>
+    - |
+        <joint name="r_hand_ring_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.3e-3 0.059874e-3 -32.9219e-3" rpy="1.21864813 -0 0"/>
+          <parent link="r_hand_ring_2"/>
+          <child link="r_hand_ring_skin_xela5_4"/>
+        </joint>
+    - |
+        <link name="r_hand_pinkie_skin_xela5_0"/>
+    - |
+        <joint name="r_hand_pinkie_skin_xela5_0_fixed_joint" type="fixed">
+          <origin xyz="-2.2125551391027898e-11 -0.002433587294553452 -0.026405457778888853" rpy="-1.1609482034540493e-11 -1.2225055986691151 1.5707963268683354"/>
+          <parent link="r_hand_pinkie_2"/>
+          <child link="r_hand_pinkie_skin_xela5_0"/>
+        </joint>
+    - |
+        <link name="r_hand_pinkie_skin_xela5_1"/>
+    - |
+        <joint name="r_hand_pinkie_skin_xela5_1_fixed_joint" type="fixed">
+          <origin xyz="2.29864e-3 2.29864e-3 -32.3759e-3" rpy="1.63745562 -0 0"/>
+          <parent link="r_hand_pinkie_2"/>
+          <child link="r_hand_pinkie_skin_xela5_1"/>
+        </joint>
+    - |
+        <link name="r_hand_pinkie_skin_xela5_2"/>
+    - |
+        <joint name="r_hand_pinkie_skin_xela5_2_fixed_joint" type="fixed">
+          <origin xyz="-2.30137e-3 -0.58136e-3 -32.3755e-3" rpy="3.14159265 -1.50415067 -1.57079633"/>
+          <parent link="r_hand_pinkie_2"/>
+          <child link="r_hand_pinkie_skin_xela5_2"/>
+        </joint>
+    - |
+        <link name="r_hand_pinkie_skin_xela5_3"/>
+    - |
+        <joint name="r_hand_pinkie_skin_xela5_3_fixed_joint" type="fixed">
+          <origin xyz="2.29899e-3 0.05891e-3 -27.9222e-3" rpy="1.21857414 -0 0"/>
+          <parent link="r_hand_pinkie_2"/>
+          <child link="r_hand_pinkie_skin_xela5_3"/>
+        </joint>
+    - |
+        <link name="r_hand_pinkie_skin_xela5_4"/>
+    - |
+        <joint name="r_hand_pinkie_skin_xela5_4_fixed_joint" type="fixed">
+          <origin xyz="-2.30102e-3 0.05891e-3 -27.9218e-3" rpy="1.21857414 -0 0"/>
+          <parent link="r_hand_pinkie_2"/>
+          <child link="r_hand_pinkie_skin_xela5_4"/>
+        </joint>
+    - |

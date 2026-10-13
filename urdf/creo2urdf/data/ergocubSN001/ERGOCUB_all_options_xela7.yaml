@@ -1,0 +1,2 @@
+
+includes: [base_SN001.yaml, ..\common\gazebo_addon.yaml, ..\common\xela_7taxels_addon.yaml]
